@@ -16,29 +16,20 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 4
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 4000010315006792}
-  - component: {fileID: 33000014285398744}
-  - component: {fileID: 23000011802457782}
-  - component: {fileID: 54000011317768384}
-  - component: {fileID: 195000013374918090}
-  - component: {fileID: 82000010309447582}
-  - component: {fileID: 135000013610579758}
-  - component: {fileID: 136000011244085542}
-  - component: {fileID: 114000013817879144}
-  - component: {fileID: 114000010895090002}
-  - component: {fileID: 114000014107345864}
-  - component: {fileID: 95518026551913450}
-  m_Layer: 9
-=======
   - 4: {fileID: 4000010315006792}
   - 33: {fileID: 33000014285398744}
-  - 65: {fileID: 65000012549210074}
   - 23: {fileID: 23000011802457782}
-  m_Layer: 0
->>>>>>> parent of 159b291... Basic Spawn Added
+  - 54: {fileID: 54000011317768384}
+  - 195: {fileID: 195000013374918090}
+  - 82: {fileID: 82000010309447582}
+  - 135: {fileID: 135000013610579758}
+  - 136: {fileID: 136000011244085542}
+  - 114: {fileID: 114000013817879144}
+  - 114: {fileID: 114000010895090002}
+  - 114: {fileID: 114000014107345864}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,12 +43,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013503759808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.92, y: 1.44, z: -3.5086937}
+  m_LocalPosition: {x: 4.92, y: 1.23, z: -3.5086937}
   m_LocalScale: {x: 1, y: 2.4437666, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23000011802457782
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -72,9 +63,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 872f5b009ce5b7c42a9c475cfff41d9d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -82,7 +71,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -96,7 +85,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013503759808}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!54 &54000011317768384
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -128,7 +116,6 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
-  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -141,14 +128,12 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - serializedVersion: 2
-      time: 1
+    - time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -159,8 +144,7 @@ AudioSource:
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
@@ -171,8 +155,7 @@ AudioSource:
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0
+    - time: 0
       value: 0
       inSlope: 0
       outSlope: 0
@@ -183,8 +166,7 @@ AudioSource:
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
-      time: 0
+    - time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -192,23 +174,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95518026551913450
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013503759808}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000010895090002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,10 +228,6 @@ SphereCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136000011244085542
 CapsuleCollider:
-=======
---- !u!65 &65000012549210074
-BoxCollider:
->>>>>>> parent of 159b291... Basic Spawn Added
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -274,6 +235,27 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.6
+  m_Height: 1.14
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &195000013374918090
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013503759808}
+  m_Enabled: 1
+  m_Radius: 0.67
+  m_Speed: 3
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1.3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
