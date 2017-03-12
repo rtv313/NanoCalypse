@@ -8,6 +8,17 @@ public class EnemyMovement : MonoBehaviour
     EnemyHealth enemyHealth;        // Reference to this enemy's health.
     UnityEngine.AI.NavMeshAgent nav;               // Reference to the nav mesh agent.
 
+    private bool paused = false;
+
+    void OnPauseGame()
+    {
+        paused = true;
+    }
+
+    void OnResumeGame()
+    {
+        paused = false;
+    }
 
     void Awake()
     {
@@ -21,17 +32,20 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        // If the enemy and the player have health left...
-        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+        if (!paused)
         {
-            // ... set the destination of the nav mesh agent to the player.
-            nav.SetDestination(player.position);
-        }
-        // Otherwise...
-        else
-        {
-            // ... disable the nav mesh agent.
-            nav.enabled = false;
+            // If the enemy and the player have health left...
+            if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+            {
+                // ... set the destination of the nav mesh agent to the player.
+                nav.SetDestination(player.position);
+            }
+            // Otherwise...
+            else
+            {
+                // ... disable the nav mesh agent.
+                nav.enabled = false;
+            }
         }
     }
 }
