@@ -75,6 +75,9 @@ public class EnemyHealth : MonoBehaviour
         // The enemy is dead.
         isDead = true;
 
+        // Remove from radar
+        Radar.RemoveRadarObject(this.gameObject);
+
         // Turn the collider into a trigger so shots can pass through it.
         capsuleCollider.isTrigger = true;
 
