@@ -4,14 +4,14 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 100;                         
-    public int currentHealth;                           
-    public Slider healthSlider;                               
+    public float startingHealth = 100;                         
+    public float currentHealth;
+    public Image HealthBar;
     public Image damageImage;                                   
     public AudioClip deathClip;                                 
     public float flashSpeed = 5f;                              
-    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     
-
+    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
+    
 
     Animator anim;                                             
     AudioSource playerAudio;                                    
@@ -54,7 +54,8 @@ public class PlayerHealth : MonoBehaviour
         
         damaged = true;
         currentHealth -= amount;
-        healthSlider.value = currentHealth;
+        float healthRatio = currentHealth / startingHealth;
+        HealthBar.rectTransform.localScale = new Vector3(healthRatio, 1, 1);
         playerAudio.Play();
 
         
