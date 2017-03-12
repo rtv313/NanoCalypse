@@ -47,6 +47,10 @@ public class EnemyMovement : MonoBehaviour
                 nav.enabled = false;
             }
         }
+        else
+        {
+            nav.enabled = false;
+        }
     }
 }
 
