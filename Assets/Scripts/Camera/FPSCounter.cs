@@ -36,6 +36,7 @@ public class FPSCounter : MonoBehaviour
 			auxTriangles = 0;
             debug = !debug;
         }
+
     }
 
     void OnGUI()
