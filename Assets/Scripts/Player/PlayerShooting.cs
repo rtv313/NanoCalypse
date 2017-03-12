@@ -2,9 +2,19 @@
 
 public class PlayerShooting : MonoBehaviour
 {
-    public int damagePerShot = 20;                  // The damage inflicted by each bullet.
-    public float timeBetweenBullets = 0.15f;        // The time between each shot.
-    public float range = 100f;                      // The distance the gun can fire.
+    public int damagePerShot1 = 20;                  // The damage inflicted by each bullet.
+    public float timeBetweenBullets1 = 0.15f;        // The time between each shot.
+    public float range1 = 100f;                      // The distance the gun can fire.
+
+    public int damagePerShot2 = 20;                  // The damage inflicted by each bullet.
+    public float timeBetweenBullets2 = 0.15f;        // The time between each shot.
+    public float range2 = 100f;                      // The distance the gun can fire.
+    public int pellets = 5;
+    public float spreadAngle = 30.0f;
+
+    public int damagePerShot3 = 100;                  // The damage inflicted by each bullet.
+    public float timeBetweenBullets3 = 1.0f;        // The time between each shot.
+    public float range3 = 100f;                      // The distance the gun can fire.
 
     float timer;                                    // A timer to determine when to fire.
     Ray shootRay;                                   // A ray from the gun end forwards.
@@ -15,6 +25,8 @@ public class PlayerShooting : MonoBehaviour
     AudioSource gunAudio;                           // Reference to the audio source.
     Light gunLight;                                 // Reference to the light component.
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
+
+    int fireMode = 1;
 
     void Awake()
     {
@@ -33,15 +45,34 @@ public class PlayerShooting : MonoBehaviour
         // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            fireMode = 1;
+            timer = 0.0f;
+        } else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            fireMode = 2;
+            timer = 0.0f;
+        } else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            fireMode = 3;
+            timer = 0.0f;
+        }
+
         // If the Fire1 button is being press and it's time to fire...
-        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
+        if (Input.GetButton("Fire1")) // && timer >= timeBetweenBullets)
         {
             // ... shoot the gun.
-            Shoot();
+            if (fireMode == 1 && timer >= timeBetweenBullets1)
+                Shoot();
+            if (fireMode == 2 && timer >= timeBetweenBullets2)
+                Shoot();
+            if (fireMode == 3 && timer >= timeBetweenBullets3)
+                Shoot();
         }
 
         // If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
-        if (timer >= timeBetweenBullets * effectsDisplayTime)
+        if (timer >= timeBetweenBullets1 * effectsDisplayTime)
         {
             // ... disable the effects.
             DisableEffects();
@@ -57,6 +88,24 @@ public class PlayerShooting : MonoBehaviour
 
     void Shoot()
     {
+        float range = 0.0f;
+        int damagePerShot = 0;
+        if (fireMode == 1)
+        {
+            range = range1;
+            damagePerShot = damagePerShot1;
+        }
+        if (fireMode == 2)
+        {
+            range = range2;
+            damagePerShot = damagePerShot2;
+        }
+        if (fireMode == 3)
+        {
+            range = range3;
+            damagePerShot = damagePerShot3;
+        }
+
         // Reset the timer.
         timer = 0f;
 
