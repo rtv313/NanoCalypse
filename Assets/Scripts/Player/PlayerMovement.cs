@@ -9,6 +9,18 @@ public class PlayerMovement : MonoBehaviour {
     int floorMask;
     float camRayLength = 100f;
 
+    private bool paused = false;
+
+    void OnPauseGame()
+    {
+        paused = true;
+    }
+
+    void OnResumeGame()
+    {
+        paused = false;
+    }
+
     void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
@@ -18,12 +30,15 @@ public class PlayerMovement : MonoBehaviour {
 
     void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
+        if (!paused)
+        {
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
 
-        Move(h,v);
-        Turning();
-        Animating(h,v);
+            Move(h, v);
+            Turning();
+            Animating(h, v);
+        }
     }
 
     void Move(float h, float v)
