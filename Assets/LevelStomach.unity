@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.6}
+  m_AnchoredPosition: {x: 0, y: 1.6000061}
   m_SizeDelta: {x: 189.32, y: 48}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &233287793
@@ -799,6 +799,16 @@ Prefab:
         type: 2}
       propertyPath: currentHealth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013771471240, guid: 62d471e8f5652f74fad49c67e794700d,
+        type: 2}
+      propertyPath: damagePerShot2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013771471240, guid: 62d471e8f5652f74fad49c67e794700d,
+        type: 2}
+      propertyPath: timeBetweenBullets2
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62d471e8f5652f74fad49c67e794700d, type: 2}

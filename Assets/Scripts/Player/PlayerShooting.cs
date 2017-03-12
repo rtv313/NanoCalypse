@@ -6,8 +6,8 @@ public class PlayerShooting : MonoBehaviour
     public float timeBetweenBullets1 = 0.15f;        // The time between each shot.
     public float range1 = 100f;                      // The distance the gun can fire.
 
-    public int damagePerShot2 = 20;                  // The damage inflicted by each bullet.
-    public float timeBetweenBullets2 = 0.15f;        // The time between each shot.
+    public int damagePerShot2 = 5;                  // The damage inflicted by each bullet.
+    public float timeBetweenBullets2 = 0.05f;        // The time between each shot.
     public float range2 = 100f;                      // The distance the gun can fire.
     public int pellets = 5;
     public float spreadAngle = 30.0f;
