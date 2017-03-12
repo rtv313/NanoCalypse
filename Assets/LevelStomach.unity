@@ -755,7 +755,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 445770975}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -803,6 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2555f4075df60da4fbdbfd089d8b341d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 =======
 --- !u!1 &448512630
 GameObject:
@@ -851,6 +852,9 @@ Transform:
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> refs/remotes/origin/master
+=======
+  canvas: {fileID: 445770979}
+>>>>>>> parent of 0ec0ab4... Asdf
 --- !u!4 &499696060 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011608888956, guid: 62d471e8f5652f74fad49c67e794700d,
