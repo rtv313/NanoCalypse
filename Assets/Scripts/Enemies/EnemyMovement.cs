@@ -34,6 +34,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!paused)
         {
+            nav.enabled = true;
             // If the enemy and the player have health left...
             if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
             {
