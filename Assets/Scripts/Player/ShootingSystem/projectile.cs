@@ -19,6 +19,19 @@ public class projectile : MonoBehaviour {
     public float rifleBulletLifeTime = 2.0f;
     public float shootgunBulletLifeTime = 0.5f;
     public float sniperBulletLifeTime = 3.0f;
+    public AudioClip rifleSound;
+    public AudioClip shootgunSound;
+    public AudioClip sniperSound;
+    public GameObject muzzleFlash;
+    private AudioSource gunAudio;
+    private ParticleSystem gunParticles;                    // Reference to the particle system.
+
+
+    void Start()
+    {
+        gunAudio = GetComponent<AudioSource>();
+        gunParticles = muzzleFlash.GetComponent<ParticleSystem>();
+    }
 
     void Update()
     {
@@ -90,7 +103,9 @@ public class projectile : MonoBehaviour {
         else if (fireMode == 3){
             shootSniperRifle();
         }
-       
+
+        gunParticles.Stop();
+        gunParticles.Play();
     }
 
     void shootAssaultRifle()
@@ -101,6 +116,9 @@ public class projectile : MonoBehaviour {
         timer = 0.0f;
         // Destroy the bullet after 2 seconds
         Destroy(bullet, rifleBulletLifeTime);
+        gunAudio.clip = rifleSound;
+        gunAudio.Play();
+
     }
 
     void shootShootgun()
@@ -129,6 +147,8 @@ public class projectile : MonoBehaviour {
         bullet.transform.Rotate(bullet.transform.rotation.x, bullet.transform.rotation.y, bullet.transform.rotation.z);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
         Destroy(bullet, shootgunBulletLifeTime);
+        gunAudio.clip = shootgunSound;
+        gunAudio.Play();
 
         timer = 0.0f;
     }
@@ -142,5 +162,7 @@ public class projectile : MonoBehaviour {
         timer = 0.0f;
         // Destroy the bullet after 2 seconds
         Destroy(bullet, sniperBulletLifeTime);
+        gunAudio.clip = sniperSound;
+        gunAudio.Play();
     }
 }
