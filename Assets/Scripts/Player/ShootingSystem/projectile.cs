@@ -71,21 +71,21 @@ public class projectile : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             fireMode = 1;
-            timer = 1.0f;
+            timer = 10.0f;
 
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             fireMode = 2;
-            timer = 1.0f;
+            timer = 10.0f;
         }
 
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             fireMode = 3;
-            timer = 1.0f;
+            timer = 10.0f;
         }
     }
 
@@ -110,6 +110,9 @@ public class projectile : MonoBehaviour {
 
     void shootAssaultRifle()
     {
+        var main = gunParticles.main;
+        main.startColor = new Color(1.0F, 0.0F, 0.0F, 1.0F);
+
         var bullet = (GameObject)Instantiate(assaultRifleBullet, bulletSpawn.position, bulletSpawn.rotation);
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedRifle;
@@ -123,6 +126,10 @@ public class projectile : MonoBehaviour {
 
     void shootShootgun()
     {
+
+        var main = gunParticles.main;
+        main.startColor =  new Color(0.0F, 0.0F, 1.0F, 1.0F);
+
         var bullet = (GameObject)Instantiate(shootgunBullet, bulletSpawn.position, bulletSpawn.rotation);
         bullet.transform.Rotate(bullet.transform.rotation.x, 5, bullet.transform.rotation.z);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
@@ -156,6 +163,10 @@ public class projectile : MonoBehaviour {
 
     void shootSniperRifle()
     {
+
+        var main = gunParticles.main;
+        main.startColor = new Color(0.0F, 1.0F, 0.0F, 1.0F);
+      
         var bullet = (GameObject)Instantiate(sniperBullet, bulletSpawn.position, bulletSpawn.rotation);
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedSniper;

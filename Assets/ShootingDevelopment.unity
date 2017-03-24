@@ -581,7 +581,7 @@ MonoBehaviour:
   sniperBulletLifeTime: 3
   rifleSound: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}
   shootgunSound: {fileID: 8300000, guid: 1e173282ed6559149b9594997be1ecb0, type: 3}
-  sniperSound: {fileID: 0}
+  sniperSound: {fileID: 8300000, guid: 5e6a774addb76444ab3adae50ca677f7, type: 3}
   muzzleFlash: {fileID: 1851640775}
 --- !u!1 &1851640775
 GameObject:
@@ -660,7 +660,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1851640775}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49557233, z: 0.84050274}
+  m_LocalPosition: {x: 0, y: 0.49557233, z: 0.959}
   m_LocalScale: {x: 0.48000008, y: 0.48000008, z: 0.48000008}
   m_Children: []
   m_Father: {fileID: 1665267872}
@@ -721,7 +721,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1819277095
+  randomSeed: -168830310
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -894,10 +894,10 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9764706, g: 0.9098039, b: 0, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: 3.04
       maxCurve:
         serializedVersion: 2
         m_Curve:
