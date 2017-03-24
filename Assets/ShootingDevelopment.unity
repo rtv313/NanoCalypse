@@ -499,12 +499,17 @@ MonoBehaviour:
   shootgunBullet: {fileID: 1417551831203592, guid: 6c8abc802717e7743b4473d035086c1d,
     type: 2}
   bulletSpawn: {fileID: 1851640779}
-  bulletSpeed: 30
+  bulletSpeedRifle: 35
+  bulletSpeedShootgun: 15
+  bulletSpeedSniper: 35
   fireMode: 1
   timer: 1
   timeBetweenBulletsAssaultRifle: 0.05
   timeBetweenBulletsShootgun: 1
   timeBetweenBulletSniperRifle: 1
+  rifleBulletLifeTime: 2
+  shootgunBulletLifeTime: 0.3
+  sniperBulletLifeTime: 3
 --- !u!1 &1851640775
 GameObject:
   m_ObjectHideFlags: 0
