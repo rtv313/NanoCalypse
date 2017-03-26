@@ -26,6 +26,14 @@ public class ShootingSystem : MonoBehaviour {
     private AudioSource gunAudio;
     private ParticleSystem gunParticles;                    // Reference to the particle system.
 
+    public float rifleHeat = 0.0f;
+    public float coolDownRifle = 3.0f;
+    public float rifleMaxHeat = 30.0f;
+    public float coolDownTime = 2.0f;
+    public bool blockRifle = false;
+
+
+
 
     void Start()
     {
@@ -39,10 +47,11 @@ public class ShootingSystem : MonoBehaviour {
 
         if (Input.GetButton("Fire1"))
         {
-            if (fireMode == 1 && timer >= timeBetweenBulletsAssaultRifle)
+            if (fireMode == 1 && timer >= timeBetweenBulletsAssaultRifle && blockRifle == false)
             {
                 Fire();
             }
+
 
             if (fireMode == 2 && timer >= timeBetweenBulletsShootgun)
             {
@@ -55,8 +64,21 @@ public class ShootingSystem : MonoBehaviour {
             }
 
         }
-    }
 
+        rifleHeat -= coolDownRifle * Time.deltaTime;
+
+        if (rifleHeat <= 0)
+        {
+            rifleHeat = 0.0f;
+        }
+
+
+      }
+
+    void coolRifle()
+    {
+        blockRifle = false;
+    }
 
     void SelectWeapon()
     {
@@ -80,6 +102,9 @@ public class ShootingSystem : MonoBehaviour {
             fireMode = 3;
             timer = 10.0f;
         }
+
+        //cooldown rifle
+      
     }
 
     void Fire()
@@ -88,6 +113,12 @@ public class ShootingSystem : MonoBehaviour {
         if (fireMode == 1)
         {
             shootAssaultRifle();
+            rifleHeat += 1.0f;
+            if (rifleHeat >= rifleMaxHeat)
+            {
+                blockRifle = true;
+                Invoke("coolRifle", coolDownTime);
+            }
         }
         else if (fireMode == 2)
         {

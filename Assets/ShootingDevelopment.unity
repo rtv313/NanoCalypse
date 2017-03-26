@@ -585,6 +585,11 @@ MonoBehaviour:
   shootgunSound: {fileID: 8300000, guid: 1e173282ed6559149b9594997be1ecb0, type: 3}
   sniperSound: {fileID: 8300000, guid: 5e6a774addb76444ab3adae50ca677f7, type: 3}
   muzzleFlash: {fileID: 1851640775}
+  rifleHeat: 0
+  coolDownRifle: 6
+  rifleMaxHeat: 30
+  coolDownTime: 2
+  blockRifle: 0
 --- !u!114 &1665267874
 MonoBehaviour:
   m_ObjectHideFlags: 0
