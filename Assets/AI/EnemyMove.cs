@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMove : MonoBehaviour {
+
+    public enum PatrolMode { PING_PONG , LOOP };
+
     UnityEngine.AI.NavMeshAgent nav;
     public GameObject target;
     public Transform patrolPath;
+    public PatrolMode patrolMode = PatrolMode.LOOP;
     Transform[] path_objs;
     int patrol_wavePoint=0;
+
+    bool pingPongUp = true;
+
+
     // Use this for initialization
     void Start ()
     {
@@ -17,19 +25,47 @@ public class EnemyMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // nav.SetDestination(target.transform.position);
         Patrol();
     }
 
     void Patrol()
     {
-        float distance = Vector3.Distance(path_objs[patrol_wavePoint].transform.position, transform.position);
-        if (distance == 0)
+        if (nav.remainingDistance < 0.5f)
         {
-            ++patrol_wavePoint;
-            if (patrol_wavePoint > path_objs.Length)
+           switch (patrolMode)
             {
-                patrol_wavePoint = 0;
+                case PatrolMode.LOOP:
+                    ++patrol_wavePoint;
+                    if (patrol_wavePoint > path_objs.Length)
+                    {
+                        patrol_wavePoint = 1;
+                    }
+                    break;
+
+                case PatrolMode.PING_PONG:
+                    // going up
+                    if (pingPongUp == true)
+                    {
+                        if (patrol_wavePoint < path_objs.Length)
+                        {
+                            ++patrol_wavePoint;
+                        }
+                        else {
+                            pingPongUp = false;
+                            patrol_wavePoint = path_objs.Length - 1;
+                        }
+                    }
+                    else {
+                        if (patrol_wavePoint > 1)
+                        {
+                            --patrol_wavePoint;
+                        }
+                        else {
+                            pingPongUp = true;
+                            patrol_wavePoint = 1;
+                        }
+                    }
+                    break;
             }
             
         }
