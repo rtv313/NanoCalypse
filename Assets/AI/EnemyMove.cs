@@ -12,12 +12,11 @@ public class EnemyMove : MonoBehaviour {
     public PatrolMode patrolMode = PatrolMode.LOOP;
     Transform[] path_objs;
     int patrol_wavePoint=0;
-
     bool pingPongUp = true;
 
 
     // Use this for initialization
-    void Start ()
+    void Awake()
     {
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         path_objs = patrolPath.GetComponentsInChildren<Transform>();
