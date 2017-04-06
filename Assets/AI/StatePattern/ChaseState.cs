@@ -15,6 +15,12 @@ public class ChaseState : State
 
     private void Transition(Context context)
     {
+        if (context.life <= 0)
+        {
+            context.state = new DeathState();
+            return;
+        }
+
         //if (context.nav.remainingDistance < context.attackDistance)
         //{
         //    context.state = new AttackState();

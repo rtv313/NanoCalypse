@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class IdleState : State {
     public float time = 0;
@@ -18,6 +17,12 @@ public class IdleState : State {
     private void Transition(Context context)
     {
         time += Time.deltaTime;
+
+        if (context.life <= 0)
+        {
+            context.state = new DeathState();
+            return;
+        }
 
         if (time >= context.idleTime && context.wander==true)
         {

@@ -5,6 +5,10 @@ public class Context : MonoBehaviour
 {
     public State state;
     public string stateString="Patrol";
+    public int life = 100;
+    //Colliders /Triggers/ Rigidbodies
+    public CapsuleCollider capsuleCollider;
+    public Rigidbody rigidbody;
 
     //Patrol State variables
     public enum PatrolMode { PING_PONG, LOOP };
@@ -42,8 +46,14 @@ public class Context : MonoBehaviour
     public float idleTime = 3f;
     public float remainingDistanceBeforeIdle=0;
 
+    //Death
+    public float sinkSpeed = 3f;
+    public float timeDestroy = 5f;
+
     void Awake()
     {
+        rigidbody = GetComponent<Rigidbody>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         path_objs_Patrol = patrolPath.GetComponentsInChildren<Transform>();
         path_objs_Wander = wanderPath.GetComponentsInChildren<Transform>();

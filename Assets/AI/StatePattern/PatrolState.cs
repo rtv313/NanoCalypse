@@ -72,6 +72,12 @@ public class PatrolState : State
     {
         time += Time.deltaTime;
 
+        if (context.life <= 0)
+        {
+            context.state = new DeathState();
+            return;
+        }
+
         if (context.playerInSight == true)
         {
             context.state = new ChaseState();
