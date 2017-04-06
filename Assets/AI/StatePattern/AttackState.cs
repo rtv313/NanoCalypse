@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 public class AttackState : State {
-    private float timer;
+    private float timer=10;
 
     public override void Handle(Context context)
     {
@@ -10,38 +10,40 @@ public class AttackState : State {
 
     private void Attack(Context context)
     {
+        context.stateString = "Attack";
         context.nav.enabled = false;
         timer += Time.deltaTime;
 
         if (context.playerHealth.currentHealth > 0 && timer >= context.timeBetweenAttacks)
         {
           context.playerHealth.TakeDamage(context.attackDamage);
-        }
-
-        if (context.playerHealth.currentHealth <= 0)
-        {
-            // ... tell the animator the player is dead.
-
+          timer = 0;
         }
     }
 
     private void Transition(Context context)
     {
+       
         if (context.life <= 0)
         {
             context.state = new DeathState();
             return;
         }
 
-        if (context.nav.remainingDistance > context.attackDistance)
-        {
-            context.nav.enabled = true;
-            context.state = new ChaseState();
-        }
-
         if (context.playerHealth.currentHealth <= 0)
         {
             context.state = new IdleState();
+            return;
         }
+
+        context.nav.enabled = true;
+
+        if (context.nav.remainingDistance > context.attackDistance)
+        {
+            context.state = new ChaseState();
+            return;
+        }
+
+        
     }
 }

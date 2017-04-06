@@ -24,15 +24,20 @@ public class IdleState : State {
             return;
         }
 
+        if (context.playerInSight == true && context.playerHealth.currentHealth > 0)
+        {
+           context.state = new ChaseState();
+            return;
+        }
+
         if (time >= context.idleTime && context.wander==true)
         {
-            context.nav.enabled = true;
             context.state = new WanderState();
         }
 
         if (time >= context.idleTime && context.wander == false)
         {
-            context.nav.enabled = true;
+           
             context.state = new PatrolState();
         }
     }

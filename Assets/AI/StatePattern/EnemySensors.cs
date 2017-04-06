@@ -36,19 +36,19 @@ public class EnemySensors : MonoBehaviour {
                 Debug.DrawRay(transform.position, direction, Color.red);
 
 
-                if (Physics.Raycast(transform.position, direction, out hit, col.radius))
-                {
-                    //if (hit.collider.gameObject == player)
-                    //{
-                    //    playerInSight = true;
-                    //    //lastPlayerSighting.position = player.transform.position; //alert other enemies, is a manager
-                    //}
-                    int z = 0;
-                }
-                else
-                {
-                    int x = 3;
-                }
+                //if (Physics.Raycast(transform.position, direction, out hit, col.radius))
+                //{
+                //    //if (hit.collider.gameObject == player)
+                //    //{
+                //    //    playerInSight = true;
+                //    //    //lastPlayerSighting.position = player.transform.position; //alert other enemies, is a manager
+                //    //}
+                //    int z = 0;
+                //}
+                //else
+                //{
+                //    int x = 3;
+                //}
 
 
             }

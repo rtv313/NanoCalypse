@@ -12,6 +12,8 @@ public class PatrolState : State
 
     private void Patrol(Context context)
     {
+        context.nav.enabled = true;
+
         float distance = context.nav.remainingDistance;
 
         if (distance== 0f) // avoid the reset that ocurred in the idle state
@@ -78,7 +80,7 @@ public class PatrolState : State
             return;
         }
 
-        if (context.playerInSight == true)
+        if (context.playerInSight == true && context.playerHealth.currentHealth > 0)
         {
             context.state = new ChaseState();
             return;

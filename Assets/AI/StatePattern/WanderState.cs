@@ -12,6 +12,8 @@ public class WanderState : State
 
     private void Wander(Context context)
     {
+        context.nav.enabled = true;
+
         if (context.nav.remainingDistance < 0.5f)
         {
 
@@ -35,7 +37,7 @@ public class WanderState : State
             return;
         }
 
-        if (context.playerInSight == true)
+        if (context.playerInSight == true && context.playerHealth.currentHealth > 0)
         {
             context.state = new ChaseState();
             return;

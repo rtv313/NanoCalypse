@@ -36,15 +36,15 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
        
-        if (damaged)
-        {
-           damageImage.color = flashColour;
-        }
+        //if (damaged)
+        //{
+        //   damageImage.color = flashColour;
+        //}
     
-        else
-        {
-           damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-        }
+        //else
+        //{
+        //   damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        //}
 
         damaged = false;
     }
@@ -56,8 +56,8 @@ public class PlayerHealth : MonoBehaviour
         damaged = true;
         currentHealth -= amount;
         float healthRatio = currentHealth / startingHealth;
-        HealthBar.rectTransform.localScale = new Vector3(healthRatio, 1, 1);
-        playerAudio.Play();
+        //HealthBar.rectTransform.localScale = new Vector3(healthRatio, 1, 1);
+        //playerAudio.Play();
 
         
         if (currentHealth <= 0 && !isDead)
@@ -70,10 +70,10 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
-        anim.SetTrigger("Die");
-        playerAudio.clip = deathClip;
-        playerAudio.Play();
-        playerMovement.enabled = false;
-        SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
+        //anim.SetTrigger("Die");
+        //playerAudio.clip = deathClip;
+        //playerAudio.Play();
+        //playerMovement.enabled = false;
+        //SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
     }
 }

@@ -10,7 +10,8 @@ public class ChaseState : State
 
     private void ChasePlayer(Context context)
     {
-      context.nav.SetDestination(context.player.position);
+        context.nav.enabled = true;
+        context.nav.SetDestination(context.player.position);
     }
 
     private void Transition(Context context)
@@ -21,10 +22,10 @@ public class ChaseState : State
             return;
         }
 
-        //if (context.nav.remainingDistance < context.attackDistance)
-        //{
-        //    context.state = new AttackState();
-        //}
+        if (context.nav.remainingDistance < context.attackDistance)
+        {
+            context.state = new AttackState();
+        }
 
         if (context.playerInSight == false && context.wander == true)
         {
