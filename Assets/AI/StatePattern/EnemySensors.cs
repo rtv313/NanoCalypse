@@ -12,6 +12,22 @@ public class EnemySensors : MonoBehaviour {
     private SphereCollider col;
     private GameObject player;
     private Context context;
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        if (transform != null && context != null)
+        {
+            Gizmos.DrawWireSphere(transform.position, context.attackDistance);
+        }
+    }
+
+    void Update()
+    {
+      
+    }
+
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -34,23 +50,6 @@ public class EnemySensors : MonoBehaviour {
                 RaycastHit hit;
                 playerInSight = true;
                 Debug.DrawRay(transform.position, direction, Color.red);
-
-
-                //if (Physics.Raycast(transform.position, direction, out hit, col.radius))
-                //{
-                //    //if (hit.collider.gameObject == player)
-                //    //{
-                //    //    playerInSight = true;
-                //    //    //lastPlayerSighting.position = player.transform.position; //alert other enemies, is a manager
-                //    //}
-                //    int z = 0;
-                //}
-                //else
-                //{
-                //    int x = 3;
-                //}
-
-
             }
         }
     }

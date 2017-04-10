@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class Context : MonoBehaviour
 {
+    public enum EnemyType { VIRUS, BACTERIA };
+    public EnemyType enemyType = EnemyType.VIRUS;
     public State state;
     public string stateString="Patrol";
     public int life = 100;
+  
     //Colliders /Triggers/ Rigidbodies
     public CapsuleCollider capsuleCollider;
     public Rigidbody rigidbody;
@@ -37,6 +40,7 @@ public class Context : MonoBehaviour
     public float attackDistance = 1.5f;
 
     //Attack Player
+   
     public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
     public int attackDamage = 10;
     public PlayerHealth playerHealth;

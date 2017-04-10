@@ -1,4 +1,5 @@
-﻿
+﻿using UnityEngine;
+
 public class ChaseState : State
 {
     public override void Handle(Context context)
@@ -22,7 +23,9 @@ public class ChaseState : State
             return;
         }
 
-        if (context.nav.remainingDistance < context.attackDistance)
+        float dist = Vector3.Distance(context.player.position, context.transform.position);
+
+        if (dist < context.attackDistance)
         {
             context.state = new AttackState();
         }

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
+
 public class AttackState : State {
     private float timer=10;
-
+    
+   
     public override void Handle(Context context)
     {
-        Transition(context);
         Attack(context);
+        Transition(context);
     }
 
     private void Attack(Context context)
@@ -14,17 +16,43 @@ public class AttackState : State {
         context.nav.enabled = false;
         timer += Time.deltaTime;
 
-        if (context.playerHealth.currentHealth > 0 && timer >= context.timeBetweenAttacks)
+        Vector3 direction = (context.player.position - context.transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));    // flattens the vector3
+        context.transform.rotation = Quaternion.Slerp(context.transform.rotation, lookRotation, Time.deltaTime * 4);
+
+       if (context.playerHealth.currentHealth > 0 && timer >= context.timeBetweenAttacks)
         {
-          context.playerHealth.TakeDamage(context.attackDamage);
-          timer = 0;
+            // context.playerHealth.TakeDamage(context.attackDamage);
+            switch (context.enemyType)
+            {
+                case Context.EnemyType.VIRUS:
+                    virusAttack(context);
+                    break;
+                case Context.EnemyType.BACTERIA:
+                    bacteriaAttack(context);
+                    break;
+            }
+
+            timer = 0;
         }
+    }
+
+    private void virusAttack(Context context)
+    {
+        VirusAttack componentAttack = context.GetComponent<VirusAttack>();
+        componentAttack.Attack();
+    }
+
+    private void bacteriaAttack(Context context)
+    {
+        BacteriaAttack componentAttack = context.GetComponent<BacteriaAttack>();
+        componentAttack.Attack();
     }
 
     private void Transition(Context context)
     {
-       
-        if (context.life <= 0)
+        
+       if (context.life <= 0)
         {
             context.state = new DeathState();
             return;
@@ -38,12 +66,12 @@ public class AttackState : State {
 
         context.nav.enabled = true;
 
-        if (context.nav.remainingDistance > context.attackDistance)
+        float dist = Vector3.Distance(context.player.position, context.transform.position);
+
+        if (dist > context.attackDistance)
         {
             context.state = new ChaseState();
             return;
         }
-
-        
     }
 }
