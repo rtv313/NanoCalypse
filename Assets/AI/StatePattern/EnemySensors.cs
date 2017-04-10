@@ -23,12 +23,7 @@ public class EnemySensors : MonoBehaviour {
         }
     }
 
-    void Update()
-    {
-      
-    }
-
-    void Awake()
+  void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();

@@ -54,6 +54,10 @@ public class Context : MonoBehaviour
     public float sinkSpeed = 3f;
     public float timeDestroy = 5f;
 
+    //Mutation
+    public bool Mutated = false;
+    public GameObject parasite;
+
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
