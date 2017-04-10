@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Context : MonoBehaviour
 {
-    public enum EnemyType { VIRUS, BACTERIA };
+    public enum EnemyType { VIRUS, BACTERIA, PARASITE };
     public EnemyType enemyType = EnemyType.VIRUS;
     public State state;
     public string stateString="Patrol";

@@ -7,7 +7,7 @@ public class BacteriaAttack : MonoBehaviour {
     public float power = 100.0F;
   
 
-    public void Attack()
+    public void Attack(Context context)
     {
         GameObject explosion = Instantiate(explosionParticles,transform.position,transform.localRotation);
         Vector3 explosionPos = transform.position;
@@ -17,7 +17,10 @@ public class BacteriaAttack : MonoBehaviour {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
 
             if (rb != null)
+            {
+                context.playerHealth.TakeDamage(context.attackDamage);
                 rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
+            }
         }
 
         Destroy(explosion, 0.2f);

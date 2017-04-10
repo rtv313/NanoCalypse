@@ -22,7 +22,6 @@ public class AttackState : State {
 
        if (context.playerHealth.currentHealth > 0 && timer >= context.timeBetweenAttacks)
         {
-            // context.playerHealth.TakeDamage(context.attackDamage);
             switch (context.enemyType)
             {
                 case Context.EnemyType.VIRUS:
@@ -30,6 +29,9 @@ public class AttackState : State {
                     break;
                 case Context.EnemyType.BACTERIA:
                     bacteriaAttack(context);
+                    break;
+                case Context.EnemyType.PARASITE:
+                    parasiteAttack(context);
                     break;
             }
 
@@ -46,7 +48,13 @@ public class AttackState : State {
     private void bacteriaAttack(Context context)
     {
         BacteriaAttack componentAttack = context.GetComponent<BacteriaAttack>();
-        componentAttack.Attack();
+        componentAttack.Attack(context);
+    }
+
+    private void parasiteAttack(Context context)
+    {
+        ParasiteAttack componentAttack = context.GetComponent<ParasiteAttack>();
+        componentAttack.Attack(context);
     }
 
     private void Transition(Context context)
