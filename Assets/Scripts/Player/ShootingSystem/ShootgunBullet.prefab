@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 23653590299647532}
   - component: {fileID: 54759704690700146}
   - component: {fileID: 114616285344166242}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ShootgunBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletType: 1
   assaultRifleDamage: 10
-  shootgunDamage: 5
+  shootgunDamage: 20
   sniperDamage: 30
 --- !u!135 &135191370512942618
 SphereCollider:
@@ -119,7 +119,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1417551831203592}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

@@ -29,7 +29,9 @@ public class BulletDamage : MonoBehaviour {
                     break;
             }
 
+         }
+        
+        if(other.gameObject.tag != "Player")
             Destroy(transform.gameObject);
-        }
     }
 }

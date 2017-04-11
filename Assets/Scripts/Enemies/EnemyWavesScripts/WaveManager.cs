@@ -50,16 +50,27 @@ public class WaveManager : MonoBehaviour {
         }
     }
 
-    void Update() //for testing only
+    void Start()
+    {
+        Invoke("deactivateIntefaze", 60f);
+    }
+
+    void deactivateIntefaze()
     {
         List<int> waves = new List<int>();
         waves.Add(0);
-        waves.Add(1);
-
-        if (activate) {
-             activateLists(waves);
-        } else{
-            deactivateLists(waves);  
-        }
+        deactivateLists(waves);
     }
+    void Update() //for testing only
+    {
+        //List<int> waves = new List<int>();
+        //waves.Add(0);
+
+        //if (activate) {
+        //     activateLists(waves);
+        //} else{
+        //    deactivateLists(waves);  
+        //}
+    }
+
 }

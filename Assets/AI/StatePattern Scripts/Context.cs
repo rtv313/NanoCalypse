@@ -66,7 +66,7 @@ public class Context : MonoBehaviour
         path_objs_Patrol = patrolPath.GetComponentsInChildren<Transform>();
         path_objs_Wander = wanderPath.GetComponentsInChildren<Transform>();
         sensors = GetComponent<EnemySensors>();
-        state = new PatrolState();
+        state = new WanderState();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
     }

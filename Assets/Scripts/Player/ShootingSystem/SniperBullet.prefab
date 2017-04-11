@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 23760380074094872}
   - component: {fileID: 54785493868188618}
   - component: {fileID: 114273118289764384}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SniperBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113761969273470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.978561, y: 0.09999999, z: 4.2346377}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 3.6129577}
+  m_LocalPosition: {x: 1.6018038, y: 10.701975, z: -15.708}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1.3520473}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -119,7 +119,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113761969273470}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

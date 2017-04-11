@@ -20,7 +20,7 @@ public class AttackState : State {
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));    // flattens the vector3
         context.transform.rotation = Quaternion.Slerp(context.transform.rotation, lookRotation, Time.deltaTime * 4);
 
-       if (context.playerHealth.currentHealth > 0 && timer >= context.timeBetweenAttacks)
+       if (context.playerHealth.currentHealth > 0 && timer >= context.timeBetweenAttacks && context.playerInSight)
         {
             switch (context.enemyType)
             {

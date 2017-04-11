@@ -9,6 +9,8 @@ public class SpawnPointScript : MonoBehaviour {
     public int timeToSpawnEnemyInEffect=1;
     public int coolDownTime = 5;
     public bool flagCreate = true;
+    public Transform patrolPath;
+    public Transform wanderPath;
     public GameObject spawnEnemyEffect;
     public GameObject[] enemies;
     public enum  EnemyType { VIRUS, BACTERIA, PARASITE, ALL };
@@ -69,7 +71,12 @@ public class SpawnPointScript : MonoBehaviour {
     void createEnemy()
     {
         GameObject enemy = enemies[enemySelector];
-        Instantiate(enemy, transform.position, transform.rotation);
+        Context context = enemy.GetComponent<Context>();
+        context.patrolPath = patrolPath;
+        context.wanderPath = wanderPath;
+        GameObject newEnemy= Instantiate(enemy, transform.position, transform.rotation);
+        
+      
         Invoke("coolDown", coolDownTime);
     }
 
