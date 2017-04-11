@@ -5,7 +5,7 @@ public class BacteriaAttack : MonoBehaviour {
     public GameObject explosionParticles;
     public float radius = 5.0F;
     public float power = 100.0F;
-  
+    public float explosionTime = 0.2F;
 
     public void Attack(Context context)
     {
@@ -20,10 +20,12 @@ public class BacteriaAttack : MonoBehaviour {
             {
                 context.playerHealth.TakeDamage(context.attackDamage);
                 rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
+                if(hit.tag=="Player")
+                    hit.GetComponent<PlayerMovement>().CallResetRb();
             }
         }
 
-        Destroy(explosion, 0.2f);
+        Destroy(explosion, explosionTime);
         Destroy(transform.gameObject);
     }
 }

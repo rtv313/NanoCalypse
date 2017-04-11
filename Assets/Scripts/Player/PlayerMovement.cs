@@ -3,11 +3,13 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
     public float speed = 6f;
+    public float resetRb = 1.5f;
     Vector3 movement;
     Animator anim;
     Rigidbody playerRigidbody;
     int floorMask;
     float camRayLength = 100f;
+
 
     private bool paused = false;
 
@@ -71,15 +73,15 @@ public class PlayerMovement : MonoBehaviour {
         //anim.SetBool("IsWalking", walking);
     }
 
-	// Use this for initialization
-	void Start ()
+	public void CallResetRb()
     {
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        Invoke("ResetRb", resetRb);
+    }
+
+    private void ResetRb()
     {
-       
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
