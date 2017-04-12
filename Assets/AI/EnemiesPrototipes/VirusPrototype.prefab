@@ -47,7 +47,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4438229990897900}
   - component: {fileID: 33203102838335326}
-  - component: {fileID: 65277355298607190}
   - component: {fileID: 23772389742035016}
   m_Layer: 0
   m_Name: Cube
@@ -70,7 +69,7 @@ GameObject:
   - component: {fileID: 114879321662113872}
   m_Layer: 0
   m_Name: OtherAgentsDetector
-  m_TagString: Untagged
+  m_TagString: AgentDetector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,18 +244,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65277355298607190
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1480072791083104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114137838465717862
 MonoBehaviour:
   m_ObjectHideFlags: 1
