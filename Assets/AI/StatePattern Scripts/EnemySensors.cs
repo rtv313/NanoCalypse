@@ -24,11 +24,12 @@ public class EnemySensors : MonoBehaviour {
     }
 
   void Awake()
-    {
+  {
         player = GameObject.FindGameObjectWithTag("Player");
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         context = GetComponent<Context>();
-    }
+  }
+
 
     void OnTriggerStay(Collider other)
     {
@@ -42,11 +43,13 @@ public class EnemySensors : MonoBehaviour {
 
             if (angle < fieldOfViewAnagle * 0.5f)
             {
-                RaycastHit hit;
                 playerInSight = true;
                 Debug.DrawRay(transform.position, direction, Color.red);
             }
+
+            return;
         }
+
     }
 
     void OnTriggerExit(Collider other)

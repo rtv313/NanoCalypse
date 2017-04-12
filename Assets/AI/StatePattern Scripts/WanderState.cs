@@ -14,7 +14,7 @@ public class WanderState : State
     {
         context.nav.enabled = true;
 
-        if (context.nav.remainingDistance < 0.5f)
+        if (context.nav.remainingDistance < context.wanderObjectiveDistance)
         {
 
             context.patrol_wavePoint = Random.Range(0, context.path_objs_Wander.Length);
@@ -30,6 +30,11 @@ public class WanderState : State
     private void Transition(Context context)
     {
         time += Time.deltaTime;
+
+        if (context.resetTimeForIdle == true)
+        {
+            time = 0;
+        }
 
         if (context.life <= 0)
         {

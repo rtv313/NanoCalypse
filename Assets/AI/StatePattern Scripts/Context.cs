@@ -27,6 +27,7 @@ public class Context : MonoBehaviour
     //Wander path
     public Transform wanderPath;
     public Transform[] path_objs_Wander;
+    public float wanderObjectiveDistance = 0.5f;
 
     // Sensors
     public EnemySensors sensors;
@@ -49,6 +50,7 @@ public class Context : MonoBehaviour
     public float idleTimer = 10f;
     public float idleTime = 3f;
     public float remainingDistanceBeforeIdle=0;
+    public bool resetTimeForIdle = false;
 
     //Death
     public float sinkSpeed = 3f;

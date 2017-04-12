@@ -21,7 +21,7 @@ public class PatrolState : State
             distance = context.remainingDistanceBeforeIdle;
         }
 
-        if (distance < 0.5f)
+        if (distance < context.wanderObjectiveDistance)
         {
             switch (context.patrolMode)
             {
@@ -73,6 +73,11 @@ public class PatrolState : State
     private void Transition(Context context)
     {
         time += Time.deltaTime;
+
+        if (context.resetTimeForIdle == true)
+        {
+            time = 0;
+        }
 
         if (context.life <= 0)
         {

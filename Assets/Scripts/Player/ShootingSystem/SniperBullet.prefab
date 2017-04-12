@@ -111,7 +111,7 @@ MonoBehaviour:
   bulletType: 2
   assaultRifleDamage: 10
   shootgunDamage: 5
-  sniperDamage: 30
+  sniperDamage: 100
 --- !u!136 &136948356014956106
 CapsuleCollider:
   m_ObjectHideFlags: 1

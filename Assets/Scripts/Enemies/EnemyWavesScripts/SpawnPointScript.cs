@@ -74,6 +74,7 @@ public class SpawnPointScript : MonoBehaviour {
         Context context = enemy.GetComponent<Context>();
         context.patrolPath = patrolPath;
         context.wanderPath = wanderPath;
+        context.wander = true;
         GameObject newEnemy= Instantiate(enemy, transform.position, transform.rotation);
         
       

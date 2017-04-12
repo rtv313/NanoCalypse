@@ -52,7 +52,7 @@ public class WaveManager : MonoBehaviour {
 
     void Start()
     {
-        Invoke("deactivateIntefaze", 60f);
+        Invoke("deactivateIntefaze", 5f);
     }
 
     void deactivateIntefaze()
