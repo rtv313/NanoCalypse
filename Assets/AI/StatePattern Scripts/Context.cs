@@ -57,7 +57,7 @@ public class Context : MonoBehaviour
     public float timeDestroy = 5f;
 
     //Mutation
-    public bool Mutated = false;
+    public bool mutaded = false ;
     public GameObject parasite;
 
     void Awake()

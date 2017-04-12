@@ -81,7 +81,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399999745233172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.489792, y: 4.86, z: -7.96}
+  m_LocalPosition: {x: 3.872322, y: 9.227129, z: -13.2398205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4438229990897900}
@@ -286,7 +286,7 @@ MonoBehaviour:
     type: 2}
   muzzleFlash: {fileID: 1397415935309674, guid: 0abcc4a59c7edae489198f9cdd4ddcc7,
     type: 2}
-  bulletSpeed: 10
+  bulletSpeed: 30
 --- !u!114 &114709024908591950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,7 +327,7 @@ MonoBehaviour:
   path_objs_Wander: []
   wanderObjectiveDistance: 0.5
   sensors: {fileID: 114709024908591950}
-  wander: 0
+  wander: 1
   playerInSight: 0
   player: {fileID: 0}
   attackDistance: 8.18
@@ -412,7 +412,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1399999745233172}
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 5
   m_AngularSpeed: 120

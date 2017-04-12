@@ -18,14 +18,35 @@ public class BulletDamage : MonoBehaviour {
             {
                 case BulletType.ASSAULT:
                     context.life -= assaultRifleDamage / 2;
+
+                    if (context.enemyType != Context.EnemyType.VIRUS && checkPropMutation())
+                    {
+                        context.state = new MutationState();
+                    }
+
                     break;
 
                 case BulletType.SHOOTGUN:
                     context.life -= shootgunDamage / 2;
+
+                    if (context.enemyType != Context.EnemyType.PARASITE && checkPropMutation())
+                    {
+                        context.state = new MutationState();
+                    }
+
                     break;
 
                 case BulletType.SNIPER:
-                    context.life -= sniperDamage / 2;
+
+                    if (context.enemyType != Context.EnemyType.BACTERIA && checkPropMutation())
+                    {
+                        context.state = new MutationState();
+                    }
+                    else
+                    {
+                        context.life -= sniperDamage / 2;
+                    }
+
                     break;
             }
 
@@ -33,5 +54,16 @@ public class BulletDamage : MonoBehaviour {
         
         if(other.gameObject.tag != "Player")
             Destroy(transform.gameObject);
+    }
+
+    bool checkPropMutation()
+    {
+        int mutation = Random.Range(0, 9);
+
+        if (mutation <= 2)
+            return true;
+        else
+            return false;
+
     }
 }

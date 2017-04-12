@@ -11,6 +11,9 @@ public class MutationState : State {
 
     private void Mutate(Context context)
     {
+        if (context.mutaded == true)
+            return;
+
         switch (context.enemyType)
         {
             case Context.EnemyType.VIRUS:
@@ -25,26 +28,31 @@ public class MutationState : State {
                 parasiteMutation(context);
                 break;
         }
-
+        context.mutaded = true;
     }
 
     private void virusMutation(Context context)
     {
         context.attackDamage = context.attackDamage * 5;
+        context.GetComponent<VirusAttack>().bulletSpeed = 50;
         //change bullet color
         //change enemy color with shader
+        Renderer rend = context.GetComponent<Renderer>();
+        rend.material.color = Color.magenta;
     }
 
     private void bacteriaMutation(Context context)
     {
-        context.nav.speed = context.nav.speed * 5;
+        context.nav.speed = 15;
         //change enemy color with shader
+        Renderer rend = context.GetComponent<Renderer>();
+        rend.material.color = Color.yellow;
     }
 
     private void parasiteMutation(Context context)
     {
         CreateParasite createParasite = new CreateParasite();
-        createParasite.createParasite(context.parasite);
+        createParasite.createParasite(context);
         
     }
 
@@ -56,13 +64,22 @@ public class MutationState : State {
 
 public class CreateParasite:MonoBehaviour
 {
-    public void createParasite(GameObject parasitePrefab)
+    public void createParasite(Context context)
     {
-        Vector3 position = transform.position;
-        position.z -= 2;
-        Instantiate(parasitePrefab, position, transform.rotation);
-        position.z = 0;
-        position.z += 2;
-        Instantiate(parasitePrefab,position, transform.rotation);
+        Vector3 position = context.transform.position;
+        position.x -= 0.3f;
+        GameObject parasiteOne = Instantiate(context.parasite, position, context.transform.rotation);
+        parasiteOne.GetComponent<Context>().mutaded = true;
+        parasiteOne.GetComponent<Context>().life = parasiteOne.GetComponent<Context>().life / 2;
+        Renderer rend = parasiteOne.GetComponent<Renderer>();
+        rend.material.color = Color.grey;
+
+        position.x = 0;
+        position.x += 0.3f;
+        GameObject parasiteTwo = Instantiate(context.parasite, position, context.transform.rotation);
+        parasiteTwo.GetComponent<Context>().mutaded = true;
+        parasiteTwo.GetComponent<Context>().life = parasiteTwo.GetComponent<Context>().life / 2;
+        rend = parasiteTwo.GetComponent<Renderer>();
+        rend.material.color = Color.grey;
     }
 }

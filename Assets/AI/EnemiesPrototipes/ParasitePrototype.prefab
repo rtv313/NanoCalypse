@@ -340,8 +340,7 @@ MonoBehaviour:
   resetTimeForIdle: 0
   sinkSpeed: 3
   timeDestroy: 5
-  Mutated: 0
-  parasite: {fileID: 0}
+  parasite: {fileID: 1548391732938064}
 --- !u!114 &114829741745013568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -425,7 +424,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1548391732938064}
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 5
   m_AngularSpeed: 120
