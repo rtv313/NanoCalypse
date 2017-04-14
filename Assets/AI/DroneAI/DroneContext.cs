@@ -18,7 +18,7 @@ public class DroneContext : MonoBehaviour
     public GameObject healParticleSystem;
     public GameObject player;
     public CapsuleCollider capsuleCollider;
-    public float timeDestroy=2.0f;
+    public float timeDestroy = 2.0f;
     public bool activateHealing = false;
     // Use this for initialization
     void Awake()
@@ -36,9 +36,19 @@ public class DroneContext : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
-        
+
         Request();
-	}
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerMovement>().resetRb = 0.5f;
+            collision.gameObject.GetComponent<PlayerMovement>().CallResetRb();
+            collision.gameObject.GetComponent<PlayerMovement>().resetRb = 1.5f;
+        }
+    }
 }
