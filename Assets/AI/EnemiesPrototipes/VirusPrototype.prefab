@@ -330,7 +330,7 @@ MonoBehaviour:
   wander: 1
   playerInSight: 0
   player: {fileID: 0}
-  attackDistance: 8.18
+  attackDistance: 22.04
   timeBetweenAttacks: 0.5
   attackDamage: 10
   playerHealth: {fileID: 0}
@@ -340,7 +340,7 @@ MonoBehaviour:
   resetTimeForIdle: 0
   sinkSpeed: 3
   timeDestroy: 5
-  Mutated: 0
+  mutaded: 0
   parasite: {fileID: 0}
 --- !u!114 &114879321662113872
 MonoBehaviour:

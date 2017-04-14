@@ -1,36 +1,28 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DestroyInterfaze : MonoBehaviour
+public class DeathDroneState : DroneState
 {
-    public void DestroyObject(GameObject gameObject, float timeToDestroy)
-    {
-        Destroy(gameObject, timeToDestroy);
-    }
-}
-
-public class DeathState : State {
-
     private bool isSinking = false;
 
-    public override void Handle(Context context)
+    public override void Handle(DroneContext context)
     {
         context.stateString = "Death";
         if (isSinking == true)
         {
             Death(context);
         }
-        else {
+        else
+        {
             StartSinking(context);
         }
     }
 
-    private void Death(Context context)
+    private void Death(DroneContext context)
     {
-     
+        context.transform.Translate(-Vector3.up * context.sinkSpeed * Time.deltaTime);
     }
 
-    private void StartSinking(Context context)
+    private void StartSinking(DroneContext context)
     {
         context.rigidbody.isKinematic = true;
         context.nav.enabled = false;
@@ -39,5 +31,4 @@ public class DeathState : State {
         DestroyInterfaze destroyInterface = new DestroyInterfaze();
         destroyInterface.DestroyObject(context.gameObject, context.timeDestroy);
     }
-    
 }
