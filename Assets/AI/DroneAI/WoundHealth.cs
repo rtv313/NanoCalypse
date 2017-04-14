@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WoundHealth : MonoBehaviour {
 
@@ -8,9 +6,12 @@ public class WoundHealth : MonoBehaviour {
     public float timeToHeal = 60f;
     public bool finishedHealing = false;
     public float time = 0;
-    
+    public GameObject healthPointOne;
+    public GameObject healthPointTwo;
+    public GameObject healthPointThree;
+    private bool flagEnter = false;
     // Update is called once per frame
-	void Update () {
+    void Update () {
 
         if (startTimer == true)
         {
@@ -25,8 +26,38 @@ public class WoundHealth : MonoBehaviour {
         if (time >= timeToHeal)
         {
             finishedHealing = true;
-            Destroy(gameObject, 3.0f);
+            Invoke("EnableDronesCreation", 3.0f); 
         }
     }
 
+    void EnableDronesCreation()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<CreateDrones>().spawnedDrones = false;
+        player.GetComponent<CreateDrones>().canDeployDrones = false;
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && flagEnter==false)
+        {
+            CreateDrones script = other.gameObject.GetComponent<CreateDrones>();
+            script.canDeployDrones = true;
+            script.wound = transform.gameObject;
+            script.healthPointOne = healthPointOne;
+            script.healthPointTwo = healthPointTwo;
+            script.healthPointThree = healthPointThree;
+            flagEnter = true;
+        }
+    }
+
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+           other.gameObject.GetComponent<CreateDrones>().canDeployDrones = false;
+        }
+    }
 }

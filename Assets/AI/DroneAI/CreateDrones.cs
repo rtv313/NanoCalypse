@@ -33,7 +33,7 @@ public class CreateDrones : MonoBehaviour {
     void SpawnDrones()
     {
 
-        if (Input.GetKeyDown(KeyCode.F) && spawnedDrones== false)
+        if (Input.GetKeyDown(KeyCode.F) && spawnedDrones== false && canDeployDrones==true)
         {
             GameObject drone = Instantiate(Drone, spawnPointOne.transform.position, spawnPointOne.transform.rotation);
             drone.GetComponent<DroneContext>().wound = wound;

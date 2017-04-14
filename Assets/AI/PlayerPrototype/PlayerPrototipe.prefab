@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1887230225251120}
   m_IsPrefabParent: 1
+--- !u!1 &1071205909274922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4839762045826636}
+  - component: {fileID: 33896402334363138}
+  m_Layer: 0
+  m_Name: DroneSpawnPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1238748881451468
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,6 +42,38 @@ GameObject:
   - component: {fileID: 198672510282692068}
   m_Layer: 0
   m_Name: bulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1540683015147752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4360853004420582}
+  - component: {fileID: 33253740905906884}
+  m_Layer: 0
+  m_Name: DroneSpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1776698371155388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4905749425253494}
+  - component: {fileID: 33676848148216800}
+  m_Layer: 0
+  m_Name: DroneSpawnPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +95,7 @@ GameObject:
   - component: {fileID: 54998962587443862}
   - component: {fileID: 114361055009080436}
   - component: {fileID: 114874532008247378}
+  - component: {fileID: 114448930467726266}
   m_Layer: 0
   m_Name: PlayerPrototipe
   m_TagString: Player
@@ -61,10 +110,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887230225251120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 4.7407827, z: -12.83}
+  m_LocalPosition: {x: 3.36, y: 5.16, z: -12.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4306666960013096}
+  - {fileID: 4839762045826636}
+  - {fileID: 4905749425253494}
+  - {fileID: 4360853004420582}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,6 +132,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4179638961619138}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4360853004420582
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1540683015147752}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0899992, y: -0.11, z: -1.2699995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4179638961619138}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4839762045826636
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071205909274922}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1900005, y: -0.11, z: -0.10999966}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4179638961619138}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4905749425253494
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776698371155388}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3499994, y: -0.11, z: -0.10999966}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4179638961619138}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23419917165636780
 MeshRenderer:
@@ -143,6 +234,13 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!33 &33253740905906884
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1540683015147752}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33279629056279150
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -157,6 +255,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238748881451468}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33676848148216800
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776698371155388}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33896402334363138
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071205909274922}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54998962587443862
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -277,6 +389,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   resetRb: 1.5
+--- !u!114 &114448930467726266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887230225251120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b03c07f3c67dcb4dab451f16dd533c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Drone: {fileID: 1120041756316344, guid: dac5f1dbb20f1c14888d174703db1fc3, type: 2}
+  spawnPointOne: {fileID: 1071205909274922}
+  spawnPointTwo: {fileID: 1776698371155388}
+  spawnPointThree: {fileID: 1540683015147752}
+  wound: {fileID: 0}
+  healthPointOne: {fileID: 0}
+  healthPointTwo: {fileID: 0}
+  healthPointThree: {fileID: 0}
+  spawnedDrones: 0
+  canDeployDrones: 0
 --- !u!114 &114565129411854518
 MonoBehaviour:
   m_ObjectHideFlags: 1
