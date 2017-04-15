@@ -19,7 +19,8 @@ public class CreateDrones : MonoBehaviour {
     public GameObject spawnParticleSystemOne;
     public GameObject spawnParticleSystemTwo;
     public GameObject spawnParticleSystemThree;
-    public float timeToCreateDrones=1.0f;
+    public float timeToCreateDrones=1.5f;
+    public float timeToDeactivateParticles = 3.0f;
 
     public bool spawnedDrones = false;
     public bool canDeployDrones = false;
@@ -49,10 +50,6 @@ public class CreateDrones : MonoBehaviour {
 
     void SpawnDrones()
     {
-        spawnParticleSystemOne.SetActive(false);
-        spawnParticleSystemTwo.SetActive(false);
-        spawnParticleSystemThree.SetActive(false);
-
         GameObject drone = Instantiate(Drone, spawnPointOne.transform.position, spawnPointOne.transform.rotation);
         drone.GetComponent<DroneContext>().wound = wound;
         drone.GetComponent<DroneContext>().woundPosition = healthPointOne;
@@ -67,5 +64,14 @@ public class CreateDrones : MonoBehaviour {
         drone.GetComponent<DroneContext>().wound = wound;
         drone.GetComponent<DroneContext>().woundPosition = healthPointThree;
         drone.GetComponent<DroneContext>().player = transform.gameObject;
+
+        Invoke("deactivateParticles", timeToDeactivateParticles);
+    }
+
+    void deactivateParticles()
+    {
+        spawnParticleSystemOne.SetActive(false);
+        spawnParticleSystemTwo.SetActive(false);
+        spawnParticleSystemThree.SetActive(false);
     }
 }
