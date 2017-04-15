@@ -16,6 +16,11 @@ public class CreateDrones : MonoBehaviour {
     public GameObject healthPointTwo;
     public GameObject healthPointThree;
 
+    public GameObject spawnParticleSystemOne;
+    public GameObject spawnParticleSystemTwo;
+    public GameObject spawnParticleSystemThree;
+    public float timeToCreateDrones=1.0f;
+
     public bool spawnedDrones = false;
     public bool canDeployDrones = false;
 
@@ -26,31 +31,41 @@ public class CreateDrones : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        SpawnDrones();
+        CallSpawnDrones();
 
+    }
+
+    void CallSpawnDrones()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && spawnedDrones== false && canDeployDrones==true)
+        {
+            spawnParticleSystemOne.SetActive(true);
+            spawnParticleSystemTwo.SetActive(true);
+            spawnParticleSystemThree.SetActive(true);
+            Invoke("SpawnDrones", timeToCreateDrones);
+            spawnedDrones = true;
+        }
     }
 
     void SpawnDrones()
     {
+        spawnParticleSystemOne.SetActive(false);
+        spawnParticleSystemTwo.SetActive(false);
+        spawnParticleSystemThree.SetActive(false);
 
-        if (Input.GetKeyDown(KeyCode.F) && spawnedDrones== false && canDeployDrones==true)
-        {
-            GameObject drone = Instantiate(Drone, spawnPointOne.transform.position, spawnPointOne.transform.rotation);
-            drone.GetComponent<DroneContext>().wound = wound;
-            drone.GetComponent<DroneContext>().woundPosition = healthPointOne;
-            drone.GetComponent<DroneContext>().player = transform.gameObject;
+        GameObject drone = Instantiate(Drone, spawnPointOne.transform.position, spawnPointOne.transform.rotation);
+        drone.GetComponent<DroneContext>().wound = wound;
+        drone.GetComponent<DroneContext>().woundPosition = healthPointOne;
+        drone.GetComponent<DroneContext>().player = transform.gameObject;
 
-            drone = Instantiate(Drone, spawnPointTwo.transform.position, spawnPointOne.transform.rotation);
-            drone.GetComponent<DroneContext>().wound = wound;
-            drone.GetComponent<DroneContext>().woundPosition = healthPointTwo;
-            drone.GetComponent<DroneContext>().player = transform.gameObject;
+        drone = Instantiate(Drone, spawnPointTwo.transform.position, spawnPointOne.transform.rotation);
+        drone.GetComponent<DroneContext>().wound = wound;
+        drone.GetComponent<DroneContext>().woundPosition = healthPointTwo;
+        drone.GetComponent<DroneContext>().player = transform.gameObject;
 
-            drone = Instantiate(Drone, spawnPointThree.transform.position, spawnPointOne.transform.rotation);
-            drone.GetComponent<DroneContext>().wound = wound;
-            drone.GetComponent<DroneContext>().woundPosition = healthPointThree;
-            drone.GetComponent<DroneContext>().player = transform.gameObject;
-
-            spawnedDrones = true;
-        }
+        drone = Instantiate(Drone, spawnPointThree.transform.position, spawnPointOne.transform.rotation);
+        drone.GetComponent<DroneContext>().wound = wound;
+        drone.GetComponent<DroneContext>().woundPosition = healthPointThree;
+        drone.GetComponent<DroneContext>().player = transform.gameObject;
     }
 }
