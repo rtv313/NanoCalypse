@@ -49,6 +49,18 @@ public class DroneContext : MonoBehaviour
             collision.gameObject.GetComponent<PlayerMovement>().resetRb = 0.5f;
             collision.gameObject.GetComponent<PlayerMovement>().CallResetRb();
             collision.gameObject.GetComponent<PlayerMovement>().resetRb = 1.5f;
+            resetRb();
         }
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            resetRb();
+        }
+    }
+
+    private void resetRb()
+    {
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
     }
 }

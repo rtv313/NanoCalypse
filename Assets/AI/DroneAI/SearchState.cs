@@ -27,6 +27,7 @@ public class SearchState : DroneState {
 
         if (dist < context.healthDistance)
         {
+            context.rigidbody.constraints =  RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
             context.state = new HealthState();
             return;
         }

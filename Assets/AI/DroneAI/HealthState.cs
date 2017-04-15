@@ -14,7 +14,7 @@ public class HealthState : DroneState {
     private void Health(DroneContext context)
     {
         context.nav.enabled = false;
-
+        
         if (targetOnSight == false)
         {
             Vector3 direction = (context.wound.transform.position - context.transform.position).normalized;
@@ -22,7 +22,10 @@ public class HealthState : DroneState {
             context.transform.rotation = Quaternion.Slerp(context.transform.rotation, lookRotation, Time.deltaTime * 3);
 
             if (context.transform.rotation == lookRotation)
+            {
                 targetOnSight = true;
+                context.rigidbody.constraints =RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY |RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY |RigidbodyConstraints.FreezePositionZ;
+            }
         }
         else 
         {
@@ -44,6 +47,7 @@ public class HealthState : DroneState {
 
         if (context.wound.GetComponent<WoundHealth>().finishedHealing==true)
         {
+            context.rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
             context.healParticleSystem.SetActive(false);
             context.state = new ReturnPlayerState();
         }
