@@ -13,6 +13,9 @@ public class EnemySensors : MonoBehaviour {
     private GameObject player;
     private Context context;
 
+    private bool flagAttackDrone = false;
+    public bool AllowDroneAttack = false;
+    public int droneRandomAttack = 3;
 
     void OnDrawGizmos()
     {
@@ -28,13 +31,24 @@ public class EnemySensors : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
         context = GetComponent<Context>();
+
+        if(AllowDroneAttack==true)
+            DecideAttack();
   }
 
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player || other.gameObject.tag =="Drone")
         {
+            if (other.gameObject.tag == "Drone" && flagAttackDrone)
+            {
+                context.target = other.transform;
+            }
+            else {
+                context.target = player.transform;
+            }
+
             playerInSight = true;
             Vector3 direction = other.transform.position - transform.position;
             float angle = Vector3.Angle(direction, transform.forward);
@@ -60,30 +74,17 @@ public class EnemySensors : MonoBehaviour {
         }
     }
 
-    float CalculatePathLength(Vector3 targetPosition)
+    void DecideAttack()
     {
-        UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
-        if (nav.enabled)
-            nav.CalculatePath(targetPosition, path);
+        int randNum = Random.Range(0, 9);
 
-        Vector3[] allWayPoints = new Vector3[path.corners.Length + 2];
-
-        allWayPoints[0] = transform.position;
-        allWayPoints[allWayPoints.Length - 1] = targetPosition;
-
-        for (int i = 0; i < path.corners.Length; i++)
+        if (randNum <= droneRandomAttack)
         {
-            allWayPoints[i + 1] = path.corners[i];
+            flagAttackDrone = true;
+            return;
         }
 
-        float pathLenght = 0f;
-
-        for (int i = 0; i < allWayPoints.Length - 1; i++)
-        {
-            pathLenght += Vector3.Distance(allWayPoints[i], allWayPoints[i + 1]);
-        }
-
-        return pathLenght;
+        flagAttackDrone = false;
     }
 }
 

@@ -12,7 +12,7 @@ public class ChaseState : State
     private void ChasePlayer(Context context)
     {
         context.nav.enabled = true;
-        context.nav.SetDestination(context.player.position);
+        context.nav.SetDestination(context.target.position);
     }
 
     private void Transition(Context context)
@@ -23,7 +23,7 @@ public class ChaseState : State
             return;
         }
 
-        float dist = Vector3.Distance(context.player.position, context.transform.position);
+        float dist = Vector3.Distance(context.target.position, context.transform.position);
 
         if (dist < context.attackDistance)
         {

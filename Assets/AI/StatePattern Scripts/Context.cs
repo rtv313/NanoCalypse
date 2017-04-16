@@ -37,7 +37,7 @@ public class Context : MonoBehaviour
     public bool playerInSight = false;
 
     //Chase Player
-    public Transform player;
+    public Transform target;
     public float attackDistance = 1.5f;
 
     //Attack Player
@@ -69,8 +69,8 @@ public class Context : MonoBehaviour
         path_objs_Wander = wanderPath.GetComponentsInChildren<Transform>();
         sensors = GetComponent<EnemySensors>();
         state = new WanderState();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerHealth = player.GetComponent<PlayerHealth>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        playerHealth = target.GetComponent<PlayerHealth>();
     }
 
     private void Request()

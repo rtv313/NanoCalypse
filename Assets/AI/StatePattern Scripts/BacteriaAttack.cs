@@ -20,8 +20,12 @@ public class BacteriaAttack : MonoBehaviour {
             {
                 context.playerHealth.TakeDamage(context.attackDamage);
                 rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
+
                 if(hit.tag=="Player")
                     hit.GetComponent<PlayerMovement>().CallResetRb();
+
+                if (hit.tag == "Drone")
+                    hit.GetComponent<DroneContext>().life -= context.attackDamage;
             }
         }
 

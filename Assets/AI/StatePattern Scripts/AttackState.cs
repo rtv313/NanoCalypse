@@ -16,7 +16,7 @@ public class AttackState : State {
         context.nav.enabled = false;
         timer += Time.deltaTime;
 
-        Vector3 direction = (context.player.position - context.transform.position).normalized;
+        Vector3 direction = (context.target.position - context.transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));    // flattens the vector3
         context.transform.rotation = Quaternion.Slerp(context.transform.rotation, lookRotation, Time.deltaTime * 4);
 
@@ -74,7 +74,7 @@ public class AttackState : State {
 
         context.nav.enabled = true;
 
-        float dist = Vector3.Distance(context.player.position, context.transform.position);
+        float dist = Vector3.Distance(context.target.position, context.transform.position);
 
         if (dist > context.attackDistance)
         {
