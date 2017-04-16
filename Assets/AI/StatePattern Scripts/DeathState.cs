@@ -27,7 +27,7 @@ public class DeathState : State {
 
     private void Death(Context context)
     {
-     
+        context.transform.Translate(-Vector3.up * context.sinkSpeed * Time.deltaTime);
     }
 
     private void StartSinking(Context context)

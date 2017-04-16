@@ -11,9 +11,10 @@ public class EnemyBullet : MonoBehaviour {
             PlayerHealth pH = other.gameObject.GetComponent<PlayerHealth>();
             pH.TakeDamage(damage);
             Destroy(transform.gameObject);
+            return;
         }
 
-        if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "AgentDetector")
+        if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "AgentDetector" && other.gameObject.tag != "Wound")
         {
             Destroy(transform.gameObject);
         }
