@@ -336,7 +336,7 @@ Animator:
   m_GameObject: {fileID: 1805332008178156}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d7f52441d6df37d4a88fb66571407e13, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b8de254f66b27d8459dc301ab68e050e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -402,6 +402,7 @@ MonoBehaviour:
   enemyType: 2
   stateString: Patrol
   life: 100
+  animator: {fileID: 95071479413545672}
   capsuleCollider: {fileID: 0}
   rigidbody: {fileID: 0}
   nav: {fileID: 0}
@@ -414,7 +415,7 @@ MonoBehaviour:
   path_objs_Wander: []
   wanderObjectiveDistance: 0.5
   sensors: {fileID: 114829741745013568}
-  wander: 1
+  wander: 0
   playerInSight: 0
   target: {fileID: 0}
   attackDistance: 2

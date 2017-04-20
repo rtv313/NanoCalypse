@@ -289,6 +289,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &352889776 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95795305208889896, guid: 65e304356d9786a4393782b6aeab0b9c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1826889625}
 --- !u!1 &831998535
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,54 +403,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114771516588257918, guid: 91d7299719e09c44680b41e52e554c1b,
         type: 2}
-      propertyPath: wanderPath
+      propertyPath: patrolPath
       value: 
       objectReference: {fileID: 1905145148}
     - target: {fileID: 114771516588257918, guid: 91d7299719e09c44680b41e52e554c1b,
         type: 2}
-      propertyPath: patrolPath
+      propertyPath: wanderPath
       value: 
       objectReference: {fileID: 1905145148}
-    - target: {fileID: 114709024908591950, guid: 91d7299719e09c44680b41e52e554c1b,
-        type: 2}
-      propertyPath: droneRandomAttack
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114709024908591950, guid: 91d7299719e09c44680b41e52e554c1b,
-        type: 2}
-      propertyPath: AllowDroneAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1399999745233172, guid: 91d7299719e09c44680b41e52e554c1b, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136529622825117794, guid: 91d7299719e09c44680b41e52e554c1b,
-        type: 2}
-      propertyPath: m_Radius
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 136529622825117794, guid: 91d7299719e09c44680b41e52e554c1b,
-        type: 2}
-      propertyPath: m_Height
-      value: 1.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 136529622825117794, guid: 91d7299719e09c44680b41e52e554c1b,
-        type: 2}
-      propertyPath: m_Center.y
-      value: -0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4046924939904332, guid: 91d7299719e09c44680b41e52e554c1b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.466
-      objectReference: {fileID: 0}
-    - target: {fileID: 95857606027325322, guid: 91d7299719e09c44680b41e52e554c1b,
-        type: 2}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: f9c32e524ba0e7048a5d3dfcbc946f91, type: 3}
-    m_RemovedComponents:
-    - {fileID: 136800191955803028, guid: 91d7299719e09c44680b41e52e554c1b, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91d7299719e09c44680b41e52e554c1b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1496783479
@@ -548,7 +514,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4179638961619138, guid: 48e36ee4f60a37b4b9792a11de492fc0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.72
+      value: 129.8
       objectReference: {fileID: 0}
     - target: {fileID: 4179638961619138, guid: 48e36ee4f60a37b4b9792a11de492fc0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -633,6 +599,21 @@ Prefab:
     - target: {fileID: 1384258613907614, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95795305208889896, guid: 65e304356d9786a4393782b6aeab0b9c,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e78102ede33a24c4e92c699caa01e028, type: 2}
+    - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 352889776}
+    - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
+        type: 2}
+      propertyPath: mutaded
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
@@ -814,6 +795,10 @@ Prefab:
     - target: {fileID: 114704206615367014, guid: 3178d9163e0e86943ac29a98175ef6dc,
         type: 2}
       propertyPath: wander
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548391732938064, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

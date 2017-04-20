@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4108249803179880}
   - component: {fileID: 33053899897695222}
-  - component: {fileID: 136800191955803028}
   - component: {fileID: 23576725914101784}
   - component: {fileID: 54151371110231606}
   - component: {fileID: 195079947011827584}
@@ -99,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873818905161902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.504, z: 0}
+  m_LocalPosition: {x: 0, y: -0.466, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4108249803179880}
@@ -112,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399999745233172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2762203, y: 5.579, z: -10.25}
+  m_LocalPosition: {x: 8.554952, y: 4.7407827, z: -12.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4438229990897900}
@@ -322,8 +321,8 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873818905161902}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: f9c32e524ba0e7048a5d3dfcbc946f91, type: 3}
+  m_Controller: {fileID: 22100000, guid: cd49dc09677444f4fbb17372ae3bda35, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -388,8 +387,8 @@ MonoBehaviour:
   fieldOfViewAnagle: 110
   playerInSight: 0
   personalLastSighting: {x: 0, y: 0, z: 0}
-  AllowDroneAttack: 0
-  droneRandomAttack: 3
+  AllowDroneAttack: 1
+  droneRandomAttack: 9
 --- !u!114 &114771516588257918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,6 +403,7 @@ MonoBehaviour:
   enemyType: 0
   stateString: Patrol
   life: 100
+  animator: {fileID: 95857606027325322}
   capsuleCollider: {fileID: 0}
   rigidbody: {fileID: 0}
   nav: {fileID: 0}
@@ -476,23 +476,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.32
+  m_Height: 1.45
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!136 &136800191955803028
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1399999745233172}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.000000059604645, y: -0.28, z: -0.00000008940697}
 --- !u!195 &195079947011827584
 NavMeshAgent:
   m_ObjectHideFlags: 1

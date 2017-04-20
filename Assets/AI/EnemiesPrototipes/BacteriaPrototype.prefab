@@ -336,7 +336,7 @@ Animator:
   m_GameObject: {fileID: 1025971880736978}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 1dd6fccae58619b44a323ef3fd1a611b, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e78102ede33a24c4e92c699caa01e028, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -386,6 +386,7 @@ MonoBehaviour:
   enemyType: 1
   stateString: Patrol
   life: 100
+  animator: {fileID: 95795305208889896}
   capsuleCollider: {fileID: 0}
   rigidbody: {fileID: 0}
   nav: {fileID: 0}
@@ -411,7 +412,7 @@ MonoBehaviour:
   resetTimeForIdle: 0
   sinkSpeed: 3
   timeDestroy: 5
-  mutaded: 0
+  mutaded: 1
   parasite: {fileID: 0}
 --- !u!114 &114709294184954394
 MonoBehaviour:
