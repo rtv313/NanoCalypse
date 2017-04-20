@@ -8,6 +8,7 @@ public class Context : MonoBehaviour
     public State state;
     public string stateString="Patrol";
     public int life = 100;
+    public Animator animator;
   
     //Colliders /Triggers/ Rigidbodies
     public CapsuleCollider capsuleCollider;

@@ -2,12 +2,22 @@
 
 public class AttackState : State {
     private float timer=10;
-    
+    private bool callAnimation = false;
    
     public override void Handle(Context context)
     {
         Attack(context);
+        AnimationControl(context);
         Transition(context);
+    }
+
+    private void AnimationControl(Context context)
+    {
+        if (callAnimation == false)
+        {
+            context.animator.SetTrigger("Attack");
+            callAnimation = true;
+        }
     }
 
     private void Attack(Context context)

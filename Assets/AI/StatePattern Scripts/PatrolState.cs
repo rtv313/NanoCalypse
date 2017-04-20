@@ -3,11 +3,23 @@
 public class PatrolState : State
 {
     private float time = 0;
+    private bool callAnimation = false;
+
     public override void Handle(Context context)
     {
+        AnimationControl(context);
         context.stateString = "Patrol";
         Patrol(context);
         Transition(context);
+    }
+
+    private void AnimationControl(Context context)
+    {
+        if (callAnimation == false)
+        {
+            context.animator.SetTrigger("Walk");
+            callAnimation = true;
+        }
     }
 
     private void Patrol(Context context)

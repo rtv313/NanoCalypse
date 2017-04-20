@@ -2,11 +2,23 @@
 
 public class IdleState : State {
     public float time = 0;
+    private bool callAnimation = false;
+
     public override void Handle(Context context)
     {
+        AnimationControl(context);
         context.stateString = "Idle";
         Idle(context);
         Transition(context);
+    }
+
+    private void AnimationControl(Context context)
+    {
+        if (callAnimation == false)
+        {
+            context.animator.SetTrigger("Idle");
+            callAnimation = true;
+        }
     }
 
     private void Idle(Context context)

@@ -12,10 +12,11 @@ public class DestroyInterfaze : MonoBehaviour
 public class DeathState : State {
 
     private bool isSinking = false;
-
+    private bool callAnimation = false;
     public override void Handle(Context context)
     {
         context.stateString = "Death";
+        AnimationControl(context);
         if (isSinking == true)
         {
             Death(context);
@@ -24,6 +25,16 @@ public class DeathState : State {
             StartSinking(context);
         }
     }
+
+    private void AnimationControl(Context context)
+    {
+        if (callAnimation == false)
+        {
+            context.animator.SetTrigger("Death");
+            callAnimation = true;
+        }
+    }
+
 
     private void Death(Context context)
     {

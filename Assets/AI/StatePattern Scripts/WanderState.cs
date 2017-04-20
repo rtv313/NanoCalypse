@@ -3,11 +3,22 @@
 public class WanderState : State
 {
     private float time = 0;
+    private bool callAnimation = false;
     public override void Handle(Context context)
     {
         context.stateString = "Wander";
+        AnimationControl(context);
         Wander(context);
         Transition(context);
+    }
+
+    private void AnimationControl(Context context)
+    {
+        if (callAnimation == false)
+        {
+            context.animator.SetTrigger("Walk");
+            callAnimation = true;
+        }
     }
 
     private void Wander(Context context)

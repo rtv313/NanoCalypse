@@ -9,6 +9,7 @@ public class MutationState : State {
         Transition(context);
     }
 
+
     private void Mutate(Context context)
     {
         if (context.mutaded == true)
