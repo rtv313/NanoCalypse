@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip deathClip;                                 
     public float flashSpeed = 5f;                              
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
+	public interfaceManager playerInterface;
     
 
     Animator anim;                                             
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
+		playerInterface = GameObject.Find ("player UI").GetComponent<interfaceManager> () as interfaceManager;
        // playerShooting = GetComponentInChildren<PlayerShooting>();
         currentHealth = startingHealth;
     }
@@ -35,7 +37,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-       
+		
+		playerInterface.updateHealthBar (startingHealth, currentHealth);
         //if (damaged)
         //{
         //   damageImage.color = flashColour;

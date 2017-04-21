@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour {
     {
         if (buttonIndex == 0)// New Game
         {
-            SceneManager.LoadScene("LevelStomach", LoadSceneMode.Single);
+            SceneManager.LoadScene("Level1", LoadSceneMode.Single);
         }
         else if (buttonIndex == 1) // Help
         {

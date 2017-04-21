@@ -7,6 +7,7 @@ public class ShootingSystem : MonoBehaviour {
     public GameObject assaultRifleBullet;
     public GameObject sniperBullet;
     public GameObject shootgunBullet;
+	public interfaceManager playerInterface;
     public Transform bulletSpawn;
     public int bulletSpeedRifle=35;
     public int bulletSpeedShootgun = 35;
@@ -39,11 +40,14 @@ public class ShootingSystem : MonoBehaviour {
     {
         gunAudio = GetComponent<AudioSource>();
         gunParticles = muzzleFlash.GetComponent<ParticleSystem>();
+		playerInterface = GameObject.Find ("player UI").GetComponent<interfaceManager> () as interfaceManager;
     }
 
     void Update()
     {
         SelectWeapon();
+		playerInterface.selectWeapon (fireMode);
+		playerInterface.updateHeatBar (rifleHeat, rifleMaxHeat);
 
         if (Input.GetButton("Fire1"))
         {
