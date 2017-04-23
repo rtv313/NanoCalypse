@@ -12,7 +12,8 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip deathClip;                                 
     public float flashSpeed = 5f;                              
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
-	public interfaceManager playerInterface;
+	private interfaceManager playerInterface;
+	private ScoreManager scoreManager;
     
 
     Animator anim;                                             
@@ -30,7 +31,8 @@ public class PlayerHealth : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
 		playerInterface = GameObject.Find ("player UI").GetComponent<interfaceManager> () as interfaceManager;
-       // playerShooting = GetComponentInChildren<PlayerShooting>();
+		scoreManager = GameObject.Find ("player UI").GetComponent<ScoreManager> () as ScoreManager;
+		// playerShooting = GetComponentInChildren<PlayerShooting>();
         currentHealth = startingHealth;
     }
 
@@ -58,10 +60,7 @@ public class PlayerHealth : MonoBehaviour
         
         damaged = true;
         currentHealth -= amount;
-        float healthRatio = currentHealth / startingHealth;
-        //HealthBar.rectTransform.localScale = new Vector3(healthRatio, 1, 1);
-        //playerAudio.Play();
-
+		scoreManager.playerTookDamage();
         
         if (currentHealth <= 0 && !isDead)
         {
@@ -73,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
+		scoreManager.playerDied ();
         //anim.SetTrigger("Die");
         //playerAudio.clip = deathClip;
         //playerAudio.Play();

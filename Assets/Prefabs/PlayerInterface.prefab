@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114071768637602252}
   - component: {fileID: 114263081858998560}
   - component: {fileID: 114297945127036744}
+  - component: {fileID: 114966420676540322}
   m_Layer: 5
   m_Name: PlayerInterface
   m_TagString: Untagged
@@ -797,6 +798,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114966420676540322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1107835408967322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ecaf1f96e1250a4199931f8e20041d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222094662724892910
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -943,7 +955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.39041883, y: 0.09386521}
-  m_AnchoredPosition: {x: 5.3000183, y: 0.3999939}
+  m_AnchoredPosition: {x: 5.3000183, y: 0.4000244}
   m_SizeDelta: {x: -8, y: -9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224216007462037138
@@ -1226,6 +1238,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -65.16002, y: -21.649994}
+  m_AnchoredPosition: {x: -65.160034, y: -21.650024}
   m_SizeDelta: {x: -140.31998, y: 33.299988}
   m_Pivot: {x: 0.5, y: 0.5}
