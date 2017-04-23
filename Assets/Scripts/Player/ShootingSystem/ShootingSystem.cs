@@ -26,6 +26,11 @@ public class ShootingSystem : MonoBehaviour {
     public GameObject muzzleFlash;
     private AudioSource gunAudio;
     private ParticleSystem gunParticles;                    // Reference to the particle system.
+    public GameObject MuzzleRifle;
+    public GameObject MuzzleShotgun;
+    public GameObject MuzzleSniper;
+    private float muzzleTimer = 0.0f;
+
 
     public float rifleHeat = 0.0f;
     public float coolDownRifle = 3.0f;
@@ -45,6 +50,13 @@ public class ShootingSystem : MonoBehaviour {
 
     void Update()
     {
+        if (muzzleTimer > 0.0f) muzzleTimer -= Time.deltaTime;
+        else {
+            MuzzleRifle.SetActive(false);
+            MuzzleShotgun.SetActive(false);
+            MuzzleSniper.SetActive(false);
+        }
+
         SelectWeapon();
 		playerInterface.selectWeapon (fireMode);
 		playerInterface.updateHeatBar (rifleHeat, rifleMaxHeat);
@@ -54,17 +66,20 @@ public class ShootingSystem : MonoBehaviour {
             if (fireMode == 1 && timer >= timeBetweenBulletsAssaultRifle && blockRifle == false)
             {
                 Fire();
+                muzzleTimer = 0.025f;
             }
 
 
             if (fireMode == 2 && timer >= timeBetweenBulletsShootgun)
             {
                 Fire();
+                muzzleTimer = 0.025f;
             }
 
             if (fireMode == 3 && timer >= timeBetweenBulletSniperRifle)
             {
                 Fire();
+                muzzleTimer = 0.025f;
             }
 
         }
@@ -132,8 +147,8 @@ public class ShootingSystem : MonoBehaviour {
             shootSniperRifle();
         }
 
-        gunParticles.Stop();
-        gunParticles.Play();
+        //gunParticles.Stop();
+        //gunParticles.Play();
     }
 
     void shootAssaultRifle()
@@ -149,7 +164,7 @@ public class ShootingSystem : MonoBehaviour {
         Destroy(bullet, rifleBulletLifeTime);
         gunAudio.clip = rifleSound;
         gunAudio.Play();
-
+        MuzzleRifle.SetActive(true);
     }
 
     void shootShootgun()
@@ -184,6 +199,7 @@ public class ShootingSystem : MonoBehaviour {
         Destroy(bullet, shootgunBulletLifeTime);
         gunAudio.clip = shootgunSound;
         gunAudio.Play();
+        MuzzleShotgun.SetActive(true);
 
         timer = 0.0f;
     }
@@ -203,5 +219,6 @@ public class ShootingSystem : MonoBehaviour {
         Destroy(bullet, sniperBulletLifeTime);
         gunAudio.clip = sniperSound;
         gunAudio.Play();
+        MuzzleSniper.SetActive(true);
     }
 }
