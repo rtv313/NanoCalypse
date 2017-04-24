@@ -456,7 +456,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548391732938064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.97, y: 4.7407827, z: -12.318}
+  m_LocalPosition: {x: 109.89502, y: 3.74, z: -286.4274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4500555825109972}
@@ -1002,9 +1002,9 @@ MonoBehaviour:
   stateString: Patrol
   life: 100
   animator: {fileID: 95543698722648324}
-  capsuleCollider: {fileID: 0}
-  rigidbody: {fileID: 0}
-  nav: {fileID: 0}
+  capsuleCollider: {fileID: 136790486080444874}
+  rigidbody: {fileID: 54917772624393478}
+  nav: {fileID: 195297268977509754}
   patrolPath: {fileID: 0}
   patrolMode: 1
   path_objs_Patrol: []
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   path_objs_Wander: []
   wanderObjectiveDistance: 0.5
   sensors: {fileID: 114829741745013568}
-  wander: 0
+  wander: 1
   playerInSight: 0
   target: {fileID: 0}
   attackDistance: 2
