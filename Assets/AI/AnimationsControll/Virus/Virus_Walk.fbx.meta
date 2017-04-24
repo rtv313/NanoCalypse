@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 9c89586d2cb7c8e4f83d6de3412f1e81
+timeCreated: 1493047989
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Ctrl_1
+    100002: Ctrl_2
+    100004: Ctrl_3
+    100006: Ctrl_4
+    100008: Ctrl_Leg_1
+    100010: Ctrl_Leg_2
+    100012: Ctrl_Leg_3
+    100014: Ctrl_Leg_4
+    100016: Cylinder003
+    100018: Head
+    100020: Hip
+    100022: ikHandle1
+    100024: ikHandle2
+    100026: ikHandle3
+    100028: ikHandle4
+    100030: ikHandle5
+    100032: joint11
+    100034: joint12
+    100036: joint13
+    100038: joint15
+    100040: joint16
+    100042: joint17
+    100044: joint19
+    100046: joint20
+    100048: joint21
+    100050: joint7
+    100052: joint8
+    100054: joint9
+    100056: Leg_1
+    100058: Leg_2
+    100060: Leg_3
+    100062: Leg_4
+    100064: nurbsCircle3
+    100066: nurbsCircle4
+    100068: Spine
+    100070: Spine1
+    100072: Spine2
+    100074: //RootNode
+    400000: Ctrl_1
+    400002: Ctrl_2
+    400004: Ctrl_3
+    400006: Ctrl_4
+    400008: Ctrl_Leg_1
+    400010: Ctrl_Leg_2
+    400012: Ctrl_Leg_3
+    400014: Ctrl_Leg_4
+    400016: Cylinder003
+    400018: Head
+    400020: Hip
+    400022: ikHandle1
+    400024: ikHandle2
+    400026: ikHandle3
+    400028: ikHandle4
+    400030: ikHandle5
+    400032: joint11
+    400034: joint12
+    400036: joint13
+    400038: joint15
+    400040: joint16
+    400042: joint17
+    400044: joint19
+    400046: joint20
+    400048: joint21
+    400050: joint7
+    400052: joint8
+    400054: joint9
+    400056: Leg_1
+    400058: Leg_2
+    400060: Leg_3
+    400062: Leg_4
+    400064: nurbsCircle3
+    400066: nurbsCircle4
+    400068: Spine
+    400070: Spine1
+    400072: Spine2
+    400074: //RootNode
+    4300000: Cylinder003
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Cylinder003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 7.5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
