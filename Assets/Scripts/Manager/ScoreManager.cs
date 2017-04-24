@@ -57,14 +57,17 @@ public class ScoreManager : MonoBehaviour
 		{
 			playerInterface.decreaseMultiplier (1);
 			timeSinceDidDamage = Time.time;
+			Debug.Log ("not damage in 10");
 		}
 		if (noMutatedCounter >= 5) { // Player kills 5 consecutive enemies that are not mutated;
 			noMutatedCounter = 0;
 			playerInterface.increaseMultiplier (1);
+			Debug.Log ("Killed 5 no mutated");
 		}
 		if(dronesActive && (Time.time - timeSinceDronesTookDamage > timeVal.dronesDidntTakeDamage)){
 			timeSinceDronesTookDamage = Time.time;
 			playerInterface.increaseMultiplier (1);
+
 		}
     }
 
@@ -80,6 +83,7 @@ public class ScoreManager : MonoBehaviour
 			noMutatedCounter++;
 		}
 		// Start coroutine to increase multiplier (Multiplier increases if player kills 5 enemies in 10s)
+		playerInterface.increaseKillCount(1);
 		StartCoroutine (checkEnemiesKilledInTenSeconds(playerInterface.getKillCount()));
 	}
 
@@ -92,6 +96,7 @@ public class ScoreManager : MonoBehaviour
 		if (Time.time - timeSinceTookDamage > timeVal.inmunityTime) {
 			timeSinceTookDamage = Time.time;
 			playerInterface.decreaseMultiplier (1);
+			Debug.Log ("Mult decreased Player took damage");
 		}
 	}
 
@@ -107,6 +112,7 @@ public class ScoreManager : MonoBehaviour
 		if (Time.time - timeSinceDronesTookDamage > timeVal.inmunityTime) {
 			timeSinceDronesTookDamage = Time.time;
 			playerInterface.decreaseMultiplier (1);
+			Debug.Log ("Mult decreased");
 		}
 	}
 
@@ -120,8 +126,9 @@ public class ScoreManager : MonoBehaviour
 	public IEnumerator checkEnemiesKilledInTenSeconds(int enemiesKilledAtStart){
 		yield return new WaitForSeconds (5.0f);
 
-		if(playerInterface.getKillCount() - enemiesKilledAtStart >= 10){
+		if(playerInterface.getKillCount() - enemiesKilledAtStart >= 3){
 			playerInterface.increaseMultiplier (1);
+			Debug.Log("killed 3 y 5");
 			StopAllCoroutines ();
 		}
 	}
