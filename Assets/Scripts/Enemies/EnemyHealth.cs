@@ -6,10 +6,9 @@ public class EnemyHealth : MonoBehaviour
     public int startingHealth = 100;            // The amount of health the enemy starts the game with.
     public int currentHealth;                   // The current health the enemy has.
     public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
-    public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
     public AudioClip deathClip;                 // The sound to play when the enemy dies.
- 
-
+	public int enemyType;						// The type of the enemy (virus = 0, bacteria = 1, parasite = 2)
+	public bool mutated;
 
     Animator anim;                              // Reference to the animator.
     AudioSource enemyAudio;                     // Reference to the audio source.
@@ -17,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
     bool isDead;                                // Whether the enemy is dead.
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
-
+	private ScoreManager scoreManager;
 
     void Awake()
     {
@@ -29,6 +28,8 @@ public class EnemyHealth : MonoBehaviour
 
         // Setting the current health when the enemy first spawns.
         currentHealth = startingHealth;
+		mutated = false;
+		scoreManager = GameObject.Find ("player UI").GetComponent<ScoreManager> () as ScoreManager;
     }
 
     void Update()
@@ -102,7 +103,7 @@ public class EnemyHealth : MonoBehaviour
         isSinking = true;
 
         // Increase the score by the enemy's score value.
-        ScoreManager.score += scoreValue;
+		scoreManager.enemyKilledByPlayer(enemyType,mutated);
 
         // After 2 seconds destory the enemy.
         Destroy(gameObject, 2f);

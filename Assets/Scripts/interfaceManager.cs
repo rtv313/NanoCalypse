@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 public class interfaceManager : MonoBehaviour {
 	private Slider HealthBar, HeatBar;
 	private Image WeaponSelector;
-	private int multiplier, scoreNumber, killNumber, multiplierBank, scoreNumberBank, killNumberBank;
+	private int multiplier, scoreNumber, killNumber, multiplierBank, scoreNumberBank, killNumberBank, multiplierNegativeBank;
 	private Text KillCount, ComboMultiplier, Score;
 	private float angle;
+	private ScoreManager scoreManager;
 	// Use this for initialization
 	void Start () {
 		HealthBar = GameObject.Find("Healthbar").GetComponent<Slider> ();
@@ -16,21 +18,35 @@ public class interfaceManager : MonoBehaviour {
 		KillCount = GameObject.Find ("KillCount").GetComponent<Text> ();
 		ComboMultiplier = GameObject.Find ("ComboMultiplier").GetComponent<Text> ();
 		Score = GameObject.Find ("Score").GetComponent<Text> ();
+		scoreManager = GameObject.Find ("player UI").GetComponent<ScoreManager> () as ScoreManager;
+		// Operating values
 		multiplier = 1;
 		scoreNumber = 0;
 		killNumber = 0;
+
+		//Banks
 		multiplierBank = 0;
 		scoreNumberBank = 0; 
 		killNumberBank = 0;
+		multiplierNegativeBank = 0;
+
 		HealthBar.value = 1.0f;
 		angle = -15;
 	}
 	void Update(){
 		WeaponSelector.transform.rotation = Quaternion.Slerp (WeaponSelector.transform.rotation, Quaternion.Euler (0, 0, angle), Time.deltaTime*5); // Updates the rotation of the weapon selector
 
+		// Updating the scores using the banks
+		// Using banks gets the effect that the score increases overtime instead of instantly changing the number
 		if (multiplierBank > 0) {
 			multiplierBank--;
 			multiplier++;
+		}
+		if (multiplierNegativeBank < 0) {
+			multiplierNegativeBank++;
+			if (multiplier > 1) {
+				multiplier--;
+			}
 		}
 		if (scoreNumberBank > 0) {
 			scoreNumberBank--;
@@ -57,13 +73,28 @@ public class interfaceManager : MonoBehaviour {
 		scoreNumberBank += multiplier * points;
 	}
 	public void setMultiplier(int mult){
-		multiplier = mult;
+		if(mult >= 1)
+		{
+			multiplier = mult;
+		}
 	}
 	public void increaseMultiplier (int multInc){
 		multiplierBank += multInc;
+		scoreManager.playerDidDamage ();
+	}
+	public void decreaseMultiplier (int multInc){
+		multiplierNegativeBank -= Mathf.Abs(multInc);
 	}
 	public void increaseKillCount(int numKills){
 		killNumberBank += numKills;
+	}
+	public void scoreReset(){
+		killNumber = 0;
+		multiplier = 1;
+		scoreNumber = 0;
+	}
+	public int getKillCount(){
+		return killNumber + killNumberBank;
 	}
 
 	public void selectWeapon(int number){
