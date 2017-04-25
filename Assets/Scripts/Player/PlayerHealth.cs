@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
 		
-		playerInterface.updateHealthBar (startingHealth, currentHealth);
+		playerInterface.updateHealthBar (currentHealth, startingHealth);
         //if (damaged)
         //{
         //   damageImage.color = flashColour;

@@ -43,6 +43,7 @@ public class DeathState : State {
 
     private void StartSinking(Context context)
     {
+		context.scoreManager.enemyKilledByPlayer (context.enemyType.GetHashCode (), context.mutaded);
         context.rigidbody.isKinematic = true;
         context.nav.enabled = false;
         context.capsuleCollider.isTrigger = true;

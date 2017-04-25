@@ -61,8 +61,12 @@ public class Context : MonoBehaviour
     public bool mutaded = false ;
     public GameObject parasite;
 
+	// Score
+	public ScoreManager scoreManager;
+
     void Awake()
     {
+		scoreManager = GameObject.Find ("player UI").GetComponent<ScoreManager> () as ScoreManager;
         rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
