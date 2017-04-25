@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
 	private ScoreManager scoreManager;
     
 
-    Animator anim;                                             
+    public Animator animator;                                             
     AudioSource playerAudio;                                    
     PlayerMovement playerMovement;                              
     //PlayerShooting playerShooting;                              
@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
        
-        anim = GetComponent<Animator>();
+        
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
 		playerInterface = GameObject.Find ("player UI").GetComponent<interfaceManager> () as interfaceManager;
@@ -45,11 +45,15 @@ public class PlayerHealth : MonoBehaviour
         //{
         //   damageImage.color = flashColour;
         //}
-    
+
         //else
         //{
         //   damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         //}
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
 
         damaged = false;
     }
@@ -73,7 +77,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
 		scoreManager.playerDied ();
-        //anim.SetTrigger("Die");
+        animator.SetTrigger("Die");
         //playerAudio.clip = deathClip;
         //playerAudio.Play();
         //playerMovement.enabled = false;

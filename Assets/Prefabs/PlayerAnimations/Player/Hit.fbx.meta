@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 515a4bdfb23c9f1488b9685afb0271ca
-timeCreated: 1493050805
+guid: 4ef0e8467c5fe244097e45a33ba797d9
+timeCreated: 1493074154
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -97,9 +97,9 @@ ModelImporter:
     100178: Character1_RightUpLeg
     100180: Character1_Spine
     100182: Character1_Spine1
-    100184: //RootNode
-    100186: Full_Mesh
-    100188: G_Mesh
+    100184: Full_Mesh
+    100186: G_Mesh
+    100188: //RootNode
     100190: Weapon_mesh
     400000: Character1_Ctrl_ChestEndEffector
     400002: Character1_Ctrl_ChestOriginEffector
@@ -193,9 +193,9 @@ ModelImporter:
     400178: Character1_RightUpLeg
     400180: Character1_Spine
     400182: Character1_Spine1
-    400184: //RootNode
-    400186: Full_Mesh
-    400188: G_Mesh
+    400184: Full_Mesh
+    400186: G_Mesh
+    400188: //RootNode
     400190: Weapon_mesh
     4300000: Full_Mesh
     4300002: Weapon_mesh

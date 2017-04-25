@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour {
     float camRayLength = 100f;
 
 
+    //Animations
+    public Animator animator;
+
+
     private bool paused = false;
 
     void OnPauseGame()
@@ -26,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
     void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
-        anim = GetComponent<Animator>();
+    
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -70,7 +74,7 @@ public class PlayerMovement : MonoBehaviour {
     void Animating(float h, float v)
     {
         bool walking = h != 0f || v != 0f;
-        //anim.SetBool("IsWalking", walking);
+        animator.SetBool("IsWalking", walking);
     }
 
 	public void CallResetRb()
