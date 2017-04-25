@@ -11,6 +11,8 @@ public class AcidTide : MonoBehaviour {
     private Vector3 to;
     private float percentage=0.0f;
     private Vector3 result;
+
+	private float counter = 8.0f;
   
     // Use this for initialization
     void Start () {
@@ -22,6 +24,11 @@ public class AcidTide : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+		counter -= Time.deltaTime;
+		if (counter < 0.0f) {
+			counter = 8.0f;
+			flagGoUp = !flagGoUp;
+		}
         if (flagGoUp == true)
         {
             tideUp();
