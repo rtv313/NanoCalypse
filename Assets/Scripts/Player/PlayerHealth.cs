@@ -81,6 +81,13 @@ public class PlayerHealth : MonoBehaviour
         //playerAudio.clip = deathClip;
         //playerAudio.Play();
         //playerMovement.enabled = false;
-        //SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
+		StartCoroutine(returnToTitleScreen());
     }
+
+	public IEnumerator returnToTitleScreen(){
+		//Renderer rend = GetComponent<Renderer> ();
+		yield return new WaitForSeconds (2.0f);
+		SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
+		
+	}
 }

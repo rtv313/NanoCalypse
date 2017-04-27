@@ -4136,10 +4136,13 @@ MonoBehaviour:
   spawnPointOne: {fileID: 1669354446016822}
   spawnPointTwo: {fileID: 1464111350968396}
   spawnPointThree: {fileID: 1612483476425842}
-  wound: {fileID: 0}
-  healthPointOne: {fileID: 0}
-  healthPointTwo: {fileID: 0}
-  healthPointThree: {fileID: 0}
+  wound: {fileID: 1775498312106728, guid: 3c36fb9d775b62e4e9c3c9604815ee66, type: 2}
+  healthPointOne: {fileID: 1775498312106728, guid: 3c36fb9d775b62e4e9c3c9604815ee66,
+    type: 2}
+  healthPointTwo: {fileID: 1775498312106728, guid: 3c36fb9d775b62e4e9c3c9604815ee66,
+    type: 2}
+  healthPointThree: {fileID: 1775498312106728, guid: 3c36fb9d775b62e4e9c3c9604815ee66,
+    type: 2}
   spawnParticleSystemOne: {fileID: 1296127531250802}
   spawnParticleSystemTwo: {fileID: 1019453096071748}
   spawnParticleSystemThree: {fileID: 1271673037313756}
@@ -4158,8 +4161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f45115e2662c2f4580442ef4986f06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 10000
-  currentHealth: 10000
+  startingHealth: 100
+  currentHealth: 100
   HealthBar: {fileID: 0}
   damageImage: {fileID: 0}
   deathClip: {fileID: 0}

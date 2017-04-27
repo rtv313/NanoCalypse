@@ -693,7 +693,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399999745233172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 116.26142, y: 3.273428, z: -289.92603}
+  m_LocalPosition: {x: 117.44672, y: 3.273427, z: -282.50827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4438229990897900}
@@ -1465,6 +1465,7 @@ MonoBehaviour:
   timeDestroy: 5
   mutaded: 0
   parasite: {fileID: 0}
+  scoreManager: {fileID: 0}
 --- !u!114 &114879321662113872
 MonoBehaviour:
   m_ObjectHideFlags: 1

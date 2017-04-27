@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody playerRigidbody;
     int floorMask;
     float camRayLength = 100f;
-
+	private Transform firingPoint;
 
     //Animations
     public Animator animator;
@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void Awake()
     {
+		firingPoint = GameObject.Find ("bulletSpawn").GetComponent<Transform>();
+
         floorMask = LayerMask.GetMask("Floor");
     
         playerRigidbody = GetComponent<Rigidbody>();
@@ -62,7 +64,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
         {
-            Vector3 playerToMouse = floorHit.point - transform.position;
+			Vector3 playerToMouse = floorHit.point - firingPoint.position;
             playerToMouse.y = 0f;
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
