@@ -12,6 +12,7 @@ TagManager:
   - Drone
   - Wound
   - PatrolPath
+  - KillPlane
   layers:
   - Default
   - TransparentFX

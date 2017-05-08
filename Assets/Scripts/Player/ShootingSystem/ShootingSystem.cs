@@ -30,6 +30,7 @@ public class ShootingSystem : MonoBehaviour {
     public GameObject MuzzleShotgun;
     public GameObject MuzzleSniper;
     private float muzzleTimer = 0.0f;
+	private float timeBetweenSwap;
 
 
     public float rifleHeat = 0.0f;
@@ -46,6 +47,7 @@ public class ShootingSystem : MonoBehaviour {
         gunAudio = GetComponent<AudioSource>();
         gunParticles = muzzleFlash.GetComponent<ParticleSystem>();
 		playerInterface = GameObject.Find ("player UI").GetComponent<interfaceManager> () as interfaceManager;
+		timeBetweenSwap = Time.time;
     }
 
     void Update()
@@ -57,7 +59,9 @@ public class ShootingSystem : MonoBehaviour {
             MuzzleSniper.SetActive(false);
         }
 
-        SelectWeapon();
+
+        		SelectWeapon();
+		
 		playerInterface.selectWeapon (fireMode);
 		playerInterface.updateHeatBar (rifleHeat, rifleMaxHeat);
 
@@ -102,28 +106,44 @@ public class ShootingSystem : MonoBehaviour {
     void SelectWeapon()
     {
         timer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            fireMode = 1;
-            timer = 10.0f;
+		if (Time.time - timeBetweenSwap >= 0.5f) {
+			if (Input.GetKeyDown (KeyCode.Alpha1) && fireMode != 1) {
+				fireMode = 1;
+				timer = 10.0f;
+				timeBetweenSwap = Time.time;
 
-        }
+			}
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            fireMode = 2;
-            timer = 10.0f;
-        }
+			if (Input.GetKeyDown (KeyCode.Alpha2) && fireMode != 2) {
+				fireMode = 2;
+				timer = 10.0f;
+				timeBetweenSwap = Time.time;
+			}
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            fireMode = 3;
-            timer = 10.0f;
-        }
+			if (Input.GetKeyDown (KeyCode.Alpha3) && fireMode != 3) {
+				fireMode = 3;
+				timer = 10.0f;
+				timeBetweenSwap = Time.time;
+			}
 
-        //cooldown rifle
-      
+			//cooldown rifle
+			//Mouse Scroll
+			if (Input.GetAxis ("Mouse ScrollWheel") > 0f) {
+				fireMode += 1;
+				if (fireMode > 3)
+					fireMode = 1;
+				timer = 10.0f;
+				timeBetweenSwap = Time.time;
+			}
+			if (Input.GetAxis ("Mouse ScrollWheel") < 0f) {
+				fireMode -= 1;
+				if (fireMode < 1)
+					fireMode = 3;
+				timer = 10.0f;
+				timeBetweenSwap = Time.time;
+			}
+		}
     }
 
     void Fire()
