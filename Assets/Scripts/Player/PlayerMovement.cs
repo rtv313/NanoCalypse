@@ -11,6 +11,16 @@ public class PlayerMovement : MonoBehaviour {
     float camRayLength = 100f;
 	private Transform firingPoint;
 
+	// Dash
+	private bool dashing = false;
+	public float dashTime = 0.4f;
+	public float dashSpeed = 15f;
+	private float currentDashTime = 0.0f;
+	private Vector3 dashMovement;
+	private TrailRenderer tr;
+	public float trailTimeToLive = 0.2f;
+	private float trailTimer = 0.0f;
+
     //Animations
     public Animator animator;
 
@@ -34,6 +44,8 @@ public class PlayerMovement : MonoBehaviour {
         floorMask = LayerMask.GetMask("Floor");
     
         playerRigidbody = GetComponent<Rigidbody>();
+
+		tr = GetComponent<TrailRenderer> ();
     }
 
     void FixedUpdate()
@@ -43,11 +55,46 @@ public class PlayerMovement : MonoBehaviour {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
 
-            Move(h, v);
-            Turning();
-            Animating(h, v);
+			DashCheck (h, v);
+
+			if (dashing)
+				Dash ();
+			else {
+				Move (h, v);
+			}
+
+			Turning ();
+			Animating (h, v);
+			
         }
     }
+
+	void DashCheck(float h, float v) {
+		if (!dashing && trailTimer <= 0.0f && Input.GetKeyDown(KeyCode.Space)) {
+			dashing = true;
+			tr.enabled = true;
+			currentDashTime = dashTime;
+			dashMovement.Set(h, 0.0f, v);
+		}
+
+		if (trailTimer > 0.0f) {
+			trailTimer -= Time.deltaTime;
+			if (trailTimer <= 0.0f) {
+				tr.enabled = false;
+			}
+		}
+	}
+
+	void Dash()
+	{
+		Vector3 velocity = dashMovement.normalized * dashSpeed * Time.deltaTime;
+		playerRigidbody.MovePosition(transform.position + velocity);
+		currentDashTime -= Time.deltaTime;
+		if (currentDashTime < 0.0f) {
+			dashing = false;
+			trailTimer = trailTimeToLive;
+		}
+	}
 
     void Move(float h, float v)
     {
