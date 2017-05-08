@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: outline_mat
+  m_Name: outline_mat_virus
   m_Shader: {fileID: 4800000, guid: 5acaf7e08c84aca46a11008629dc4af5, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -102,7 +102,7 @@ Material:
       second: 1
     - first:
         name: _Outline
-      second: 0.52
+      second: 0.35
     - first:
         name: _Parallax
       second: 0.02
