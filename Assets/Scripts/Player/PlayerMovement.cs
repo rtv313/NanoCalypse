@@ -75,6 +75,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (!dashing && trailTimer <= 0.0f && Input.GetKeyDown(KeyCode.Space)) {
 			dashing = true;
 			tr.enabled = true;
+			tr.Clear();
 			currentDashTime = dashTime;
 			dashMovement.Set(h, playerGravity * Time.deltaTime, v);
 		}
