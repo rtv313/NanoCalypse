@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
+	public float playerGravity = -9.8f;
+
     public float speed = 6f;
     public float resetRb = 1.5f;
     Vector3 movement;
@@ -74,7 +76,7 @@ public class PlayerMovement : MonoBehaviour {
 			dashing = true;
 			tr.enabled = true;
 			currentDashTime = dashTime;
-			dashMovement.Set(h, 0.0f, v);
+			dashMovement.Set(h, playerGravity * Time.deltaTime, v);
 		}
 
 		if (trailTimer > 0.0f) {
@@ -98,8 +100,9 @@ public class PlayerMovement : MonoBehaviour {
 
     void Move(float h, float v)
     {
-        movement.Set(h,0f,v);
+		movement.Set(h, playerGravity * Time.deltaTime, v);
         movement = movement.normalized*speed*Time.deltaTime; // makes speed in diagonal the same
+		Rigidbody rb = GetComponent<Rigidbody>();
         playerRigidbody.MovePosition(transform.position + movement);
     }
 

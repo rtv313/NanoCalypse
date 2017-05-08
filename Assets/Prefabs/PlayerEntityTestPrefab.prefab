@@ -4136,7 +4136,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1879da58b2e3c424bb685e8621e669ad, type: 2}
+  - {fileID: 2100000, guid: ceb6581f9d56f7f4694023989c4362d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4162,20 +4162,20 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0
+        time: 0.005025125
         value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.5572742
-        value: 0.67041117
-        inSlope: -0.8457899
-        outSlope: -0.8457899
+        time: 0.4869225
+        value: 0.5504111
+        inSlope: -1.6562423
+        outSlope: -1.6562423
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.98994976
-        value: 0.03999999
+        time: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -4185,10 +4185,10 @@ TrailRenderer:
     colorGradient:
       key0:
         serializedVersion: 2
-        rgba: 4278190335
+        rgba: 4294967295
       key1:
         serializedVersion: 2
-        rgba: 4278453336
+        rgba: 4294967295
       key2:
         serializedVersion: 2
         rgba: 0
@@ -4291,10 +4291,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d030fcb01ebe254ea31193357b0abcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGravity: -9.8
   speed: 6
   resetRb: 1.5
   dashTime: 0.2
   dashSpeed: 30
+  trailTimeToLive: 0.2
   animator: {fileID: 95603828559276720}
 --- !u!114 &114989393678226994
 MonoBehaviour:
