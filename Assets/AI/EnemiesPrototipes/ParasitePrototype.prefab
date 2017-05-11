@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 2
   stateString: Patrol
-  life: 100
+  life: 50
   animator: {fileID: 95543698722648324}
   capsuleCollider: {fileID: 136790486080444874}
   rigidbody: {fileID: 54917772624393478}
