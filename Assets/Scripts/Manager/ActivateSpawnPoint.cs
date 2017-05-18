@@ -8,9 +8,10 @@ public class ActivateSpawnPoint : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-       
-            spawnPoint.SetActive(true);
-            Destroy(transform.gameObject);
-        
+		if (other.tag == "Player") {
+			Debug.Log ("Spawn Point Activated!");
+			spawnPoint.SetActive(true);
+			Destroy(transform.gameObject);
+		}
     }
 }

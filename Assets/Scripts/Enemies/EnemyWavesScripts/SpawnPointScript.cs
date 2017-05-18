@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnPointScript : MonoBehaviour {
 
+	public int enemyPool = 5;
     public int timeToSpawnMin;
     public int timeToSpawnMax;
     public int timeToSpawnEnemyInEffect=1;
@@ -21,10 +22,13 @@ public class SpawnPointScript : MonoBehaviour {
 
     void Update()
     {
-        if (flagCreate)
+        if (flagCreate && enemyPool > 0)
         {
             createEnemyPrevious();
+			--enemyPool;
         }
+		else if (enemyPool == 0)
+			gameObject.SetActive (false);
     }
 
     void createEnemyPrevious()
