@@ -57,12 +57,12 @@ public class ScoreManager : MonoBehaviour
 		{
 			playerInterface.decreaseMultiplier (1);
 			timeSinceDidDamage = Time.time;
-			Debug.Log ("not damage in 10");
+
 		}
 		if (noMutatedCounter >= 5) { // Player kills 5 consecutive enemies that are not mutated;
 			noMutatedCounter = 0;
 			playerInterface.increaseMultiplier (1);
-			Debug.Log ("Killed 5 no mutated");
+
 		}
 		if(dronesActive && (Time.time - timeSinceDronesTookDamage > timeVal.dronesDidntTakeDamage)){
 			timeSinceDronesTookDamage = Time.time;
