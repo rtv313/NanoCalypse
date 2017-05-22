@@ -66,7 +66,7 @@ public class Context : MonoBehaviour
 
     void Awake()
     {
-		scoreManager = GameObject.Find ("player UI").GetComponent<ScoreManager> () as ScoreManager;
+		scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;
         rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();

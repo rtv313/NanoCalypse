@@ -30,8 +30,8 @@ public class PlayerHealth : MonoBehaviour
         
         playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
-		playerInterface = GameObject.Find ("player UI").GetComponent<interfaceManager> () as interfaceManager;
-		scoreManager = GameObject.Find ("player UI").GetComponent<ScoreManager> () as ScoreManager;
+		playerInterface = GameObject.Find ("GUI").GetComponent<interfaceManager> () as interfaceManager;
+		scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;
 		// playerShooting = GetComponentInChildren<PlayerShooting>();
         currentHealth = startingHealth;
     }

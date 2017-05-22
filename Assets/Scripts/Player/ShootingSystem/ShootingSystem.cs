@@ -46,7 +46,7 @@ public class ShootingSystem : MonoBehaviour {
     {
         gunAudio = GetComponent<AudioSource>();
         gunParticles = muzzleFlash.GetComponent<ParticleSystem>();
-		playerInterface = GameObject.Find ("player UI").GetComponent<interfaceManager> () as interfaceManager;
+		playerInterface = GameObject.Find ("GUI").GetComponent<interfaceManager> () as interfaceManager;
 		timeBetweenSwap = Time.time;
     }
 

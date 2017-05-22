@@ -4,9 +4,17 @@ public class BulletDamage : MonoBehaviour {
 
     public enum BulletType { ASSAULT, SHOOTGUN,SNIPER };
     public BulletType bulletType = BulletType.ASSAULT;
+	public AudioClip bulletHitHard;
+	public AudioClip bulletHitSoft;
+	public AudioClip enemyDamage;
+	public AudioClip enemyScreech;
     public int assaultRifleDamage = 10;
     public int shootgunDamage = 5;
     public int sniperDamage = 30;
+
+	void Awake() {
+
+	}
 
     void OnCollisionEnter(Collision other)
     {
@@ -50,10 +58,18 @@ public class BulletDamage : MonoBehaviour {
                     break;
             }
 
+			AudioSource.PlayClipAtPoint (bulletHitHard, transform.position);
+			if (context.life <= 0) {
+				AudioSource.PlayClipAtPoint (enemyScreech, transform.position, 4.0f);
+			}
+			else AudioSource.PlayClipAtPoint (enemyDamage, transform.position, 1.0f);
+			Destroy (transform.gameObject);
          }
         
-        if(other.gameObject.tag != "Player")
-            Destroy(transform.gameObject);
+		if (other.gameObject.tag != "Player" && other.gameObject.tag != "Enemy") {
+			AudioSource.PlayClipAtPoint (bulletHitSoft, transform.position);
+			Destroy (transform.gameObject);
+		}
     }
 
     bool checkPropMutation()

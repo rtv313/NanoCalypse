@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
 
     void Awake()
     {
-		playerInterface = GameObject.Find ("player UI").GetComponent<interfaceManager> () as interfaceManager;
+		playerInterface = GameObject.Find ("GUI").GetComponent<interfaceManager> () as interfaceManager;
 		scoreEnemies = new score[3];
 		// Virus
 		scoreEnemies [0].points = 200;

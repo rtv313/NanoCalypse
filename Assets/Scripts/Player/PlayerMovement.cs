@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 	private bool dashing = false;
 	public float dashTime = 0.4f;
 	public float dashSpeed = 15f;
+	public AudioClip dashingSound;
 	private float currentDashTime = 0.0f;
 	private Vector3 dashMovement;
 	private TrailRenderer tr;
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
     {
 		firingPoint = GameObject.Find ("bulletSpawn").GetComponent<Transform>();
 
-        floorMask = LayerMask.GetMask("Floor");
+        floorMask = LayerMask.GetMask("AimPlane");
     
         playerRigidbody = GetComponent<Rigidbody>();
 
@@ -73,6 +74,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void DashCheck(float h, float v) {
 		if (!dashing && trailTimer <= 0.0f && Input.GetKeyDown(KeyCode.Space)) {
+			AudioSource.PlayClipAtPoint (dashingSound, transform.position);
 			dashing = true;
 			tr.enabled = true;
 			tr.Clear();

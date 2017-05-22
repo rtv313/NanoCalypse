@@ -12,13 +12,16 @@ public class interfaceManager : MonoBehaviour {
 	private ScoreManager scoreManager;
 	// Use this for initialization
 	void Start () {
+		// Hide Mouse Cursor
+		Cursor.visible = false;
+
 		HealthBar = GameObject.Find("Healthbar").GetComponent<Slider> ();
 		HeatBar = GameObject.Find("HeatBar").GetComponent<Slider> ();
 		WeaponSelector = GameObject.Find("WeaponSelector").GetComponent<Image>();
 		KillCount = GameObject.Find ("KillCount").GetComponent<Text> ();
 		ComboMultiplier = GameObject.Find ("ComboMultiplier").GetComponent<Text> ();
 		Score = GameObject.Find ("Score").GetComponent<Text> ();
-		scoreManager = GameObject.Find ("player UI").GetComponent<ScoreManager> () as ScoreManager;
+		scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;
 		// Operating values
 		multiplier = 1;
 		scoreNumber = 0;
