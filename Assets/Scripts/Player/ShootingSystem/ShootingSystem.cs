@@ -39,8 +39,11 @@ public class ShootingSystem : MonoBehaviour {
     public float coolDownTime = 2.0f;
     public bool blockRifle = false;
 
+    public GameObject riflePointer;
+    public GameObject shotgunPointer;
+    public GameObject sniperPointer;
 
-
+    public AudioClip weaponChange;
 
     void Start()
     {
@@ -111,21 +114,23 @@ public class ShootingSystem : MonoBehaviour {
 				fireMode = 1;
 				timer = 10.0f;
 				timeBetweenSwap = Time.time;
-
+                AudioSource.PlayClipAtPoint(weaponChange, transform.position);
 			}
 
 			if (Input.GetKeyDown (KeyCode.Alpha2) && fireMode != 2) {
 				fireMode = 2;
 				timer = 10.0f;
 				timeBetweenSwap = Time.time;
-			}
+                AudioSource.PlayClipAtPoint(weaponChange, transform.position);
+            }
 
 
 			if (Input.GetKeyDown (KeyCode.Alpha3) && fireMode != 3) {
 				fireMode = 3;
 				timer = 10.0f;
 				timeBetweenSwap = Time.time;
-			}
+                AudioSource.PlayClipAtPoint(weaponChange, transform.position);
+            }
 
 			//cooldown rifle
 			//Mouse Scroll
@@ -135,15 +140,36 @@ public class ShootingSystem : MonoBehaviour {
 					fireMode = 1;
 				timer = 10.0f;
 				timeBetweenSwap = Time.time;
-			}
+                AudioSource.PlayClipAtPoint(weaponChange, transform.position);
+            }
 			if (Input.GetAxis ("Mouse ScrollWheel") < 0f) {
 				fireMode -= 1;
 				if (fireMode < 1)
 					fireMode = 3;
 				timer = 10.0f;
 				timeBetweenSwap = Time.time;
-			}
+                AudioSource.PlayClipAtPoint(weaponChange, transform.position);
+            }
 		}
+
+        if (fireMode == 1)
+        {
+            riflePointer.SetActive(true);
+            shotgunPointer.SetActive(false);
+            sniperPointer.SetActive(false);
+        }
+        if (fireMode == 2)
+        {
+            riflePointer.SetActive(false);
+            shotgunPointer.SetActive(true);
+            sniperPointer.SetActive(false);
+        }
+        if (fireMode == 3)
+        {
+            riflePointer.SetActive(false);
+            shotgunPointer.SetActive(false);
+            sniperPointer.SetActive(true);
+        }
     }
 
     void Fire()
