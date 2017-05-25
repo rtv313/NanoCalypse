@@ -32,6 +32,13 @@ public class BulletDamage : MonoBehaviour {
                         context.state = new MutationState();
                     }
 
+
+                    if (context.enemyType != Context.EnemyType.VIRUS)
+                    {
+                        context.receiveDamageMutate();
+                    }
+                    else context.receiveDamage();
+
                     break;
 
                 case BulletType.SHOOTGUN:
@@ -41,6 +48,12 @@ public class BulletDamage : MonoBehaviour {
                     {
                         context.state = new MutationState();
                     }
+
+                    if (context.enemyType != Context.EnemyType.PARASITE)
+                    {
+                        context.receiveDamageMutate();
+                    }
+                    else context.receiveDamage();
 
                     break;
 
@@ -54,6 +67,12 @@ public class BulletDamage : MonoBehaviour {
                     {
                         context.life -= sniperDamage / 2;
                     }
+
+                    if (context.enemyType != Context.EnemyType.BACTERIA)
+                    {
+                        context.receiveDamageMutate();
+                    }
+                    else context.receiveDamage();
 
                     break;
             }
