@@ -11,7 +11,7 @@ public class ShockWave : MonoBehaviour {
         collider = gameObject.GetComponent<SphereCollider>();
         collider.enabled = false;
         ps.GetComponent<ParticleSystem>().Emit(1);
-        Invoke("activateTrigger", 1.0f);
+        Invoke("activateTrigger", 0.4f);
     }
 
     void OnTriggerEnter(Collider other)
