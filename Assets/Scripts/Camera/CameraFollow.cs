@@ -15,12 +15,13 @@ public class CameraFollow : MonoBehaviour
         if (debug)
         {
             GL.wireframe = true;
-                   }
-           }
+        }
+    }
+
 	void OnPostRender()
     {
         GL.wireframe = false;
-           }
+    }
 
     void Start()
     {
@@ -44,7 +45,6 @@ public class CameraFollow : MonoBehaviour
             {
                 cam.clearFlags = CameraClearFlags.Skybox;
             }
-       }
+        }
     }
-	
-}
+ }

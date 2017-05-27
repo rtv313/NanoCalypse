@@ -13,7 +13,7 @@ public class interfaceManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Hide Mouse Cursor
-		Cursor.visible = false;
+		//Cursor.visible = false;
 
 		HealthBar = GameObject.Find("Healthbar").GetComponent<Slider> ();
 		HeatBar = GameObject.Find("HeatBar").GetComponent<Slider> ();
