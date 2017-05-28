@@ -339,7 +339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -175, y: 93}
+  m_AnchoredPosition: {x: -148, y: 93}
   m_SizeDelta: {x: 983, y: 302}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299157449
@@ -700,7 +700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -99, y: -120}
+  m_AnchoredPosition: {x: -62, y: -120}
   m_SizeDelta: {x: 639.6, y: 195.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &794552906
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 0
-  clickSound: {fileID: 8300000, guid: 3e55d91470f0800489da4259a0eefe71, type: 3}
+  clickSound: {fileID: 8300000, guid: 0624c48124b9b54429d8fbabae984089, type: 3}
   overSound: {fileID: 8300000, guid: 77894bfddf34087418c66be2634def55, type: 3}
 --- !u!114 &1148358427
 MonoBehaviour:
@@ -1309,7 +1309,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1212160099}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -1397,7 +1397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 0
-  clickSound: {fileID: 8300000, guid: 3e55d91470f0800489da4259a0eefe71, type: 3}
+  clickSound: {fileID: 8300000, guid: 0624c48124b9b54429d8fbabae984089, type: 3}
   overSound: {fileID: 8300000, guid: 77894bfddf34087418c66be2634def55, type: 3}
 --- !u!114 &1237591678
 MonoBehaviour:
@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 0
-  clickSound: {fileID: 8300000, guid: 3e55d91470f0800489da4259a0eefe71, type: 3}
+  clickSound: {fileID: 8300000, guid: 0624c48124b9b54429d8fbabae984089, type: 3}
   overSound: {fileID: 8300000, guid: 77894bfddf34087418c66be2634def55, type: 3}
 --- !u!114 &1297637872
 MonoBehaviour:
@@ -1743,7 +1743,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1512017566}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -2220,7 +2220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 1
-  clickSound: {fileID: 8300000, guid: 3e55d91470f0800489da4259a0eefe71, type: 3}
+  clickSound: {fileID: 8300000, guid: 0624c48124b9b54429d8fbabae984089, type: 3}
   overSound: {fileID: 8300000, guid: 77894bfddf34087418c66be2634def55, type: 3}
 --- !u!114 &1686828014
 MonoBehaviour:
@@ -2471,7 +2471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 2
-  clickSound: {fileID: 8300000, guid: 3e55d91470f0800489da4259a0eefe71, type: 3}
+  clickSound: {fileID: 8300000, guid: 0624c48124b9b54429d8fbabae984089, type: 3}
   overSound: {fileID: 8300000, guid: 77894bfddf34087418c66be2634def55, type: 3}
 --- !u!114 &1755959727
 MonoBehaviour:
@@ -2976,7 +2976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonIndex: 3
-  clickSound: {fileID: 8300000, guid: 3e55d91470f0800489da4259a0eefe71, type: 3}
+  clickSound: {fileID: 8300000, guid: 0624c48124b9b54429d8fbabae984089, type: 3}
   overSound: {fileID: 8300000, guid: 77894bfddf34087418c66be2634def55, type: 3}
 --- !u!114 &1956828339
 MonoBehaviour:
