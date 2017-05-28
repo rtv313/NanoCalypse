@@ -8,8 +8,12 @@ public class interfaceManager : MonoBehaviour {
 	private Image WeaponSelector;
 	private int multiplier, scoreNumber, killNumber, multiplierBank, scoreNumberBank, killNumberBank, multiplierNegativeBank;
 	private Text KillCount, ComboMultiplier, Score;
-	private float angle;
+	private float angle, timmerScoreScound,timmerMultiplierScound;
 	private ScoreManager scoreManager;
+
+	private AudioSource sourceScore, sourceMultiplierIncrease,sourceMultiplierDecrease, sourceWeaponSelector;
+	private AudioSource [] sounds;
+	public AudioClip scoreSound, MultIncSound, MultDecSound, WeaponSelSound;
 	// Use this for initialization
 	void Start () {
 		// Hide Mouse Cursor
@@ -35,8 +39,31 @@ public class interfaceManager : MonoBehaviour {
 
 		HealthBar.value = 1.0f;
 		angle = -15;
+
+
+		// Sounds
+
+		/*gameObject.AddComponent<AudioSource> ();
+		gameObject.AddComponent<AudioSource> ();*/
+		sounds = GetComponents<AudioSource> ();
+
+		sourceScore = sounds [0];
+		sourceMultiplierIncrease = sounds [1];
+		sourceMultiplierDecrease = sounds [2];
+		sourceWeaponSelector = sounds [3];
+
+		sourceScore.loop = true;
+		sourceScore.playOnAwake = false;
+		timmerScoreScound = Time.time;
+		timmerMultiplierScound = Time.time;
+
+
+
+
+
 	}
 	void Update(){
+		
 		WeaponSelector.transform.rotation = Quaternion.Slerp (WeaponSelector.transform.rotation, Quaternion.Euler (0, 0, angle), Time.deltaTime*5); // Updates the rotation of the weapon selector
 
 		// Updating the scores using the banks
@@ -44,16 +71,30 @@ public class interfaceManager : MonoBehaviour {
 		if (multiplierBank > 0) {
 			multiplierBank--;
 			multiplier++;
+			sourceMultiplierIncrease.PlayOneShot(MultIncSound);
 		}
 		if (multiplierNegativeBank < 0) {
 			multiplierNegativeBank++;
 			if (multiplier > 1) {
 				multiplier--;
+				playMultiplierDecreaseSound ();
 			}
 		}
 		if (scoreNumberBank > 0) {
-			scoreNumberBank--;
-			scoreNumber++;
+			playScoreIncreaseSound ();
+			if (scoreNumberBank > 300) {
+				scoreNumberBank -= 10;
+				scoreNumber += 10;
+			} else if (scoreNumberBank > 100) {
+				scoreNumberBank -= 5;
+				scoreNumber += 5;
+			} else {
+				scoreNumberBank--;
+				scoreNumber++;
+			}
+		} else {
+			if (sourceScore.volume > 0.0f) 
+				StartCoroutine (fadeAudio(sourceScore));
 		}
 		if (killNumberBank > 0) {
 			killNumberBank--;
@@ -104,25 +145,60 @@ public class interfaceManager : MonoBehaviour {
 		// Set the angle for the weapon selector
 		// -15 -> Assault Rifle
 		// 105 -> Sniper
-		// 225 -> Shotgun
+		// 225 -> Shotgun+
+		//sourceWeaponSelector.PlayOneShot(WeaponSelSound);
 		switch (number) {
 		case 1:
 			HeatBar.gameObject.SetActive (true);
-			angle = -15;
+			if (angle != -15) {
+				angle = -15;
+				sourceWeaponSelector.PlayOneShot(WeaponSelSound);
+			}
+
 			break;
 		case 2:
 			HeatBar.gameObject.SetActive (false);
-			angle = 225;
+			if (angle != 225) {
+				angle = 225;
+				sourceWeaponSelector.PlayOneShot(WeaponSelSound);
+			}
+
 			break;
 		case 3:
 			HeatBar.gameObject.SetActive (false);
-			angle = 105;
+			if (angle != 105) {
+				angle = 105;
+				sourceWeaponSelector.PlayOneShot(WeaponSelSound);
+			}
 			break;
 		default:
 			HeatBar.gameObject.SetActive (true);
-			angle = -15;
+			if (angle != -15) {
+				angle = -15;
+				sourceWeaponSelector.PlayOneShot(WeaponSelSound);
+			}
 			break;
 		}
 	
+	}
+	private void playScoreIncreaseSound(){
+		if (Time.time - timmerScoreScound > 2.5f) {
+			sourceScore.volume = 0.3f;
+			sourceScore.Play ();
+			timmerScoreScound = Time.time;
+		}
+	}
+	private void playMultiplierDecreaseSound(){
+		if (Time.time - timmerMultiplierScound > 2.5f) {
+			sourceMultiplierDecrease.PlayOneShot (MultDecSound);
+			timmerMultiplierScound = Time.time;
+		}
+	}
+	public IEnumerator fadeAudio(AudioSource audioToFade){
+		while(audioToFade.volume > 0.0f){
+			audioToFade.volume -= Time.deltaTime;
+			yield return new WaitForSeconds (0.2f);
+			//Debug.Log (audioToFade.volume);
+		}
 	}
 }
