@@ -81,7 +81,7 @@ public class BulletDamage : MonoBehaviour {
 			if (context.life <= 0) {
 				AudioSource.PlayClipAtPoint (enemyScreech, transform.position, 4.0f);
 			}
-			else AudioSource.PlayClipAtPoint (enemyDamage, transform.position, 1.0f);
+			else AudioSource.PlayClipAtPoint (enemyDamage, transform.position, 4.0f);
 			Destroy (transform.gameObject);
          }
         
