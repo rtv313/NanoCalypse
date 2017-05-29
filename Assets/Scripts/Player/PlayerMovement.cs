@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 	public float playerGravity = -9.8f;
-
     public float speed = 6f;
     public float resetRb = 1.5f;
     Vector3 movement;
@@ -45,7 +44,6 @@ public class PlayerMovement : MonoBehaviour {
 		firingPoint = GameObject.Find ("bulletSpawn").GetComponent<Transform>();
 
         floorMask = LayerMask.GetMask("AimPlane");
-    
         playerRigidbody = GetComponent<Rigidbody>();
 
 		tr = GetComponent<TrailRenderer> ();
