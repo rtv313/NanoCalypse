@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 114503074501931384}
   - component: {fileID: 114097580672435342}
   - component: {fileID: 114930454532507960}
+  - component: {fileID: 114452026393632362}
   m_Layer: 0
   m_Name: ParasitePrototype
   m_TagString: Enemy
@@ -456,8 +457,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548391732938064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 119.4268, y: 3.94, z: -281.64294}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 104.84, y: 3.44, z: -311.7}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4500555825109972}
   - {fileID: 4308235147980692}
@@ -971,6 +972,18 @@ MonoBehaviour:
   radius: 8.34
   power: 400
   explosionTime: 0.2
+--- !u!114 &114452026393632362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548391732938064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cccaa2ac1aba544a3a757ebf97d486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 1405895755720808}
 --- !u!114 &114503074501931384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1104,9 +1117,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!137 &137169195269311822
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

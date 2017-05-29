@@ -1,5 +1,6 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
+
+[RequireComponent(typeof(DamageFeedback))]
 
 public class Context : MonoBehaviour
 {
@@ -64,6 +65,9 @@ public class Context : MonoBehaviour
 	// Score
 	public ScoreManager scoreManager;
 
+    // Damage Feedback
+    private DamageFeedback dmgFeedback;
+
     void Awake()
     {
 		scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;
@@ -76,6 +80,7 @@ public class Context : MonoBehaviour
         state = new WanderState();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = target.GetComponent<PlayerHealth>();
+        dmgFeedback = GetComponent<DamageFeedback>();
     }
 
     private void Request()
@@ -88,4 +93,14 @@ public class Context : MonoBehaviour
         playerInSight = sensors.playerInSight;
         Request();
     } 
+
+    public void receiveDamage()
+    {
+        dmgFeedback.receiveDamage();
+    }
+
+    public void receiveDamageMutate()
+    {
+        dmgFeedback.receiveDamageMutate();
+    }
 }
