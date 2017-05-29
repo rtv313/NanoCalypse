@@ -1068,6 +1068,7 @@ GameObject:
   - component: {fileID: 114811197282157110}
   - component: {fileID: 114397833529421528}
   - component: {fileID: 96625073490681228}
+  - component: {fileID: 114354329065691368}
   m_Layer: 0
   m_Name: PlayerEntityTestPrefab
   m_TagString: Player
@@ -2544,7 +2545,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1563886284642954}
   m_LocalRotation: {x: 0, y: -0.60871756, z: 0, w: 0.793387}
-  m_LocalPosition: {x: 126.482, y: 3.739, z: -281.195}
+  m_LocalPosition: {x: 8.55, y: 5.16, z: -6.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4578923017671572}
@@ -4160,6 +4161,20 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114354329065691368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563886284642954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3618fb07fdd574a8e7c8106d90604e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinePrefab: {fileID: 1051721695207192, guid: d331c34fcc463bb43a2ca1defceeaaaa, type: 2}
+  minesLimit: 5
+  cooldown: 0.5
 --- !u!114 &114397833529421528
 MonoBehaviour:
   m_ObjectHideFlags: 1
