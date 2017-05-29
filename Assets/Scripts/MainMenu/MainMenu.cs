@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
     public int buttonIndex = 0;
+	public AudioClip clickSound, overSound;
 	private Canvas TitleCanvas, CanvasHelp, CanvasCredit;
+	private AudioSource sourceClick, sourceOver;
+	private AudioSource [] sounds;
 	// Use this for initialization
 	void Start () {
 		CanvasHelp = GameObject.Find ("CanvasHelp").GetComponent<Canvas>();
@@ -15,10 +18,31 @@ public class MainMenu : MonoBehaviour {
 		CanvasHelp.enabled = false;
 		TitleCanvas.enabled = true;
 		CanvasCredit.enabled = false;
+		gameObject.AddComponent<AudioSource> ();
+		gameObject.AddComponent<AudioSource> ();
+
+		sounds = GetComponents<AudioSource> ();
+
+		sourceClick = sounds [0];
+		sourceOver = sounds [1];
+
+		sourceClick.clip = clickSound;
+		sourceClick.playOnAwake = false;
+		sourceOver.clip = overSound;
+		sourceOver.playOnAwake = false;
+
+		sourceOver.volume = 0.2f;
+		sourceOver.pitch = 2;
+
+		sourceClick.volume = 1.0f;
+		sourceClick.pitch = 3;
+
     }
 
     public void buttonWasClicked()
     {
+		sourceClick.PlayOneShot (clickSound);
+		
         if (buttonIndex == 0)// New Game
         {
             SceneManager.LoadScene("Level1", LoadSceneMode.Single);
@@ -42,12 +66,13 @@ public class MainMenu : MonoBehaviour {
 		}
     }
 	public void backToMain(){
+		sourceClick.PlayOneShot (clickSound);
 		CanvasHelp.enabled = false;
 		TitleCanvas.enabled = true;
 		CanvasCredit.enabled = false;
 	}
-    // Update is called once per frame
-    void Update () {
-
-    }
+	public void buttonOver ()
+	{
+		sourceOver.PlayOneShot (overSound);
+	}
 }
