@@ -16,15 +16,19 @@ public class ShockWave : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enemy")
-         Destroy(other.gameObject);
+        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 5)
+        {
+            Destroy(other.gameObject);
+        }
         Debug.Log("Collision");
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 5)
+        {
             Destroy(other.gameObject);
+        }
         Debug.Log("Collision");
     }
 
