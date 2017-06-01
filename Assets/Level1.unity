@@ -803,9 +803,14 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-      propertyPath: weaponChange
-      objectReference: {fileID: 8300000, guid: 311138afb35240741b4cbeabb09dc570, type: 3}
     - target: {fileID: 1562513829536674, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: 
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562513829536674, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
   m_IsPrefabParent: 0
