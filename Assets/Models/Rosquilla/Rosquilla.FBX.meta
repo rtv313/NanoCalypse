@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dfedb38dadeb7a0439db278f72239ae2
-timeCreated: 1492420785
+guid: 378693991e9e9ce4d9dcfdd3464aa8b6
+timeCreated: 1496331605
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Group1
+    4300000: Rosquilla
   materials:
     importMaterials: 1
     materialName: 0
@@ -20,6 +20,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
