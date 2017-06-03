@@ -13,10 +13,13 @@ public class Mine : MonoBehaviour
         Invoke("createMine", explosionTime);
 	}
 
-    void createMine()
+    void OnTriggerEnter(Collider other)
     {
-        Instantiate(MinePrefab, gameObject.transform.position, Quaternion.identity);
-        Destroy(transform.gameObject);
+        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 1)
+        {
+            Instantiate(MinePrefab, gameObject.transform.position, Quaternion.identity);
+            Destroy(transform.gameObject);
+        }
     }
 }
 
