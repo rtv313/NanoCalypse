@@ -199,7 +199,7 @@ ModelImporter:
     400190: Weapon_mesh
     4300000: Full_Mesh
     4300002: Weapon_mesh
-    7400000: Take 001
+    7400000: Run
     9500000: //RootNode
     13700000: Full_Mesh
     13700002: Weapon_mesh
@@ -213,6 +213,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -225,7 +227,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Run
       takeName: Take 001
       firstFrame: 10
       lastFrame: 32

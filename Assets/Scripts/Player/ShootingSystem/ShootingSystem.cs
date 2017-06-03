@@ -45,6 +45,8 @@ public class ShootingSystem : MonoBehaviour {
 
     public AudioClip weaponChange;
 
+    public Animator animator;
+
     void Start()
     {
         gunAudio = GetComponent<AudioSource>();
@@ -70,6 +72,9 @@ public class ShootingSystem : MonoBehaviour {
 
         if (Input.GetButton("Fire1"))
         {
+
+            animator.SetBool("Shooting", true);
+
             if (fireMode == 1 && timer >= timeBetweenBulletsAssaultRifle && blockRifle == false)
             {
                 Fire();
@@ -89,6 +94,10 @@ public class ShootingSystem : MonoBehaviour {
                 muzzleTimer = 0.025f;
             }
 
+        }
+        else
+        {
+            animator.SetBool("Shooting", false);
         }
 
         rifleHeat -= coolDownRifle * Time.deltaTime;
