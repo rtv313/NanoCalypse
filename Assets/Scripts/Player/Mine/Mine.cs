@@ -4,22 +4,37 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    public int explosionTime = 1;
-    public GameObject MinePrefab;
+   
+    public GameObject Explosion;
    
     // Update is called once per frame
 	void Start ()
     {
-        Invoke("createMine", explosionTime);
+        Invoke("Destroy", 30.0f);
 	}
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 1)
+        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2)
         {
-            Instantiate(MinePrefab, gameObject.transform.position, Quaternion.identity);
+            Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
             Destroy(transform.gameObject);
         }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2)
+        {
+            Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
+            Destroy(transform.gameObject);
+        }
+    }
+
+    void Destroy()
+    {
+        Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
+        Destroy(transform.gameObject);
     }
 }
 

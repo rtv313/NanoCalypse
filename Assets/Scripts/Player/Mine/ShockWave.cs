@@ -18,7 +18,7 @@ public class ShockWave : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 5)
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<Context>().life = 0;
         }
         Debug.Log("Collision");
     }
@@ -27,7 +27,7 @@ public class ShockWave : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 5)
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<Context>().life = 0;
         }
         Debug.Log("Collision");
     }

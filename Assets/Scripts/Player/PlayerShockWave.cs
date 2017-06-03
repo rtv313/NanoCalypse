@@ -7,7 +7,9 @@ public class PlayerShockWave : MonoBehaviour
     public GameObject MinePrefab;
     public int minesLimit=5;
     public float cooldown = 0.3f;
+    public GameObject MinePosition;
     private float mineHeat = 1f;
+
 
     void Update()
     {
@@ -19,7 +21,7 @@ public class PlayerShockWave : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Q) && mineHeat < minesLimit)
         {
-            Instantiate(MinePrefab,gameObject.transform.position,Quaternion.identity);
+            Instantiate(MinePrefab, MinePosition.transform.position,Quaternion.identity);
             mineHeat++;
         }
     }
