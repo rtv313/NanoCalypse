@@ -258,15 +258,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1563886284642954, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114989393678226994, guid: bce1a624e82699842875f2e9281e0b8a,
-        type: 2}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 356854237}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
   m_IsPrefabParent: 0
@@ -376,11 +367,6 @@ MonoBehaviour:
 --- !u!4 &192139966 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4492912837275058, guid: bce1a624e82699842875f2e9281e0b8a,
-    type: 2}
-  m_PrefabInternal: {fileID: 124064059}
---- !u!95 &356854237 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95603828559276720, guid: bce1a624e82699842875f2e9281e0b8a,
     type: 2}
   m_PrefabInternal: {fileID: 124064059}
 --- !u!1 &429162545
