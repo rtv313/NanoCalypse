@@ -28,7 +28,7 @@ public class MutationState : State {
             case Context.EnemyType.PARASITE:
                 parasiteMutation(context);
                 break;
-        }
+          }
         context.mutaded = true;
     }
 
@@ -67,20 +67,8 @@ public class CreateParasite:MonoBehaviour
 {
     public void createParasite(Context context)
     {
-        Vector3 position = context.transform.position;
-        position.x -= 0.3f;
-        GameObject parasiteOne = Instantiate(context.parasite, position, context.transform.rotation);
-        parasiteOne.GetComponent<Context>().mutaded = true;
-        parasiteOne.GetComponent<Context>().life = parasiteOne.GetComponent<Context>().life / 2;
-        Renderer rend = parasiteOne.GetComponent<Renderer>();
-        rend.material.color = Color.grey;
+        ParasiteSpawnManager manager= context.gameObject.GetComponent<ParasiteSpawnManager>();
+        manager.CreateParasites();
 
-        position.x = 0;
-        position.x += 0.3f;
-        GameObject parasiteTwo = Instantiate(context.parasite, position, context.transform.rotation);
-        parasiteTwo.GetComponent<Context>().mutaded = true;
-        parasiteTwo.GetComponent<Context>().life = parasiteTwo.GetComponent<Context>().life / 2;
-        rend = parasiteTwo.GetComponent<Renderer>();
-        rend.material.color = Color.grey;
     }
 }

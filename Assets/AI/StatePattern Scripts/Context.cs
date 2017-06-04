@@ -60,7 +60,6 @@ public class Context : MonoBehaviour
 
     //Mutation
     public bool mutaded = false ;
-    public GameObject parasite;
 
 	// Score
 	public ScoreManager scoreManager;
