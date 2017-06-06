@@ -87,13 +87,17 @@ public class PlayerHealth : MonoBehaviour
 	public IEnumerator returnToTitleScreen(){
 		//Renderer rend = GetComponent<Renderer> ();
 		yield return new WaitForSeconds (2.0f);
+        GL.Clear(true, true, Color.black);
 		SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
-	}
+        Destroy(this);
+    }
 
 	void OnTriggerEnter(Collider collider){
 		if(collider.tag == "KillPlane")
 		{
-			SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
-		}
+            GL.Clear(true, true, Color.black);
+            SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
+            Destroy(this);
+        }
 	}
 }
