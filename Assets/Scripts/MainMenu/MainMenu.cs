@@ -64,6 +64,10 @@ public class MainMenu : MonoBehaviour {
 		{
 			Application.Quit();
 		}
+        else if (buttonIndex == 4) // Back To Main Menu
+        {
+            SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
+        }
     }
 	public void backToMain(){
 		sourceClick.PlayOneShot (clickSound);

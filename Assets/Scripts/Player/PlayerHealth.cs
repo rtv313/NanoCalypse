@@ -88,7 +88,7 @@ public class PlayerHealth : MonoBehaviour
 		//Renderer rend = GetComponent<Renderer> ();
 		yield return new WaitForSeconds (2.0f);
         GL.Clear(true, true, Color.black);
-		SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
+		SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
         Destroy(this);
     }
 
@@ -96,7 +96,7 @@ public class PlayerHealth : MonoBehaviour
 		if(collider.tag == "KillPlane")
 		{
             GL.Clear(true, true, Color.black);
-            SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
             Destroy(this);
         }
 	}
