@@ -1335,6 +1335,16 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114811197282157110, guid: bce1a624e82699842875f2e9281e0b8a,
+        type: 2}
+      propertyPath: startingHealth
+      value: 100000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114811197282157110, guid: bce1a624e82699842875f2e9281e0b8a,
+        type: 2}
+      propertyPath: currentHealth
+      value: 100000000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
   m_IsPrefabParent: 0
@@ -1388,7 +1398,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1275791219502890, guid: 609ac4b8fd8affe4781c1fbe5c323adb, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 609ac4b8fd8affe4781c1fbe5c323adb, type: 2}
@@ -2893,10 +2903,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1548391732938064, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
-      propertyPath: m_Name
-      value: ParasitePrototype (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 114704206615367014, guid: 3178d9163e0e86943ac29a98175ef6dc,
         type: 2}
       propertyPath: patrolPath
@@ -2907,6 +2913,14 @@ Prefab:
       propertyPath: wanderPath
       value: 
       objectReference: {fileID: 1868794610}
+    - target: {fileID: 1548391732938064, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
+      propertyPath: m_Name
+      value: ParasitePrototype (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548391732938064, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
   m_IsPrefabParent: 0

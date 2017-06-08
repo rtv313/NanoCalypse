@@ -93,8 +93,5 @@ public class AttackState : State {
         }
     }
 
-    public void PlayAttackSound()
-    {
-        Debug.Log("LLamado desde animacion");
-    }
+    
 }

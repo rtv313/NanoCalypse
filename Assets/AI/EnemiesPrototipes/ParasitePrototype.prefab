@@ -261,6 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4214606757282476}
   - component: {fileID: 95543698722648324}
+  - component: {fileID: 114237748817310276}
   m_Layer: 0
   m_Name: Parasyte
   m_TagString: Untagged
@@ -566,7 +567,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548391732938064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 110.787285, y: 3.96, z: -278.98947}
+  m_LocalPosition: {x: 107.61, y: 3.95, z: -278.76157}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4500555825109972}
@@ -1464,6 +1465,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parasite: {fileID: 1548391732938064}
   canInstantiate: 1
+--- !u!114 &114237748817310276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1501182237534134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0681237c464e4488d4b8f5ef808a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114305472854508084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1535,7 +1547,7 @@ MonoBehaviour:
   wander: 1
   playerInSight: 0
   target: {fileID: 0}
-  attackDistance: 2
+  attackDistance: 2.3
   timeBetweenAttacks: 0.5
   attackDamage: 10
   playerHealth: {fileID: 0}
