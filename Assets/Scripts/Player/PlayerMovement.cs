@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour {
     // Mouse/Controller
     bool usingMouse = true;
     Vector3 lastControllerPosition = new Vector3(0,0,0);
+    float turningSpeep = 20.0f;
 
     private bool paused = false;
 
@@ -122,12 +123,12 @@ public class PlayerMovement : MonoBehaviour {
             lastControllerPosition = playerToMouse;
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-            playerRigidbody.MoveRotation(newRotation);
+            playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeep));
         }
         else if (!usingMouse) // Controller Axis giving no response
         {
             Quaternion newRotation = Quaternion.LookRotation(lastControllerPosition);
-            playerRigidbody.MoveRotation(newRotation);
+            playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeep));
         }
         else // Using mouse for aim
         {
@@ -140,7 +141,7 @@ public class PlayerMovement : MonoBehaviour {
                 playerToMouse.y = 0f;
 
                 Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-                playerRigidbody.MoveRotation(newRotation);
+                playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeep));
             }
         }
 
