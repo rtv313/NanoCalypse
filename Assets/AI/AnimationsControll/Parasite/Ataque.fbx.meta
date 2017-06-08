@@ -52,7 +52,7 @@ ModelImporter:
     400042: Tail_3
     400044: Tail_3_Ctrl
     4300000: Box001
-    7400000: Take 001
+    7400000: ParasiteAttack
     9500000: //RootNode
     13700000: Box001
   materials:
@@ -65,6 +65,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -77,7 +79,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: ParasiteAttack
       takeName: Take 001
       firstFrame: 10
       lastFrame: 40
@@ -99,7 +101,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.52639294
+        functionName: Attack
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ac26eb3ebaf96404bb7bdc13f36f7fd6,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.42668623
+        functionName: PlayAttackSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ac26eb3ebaf96404bb7bdc13f36f7fd6,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
