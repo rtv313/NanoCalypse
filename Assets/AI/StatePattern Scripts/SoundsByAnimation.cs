@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationEventInterface : MonoBehaviour {
+public class SoundsByAnimation : MonoBehaviour {
+    public AudioSource audioSource;
+    public AudioClip attackAudio;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +19,7 @@ public class AnimationEventInterface : MonoBehaviour {
 
     public void PlayAttackSound()
     {
-        Debug.Log("LLamado desde animacion");
+        audioSource.clip = attackAudio;
+        audioSource.Play();
     }
 }

@@ -664,7 +664,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384258613907614}
   m_LocalRotation: {x: -0, y: -0.93151623, z: -0, w: 0.36369985}
-  m_LocalPosition: {x: 111.46332, y: 3.86, z: -286.27045}
+  m_LocalPosition: {x: 111.86, y: 2.74, z: -278.1224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934009288488382}
@@ -932,6 +932,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23337890616490372
 MeshRenderer:
@@ -963,6 +964,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23560078301155890
 MeshRenderer:
@@ -994,6 +996,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33176432865533812
 MeshFilter:
@@ -1129,7 +1132,6 @@ MonoBehaviour:
   sinkSpeed: 3
   timeDestroy: 5
   mutaded: 1
-  parasite: {fileID: 0}
   scoreManager: {fileID: 0}
 --- !u!114 &114709294184954394
 MonoBehaviour:
@@ -1185,7 +1187,7 @@ MonoBehaviour:
     type: 2}
   radius: 8.34
   power: 400
-  explosionTime: 0.2
+  explosionTime: 3
 --- !u!135 &135575005534233132
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1267,6 +1269,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
@@ -1301,6 +1304,7 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384258613907614}
   m_Enabled: 1
+  m_AgentTypeID: 0
   m_Radius: 0.5000001
   m_Speed: 3
   m_Acceleration: 8

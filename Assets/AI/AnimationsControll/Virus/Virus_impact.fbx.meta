@@ -82,7 +82,7 @@ ModelImporter:
     400072: Spine2
     400074: //RootNode
     4300000: Cylinder003
-    7400000: Take 001
+    7400000: VirusImpact
     9500000: //RootNode
     13700000: Cylinder003
   materials:
@@ -95,6 +95,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -105,7 +107,111 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: VirusImpact
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Ctrl_1
+        weight: 1
+      - path: Ctrl_2
+        weight: 1
+      - path: Ctrl_3
+        weight: 1
+      - path: Ctrl_4
+        weight: 1
+      - path: Ctrl_Leg_1
+        weight: 1
+      - path: Ctrl_Leg_1/ikHandle1
+        weight: 1
+      - path: Ctrl_Leg_2
+        weight: 1
+      - path: Ctrl_Leg_2/ikHandle2
+        weight: 1
+      - path: Ctrl_Leg_3
+        weight: 1
+      - path: Ctrl_Leg_3/ikHandle4
+        weight: 1
+      - path: Ctrl_Leg_4
+        weight: 1
+      - path: Ctrl_Leg_4/ikHandle3
+        weight: 1
+      - path: Cylinder003
+        weight: 1
+      - path: Hip
+        weight: 1
+      - path: Hip/Leg_1
+        weight: 1
+      - path: Hip/Leg_1/joint7
+        weight: 1
+      - path: Hip/Leg_1/joint7/joint8
+        weight: 1
+      - path: Hip/Leg_1/joint7/joint8/joint9
+        weight: 1
+      - path: Hip/Leg_2
+        weight: 1
+      - path: Hip/Leg_2/joint11
+        weight: 1
+      - path: Hip/Leg_2/joint11/joint12
+        weight: 1
+      - path: Hip/Leg_2/joint11/joint12/joint13
+        weight: 1
+      - path: Hip/Leg_3
+        weight: 1
+      - path: Hip/Leg_3/joint19
+        weight: 1
+      - path: Hip/Leg_3/joint19/joint20
+        weight: 1
+      - path: Hip/Leg_3/joint19/joint20/joint21
+        weight: 1
+      - path: Hip/Leg_4
+        weight: 1
+      - path: Hip/Leg_4/joint15
+        weight: 1
+      - path: Hip/Leg_4/joint15/joint16
+        weight: 1
+      - path: Hip/Leg_4/joint15/joint16/joint17
+        weight: 1
+      - path: Hip/Spine
+        weight: 1
+      - path: Hip/Spine/Spine1
+        weight: 1
+      - path: Hip/Spine/Spine1/Spine2
+        weight: 1
+      - path: Hip/Spine/Spine1/Spine2/Head
+        weight: 1
+      - path: nurbsCircle3
+        weight: 1
+      - path: nurbsCircle3/ikHandle5
+        weight: 1
+      - path: nurbsCircle4
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

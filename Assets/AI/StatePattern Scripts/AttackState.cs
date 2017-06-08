@@ -22,6 +22,7 @@ public class AttackState : State {
 
     private void Attack(Context context)
     {
+        
         context.stateString = "Attack";
         context.nav.enabled = false;
         timer += Time.deltaTime;
