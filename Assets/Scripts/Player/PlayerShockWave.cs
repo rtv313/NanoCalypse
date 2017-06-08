@@ -19,7 +19,7 @@ public class PlayerShockWave : MonoBehaviour
 
     void CreateShockWave()
     {
-        if(Input.GetKeyDown(KeyCode.Q) && mineHeat < minesLimit)
+        if(Input.GetButtonDown("Fire2") && mineHeat < minesLimit)
         {
             Instantiate(MinePrefab, MinePosition.transform.position,Quaternion.identity);
             mineHeat++;

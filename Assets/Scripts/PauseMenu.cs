@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
+    public GameObject button1;
+    public GameObject button2;
 
     private Canvas canvas;
 
@@ -20,6 +22,8 @@ public class PauseMenu : MonoBehaviour {
             {
                 go.SendMessage("OnResumeGame", SendMessageOptions.DontRequireReceiver);
                 Time.timeScale = 1.0f;
+                button1.SetActive(false);
+                button2.SetActive(false);
             }
         }
         else
@@ -31,6 +35,8 @@ public class PauseMenu : MonoBehaviour {
             {
                 go.SendMessage("OnPauseGame", SendMessageOptions.DontRequireReceiver);
                 Time.timeScale = 0.0f;
+                button1.SetActive(true);
+                button2.SetActive(true);
             }
         }
     }
@@ -51,11 +57,13 @@ public class PauseMenu : MonoBehaviour {
     void Start () {
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
-	}
+        button1.SetActive(false);
+        button2.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.P))
+		if (Input.GetButtonDown("Pause"))
         {
             handlePause();
         }

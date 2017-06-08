@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour {
     //Animations
     public Animator animator;
 
+    // Mouse/Controller
+    bool usingMouse = true;
+    Vector3 lastControllerPosition = new Vector3(0,0,0);
 
     private bool paused = false;
 
@@ -71,7 +74,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 	void DashCheck(float h, float v) {
-		if (!dashing && trailTimer <= 0.0f && Input.GetKeyDown(KeyCode.Space)) {
+		if (!dashing && trailTimer <= 0.0f && (Input.GetAxis("Dash") > 0.2f || Input.GetKeyDown(KeyCode.Space))) {
 			AudioSource.PlayClipAtPoint (dashingSound, transform.position);
 			dashing = true;
 			tr.enabled = true;
@@ -110,17 +113,41 @@ public class PlayerMovement : MonoBehaviour {
 
     void Turning()
     {
-        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit floorHit;
-
-        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+        // Controller Axis giving values
+        if (Mathf.Abs(Input.GetAxis("AimHorizontal")) > 0.3f || Mathf.Abs(Input.GetAxis("AimVertical")) > 0.3f)
         {
-            Vector3 playerToMouse = floorHit.point - transform.position;
-            //Vector3 playerToMouse = floorHit.point - firingPoint.position;
+            usingMouse = false;
+            Vector3 playerToMouse = new Vector3(Input.GetAxis("AimHorizontal"), 0.0f, Input.GetAxis("AimVertical")) - new Vector3(0.0f,0.0f,0.0f);
             playerToMouse.y = 0f;
+            lastControllerPosition = playerToMouse;
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             playerRigidbody.MoveRotation(newRotation);
+        }
+        else if (!usingMouse) // Controller Axis giving no response
+        {
+            Quaternion newRotation = Quaternion.LookRotation(lastControllerPosition);
+            playerRigidbody.MoveRotation(newRotation);
+        }
+        else // Using mouse for aim
+        {
+            Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit floorHit;
+
+            if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+            {
+                Vector3 playerToMouse = floorHit.point - transform.position;
+                playerToMouse.y = 0f;
+
+                Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+                playerRigidbody.MoveRotation(newRotation);
+            }
+        }
+
+        // Back to using mouse/keyboard
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            usingMouse = true;
         }
     }
 
