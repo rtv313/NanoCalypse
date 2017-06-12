@@ -9,6 +9,7 @@ public class PlayerShockWave : MonoBehaviour
     public float cooldown = 0.3f;
     public GameObject MinePosition;
     private float mineHeat = 1f;
+    private bool releaseButton = false;
 
 
     void Update()
@@ -19,11 +20,13 @@ public class PlayerShockWave : MonoBehaviour
 
     void CreateShockWave()
     {
-        if(Input.GetButtonDown("Fire2") && mineHeat < minesLimit)
+        if(Input.GetAxis("Fire2") > 0.2f && mineHeat < minesLimit && releaseButton)
         {
+            releaseButton = false;
             Instantiate(MinePrefab, MinePosition.transform.position,Quaternion.identity);
             mineHeat++;
         }
+        if (Input.GetAxis("Fire2") < 0.2f) releaseButton = true;
     }
 
     void CoolDown()
