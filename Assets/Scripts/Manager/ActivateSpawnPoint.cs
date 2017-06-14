@@ -10,7 +10,7 @@ public class ActivateSpawnPoint : MonoBehaviour {
     {
 		if (other.tag == "Player") {
 			Debug.Log ("Spawn Point Activated!");
-			spawnPoint.SetActive(true);
+			spawnPoint.GetComponent<SpawnControl>().ActivateSpawn();
 			Destroy(transform.gameObject);
 		}
     }

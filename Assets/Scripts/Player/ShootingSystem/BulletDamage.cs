@@ -84,6 +84,24 @@ public class BulletDamage : MonoBehaviour {
 			else AudioSource.PlayClipAtPoint (enemyDamage, transform.position, 4.0f);
 			Destroy (transform.gameObject);
          }
+        // Hit on spawn Point
+        else if (other.gameObject.tag == "SpawnPoint")
+        {
+            switch (bulletType)
+            {
+                case BulletType.ASSAULT:
+                    other.gameObject.GetComponent<SpawnControl>().health = assaultRifleDamage / 2;
+                    break;
+
+                case BulletType.SHOOTGUN:
+                    other.gameObject.GetComponent<SpawnControl>().health = shootgunDamage / 2;
+                    break;
+
+                case BulletType.SNIPER:
+                    other.gameObject.GetComponent<SpawnControl>().health = sniperDamage / 2;
+                    break;
+            }
+         }
         
 		if (other.gameObject.tag != "Player" && other.gameObject.tag != "Enemy") {
 			AudioSource.PlayClipAtPoint (bulletHitSoft, transform.position);

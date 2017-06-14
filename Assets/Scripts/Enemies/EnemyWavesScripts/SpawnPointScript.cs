@@ -80,8 +80,6 @@ public class SpawnPointScript : MonoBehaviour {
         context.wanderPath = wanderPath;
         context.wander = true;
         GameObject newEnemy= Instantiate(enemy, transform.position, transform.rotation);
-        
-      
         Invoke("coolDown", coolDownTime);
     }
 

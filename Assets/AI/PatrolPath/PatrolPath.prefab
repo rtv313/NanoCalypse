@@ -136,13 +136,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1128438397184556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b02f704d33a7749b1cb865987c4ec1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c9060d7bd607114292fda410484ec00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 4474114205945382}
-  - {fileID: 4272930936797402}
-  - {fileID: 4131222129399768}
+  path: []
   rayColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!135 &135628731977031492
 SphereCollider:
