@@ -70,7 +70,7 @@ public class ShootingSystem : MonoBehaviour {
 		playerInterface.selectWeapon (fireMode);
 		playerInterface.updateHeatBar (rifleHeat, rifleMaxHeat);
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetAxis("Fire1") > 0.2f)
         {
 
             animator.SetBool("Shooting", true);
