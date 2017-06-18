@@ -43,9 +43,10 @@ public class Context : MonoBehaviour
     public float attackDistance = 1.5f;
 
     //Attack Player
+   
+    public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
     public int attackDamage = 10;
     public PlayerHealth playerHealth;
-    public bool animFlagAttack = false;
 
     //Idle Player
     public float idleTimer = 10f;
@@ -101,5 +102,4 @@ public class Context : MonoBehaviour
     {
         dmgFeedback.receiveDamageMutate();
     }
-
 }

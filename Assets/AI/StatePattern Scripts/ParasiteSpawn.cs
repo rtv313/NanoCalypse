@@ -17,7 +17,7 @@ public class ParasiteSpawn : MonoBehaviour {
     {
        GameObject parasiteOne = Instantiate(parasite, transform.position, transform.rotation);
        parasiteOne.GetComponent<Context>().mutaded = true;
-       parasiteOne.GetComponent<Context>().life = 50;
+       parasiteOne.GetComponent<Context>().life = parasiteOne.GetComponent<Context>().life / 2;
        Destroy(gameObject);
      }
 

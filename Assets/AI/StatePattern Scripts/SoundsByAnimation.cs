@@ -5,24 +5,20 @@ using UnityEngine;
 public class SoundsByAnimation : MonoBehaviour {
     public AudioSource audioSource;
     public AudioClip attackAudio;
-    private Context cont;
+    
 
-    // Use this for initialization
-    void Start()
-    {
-        cont= transform.parent.GetComponent<Context>();
-
-    }
-
-
-    // Update is called once per frame
-    void Update () {
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
 		
 	}
 
     public void PlayAttackSound()
     {
-        cont.animFlagAttack = true;
         audioSource.clip = attackAudio;
         audioSource.Play();
     }
