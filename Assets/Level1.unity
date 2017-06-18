@@ -1638,7 +1638,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
@@ -1713,7 +1713,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
@@ -2311,7 +2311,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
@@ -3059,7 +3059,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
@@ -3134,7 +3134,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
@@ -3499,7 +3499,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
@@ -5078,7 +5078,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
@@ -6735,7 +6735,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
@@ -8030,7 +8030,7 @@ Prefab:
         type: 2}
       propertyPath: wanderPath
       value: 
-      objectReference: {fileID: 1426635604}
+      objectReference: {fileID: 28478003}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: target
