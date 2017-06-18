@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: mina_dif
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_CustomRenderQueue: -1
@@ -18,7 +18,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 6fc3e8e503303a048bdbd7b2ea799b61, type: 3}
+        m_Texture: {fileID: 2800000, guid: bbc9a7508208ec84da50151df879553d, type: 3}
         m_Scale: {x: 1, y: -1}
         m_Offset: {x: 0, y: 1}
     - _DetailAlbedoMap:
@@ -38,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a6fa90d2b1c0eee4dbaf4db1a35445f0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 75e8bb3a6ad98044b9c506295b5f4f1c, type: 3}
         m_Scale: {x: 1, y: -1}
         m_Offset: {x: 0, y: 1}
     - _MetallicGlossMap:
@@ -72,4 +72,4 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
