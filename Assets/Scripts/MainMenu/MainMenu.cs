@@ -52,7 +52,6 @@ public class MainMenu : MonoBehaviour {
 			CanvasHelp.enabled = true;
 			TitleCanvas.enabled = false;
 			CanvasCredit.enabled = false;
-			Debug.Log ("Deactive");
         }
         else if (buttonIndex == 2) // Credits
         {
@@ -78,5 +77,10 @@ public class MainMenu : MonoBehaviour {
 	public void buttonOver ()
 	{
 		sourceOver.PlayOneShot (overSound);
+		gameObject.GetComponent<RectTransform> ().sizeDelta = new Vector2 (160f, 28f);
+		Debug.Log ("Scaled");
+	}
+	public void buttonOut(){
+		gameObject.GetComponent<RectTransform> ().sizeDelta = new Vector2 (160f, 30f);
 	}
 }
