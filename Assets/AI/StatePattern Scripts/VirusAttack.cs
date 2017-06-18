@@ -7,6 +7,7 @@ public class VirusAttack : MonoBehaviour
     public GameObject muzzleFlash;
     public float bulletSpeed=10;
 
+   
     public void Attack()
     {
         GameObject flash = Instantiate(muzzleFlash, transform.position, transform.rotation);
