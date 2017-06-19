@@ -218,9 +218,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4619620897599454}
-  - component: {fileID: 33233069461692368}
   - component: {fileID: 136529664606206042}
-  - component: {fileID: 23337890616490372}
   - component: {fileID: 54356547357809010}
   - component: {fileID: 195540375696011590}
   - component: {fileID: 135575005534233132}
@@ -231,6 +229,7 @@ GameObject:
   - component: {fileID: 114913383934990460}
   - component: {fileID: 114720633310393544}
   - component: {fileID: 114835962581751246}
+  - component: {fileID: 114755099016752022}
   m_Layer: 0
   m_Name: BacteriaPrototype
   m_TagString: Enemy
@@ -664,7 +663,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384258613907614}
   m_LocalRotation: {x: -0, y: -0.93151623, z: -0, w: 0.36369985}
-  m_LocalPosition: {x: 111.86, y: 2.74, z: -278.1224}
+  m_LocalPosition: {x: -11.73, y: 5.85, z: -10.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934009288488382}
@@ -934,38 +933,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23337890616490372
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1384258613907614}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 34f9e2bdb615e724787d1701912a5438, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23560078301155890
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1005,13 +972,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141109994620820}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33233069461692368
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1384258613907614}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33900759436914476
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1029,7 +989,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -1122,9 +1082,9 @@ MonoBehaviour:
   playerInSight: 0
   target: {fileID: 0}
   attackDistance: 2
-  timeBetweenAttacks: 0.5
   attackDamage: 10
   playerHealth: {fileID: 0}
+  animFlagAttack: 0
   idleTimer: 10
   idleTime: 3
   remainingDistanceBeforeIdle: 0
@@ -1160,6 +1120,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b510c3bf1498b1b439c665628328ee92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114755099016752022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384258613907614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fe5330157d7464cb4f42413190e6a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToActivate: 0.5
+  flagEnter: 0
 --- !u!114 &114835962581751246
 MonoBehaviour:
   m_ObjectHideFlags: 1
