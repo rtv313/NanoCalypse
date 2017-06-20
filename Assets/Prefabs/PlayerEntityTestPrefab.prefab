@@ -1958,13 +1958,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1277352008431460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4492912837275058}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4009144589659358
 Transform:
   m_ObjectHideFlags: 1
@@ -2721,7 +2721,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1563886284642954}
   m_LocalRotation: {x: 0, y: -0.60871756, z: 0, w: 0.793387}
-  m_LocalPosition: {x: 126.482, y: 3.739, z: -281.195}
+  m_LocalPosition: {x: 13.56, y: 1.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4578923017671572}
@@ -4620,7 +4620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3618fb07fdd574a8e7c8106d90604e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinePrefab: {fileID: 1051721695207192, guid: d331c34fcc463bb43a2ca1defceeaaaa, type: 2}
+  MinePrefab: {fileID: 1979340622244994, guid: 4940c128645e59a478670107e5c165fd, type: 2}
   minesLimit: 5
   cooldown: 0.5
   MinePosition: {fileID: 1277352008431460}

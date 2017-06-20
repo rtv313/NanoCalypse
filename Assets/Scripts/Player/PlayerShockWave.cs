@@ -23,7 +23,7 @@ public class PlayerShockWave : MonoBehaviour
         if(Input.GetAxis("Fire2") > 0.2f && mineHeat < minesLimit && releaseButton)
         {
             releaseButton = false;
-            Instantiate(MinePrefab, MinePosition.transform.position,Quaternion.identity);
+            Instantiate(MinePrefab, MinePosition.transform.position,MinePosition.transform.rotation);
             mineHeat++;
         }
         if (Input.GetAxis("Fire2") < 0.2f) releaseButton = true;
