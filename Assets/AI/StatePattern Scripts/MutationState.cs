@@ -38,15 +38,17 @@ public class MutationState : State {
         context.GetComponent<VirusAttack>().bulletSpeed = 50;
         //change bullet color
         //change enemy color with shader
-        Renderer rend = context.GetComponent<Renderer>();
+        Transform ChildWithRender = context.gameObject.transform.GetChild(2).GetChild(0);
+        Renderer rend = ChildWithRender.gameObject.GetComponent<Renderer>();
         rend.material.color = Color.magenta;
     }
 
     private void bacteriaMutation(Context context)
     {
-        context.nav.speed = 15;
+        context.nav.speed = 12;
         //change enemy color with shader
-        Renderer rend = context.GetComponent<Renderer>();
+        Transform ChildWithRender =  context.gameObject.transform.GetChild(2).GetChild(0);
+        Renderer rend = ChildWithRender.gameObject.GetComponent<Renderer>();
         rend.material.color = Color.yellow;
     }
 

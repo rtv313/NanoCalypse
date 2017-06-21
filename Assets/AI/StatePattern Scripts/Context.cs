@@ -79,6 +79,26 @@ public class Context : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = target.GetComponent<PlayerHealth>();
         dmgFeedback = GetComponent<DamageFeedback>();
+
+        if (enemyType == EnemyType.VIRUS) // for break monotony
+        {
+            float[] variableAttackPosition = new float[4];
+            variableAttackPosition[0] = attackDistance - 9;
+            variableAttackPosition[1] = attackDistance - 6;
+            variableAttackPosition[2] = attackDistance - 3;
+            variableAttackPosition[3] = attackDistance;
+            attackDistance = variableAttackPosition[Random.Range(0, 4)];
+        }
+        else
+        {
+            float[] variableSpeed = new float[4];
+            variableSpeed[0] = nav.speed + 0.5f;
+            variableSpeed[1] = nav.speed - 1.0f;
+            variableSpeed[2] = nav.speed - 0.5f;
+            variableSpeed[3] = nav.speed;
+            nav.speed = variableSpeed[Random.Range(0, 4)];
+        }
+
     }
 
     private void Request()

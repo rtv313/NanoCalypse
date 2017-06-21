@@ -7,12 +7,6 @@ public class ParasiteSpawn : MonoBehaviour {
     public GameObject parasite;
     public bool canInstantiate=true;
 
-	// Use this for initialization
-	 void Update()
-    {
-       
-    }
-
     public void CreateParasites()
     {
        GameObject parasiteOne = Instantiate(parasite, transform.position, transform.rotation);
@@ -23,19 +17,19 @@ public class ParasiteSpawn : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag!="Bullet")
+        if(other.tag=="Player")
           canInstantiate = false;
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag != "Bullet")
+        if (other.tag == "Player")
             canInstantiate = false;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag != "Bullet")
+        if (other.tag == "Player")
             canInstantiate = true;
     }
 

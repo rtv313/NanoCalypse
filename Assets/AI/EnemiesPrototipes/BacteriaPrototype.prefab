@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4561655628808500}
   - component: {fileID: 95452073596169268}
   m_Layer: 0
-  m_Name: Bacteriawalk
+  m_Name: Bacteria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 4445961132737254}
   - component: {fileID: 137266449405495186}
   m_Layer: 0
-  m_Name: bacteria_low_1
+  m_Name: BacteriMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   resetTimeForIdle: 0
   sinkSpeed: 3
   timeDestroy: 5
-  mutaded: 1
+  mutaded: 0
   scoreManager: {fileID: 0}
 --- !u!114 &114709294184954394
 MonoBehaviour:

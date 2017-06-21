@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 4066825928828768}
   - component: {fileID: 137169195269311822}
   m_Layer: 0
-  m_Name: Box001
+  m_Name: ParasityMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
