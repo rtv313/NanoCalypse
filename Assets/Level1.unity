@@ -16,8 +16,8 @@ RenderSettings:
   serializedVersion: 8
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.058
+  m_FogMode: 2
+  m_FogDensity: 0.061
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 51970988}
   - component: {fileID: 51970989}
   m_Layer: 0
-  m_Name: Point light (5)
+  m_Name: Pink_Light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 82504774}
   - component: {fileID: 82504775}
   m_Layer: 0
-  m_Name: Point light (14)
+  m_Name: Green_light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 104256936}
   - component: {fileID: 104256937}
   m_Layer: 0
-  m_Name: Point light (18)
+  m_Name: Green_light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1153,15 +1153,15 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294959103
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
+  m_HDR: 1
   m_AllowMSAA: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -1177,7 +1177,8 @@ Transform:
   m_LocalRotation: {x: 0.41186422, y: 0, z: 0, w: 0.9112452}
   m_LocalPosition: {x: 129.36, y: 29.47, z: -312.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 511482783}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 48.644, y: 0, z: 0}
@@ -1354,7 +1355,7 @@ GameObject:
   - component: {fileID: 141747353}
   - component: {fileID: 141747354}
   m_Layer: 0
-  m_Name: Point light (19)
+  m_Name: Green_light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2537,6 +2538,54 @@ Prefab:
       propertyPath: m_Intensity
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1930160818080780, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530327766801458, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899515583095374, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852832156400140, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461115314946404, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817468569782194, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114834833628914, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651038533481088, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361198244860918, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547045090905750, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913716949366432, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731471458893806, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
   m_IsPrefabParent: 0
@@ -2919,6 +2968,99 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 988127695}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &511482782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 511482783}
+  - component: {fileID: 511482786}
+  - component: {fileID: 511482785}
+  - component: {fileID: 511482784}
+  - component: {fileID: 511482787}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &511482783
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511482782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 118419650}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!92 &511482784
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511482782}
+  m_Enabled: 1
+--- !u!124 &511482785
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511482782}
+  m_Enabled: 1
+--- !u!20 &511482786
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511482782}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 8194
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
+--- !u!114 &511482787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511482782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf604cc9f73d9f746967c1e431595b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513271204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,7 +3071,7 @@ GameObject:
   - component: {fileID: 513271205}
   - component: {fileID: 513271206}
   m_Layer: 0
-  m_Name: Point light (3)
+  m_Name: Pink_Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3038,7 +3180,7 @@ GameObject:
   - component: {fileID: 517516637}
   - component: {fileID: 517516638}
   m_Layer: 0
-  m_Name: Point light (8)
+  m_Name: Pink_Light (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3233,7 +3375,7 @@ GameObject:
   - component: {fileID: 548119630}
   - component: {fileID: 548119631}
   m_Layer: 0
-  m_Name: Point light (21)
+  m_Name: Green_light (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3298,7 +3440,7 @@ GameObject:
   - component: {fileID: 557465096}
   - component: {fileID: 557465097}
   m_Layer: 0
-  m_Name: Point light (12)
+  m_Name: Pink_Light (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5688,7 +5830,7 @@ GameObject:
   - component: {fileID: 1005538916}
   - component: {fileID: 1005538917}
   m_Layer: 0
-  m_Name: Point light (10)
+  m_Name: Pink_Light (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5753,7 +5895,7 @@ GameObject:
   - component: {fileID: 1017338632}
   - component: {fileID: 1017338633}
   m_Layer: 0
-  m_Name: Point light (1)
+  m_Name: Pink_Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5946,7 +6088,7 @@ GameObject:
   - component: {fileID: 1069491153}
   - component: {fileID: 1069491154}
   m_Layer: 0
-  m_Name: Point light (7)
+  m_Name: Pink_Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6595,7 +6737,7 @@ GameObject:
   - component: {fileID: 1198932818}
   - component: {fileID: 1198932819}
   m_Layer: 0
-  m_Name: Point light (16)
+  m_Name: Green_light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7211,7 +7353,7 @@ GameObject:
   - component: {fileID: 1331176012}
   - component: {fileID: 1331176013}
   m_Layer: 0
-  m_Name: Point light (22)
+  m_Name: Green_light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7435,7 +7577,7 @@ GameObject:
   - component: {fileID: 1419684637}
   - component: {fileID: 1419684638}
   m_Layer: 0
-  m_Name: Point light (11)
+  m_Name: Pink_Light (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8004,7 +8146,7 @@ GameObject:
   - component: {fileID: 1483795674}
   - component: {fileID: 1483795675}
   m_Layer: 0
-  m_Name: Point light (4)
+  m_Name: Pink_Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8069,7 +8211,7 @@ GameObject:
   - component: {fileID: 1488926980}
   - component: {fileID: 1488926981}
   m_Layer: 0
-  m_Name: Point light (15)
+  m_Name: Green_light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8134,7 +8276,7 @@ GameObject:
   - component: {fileID: 1508682910}
   - component: {fileID: 1508682911}
   m_Layer: 0
-  m_Name: Point light (20)
+  m_Name: Green_light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9646,7 +9788,7 @@ GameObject:
   - component: {fileID: 1851944082}
   - component: {fileID: 1851944083}
   m_Layer: 0
-  m_Name: Point light (9)
+  m_Name: Pink_Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10516,7 +10658,7 @@ GameObject:
   - component: {fileID: 2011961867}
   - component: {fileID: 2011961868}
   m_Layer: 0
-  m_Name: Point light (2)
+  m_Name: Pink_Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10625,7 +10767,7 @@ GameObject:
   - component: {fileID: 2067960033}
   - component: {fileID: 2067960034}
   m_Layer: 0
-  m_Name: Point light (17)
+  m_Name: Green_light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10760,7 +10902,7 @@ GameObject:
   - component: {fileID: 2120416787}
   - component: {fileID: 2120416788}
   m_Layer: 0
-  m_Name: Point light (6)
+  m_Name: Pink_Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11177,7 +11319,7 @@ GameObject:
   - component: {fileID: 2143429383}
   - component: {fileID: 2143429384}
   m_Layer: 0
-  m_Name: Point light (13)
+  m_Name: Pink_Light (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
