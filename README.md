@@ -1,5 +1,5 @@
 # NanoCalypse
 Upc Master Final Project
 
-ya hemos llegado
+Artistas incluidos en el repositorio.
 
