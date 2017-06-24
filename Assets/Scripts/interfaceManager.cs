@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine;
+
 public class interfaceManager : MonoBehaviour {
 	private Slider HealthBar, HeatBar;
 	private Image WeaponSelector;
 	private int multiplier, scoreNumber, killNumber, multiplierBank, scoreNumberBank, killNumberBank, multiplierNegativeBank;
 	private Text KillCount, ComboMultiplier, Score;
-	private float angle, timmerScoreScound,timmerMultiplierScound;
+	private float angle, timmerScoreScound,timmerMultiplierScound, lowAlpha, highAlpha;
 	private ScoreManager scoreManager;
-
 	private AudioSource sourceScore, sourceMultiplierIncrease,sourceMultiplierDecrease, sourceWeaponSelector;
 	private AudioSource [] sounds;
+	private imageFadin red_img, blue_img, green_img;
 	public AudioClip scoreSound, MultIncSound, MultDecSound, WeaponSelSound;
 	// Use this for initialization
 	void Start () {
+
+		// Weapon images
+		red_img = GameObject.Find("red_image").GetComponent<imageFadin>();
+		blue_img = GameObject.Find("blue_image").GetComponent<imageFadin>();
+		green_img = GameObject.Find("green_image").GetComponent<imageFadin>();
 		// Hide Mouse Cursor
 		//Cursor.visible = false;
 
@@ -59,8 +64,17 @@ public class interfaceManager : MonoBehaviour {
 		timmerScoreScound = Time.time;
 		timmerMultiplierScound = Time.time;
 
+		lowAlpha = 0.1f;
+		highAlpha = 1.0f;
+
+		green_img.SetPositionZ (0);
+		blue_img.SetPositionZ (1);
+		red_img.SetPositionZ (2);
 
 
+		red_img.changeAlpha (highAlpha);
+		blue_img.changeAlpha (lowAlpha);
+		green_img.changeAlpha (lowAlpha);
 
 
 	}
@@ -154,7 +168,14 @@ public class interfaceManager : MonoBehaviour {
 			HeatBar.gameObject.SetActive (true);
 			if (angle != -15) {
 				angle = -15;
+				red_img.changeAlpha (highAlpha);
+				red_img.SetPositionZ (2);
+				blue_img.changeAlpha (lowAlpha);
+				blue_img.SetPositionZ (1);
+				green_img.changeAlpha (lowAlpha);
+				green_img.SetPositionZ (0);
 				sourceWeaponSelector.PlayOneShot(WeaponSelSound);
+
 			}
 
 			break;
@@ -162,6 +183,12 @@ public class interfaceManager : MonoBehaviour {
 			HeatBar.gameObject.SetActive (false);
 			if (angle != 225) {
 				angle = 225;
+				red_img.changeAlpha (lowAlpha);
+				red_img.SetPositionZ (1);
+				blue_img.changeAlpha (highAlpha);
+				blue_img.SetPositionZ (2);
+				green_img.changeAlpha (lowAlpha);
+				green_img.SetPositionZ (0);
 				sourceWeaponSelector.PlayOneShot(WeaponSelSound);
 			}
 
@@ -170,6 +197,12 @@ public class interfaceManager : MonoBehaviour {
 			HeatBar.gameObject.SetActive (false);
 			if (angle != 105) {
 				angle = 105;
+				red_img.changeAlpha (lowAlpha);
+				red_img.SetPositionZ (0);
+				blue_img.changeAlpha (lowAlpha);
+				blue_img.SetPositionZ (1);
+				green_img.changeAlpha (highAlpha);
+				green_img.SetPositionZ (2);
 				sourceWeaponSelector.PlayOneShot(WeaponSelSound);
 			}
 			break;
@@ -177,6 +210,12 @@ public class interfaceManager : MonoBehaviour {
 			HeatBar.gameObject.SetActive (true);
 			if (angle != -15) {
 				angle = -15;
+				red_img.changeAlpha (highAlpha);
+				red_img.SetPositionZ (2);
+				blue_img.changeAlpha (lowAlpha);
+				blue_img.SetPositionZ (1);
+				green_img.changeAlpha (lowAlpha);
+				green_img.SetPositionZ (0);
 				sourceWeaponSelector.PlayOneShot(WeaponSelSound);
 			}
 			break;
