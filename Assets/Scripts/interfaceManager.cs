@@ -104,8 +104,8 @@ public class interfaceManager : MonoBehaviour {
 		}
 
 		KillCount.text = killNumber.ToString() + " K.O.";
-		ComboMultiplier.text = "X  " + multiplier.ToString();
-		Score.text = scoreNumber.ToString() + "  points";
+		ComboMultiplier.text = "x  " + multiplier.ToString();
+		Score.text = scoreNumber.ToString();
 
 			
 	}
