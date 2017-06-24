@@ -43,8 +43,10 @@ public class interfaceManager : MonoBehaviour {
 
 		// Sounds
 
-		/*gameObject.AddComponent<AudioSource> ();
-		gameObject.AddComponent<AudioSource> ();*/
+		gameObject.AddComponent<AudioSource> ();
+		gameObject.AddComponent<AudioSource> ();
+		gameObject.AddComponent<AudioSource> ();
+		gameObject.AddComponent<AudioSource> ();
 		sounds = GetComponents<AudioSource> ();
 
 		sourceScore = sounds [0];

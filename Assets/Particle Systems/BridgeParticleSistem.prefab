@@ -1291,8 +1291,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406935924814360}
-  m_LocalRotation: {x: -0, y: 0.81109154, z: -0, w: 0.58491933}
-  m_LocalPosition: {x: 99.23, y: -0.13, z: -276.65}
+  m_LocalRotation: {x: -0, y: 0.82615566, z: -0, w: -0.56344193}
+  m_LocalPosition: {x: 36.2, y: -0.13, z: -235.2}
   m_LocalScale: {x: 1.2341762, y: 1, z: 0.7468998}
   m_Children:
   - {fileID: 4602611191163392}
@@ -1300,7 +1300,7 @@ Transform:
   - {fileID: 4766624594196268}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 108.40501, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 159.927, z: 0}
 --- !u!4 &4391155269193262
 Transform:
   m_ObjectHideFlags: 1
@@ -2297,7 +2297,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1034112494
+  randomSeed: -772526574
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2609,7 +2609,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -5279,7 +5279,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -589025400
+  randomSeed: 1072490004
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5603,7 +5603,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -8237,7 +8237,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1123046924
+  randomSeed: -1249913578
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8549,7 +8549,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -11591,7 +11591,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -14669,7 +14669,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -17399,7 +17399,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1588637780
+  randomSeed: -883163572
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17711,7 +17711,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -20381,7 +20381,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -827759162
+  randomSeed: 606935445
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -20705,7 +20705,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -23687,7 +23687,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -26393,7 +26393,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1663185424
+  randomSeed: -899022755
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -26717,7 +26717,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -29699,7 +29699,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -32777,7 +32777,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -35507,7 +35507,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1612092145
+  randomSeed: 1617691396
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -35819,7 +35819,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -38861,7 +38861,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -41567,7 +41567,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 444139179
+  randomSeed: -806044959
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -41891,7 +41891,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -44873,7 +44873,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -47951,7 +47951,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -50681,7 +50681,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1026815288
+  randomSeed: -1898600156
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -50993,7 +50993,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -53663,7 +53663,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 472443897
+  randomSeed: 323370422
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -53987,7 +53987,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -56621,7 +56621,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1668328488
+  randomSeed: -985070594
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -56933,7 +56933,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -59975,7 +59975,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -63053,7 +63053,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -65783,7 +65783,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1000802064
+  randomSeed: 762464667
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -66095,7 +66095,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -68789,7 +68789,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -243649413
+  randomSeed: 1885722220
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -69101,7 +69101,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -71771,7 +71771,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1983589633
+  randomSeed: -255533826
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -72095,7 +72095,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -74705,7 +74705,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1967862245
+  randomSeed: -49768618
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -75029,7 +75029,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -78011,7 +78011,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -80717,7 +80717,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2136534702
+  randomSeed: -692845204
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -81041,7 +81041,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -83651,7 +83651,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -370041130
+  randomSeed: 710798080
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -83975,7 +83975,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -86957,7 +86957,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -90035,7 +90035,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -92765,7 +92765,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 327335520
+  randomSeed: 667657340
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -93077,7 +93077,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -95747,7 +95747,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1589676413
+  randomSeed: -277553124
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -96071,7 +96071,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -98681,7 +98681,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1175006024
+  randomSeed: 1840231024
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -99005,7 +99005,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -101639,7 +101639,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2137538065
+  randomSeed: 248338840
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -101951,7 +101951,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -104993,7 +104993,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -107723,7 +107723,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 474805578
+  randomSeed: -1599473533
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -108035,7 +108035,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -110705,7 +110705,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1811991114
+  randomSeed: -2110121
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -111029,7 +111029,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -113639,7 +113639,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1712164652
+  randomSeed: 1413022282
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -113963,7 +113963,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -116597,7 +116597,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 124348954
+  randomSeed: -538069005
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -116909,7 +116909,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -119579,7 +119579,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1250016328
+  randomSeed: -783406281
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -119903,7 +119903,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -122537,7 +122537,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1717579546
+  randomSeed: -799156188
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -122849,7 +122849,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
@@ -125543,7 +125543,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 83194387
+  randomSeed: 812596381
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -125855,7 +125855,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 0
     randomizeRotationDirection: 1
-    maxNumParticles: 500
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 1
     gravityModifier:
