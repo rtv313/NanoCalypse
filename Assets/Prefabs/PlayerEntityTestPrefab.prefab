@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 4740811669925366}
   - component: {fileID: 33188612026439054}
   - component: {fileID: 23508106571094804}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 4286494678604536}
   - component: {fileID: 33163354419411300}
   - component: {fileID: 23472201879576024}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,7 +846,7 @@ GameObject:
   - component: {fileID: 4004382775853942}
   - component: {fileID: 33339864677169628}
   - component: {fileID: 23358162737710046}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,6 +880,22 @@ GameObject:
   - component: {fileID: 33582770919742248}
   m_Layer: 0
   m_Name: DroneSpawnPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1466251423752256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4481556488485600}
+  - component: {fileID: 108635655204508178}
+  m_Layer: 0
+  m_Name: PlayerSpotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -974,7 +990,7 @@ GameObject:
   - component: {fileID: 4449773735767970}
   - component: {fileID: 33630215097015518}
   - component: {fileID: 23217780497262484}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1052,7 @@ GameObject:
   - component: {fileID: 4954303744433588}
   - component: {fileID: 33638485970191282}
   - component: {fileID: 23460756476722716}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1375,7 @@ GameObject:
   - component: {fileID: 4902505091436348}
   - component: {fileID: 33072259688746592}
   - component: {fileID: 23947819004060290}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1516,7 +1532,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4050771286259776}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: MuzzleSniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1636,7 +1652,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4412396699710390}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: MuzzleShotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1747,7 +1763,7 @@ GameObject:
   - component: {fileID: 4086913242733574}
   - component: {fileID: 33774229566377868}
   - component: {fileID: 23017935622916184}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1807,7 +1823,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4831070263027378}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: MuzzleRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1824,7 +1840,7 @@ GameObject:
   - component: {fileID: 4719544283961700}
   - component: {fileID: 33096814161517102}
   - component: {fileID: 23499955229895318}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,7 +1887,7 @@ GameObject:
   - component: {fileID: 4083889953489678}
   - component: {fileID: 33110908599561710}
   - component: {fileID: 23404605571575966}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2714,14 +2730,27 @@ Transform:
   m_Father: {fileID: 4248471124338314}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4481556488485600
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1466251423752256}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 19.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4492912837275058}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4492912837275058
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1563886284642954}
-  m_LocalRotation: {x: 0, y: -0.60871756, z: 0, w: 0.793387}
-  m_LocalPosition: {x: 13.56, y: 1.84, z: 0}
+  m_LocalRotation: {x: 0, y: -0.47285825, z: 0, w: 0.88113856}
+  m_LocalPosition: {x: 128.48, y: 3.739, z: -289.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4578923017671572}
@@ -2734,9 +2763,10 @@ Transform:
   - {fileID: 4756180109803264}
   - {fileID: 4378554691295492}
   - {fileID: 4006318327002780}
+  - {fileID: 4481556488485600}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -56.44, z: 0}
 --- !u!4 &4493593465424996
 Transform:
   m_ObjectHideFlags: 1
@@ -4573,6 +4603,42 @@ TrailRenderer:
     textureMode: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
+--- !u!108 &108635655204508178
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1466251423752256}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 1.0147059, g: 0.619269, b: 0.93834555, a: 1}
+  m_Intensity: 3.69
+  m_Range: 26.219786
+  m_SpotAngle: 66.64081
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 0
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!108 &108993686970871188
 Light:
   m_ObjectHideFlags: 1
@@ -4583,7 +4649,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.99188644, g: 1, b: 0.85294116, a: 1}
-  m_Intensity: 3.71
+  m_Intensity: 20
   m_Range: 15.2
   m_SpotAngle: 48
   m_CookieSize: 10
@@ -4669,6 +4735,7 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   damageImage: {fileID: 0}
   deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
+  damageClip: {fileID: 8300000, guid: 6b895292f18ec73429868b1e01bf0e9d, type: 3}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   animator: {fileID: 95603828559276720}
@@ -4736,7 +4803,7 @@ MonoBehaviour:
   riflePointer: {fileID: 1689917221664448}
   shotgunPointer: {fileID: 1184253607130594}
   sniperPointer: {fileID: 1508056671323438}
-  weaponChange: {fileID: 0}
+  weaponChange: {fileID: 8300000, guid: e53eca37b5fa91b4fbc8e17c28e66b04, type: 3}
   animator: {fileID: 95603828559276720}
 --- !u!120 &120055352604080580
 LineRenderer:

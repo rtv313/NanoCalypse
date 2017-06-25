@@ -9,7 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     public Image HealthBar;
     public Image damageImage;                                   
-    public AudioClip deathClip;                                 
+    public AudioClip deathClip;
+    public AudioClip damageClip;                          
     public float flashSpeed = 5f;                              
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 	private interfaceManager playerInterface;
@@ -62,7 +63,10 @@ public class PlayerHealth : MonoBehaviour
         damaged = true;
         currentHealth -= amount;
 		scoreManager.playerTookDamage();
-        
+        playerAudio.clip = damageClip;
+        //playerAudio.volume = 0.7f;
+        playerAudio.Play();
+
         if (currentHealth <= 0 && isDead == false )
         {
          Death();
