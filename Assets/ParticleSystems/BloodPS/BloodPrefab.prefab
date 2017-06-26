@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 4697270419869412}
   - component: {fileID: 33040281774902048}
   - component: {fileID: 23503950030287994}
+  - component: {fileID: 114848789465414974}
   m_Layer: 0
   m_Name: BloodPrefab
   m_TagString: Untagged
@@ -142,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725288561678184}
   m_LocalRotation: {x: -0.000000016205188, y: 0.99999523, z: 0.0000000021928677, w: -0.0031097927}
-  m_LocalPosition: {x: 2.95, y: 6.68, z: -4.53}
+  m_LocalPosition: {x: 10.691265, y: 7.764182, z: -6.40267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4937984166009932}
@@ -169,7 +170,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725288561678184}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -202,6 +203,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1725288561678184}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114848789465414974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725288561678184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c0e584b1b61684eba3874d8a60839f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 3
 --- !u!198 &198195738339308400
 ParticleSystem:
   m_ObjectHideFlags: 1

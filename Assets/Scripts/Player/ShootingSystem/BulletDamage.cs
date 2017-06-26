@@ -11,6 +11,7 @@ public class BulletDamage : MonoBehaviour {
     public int assaultRifleDamage = 10;
     public int shootgunDamage = 5;
     public int sniperDamage = 30;
+    public GameObject bloodPS;
 
 	void Awake() {
 
@@ -21,6 +22,7 @@ public class BulletDamage : MonoBehaviour {
         if (other.gameObject.tag == "Enemy")
         {
             Context context = other.gameObject.GetComponent<Context>();
+            Instantiate(bloodPS, transform.position, transform.rotation);
 
             switch (bulletType)
             {
