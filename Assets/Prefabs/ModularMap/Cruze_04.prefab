@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33276902319204138}
   - component: {fileID: 23947083242201830}
   m_Layer: 0
-  m_Name: Cruze_4
+  m_Name: Cross_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1749130138551678}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20512, y: 0, z: 0}
+  m_LocalPosition: {x: -88.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4323745940649780}
