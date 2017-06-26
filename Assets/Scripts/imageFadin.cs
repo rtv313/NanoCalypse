@@ -13,6 +13,10 @@ public class imageFadin : MonoBehaviour {
 		scaleSmall = 0.9f;
 		scaleBig = 1.5f;
 	}
+	void Awake(){
+
+		rectAux = this.GetComponent<RectTransform> ();
+	}
 	void Update(){
 		gameObject.GetComponent<Image> ().color = mycolor;
 		rectAux = this.GetComponent<RectTransform> ();
@@ -21,7 +25,6 @@ public class imageFadin : MonoBehaviour {
 			scaleY = Mathf.Lerp (this.GetComponent<RectTransform> ().localScale.y, scaleBig, Time.deltaTime * 3);
 			scaleZ = Mathf.Lerp (this.GetComponent<RectTransform> ().localScale.z, scaleBig, Time.deltaTime * 3);
 			rectAux.localScale = new Vector3(scaleX, scaleY, scaleZ);
-			Debug.Log ("Scaling");
 		}else if(rectAux.GetSiblingIndex() != 2 && this.GetComponent<RectTransform> ().localScale.x >= scaleSmall){
 			rectAux.localScale = new Vector3(scaleSmall, scaleSmall, scaleSmall);
 		}
