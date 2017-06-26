@@ -23,7 +23,8 @@ public class PlayerHealth : MonoBehaviour
     private PlayerMovement playerMovement;                              
     //PlayerShooting playerShooting;                              
     private bool isDead = false;                                                
-    private bool damaged;                                              
+    private bool damaged, godmode, devTools;  
+	public Text godModeText, devToolsText;
 
 
     void Awake()
@@ -35,11 +36,38 @@ public class PlayerHealth : MonoBehaviour
 		// playerShooting = GetComponentInChildren<PlayerShooting>();
         currentHealth = startingHealth;
 		dead = false;
+		godmode = false;
     }
 
 
     void Update()
     {
+		if (Input.GetKeyDown (KeyCode.F12)||Input.GetKeyDown (KeyCode.Delete))
+			devTools = !devTools;
+
+		if (!devTools)
+			godmode = false;
+		
+		if (devTools) {
+			if (Input.GetKeyDown (KeyCode.Alpha0))
+				godmode = !godmode;
+			if (Input.GetKeyDown (KeyCode.Alpha9))
+				currentHealth += 20;
+			if (Input.GetKeyDown (KeyCode.Alpha8))
+				currentHealth -= 20;
+			if (Input.GetKeyDown (KeyCode.Alpha7)) {
+				this.transform.position = GameObject.Find ("end_TP").transform.position;
+			}
+			if (Input.GetKeyDown (KeyCode.Alpha6)) {
+				this.transform.position = GameObject.Find ("mid_TP").transform.position;
+			}
+			if (Input.GetKeyDown (KeyCode.Alpha5)) {
+				this.transform.position = GameObject.Find ("start_TP").transform.position;
+			}
+		
+		}
+		godModeText.enabled = godmode;
+		devToolsText.enabled = devTools;
 		
 		playerInterface.updateHealthBar (currentHealth, startingHealth);
         //if (damaged)
@@ -62,18 +90,20 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        damaged = true;
-        currentHealth -= amount;
-		scoreManager.playerTookDamage();
-        playerAudio.clip = damageClip;
-        //playerAudio.volume = 0.7f;
-        playerAudio.Play();
+		if(!godmode){
+	        damaged = true;
+	        currentHealth -= amount;
+			scoreManager.playerTookDamage();
+	        playerAudio.clip = damageClip;
+	        //playerAudio.volume = 0.7f;
+	        playerAudio.Play();
 
-        if (currentHealth <= 0 && isDead == false )
-        {
-		 	dead = true;
-         	Death();
-        }
+	        if (currentHealth <= 0 && isDead == false )
+	        {
+			 	dead = true;
+	         	Death();
+	        }
+		}
     }
 
 
