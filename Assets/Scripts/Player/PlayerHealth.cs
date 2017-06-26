@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 	private interfaceManager playerInterface;
 	private ScoreManager scoreManager;
+	public bool dead;
     
 
     public Animator animator;                                             
@@ -33,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
 		scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;
 		// playerShooting = GetComponentInChildren<PlayerShooting>();
         currentHealth = startingHealth;
+		dead = false;
     }
 
 
@@ -69,7 +71,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0 && isDead == false )
         {
-         Death();
+		 	dead = true;
+         	Death();
         }
     }
 

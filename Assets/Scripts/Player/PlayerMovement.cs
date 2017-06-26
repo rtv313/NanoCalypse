@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
     //Animations
     public Animator animator;
+	private bool dead;
 
     // Mouse/Controller
     bool usingMouse = true;
@@ -53,9 +54,13 @@ public class PlayerMovement : MonoBehaviour {
 		tr = GetComponent<TrailRenderer> ();
     }
 
+	void Start(){
+		dead = GameObject.Find ("Player").GetComponent<PlayerHealth> ().dead;
+	}
     void FixedUpdate()
     {
-        if (!paused)
+		dead = GameObject.Find ("Player").GetComponent<PlayerHealth> ().dead;
+        if (!paused && !dead)
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
