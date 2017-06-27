@@ -694,8 +694,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399999745233172}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.62, y: 0.95, z: -3.7}
+  m_LocalRotation: {x: -0, y: -0.43040347, z: -0, w: -0.90263665}
+  m_LocalPosition: {x: 26.72, y: 3.42, z: -242.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4438229990897900}
@@ -703,7 +703,7 @@ Transform:
   - {fileID: 4811950379674800}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -309.014, z: 0}
 --- !u!4 &4130081757634694
 Transform:
   m_ObjectHideFlags: 1
@@ -1490,7 +1490,7 @@ MonoBehaviour:
     type: 2}
   muzzleFlash: {fileID: 1397415935309674, guid: 0abcc4a59c7edae489198f9cdd4ddcc7,
     type: 2}
-  bulletSpeed: 30
+  bulletSpeed: 10
 --- !u!114 &114709024908591950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1538,7 +1538,7 @@ MonoBehaviour:
   playerInSight: 0
   target: {fileID: 0}
   attackDistance: 22
-  attackDamage: 10
+  attackDamage: 1
   playerHealth: {fileID: 0}
   animFlagAttack: 0
   idleTimer: 10

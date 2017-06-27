@@ -566,8 +566,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548391732938064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.63, y: 6.28, z: 4.22}
+  m_LocalRotation: {x: -0, y: 0.30202127, z: -0, w: 0.9533012}
+  m_LocalPosition: {x: 68.93, y: 3.9, z: -276.54}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4500555825109972}
@@ -1422,7 +1422,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1604,7 +1604,7 @@ MonoBehaviour:
   playerInSight: 0
   target: {fileID: 0}
   attackDistance: 2.3
-  attackDamage: 10
+  attackDamage: 1
   playerHealth: {fileID: 0}
   animFlagAttack: 0
   idleTimer: 10

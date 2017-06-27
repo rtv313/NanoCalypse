@@ -662,8 +662,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384258613907614}
-  m_LocalRotation: {x: -0, y: -0.93151623, z: -0, w: 0.36369985}
-  m_LocalPosition: {x: -11.73, y: 5.85, z: -10.51}
+  m_LocalRotation: {x: -0, y: -0.9997436, z: -0, w: -0.022646058}
+  m_LocalPosition: {x: -19.3, y: 3.23, z: -123.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934009288488382}
@@ -671,7 +671,7 @@ Transform:
   - {fileID: 4561655628808500}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -137.345, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -182.59499, z: 0}
 --- !u!4 &4628105536959244
 Transform:
   m_ObjectHideFlags: 1
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   playerInSight: 0
   target: {fileID: 0}
   attackDistance: 2
-  attackDamage: 10
+  attackDamage: 1
   playerHealth: {fileID: 0}
   animFlagAttack: 0
   idleTimer: 10
