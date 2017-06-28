@@ -22,7 +22,7 @@ public class SpawnControl : MonoBehaviour {
     //Spawn variables
     public GameObject spawnPos;
     public GameObject deathPs;
-    public int enemyPool = 5;
+    public int numberOfEnemiesForSpawn = 10;
     public int timeToSpawnMin;
     public int timeToSpawnMax;
     public int timeToSpawnEnemyInEffect = 1;
@@ -67,9 +67,10 @@ public class SpawnControl : MonoBehaviour {
         {
             AnimationControl();
 
-            if (flagCreate == true && enemyPool > 0 && finishOpen == true)
+            if (flagCreate == true && numberOfEnemiesForSpawn > 0 && finishOpen == true)
             {
                 createEnemyPrevious();
+                numberOfEnemiesForSpawn--;
             }
         }
         else
@@ -140,8 +141,11 @@ public class SpawnControl : MonoBehaviour {
         context.wanderPath = wanderPath;
         context.wander = true;
         GameObject newEnemy = Instantiate(enemySelected, spawnPos.transform.position, spawnPos.transform.rotation);
+        newEnemy.GetComponent<Context>().enabled = false;
+        newEnemy.GetComponent<SphereCollider>().enabled = false;
         newEnemy.GetComponent<CapsuleCollider>().enabled = false;
         newEnemy.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        newEnemy.GetComponent<Rigidbody>().isKinematic = false;
         newEnemy.GetComponent<Rigidbody>().velocity = newEnemy.transform.forward * speed;
         Invoke("coolDown", coolDownTime);
     }

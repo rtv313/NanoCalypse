@@ -20,10 +20,5 @@ public class ParasiteSpawnManager : MonoBehaviour {
         {
             spawnPointTwo.GetComponent<ParasiteSpawn>().CreateParasites();
         }
-
-        if (spawnPointThree.GetComponent<ParasiteSpawn>().canInstantiate == true)
-        {
-            spawnPointThree.GetComponent<ParasiteSpawn>().CreateParasites();
-        }
     }
 }
