@@ -13,6 +13,8 @@ TagManager:
   - Wound
   - PatrolPath
   - KillPlane
+  - Undefined
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

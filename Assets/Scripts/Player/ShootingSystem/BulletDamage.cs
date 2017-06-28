@@ -92,15 +92,15 @@ public class BulletDamage : MonoBehaviour {
             switch (bulletType)
             {
                 case BulletType.ASSAULT:
-                    other.gameObject.GetComponent<SpawnControl>().health = assaultRifleDamage / 2;
+                    other.gameObject.GetComponent<SpawnControl>().health -= assaultRifleDamage / 2;
                     break;
 
                 case BulletType.SHOOTGUN:
-                    other.gameObject.GetComponent<SpawnControl>().health = shootgunDamage / 2;
+                    other.gameObject.GetComponent<SpawnControl>().health -= shootgunDamage / 2;
                     break;
 
                 case BulletType.SNIPER:
-                    other.gameObject.GetComponent<SpawnControl>().health = sniperDamage / 2;
+                    other.gameObject.GetComponent<SpawnControl>().health -= sniperDamage / 2;
                     break;
             }
          }

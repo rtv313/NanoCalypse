@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FoodAttackManager : MonoBehaviour {
+public class FoodAttackManager : MonoBehaviour
+{
 
     public GameObject[] spawnFoodPositions;
     public GameObject[] food;
     public float[] spawnTimes;
-    public float attackDuration;
     public float timeBetweenAttacks;
     public bool startAttack = false;
     public int waves = 5;
     private int waveCounter = 0;
-    
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         Attack();
     }
@@ -32,7 +32,7 @@ public class FoodAttackManager : MonoBehaviour {
         if (startAttack == true && waveCounter < waves)
         {
             waveCounter++;
-            Debug.Log("FOOD ATTACK WAVE:"+ waveCounter);
+            Debug.Log("FOOD ATTACK WAVE:" + waveCounter);
             float biggestTime = 0;
             float biggetsCooldown = 0;
             for (int i = 0; i < spawnFoodPositions.Length; i++)
@@ -52,8 +52,8 @@ public class FoodAttackManager : MonoBehaviour {
                     biggetsCooldown = timeCooldown;
                 }
 
-               spawnPoint.GetComponent<FoodAttackSpawn>().callAttack(timeToStart, timeCooldown, selectedFood);
-           }
+                spawnPoint.GetComponent<FoodAttackSpawn>().callAttack(timeToStart, timeCooldown, selectedFood);
+            }
             startAttack = false;
             Invoke("ActivateAttack", timeBetweenAttacks + biggestTime + biggetsCooldown);
         }
