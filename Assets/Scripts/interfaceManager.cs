@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class interfaceManager : MonoBehaviour {
 	private Slider HealthBar, HeatBar;
 	private Image WeaponSelector;
-	private int multiplier, scoreNumber, killNumber, multiplierBank, scoreNumberBank, killNumberBank, multiplierNegativeBank;
+	private int multiplier, scoreNumber, killNumber, multiplierBank, scoreNumberBank, killNumberBank, multiplierNegativeBank, highestMult;
 	private Text KillCount, ComboMultiplier, Score;
-	private float angle, timmerScoreScound,timmerMultiplierScound, lowAlpha, highAlpha;
+	private float angle, timmerScoreScound,timmerMultiplierScound, lowAlpha, highAlpha, TimeInLevel;
 	private ScoreManager scoreManager;
 	private AudioSource sourceScore, sourceMultiplierIncrease,sourceMultiplierDecrease, sourceWeaponSelector;
 	private AudioSource [] sounds;
@@ -33,6 +33,7 @@ public class interfaceManager : MonoBehaviour {
 		scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;
 		// Operating values
 		multiplier = 1;
+		highestMult = 1;
 		scoreNumber = 0;
 		killNumber = 0;
 
@@ -75,6 +76,7 @@ public class interfaceManager : MonoBehaviour {
 		red_img.changeAlpha (highAlpha);
 		blue_img.changeAlpha (lowAlpha);
 		green_img.changeAlpha (lowAlpha);
+		TimeInLevel = 0.0f;
 
 
 	}
@@ -116,11 +118,14 @@ public class interfaceManager : MonoBehaviour {
 			killNumberBank--;
 			killNumber++;
 		}
-
+		if (multiplier > highestMult)
+			highestMult = multiplier;
+		
 		KillCount.text = killNumber.ToString() + " K.O.";
 		ComboMultiplier.text = "x  " + multiplier.ToString();
 		Score.text = scoreNumber.ToString();
 
+		TimeInLevel += Time.deltaTime * Time.timeScale;
 			
 	}
 	public void updateHealthBar(float currentHealth, float maxHealth){ // Updates the HealthBar
@@ -228,6 +233,15 @@ public class interfaceManager : MonoBehaviour {
 			sourceScore.Play ();
 			timmerScoreScound = Time.time;
 		}
+	}
+	public float getTimeInLevel(){
+		return TimeInLevel;
+	}
+	public int getScore(){
+		return scoreNumber + scoreNumberBank;
+	}
+	public int getHighestMult (){
+		return highestMult;
 	}
 	private void playMultiplierDecreaseSound(){
 		if (Time.time - timmerMultiplierScound > 2.5f) {
