@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 198761054375517152}
   - component: {fileID: 199944937645449148}
   m_Layer: 0
-  m_Name: ShockWavePs
+  m_Name: BacteriaExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627925735460288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.293758, y: 3.7407825, z: -6.0913806}
+  m_LocalPosition: {x: 12.622838, y: -3.1075918e-16, z: 13.99535}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4388659267957534}
@@ -380,7 +380,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1274058843
+  randomSeed: 1895896985
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3410,7 +3410,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -980638366
+  randomSeed: 1608127517
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3476,7 +3476,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 0.11372549, b: 0, a: 1}
-      maxColor: {r: 0.07586192, g: 0, b: 1, a: 0.5882353}
+      maxColor: {r: 0, g: 1, b: 0.37931037, a: 0.5882353}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6385,7 +6385,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 334498212
+  randomSeed: -1317591255
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6475,7 +6475,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.04082137, b: 0.8455882, a: 1}
+      maxColor: {r: 0, g: 1, b: 0.25517225, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -9451,7 +9451,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1363734245
+  randomSeed: 616481913
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9517,7 +9517,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 0.11372549, b: 0, a: 1}
-      maxColor: {r: 0.27897906, g: 0.11159169, b: 0.9485294, a: 0.5882353}
+      maxColor: {r: 0.2677876, g: 0.9338235, b: 0.4377415, a: 0.5882353}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -12479,7 +12479,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
-  m_SortMode: 2
+  m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 32
   m_CameraVelocityScale: 0
@@ -12581,7 +12581,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
-  m_SortMode: 2
+  m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 32
   m_CameraVelocityScale: 0
