@@ -3131,14 +3131,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 59
       objectReference: {fileID: 0}
-    - target: {fileID: 1384258613907614, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
-      propertyPath: m_Name
-      value: BacteriaPrototype (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4619620897599454, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -182.59499
-      objectReference: {fileID: 0}
     - target: {fileID: 114631780803292564, guid: 65e304356d9786a4393782b6aeab0b9c,
         type: 2}
       propertyPath: patrolPath
@@ -3164,6 +3156,10 @@ Prefab:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 974649347}
+    - target: {fileID: 1384258613907614, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
+      propertyPath: m_Name
+      value: BacteriaPrototype (7)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
   m_IsPrefabParent: 0

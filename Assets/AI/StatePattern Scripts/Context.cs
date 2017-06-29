@@ -66,6 +66,8 @@ public class Context : MonoBehaviour
     // Damage Feedback
     private DamageFeedback dmgFeedback;
 
+    public GameObject explosion;
+
     void Awake()
     {
 		scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;

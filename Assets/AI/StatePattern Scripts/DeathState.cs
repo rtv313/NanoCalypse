@@ -10,11 +10,12 @@ public class DestroyInterfaze : MonoBehaviour
 }
 
 public class DeathState : State {
-
+    private GameObject explosionPS;
     private bool isSinking = false;
     private bool callAnimation = false;
     public override void Handle(Context context)
     {
+        explosionPS = context.explosion;
         context.stateString = "Death";
         AnimationControl(context);
         if (isSinking == true)
@@ -22,6 +23,12 @@ public class DeathState : State {
             Death(context);
         }
         else {
+            if (context.enemyType == Context.EnemyType.BACTERIA)
+            {
+                GameObject explosion = GameObject.Instantiate(explosionPS, context.gameObject.transform.position, 
+                    context.gameObject.transform.localRotation);
+                GameObject.Destroy(explosion, 2.0f);
+            }
             StartSinking(context);
         }
     }
