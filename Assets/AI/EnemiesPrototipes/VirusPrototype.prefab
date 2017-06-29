@@ -1537,7 +1537,7 @@ MonoBehaviour:
   wander: 1
   playerInSight: 0
   target: {fileID: 0}
-  attackDistance: 22
+  attackDistance: 12
   attackDamage: 1
   playerHealth: {fileID: 0}
   animFlagAttack: 0
