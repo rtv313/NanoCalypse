@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 114841375653336494}
   - component: {fileID: 82091810851388792}
   - component: {fileID: 114558780647551630}
+  - component: {fileID: 114679340528232680}
   m_Layer: 0
   m_Name: ParasitePrototype
   m_TagString: Enemy
@@ -530,8 +531,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548391732938064}
-  m_LocalRotation: {x: -0, y: 0.30202127, z: -0, w: 0.9533012}
-  m_LocalPosition: {x: 0.8596208, y: 1.72, z: 12.5503235}
+  m_LocalRotation: {x: -0, y: 0.0073434254, z: -0, w: 0.99997306}
+  m_LocalPosition: {x: 7.24, y: 1.34, z: -5.6092134}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4500555825109972}
@@ -541,7 +542,7 @@ Transform:
   - {fileID: 4933916021124586}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.84200007, z: 0}
 --- !u!4 &4124761044040502
 Transform:
   m_ObjectHideFlags: 1
@@ -896,7 +897,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558730627783964}
   m_LocalRotation: {x: -0, y: -0.0022428145, z: -0, w: 0.9999975}
-  m_LocalPosition: {x: -1.2515831, y: -0.2, z: -0.122906685}
+  m_LocalPosition: {x: -1.11, y: -0.2, z: -0.12}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4698471033327240}
@@ -1406,6 +1407,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToActivate: 0.5
   flagEnter: 0
+--- !u!114 &114679340528232680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548391732938064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a8b1a639bd4214f85f706ad43ddc83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodPrefab: {fileID: 1725288561678184, guid: c6c1c451d1701444db32964d8bd103eb,
+    type: 2}
+  heightPosition: -0.5
 --- !u!114 &114704206615367014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1448,6 +1463,7 @@ MonoBehaviour:
   timeDestroy: 5
   mutaded: 0
   scoreManager: {fileID: 0}
+  explosion: {fileID: 0}
 --- !u!114 &114829741745013568
 MonoBehaviour:
   m_ObjectHideFlags: 1

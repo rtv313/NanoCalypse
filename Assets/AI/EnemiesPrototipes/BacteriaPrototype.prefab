@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 114720633310393544}
   - component: {fileID: 114835962581751246}
   - component: {fileID: 114755099016752022}
+  - component: {fileID: 114489901390291064}
   m_Layer: 0
   m_Name: BacteriaPrototype
   m_TagString: Enemy
@@ -663,7 +664,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384258613907614}
   m_LocalRotation: {x: -0, y: -0.9997436, z: -0, w: -0.022646058}
-  m_LocalPosition: {x: 36.1, y: 3.23, z: -127.9}
+  m_LocalPosition: {x: 6.7943716, y: 0.953, z: -10.529954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934009288488382}
@@ -1051,6 +1052,20 @@ MonoBehaviour:
   personalLastSighting: {x: 0, y: 0, z: 0}
   AllowDroneAttack: 1
   droneRandomAttack: 9
+--- !u!114 &114489901390291064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384258613907614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a8b1a639bd4214f85f706ad43ddc83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodPrefab: {fileID: 1725288561678184, guid: c6c1c451d1701444db32964d8bd103eb,
+    type: 2}
+  heightPosition: 1
 --- !u!114 &114631780803292564
 MonoBehaviour:
   m_ObjectHideFlags: 1
