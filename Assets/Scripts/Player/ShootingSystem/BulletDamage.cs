@@ -21,7 +21,6 @@ public class BulletDamage : MonoBehaviour {
         if (other.gameObject.tag == "Enemy")
         {
             Context context = other.gameObject.GetComponent<Context>();
-            //Instantiate(bloodPS, transform.position, transform.rotation);
 
             switch (bulletType)
             {
