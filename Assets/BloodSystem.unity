@@ -904,41 +904,6 @@ Prefab:
       propertyPath: wanderPath
       value: 
       objectReference: {fileID: 597834278}
-    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
-        type: 2}
-      propertyPath: enemyBacteria
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
-        type: 2}
-      propertyPath: timeToSpawnMin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
-        type: 2}
-      propertyPath: timeToSpawnMax
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
-        type: 2}
-      propertyPath: timeToSpawnEnemyInEffect
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
-        type: 2}
-      propertyPath: coolDownTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
-        type: 2}
-      propertyPath: speed
-      value: 4.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
-        type: 2}
-      propertyPath: enemyType
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1143815183680708, guid: ecedd59edafc3d040931069908ef2fa3, type: 2}
       propertyPath: m_IsActive
       value: 0
