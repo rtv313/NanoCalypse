@@ -5,8 +5,7 @@ using UnityEngine;
 public class AcidDamage : MonoBehaviour {
 
     GameObject player;                         
-    PlayerHealth playerHealth;               
-    EnemyHealth enemyHealth;
+    PlayerHealth playerHealth;  
     public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
     public int attackDamage = 10;
     float timer;
@@ -16,7 +15,6 @@ public class AcidDamage : MonoBehaviour {
         // Setting up the references.
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
-        enemyHealth = GetComponent<EnemyHealth>();
       
     }
 
