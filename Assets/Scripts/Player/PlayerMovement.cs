@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Dash()
 	{
-		Vector3 velocity = dashMovement.normalized * dashSpeed * Time.deltaTime;
+        Vector3 velocity = dashMovement.normalized * dashSpeed * Time.deltaTime;
 		playerRigidbody.MovePosition(transform.position + velocity);
 		currentDashTime -= Time.deltaTime;
 		if (currentDashTime < 0.0f) {

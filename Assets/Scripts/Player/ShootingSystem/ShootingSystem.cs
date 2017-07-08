@@ -47,25 +47,32 @@ public class ShootingSystem : MonoBehaviour {
 
     public Animator animator;
 
+    private PlayerTextureManager texture;
+
     void Start()
     {
         gunAudio = GetComponent<AudioSource>();
         gunParticles = muzzleFlash.GetComponent<ParticleSystem>();
 		playerInterface = GameObject.Find ("GUI").GetComponent<interfaceManager> () as interfaceManager;
 		timeBetweenSwap = Time.time;
+        texture = GetComponent<PlayerTextureManager>();
+        texture.SetAssaulRifleTexture();
+
     }
 
     void Update()
     {
-        if (muzzleTimer > 0.0f) muzzleTimer -= Time.deltaTime;
-        else {
+        if (muzzleTimer > 0.0f)
+            muzzleTimer -= Time.deltaTime;
+        else
+        {
             MuzzleRifle.SetActive(false);
             MuzzleShotgun.SetActive(false);
             MuzzleSniper.SetActive(false);
         }
 
 
-        		SelectWeapon();
+        SelectWeapon();
 		
 		playerInterface.selectWeapon (fireMode);
 		playerInterface.updateHeatBar (rifleHeat, rifleMaxHeat);
@@ -141,9 +148,10 @@ public class ShootingSystem : MonoBehaviour {
                 AudioSource.PlayClipAtPoint(weaponChange, transform.position);
             }
 
-			//cooldown rifle
+			//Cooldown rifle
 			//Mouse Scroll
-			if (Input.GetAxis ("Mouse ScrollWheel") > 0f) {
+			if (Input.GetAxis ("Mouse ScrollWheel") > 0f)
+            {
 				fireMode += 1;
 				if (fireMode > 3)
 					fireMode = 1;
@@ -151,7 +159,8 @@ public class ShootingSystem : MonoBehaviour {
 				timeBetweenSwap = Time.time;
                 AudioSource.PlayClipAtPoint(weaponChange, transform.position);
             }
-			if (Input.GetAxis ("Mouse ScrollWheel") < 0f) {
+			if (Input.GetAxis ("Mouse ScrollWheel") < 0f)
+            {
 				fireMode -= 1;
 				if (fireMode < 1)
 					fireMode = 3;
@@ -160,6 +169,7 @@ public class ShootingSystem : MonoBehaviour {
                 AudioSource.PlayClipAtPoint(weaponChange, transform.position);
             }
 		}
+
 
         if (fireMode == 1)
         {
@@ -179,6 +189,16 @@ public class ShootingSystem : MonoBehaviour {
             shotgunPointer.SetActive(false);
             sniperPointer.SetActive(true);
         }
+
+        if (fireMode == 1 && texture.fireMode != 1)
+            texture.SetAssaulRifleTexture();
+
+        if (fireMode == 2 && texture.fireMode != 2)
+            texture.SetShootgunTexture();
+
+        if (fireMode == 3 && texture.fireMode != 3)
+            texture.SetSniperTexture();
+
     }
 
     void Fire()
