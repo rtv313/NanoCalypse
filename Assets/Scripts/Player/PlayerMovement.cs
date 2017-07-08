@@ -147,6 +147,7 @@ public class PlayerMovement : MonoBehaviour {
 
                 Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
                 playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeep));
+         
             }
         }
 

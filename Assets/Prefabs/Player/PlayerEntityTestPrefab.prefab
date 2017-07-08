@@ -4787,6 +4787,9 @@ MonoBehaviour:
   rifleTexture: {fileID: 2800000, guid: 5e9723b565246b941b6f84ae0dc49419, type: 3}
   shootgunTexture: {fileID: 2800000, guid: 928edbc57695bb44f94e936bdf9b69f2, type: 3}
   sniperTexture: {fileID: 2800000, guid: 810632715af7ca74fa66076d6faedc53, type: 3}
+  red: {r: 1, g: 0, b: 0, a: 0}
+  blue: {r: 0, g: 0.7931037, b: 1, a: 0}
+  green: {r: 0.27170384, g: 0.83823526, b: 0, a: 0}
   fireMode: 1
 --- !u!114 &114354329065691368
 MonoBehaviour:
