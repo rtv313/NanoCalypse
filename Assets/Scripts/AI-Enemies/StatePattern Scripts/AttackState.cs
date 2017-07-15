@@ -6,6 +6,11 @@ public class AttackState : State {
    
     public override void Handle(Context context)
     {
+        int walkState = Animator.StringToHash("Walk");
+        if (context.animator.GetCurrentAnimatorStateInfo(0).nameHash == walkState)
+        {
+            callAnimation = false;
+        }
         AnimationControl(context);
         Attack(context);
         Transition(context);

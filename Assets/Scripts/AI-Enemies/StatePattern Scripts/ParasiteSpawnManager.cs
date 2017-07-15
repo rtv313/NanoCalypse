@@ -6,7 +6,6 @@ public class ParasiteSpawnManager : MonoBehaviour {
 
     public GameObject spawnPointOne;
     public GameObject spawnPointTwo;
-    public GameObject spawnPointThree;
    
     public void CreateParasites()
     {

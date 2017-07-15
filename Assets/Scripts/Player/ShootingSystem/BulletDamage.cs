@@ -37,7 +37,8 @@ public class BulletDamage : MonoBehaviour {
                     {
                         context.receiveDamageMutate();
                     }
-                    else context.receiveDamage();
+                    else
+                        context.receiveDamage();
 
                     break;
 

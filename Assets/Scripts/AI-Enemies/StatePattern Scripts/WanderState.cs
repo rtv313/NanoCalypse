@@ -14,7 +14,7 @@ public class WanderState : State
 
     private void AnimationControl(Context context)
     {
-        if (callAnimation == false)
+        if (callAnimation == true)
         {
             context.animator.SetTrigger("Walk");
             callAnimation = true;

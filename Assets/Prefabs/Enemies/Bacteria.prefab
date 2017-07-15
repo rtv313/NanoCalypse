@@ -664,7 +664,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384258613907614}
   m_LocalRotation: {x: -0, y: -0.9997436, z: -0, w: -0.022646058}
-  m_LocalPosition: {x: 6.7943716, y: 0.953, z: -10.529954}
+  m_LocalPosition: {x: 119.322556, y: 5.26, z: -264.2847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4934009288488382}
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 1
   stateString: Patrol
-  life: 80
+  life: 130
   animator: {fileID: 95452073596169268}
   capsuleCollider: {fileID: 136529664606206042}
   rigidbody: {fileID: 54356547357809010}
@@ -1294,11 +1294,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 1384258613907614}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5000001
-  m_Speed: 3
+  m_Radius: 3.2
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 5
-  m_AngularSpeed: 120
+  m_AngularSpeed: 56
   m_StoppingDistance: 0.8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

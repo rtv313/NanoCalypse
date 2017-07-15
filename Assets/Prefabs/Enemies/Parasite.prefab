@@ -532,7 +532,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548391732938064}
   m_LocalRotation: {x: -0, y: 0.0073434254, z: -0, w: 0.99997306}
-  m_LocalPosition: {x: 7.24, y: 1.34, z: -5.6092134}
+  m_LocalPosition: {x: 115.54922, y: 5.19, z: -267.6734}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4500555825109972}
@@ -1493,7 +1493,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointOne: {fileID: 1072758719243828}
   spawnPointTwo: {fileID: 1558730627783964}
-  spawnPointThree: {fileID: 0}
 --- !u!114 &114930454532507960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1622,7 +1621,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1548391732938064}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5000001
+  m_Radius: 1.5
   m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 5
