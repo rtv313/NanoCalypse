@@ -42,7 +42,8 @@ public class AttackState : State {
             switch (context.enemyType)
             {
                 case Context.EnemyType.VIRUS:
-                    virusAttack(context);
+                    if(context.mutaded == false)
+                        virusAttack(context);
                     break;
              
                 case Context.EnemyType.PARASITE:

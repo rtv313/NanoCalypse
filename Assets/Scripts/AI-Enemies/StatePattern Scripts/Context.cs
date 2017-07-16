@@ -85,9 +85,9 @@ public class Context : MonoBehaviour
         if (enemyType == EnemyType.VIRUS) // for break monotony
         {
             float[] variableAttackPosition = new float[4];
-            variableAttackPosition[0] = attackDistance - 9;
-            variableAttackPosition[1] = attackDistance - 6;
-            variableAttackPosition[2] = attackDistance - 3;
+            variableAttackPosition[0] = attackDistance - 5;
+            variableAttackPosition[1] = attackDistance - 3;
+            variableAttackPosition[2] = attackDistance - 1;
             variableAttackPosition[3] = attackDistance;
             attackDistance = variableAttackPosition[Random.Range(0, 4)];
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySensors : MonoBehaviour {
 
-    public float fieldOfViewAnagle = 110f;
+    public float fieldOfViewAngle = 110f;
     public bool playerInSight=false;
     public Vector3 personalLastSighting;
 
@@ -55,7 +55,7 @@ public class EnemySensors : MonoBehaviour {
 
             Debug.DrawRay(transform.position, direction, Color.green);
 
-            if (angle < fieldOfViewAnagle * 0.5f)
+            if (angle < fieldOfViewAngle * 0.5f)
             {
                 playerInSight = true;
                 Debug.DrawRay(transform.position, direction, Color.red);

@@ -7,6 +7,11 @@ public class WanderState : State
     public override void Handle(Context context)
     {
         context.stateString = "Wander";
+        int idleState = Animator.StringToHash("Idle");
+        if (context.animator.GetCurrentAnimatorStateInfo(0).nameHash == idleState)
+        {
+            callAnimation = false;
+        }
         AnimationControl(context);
         Wander(context);
         Transition(context);
@@ -14,7 +19,7 @@ public class WanderState : State
 
     private void AnimationControl(Context context)
     {
-        if (callAnimation == true)
+        if (callAnimation == false)
         {
             context.animator.SetTrigger("Walk");
             callAnimation = true;
