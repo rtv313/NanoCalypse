@@ -36,7 +36,7 @@ public class VirusLaser : MonoBehaviour {
         float angle = Vector3.Angle(dir, transform.forward);
         Debug.DrawRay(firePoint.position, dir, Color.blue);
 
-       if (Physics.Raycast(firePoint.position, dir, out hit, 100) && targetDistance <= context.attackDistance)
+       if (Physics.Raycast(firePoint.position, dir, out hit, targetDistance) && targetDistance <= context.attackDistance)
        {
             lineRenderer.enabled = true;
             if (hit.transform.gameObject.tag == "Player" && angle < angleForAttack)
