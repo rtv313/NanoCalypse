@@ -20,8 +20,11 @@ public class SoundsByAnimation : MonoBehaviour {
 
     public void PlayAttackSound()
     {
-        cont.animFlagAttack = true;
-        audioSource.clip = attackAudio;
-        audioSource.Play();
+        if (cont.mutaded == false)
+        {
+            cont.animFlagAttack = true;
+            audioSource.clip = attackAudio;
+            audioSource.Play();
+        }
     }
 }

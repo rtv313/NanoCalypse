@@ -8,10 +8,14 @@ public class VirusLaser : MonoBehaviour {
     public int damage = 1;
     public float angleForAttack = 60f;
     public float timerBetweenDamage = 0.5f;
+    public float timerAudioLaser = 1.0f;
+    private float timeAudioLaser = 0.0f;
+    public AudioClip laserAudio;
+    private AudioSource audioSource;
     private Context context;
     private LineRenderer lineRenderer;
     private PlayerHealth playerHealth;
-  
+    
     private float timeForDamage = 0f;
 	// Use this for initialization
 	void Start ()
@@ -19,6 +23,8 @@ public class VirusLaser : MonoBehaviour {
         context = GetComponent<Context>();
         lineRenderer = GetComponent<LineRenderer>();
         playerHealth = context.target.GetComponent<PlayerHealth>();
+        audioSource = GetComponent<AudioSource>();
+        timeAudioLaser = timerAudioLaser;
 	}
     void FixedUpdate()
     {
@@ -36,8 +42,17 @@ public class VirusLaser : MonoBehaviour {
         float angle = Vector3.Angle(dir, transform.forward);
         Debug.DrawRay(firePoint.position, dir, Color.blue);
 
-       if (Physics.Raycast(firePoint.position, dir, out hit, targetDistance) && targetDistance <= context.attackDistance)
-       {
+        if (Physics.Raycast(firePoint.position, dir, out hit, targetDistance) && targetDistance <= context.attackDistance)
+        {
+            if (timeAudioLaser >= timerAudioLaser)
+            {
+                audioSource.clip = laserAudio;
+                audioSource.Play();
+                timeAudioLaser = 0.0f;
+            }
+
+            timeAudioLaser += Time.deltaTime;
+
             lineRenderer.enabled = true;
             if (hit.transform.gameObject.tag == "Player" && angle < angleForAttack)
             {
@@ -57,6 +72,10 @@ public class VirusLaser : MonoBehaviour {
                 lineRenderer.SetPosition(0, firePoint.position);
                 lineRenderer.SetPosition(1, hit.point);
             }
+        }
+        else
+        {
+            timeAudioLaser = timerAudioLaser;
         }
     }
 }
