@@ -47,6 +47,9 @@ public class SpawnControl : MonoBehaviour {
     public AudioClip closeAudio;
     public AudioClip spawnAudio;
 
+    // ActivateMesh
+    public  GameObject activationMesh;
+
     // Use this for initialization
     void Start ()
     {
@@ -76,6 +79,7 @@ public class SpawnControl : MonoBehaviour {
         else
         {
            GameObject deathPsRef= Instantiate(deathPs, transform.position, transform.rotation);
+            activationMesh.GetComponent<ActivateNavMesh>().DestroyActivationMesh();
             Destroy(deathPsRef, 2.0f);
             Destroy(gameObject); 
         }

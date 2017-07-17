@@ -5,6 +5,11 @@ using UnityEngine;
 public class ActivateNavMesh : MonoBehaviour {
 
     // Use this for initialization
+
+    void Start()
+    {
+        transform.parent = null;
+    }
     
 
     void OnTriggerEnter(Collider other)
@@ -17,5 +22,10 @@ public class ActivateNavMesh : MonoBehaviour {
             other.gameObject.GetComponent<ActivateEnemyCollidersNav>().flagEnter = true;
             other.gameObject.GetComponent<SphereCollider>().enabled = true;
         }
+    }
+
+    public void DestroyActivationMesh()
+    {
+        Destroy(gameObject, 10.0f);
     }
 }
