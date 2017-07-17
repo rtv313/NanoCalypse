@@ -34,20 +34,21 @@ public class MutationState : State {
 
     private void virusMutation(Context context)
     {
-       //Change enemy color with shader
-        //Transform ChildWithRender = context.gameObject.transform.GetChild(2).GetChild(0);
-        //Renderer rend = ChildWithRender.gameObject.GetComponent<Renderer>();
-        //rend.material.color = Color.magenta;
+        //Change enemy color with shader
+        Transform ChildWithRender = context.gameObject.transform.GetChild(1).GetChild(0);
+        Renderer rend = ChildWithRender.gameObject.GetComponent<Renderer>();
+        rend.material.mainTexture = context.mutationTexture;
         context.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        
     }
 
     private void bacteriaMutation(Context context)
     {
         context.nav.speed = 12;
         //Change enemy color with shader
-        Transform ChildWithRender =  context.gameObject.transform.GetChild(2).GetChild(0);
+        Transform ChildWithRender =  context.gameObject.transform.GetChild(1).GetChild(0);
         Renderer rend = ChildWithRender.gameObject.GetComponent<Renderer>();
-        rend.material.color = Color.yellow;
+        rend.material.mainTexture = context.mutationTexture;
     }
 
     private void parasiteMutation(Context context)

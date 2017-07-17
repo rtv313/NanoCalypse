@@ -1572,6 +1572,7 @@ MonoBehaviour:
   mutaded: 0
   scoreManager: {fileID: 0}
   explosion: {fileID: 0}
+  mutationTexture: {fileID: 2800000, guid: 99da5bed1cf737340adec0316d098f16, type: 3}
 --- !u!114 &114879321662113872
 MonoBehaviour:
   m_ObjectHideFlags: 1
