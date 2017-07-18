@@ -321,6 +321,11 @@ Prefab:
       propertyPath: wanderPath
       value: 
       objectReference: {fileID: 1431180977}
+    - target: {fileID: 96444124202835760, guid: 65e304356d9786a4393782b6aeab0b9c,
+        type: 2}
+      propertyPath: m_Time
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
   m_IsPrefabParent: 0
