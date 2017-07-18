@@ -15,6 +15,8 @@ public class VirusLaser : MonoBehaviour {
     private Context context;
     private LineRenderer lineRenderer;
     private PlayerHealth playerHealth;
+    public GameObject ImpactLaserEffect;
+    private GameObject instanceImpactLaser;
     
     private float timeForDamage = 0f;
 	// Use this for initialization
@@ -25,13 +27,20 @@ public class VirusLaser : MonoBehaviour {
         playerHealth = context.target.GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
         timeAudioLaser = timerAudioLaser;
+        instanceImpactLaser = Instantiate(ImpactLaserEffect);
+        instanceImpactLaser.active = false;
 	}
     void FixedUpdate()
     {
         if (context.mutaded == true && context.stateString == "Attack")
+        {
             LaserAttack();
+        }
         else
+        {
+            instanceImpactLaser.active = false;
             lineRenderer.enabled = false;
+        }
     }
 
     void LaserAttack()
@@ -44,6 +53,7 @@ public class VirusLaser : MonoBehaviour {
 
         if (Physics.Raycast(firePoint.position, dir, out hit, targetDistance) && targetDistance <= context.attackDistance)
         {
+            instanceImpactLaser.transform.position = hit.point;
             if (timeAudioLaser >= timerAudioLaser)
             {
                 audioSource.clip = laserAudio;
@@ -54,6 +64,7 @@ public class VirusLaser : MonoBehaviour {
             timeAudioLaser += Time.deltaTime;
 
             lineRenderer.enabled = true;
+            instanceImpactLaser.active = true;
             if (hit.transform.gameObject.tag == "Player" && angle < angleForAttack)
             {
                 lineRenderer.SetPosition(0, firePoint.position);
@@ -75,7 +86,7 @@ public class VirusLaser : MonoBehaviour {
         }
         else
         {
-            timeAudioLaser = timerAudioLaser;
+          timeAudioLaser = timerAudioLaser;
         }
     }
 }

@@ -1494,7 +1494,9 @@ MonoBehaviour:
   angleForAttack: 25
   timerBetweenDamage: 1
   timerAudioLaser: 1
-  laserAudio: {fileID: 0}
+  laserAudio: {fileID: 8300000, guid: ca9f3cff8ab27fa4d8c9f1d3a6e96cb5, type: 3}
+  ImpactLaserEffect: {fileID: 1682002780390900, guid: f32a87f82e0463e40ad80e7c6fec424a,
+    type: 2}
 --- !u!114 &114672189679804968
 MonoBehaviour:
   m_ObjectHideFlags: 1
