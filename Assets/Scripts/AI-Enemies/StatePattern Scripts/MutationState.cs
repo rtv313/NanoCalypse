@@ -49,6 +49,8 @@ public class MutationState : State {
         Transform ChildWithRender =  context.gameObject.transform.GetChild(1).GetChild(0);
         Renderer rend = ChildWithRender.gameObject.GetComponent<Renderer>();
         rend.material.mainTexture = context.mutationTexture;
+        context.GetComponent<TrailRenderer>().enabled = true;
+        context.nav.angularSpeed = 200;
     }
 
     private void parasiteMutation(Context context)
