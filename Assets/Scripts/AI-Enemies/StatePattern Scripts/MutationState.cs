@@ -51,6 +51,7 @@ public class MutationState : State {
         rend.material.mainTexture = context.mutationTexture;
         context.GetComponent<TrailRenderer>().enabled = true;
         context.nav.angularSpeed = 200;
+        context.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
     }
 
     private void parasiteMutation(Context context)
