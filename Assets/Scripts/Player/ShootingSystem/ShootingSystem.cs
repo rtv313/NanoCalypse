@@ -17,9 +17,7 @@ public class ShootingSystem : MonoBehaviour {
     public float timeBetweenBulletsAssaultRifle = 0.0f;
     public float timeBetweenBulletsShootgun = 0.0f;
     public float timeBetweenBulletSniperRifle = 0.0f;
-    public float rifleBulletLifeTime = 2.0f;
-    public float shootgunBulletLifeTime = 0.5f;
-    public float sniperBulletLifeTime = 3.0f;
+
     public AudioClip rifleSound;
     public AudioClip shootgunSound;
     public AudioClip sniperSound;
@@ -230,13 +228,11 @@ public class ShootingSystem : MonoBehaviour {
     {
         var main = gunParticles.main;
         main.startColor = new Color(1.0F, 0.0F, 0.0F, 1.0F);
-
-        var bullet = (GameObject)Instantiate(assaultRifleBullet, bulletSpawn.position, bulletSpawn.rotation);
+        var bullet = GetComponent<BulletsPool>().GetRifleBullet(bulletSpawn);
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedRifle;
+        bullet.GetComponent<BulletDamage>().CallDeactivate();
         timer = 0.0f;
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, rifleBulletLifeTime);
         gunAudio.clip = rifleSound;
         gunAudio.Play();
         MuzzleRifle.SetActive(true);
@@ -248,30 +244,31 @@ public class ShootingSystem : MonoBehaviour {
         var main = gunParticles.main;
         main.startColor =  new Color(0.0F, 0.0F, 1.0F, 1.0F);
 
-        var bullet = (GameObject)Instantiate(shootgunBullet, bulletSpawn.position, bulletSpawn.rotation);
+        var bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, 5, bullet.transform.rotation.z);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        Destroy(bullet, shootgunBulletLifeTime);
+        bullet.GetComponent<BulletDamage>().CallDeactivate();
 
-        bullet = (GameObject)Instantiate(shootgunBullet, bulletSpawn.position, bulletSpawn.rotation);
+        bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, 10, bullet.transform.rotation.z);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        Destroy(bullet, shootgunBulletLifeTime);
+        bullet.GetComponent<BulletDamage>().CallDeactivate();
 
-        bullet = (GameObject)Instantiate(shootgunBullet, bulletSpawn.position, bulletSpawn.rotation);
+        bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, -5, bullet.transform.rotation.z);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        Destroy(bullet, shootgunBulletLifeTime);
+        bullet.GetComponent<BulletDamage>().CallDeactivate();
 
-        bullet = (GameObject)Instantiate(shootgunBullet, bulletSpawn.position, bulletSpawn.rotation);
+        bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, -10, bullet.transform.rotation.z);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        Destroy(bullet, shootgunBulletLifeTime);
+        bullet.GetComponent<BulletDamage>().CallDeactivate();
 
-        bullet = (GameObject)Instantiate(shootgunBullet, bulletSpawn.position, bulletSpawn.rotation);
+        bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, bullet.transform.rotation.y, bullet.transform.rotation.z);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        Destroy(bullet, shootgunBulletLifeTime);
+        bullet.GetComponent<BulletDamage>().CallDeactivate();
+
         gunAudio.clip = shootgunSound;
         gunAudio.Play();
         MuzzleShotgun.SetActive(true);
@@ -285,13 +282,12 @@ public class ShootingSystem : MonoBehaviour {
 
         var main = gunParticles.main;
         main.startColor = new Color(0.0F, 1.0F, 0.0F, 1.0F);
-      
-        var bullet = (GameObject)Instantiate(sniperBullet, bulletSpawn.position, bulletSpawn.rotation);
-        // Add velocity to the bullet
+
+        var bullet = GetComponent<BulletsPool>().GetSniperBullet(bulletSpawn);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedSniper;
+        bullet.GetComponent<BulletDamage>().CallDeactivate();
         timer = 0.0f;
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, sniperBulletLifeTime);
+    
         gunAudio.clip = sniperSound;
         gunAudio.Play();
         MuzzleSniper.SetActive(true);

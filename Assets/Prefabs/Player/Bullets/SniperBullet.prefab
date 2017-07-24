@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cdcc80973e22da4f8f73379ca6c142f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletLifeTime: 3
   bulletType: 2
   bulletHitHard: {fileID: 8300000, guid: 751f3ff62ffa0244295878c4a90d3017, type: 3}
   bulletHitSoft: {fileID: 8300000, guid: 5439af764d999f243949cc3f7064cfab, type: 3}

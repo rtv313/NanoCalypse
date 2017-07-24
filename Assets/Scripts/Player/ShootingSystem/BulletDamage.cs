@@ -3,6 +3,7 @@
 public class BulletDamage : MonoBehaviour {
 
     public enum BulletType { ASSAULT, SHOOTGUN,SNIPER };
+    public float bulletLifeTime = 2.0f;
     public BulletType bulletType = BulletType.ASSAULT;
 	public AudioClip bulletHitHard;
 	public AudioClip bulletHitSoft;
@@ -11,10 +12,7 @@ public class BulletDamage : MonoBehaviour {
     public int assaultRifleDamage = 10;
     public int shootgunDamage = 5;
     public int sniperDamage = 30;
-
-	void Awake() {
-
-	}
+  
 
     void OnCollisionEnter(Collision other)
     {
@@ -79,12 +77,15 @@ public class BulletDamage : MonoBehaviour {
             }
 
 			AudioSource.PlayClipAtPoint (bulletHitHard, transform.position);
-			if (context.life <= 0) {
+			if (context.life <= 0)
+            {
 				AudioSource.PlayClipAtPoint (enemyScreech, transform.position, 4.0f);
 			}
-			else AudioSource.PlayClipAtPoint (enemyDamage, transform.position, 4.0f);
-			Destroy (transform.gameObject);
-         }
+			else
+                AudioSource.PlayClipAtPoint (enemyDamage, transform.position, 4.0f);
+
+            DeactivateBullet();
+        }
         // Hit on spawn Point
         else if (other.gameObject.tag == "SpawnPoint")
         {
@@ -104,10 +105,11 @@ public class BulletDamage : MonoBehaviour {
             }
          }
         
-		if (other.gameObject.tag != "Player" && other.gameObject.tag != "Enemy") {
+		if (other.gameObject.tag != "Player" && other.gameObject.tag != "Enemy")
+        {
 			AudioSource.PlayClipAtPoint (bulletHitSoft, transform.position);
-			Destroy (transform.gameObject);
-		}
+            DeactivateBullet();
+        }
     }
 
     bool checkPropMutation()
@@ -119,5 +121,15 @@ public class BulletDamage : MonoBehaviour {
         else
             return false;
 
+    }
+
+    public void CallDeactivate()
+    {
+        Invoke("DeactivateBullet", bulletLifeTime);
+    }
+
+    void DeactivateBullet()
+    {
+        gameObject.SetActive(false);
     }
 }
