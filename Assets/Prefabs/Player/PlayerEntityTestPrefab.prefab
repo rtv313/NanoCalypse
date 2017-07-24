@@ -918,7 +918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1475177705822382
 GameObject:
   m_ObjectHideFlags: 1
@@ -1137,7 +1137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1563886284642954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1158,7 @@ GameObject:
   - component: {fileID: 114354329065691368}
   - component: {fileID: 114144584961248784}
   - component: {fileID: 114348503712072098}
+  - component: {fileID: 114150632379734968}
   m_Layer: 0
   m_Name: PlayerEntityTestPrefab
   m_TagString: Player
@@ -2769,8 +2770,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1563886284642954}
-  m_LocalRotation: {x: 0, y: -0.47285825, z: 0, w: 0.88113856}
-  m_LocalPosition: {x: 110.36376, y: 5.22, z: -272.96283}
+  m_LocalRotation: {x: -0, y: -0.00631532, z: -0, w: 0.9999801}
+  m_LocalPosition: {x: 106.59, y: 11.4, z: -272.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4578923017671572}
@@ -2787,7 +2788,7 @@ Transform:
   - {fileID: 4694484042657592}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -56.44, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.72400004, z: 0}
 --- !u!4 &4493593465424996
 Transform:
   m_ObjectHideFlags: 1
@@ -4772,6 +4773,29 @@ MonoBehaviour:
   timeBetweenAttacks: 2
   startAttack: 0
   waves: 5
+--- !u!114 &114150632379734968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563886284642954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c33590f6451e4043b300113869c75a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rifleBullet: {fileID: 1524784479356734, guid: f65c9e44e37a1844b91473fe4c522b9d,
+    type: 2}
+  shootgunBullet: {fileID: 1417551831203592, guid: 6c8abc802717e7743b4473d035086c1d,
+    type: 2}
+  sniperBullet: {fileID: 1113761969273470, guid: 188d153260e6ee1488eefa0300115993,
+    type: 2}
+  rifleBulletsAmount: 15
+  shootgunBulletsAmount: 10
+  sniperBulletsAmount: 5
+  rifleBullets: []
+  shootgunBullets: []
+  sniperBullets: []
 --- !u!114 &114348503712072098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4916,9 +4940,6 @@ MonoBehaviour:
   timeBetweenBulletsAssaultRifle: 0.15
   timeBetweenBulletsShootgun: 1
   timeBetweenBulletSniperRifle: 1
-  rifleBulletLifeTime: 2
-  shootgunBulletLifeTime: 1.5
-  sniperBulletLifeTime: 3
   rifleSound: {fileID: 8300000, guid: 2a3ab5302aabd2f4b9948bb3d2fc1304, type: 3}
   shootgunSound: {fileID: 8300000, guid: 485f21ad9329cc346b75746b045588df, type: 3}
   sniperSound: {fileID: 8300000, guid: cb9935215934a15419d4c044e2f5ac41, type: 3}
