@@ -53,6 +53,7 @@ public class BulletsPool : MonoBehaviour {
         bullet.transform.position = positionReference.position;
         bullet.transform.rotation = positionReference.rotation;
         bullet.GetComponent<TrailRenderer>().Clear();
+        bullet.GetComponent<BulletDamage>().ResetBulletLifeTime();
         bullet.GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);
         bullet.SetActive(true);
     } 

@@ -229,9 +229,10 @@ public class ShootingSystem : MonoBehaviour {
         var main = gunParticles.main;
         main.startColor = new Color(1.0F, 0.0F, 0.0F, 1.0F);
         var bullet = GetComponent<BulletsPool>().GetRifleBullet(bulletSpawn);
+        bullet.GetComponent<BulletDamage>().EnableShoot();
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedRifle;
-        bullet.GetComponent<BulletDamage>().CallDeactivate();
+        
         timer = 0.0f;
         gunAudio.clip = rifleSound;
         gunAudio.Play();
@@ -246,28 +247,32 @@ public class ShootingSystem : MonoBehaviour {
 
         var bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, 5, bullet.transform.rotation.z);
+        bullet.GetComponent<BulletDamage>().EnableShoot();
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        bullet.GetComponent<BulletDamage>().CallDeactivate();
+  
 
         bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, 10, bullet.transform.rotation.z);
+        bullet.GetComponent<BulletDamage>().EnableShoot();
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        bullet.GetComponent<BulletDamage>().CallDeactivate();
+  
 
         bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, -5, bullet.transform.rotation.z);
+        bullet.GetComponent<BulletDamage>().EnableShoot();
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        bullet.GetComponent<BulletDamage>().CallDeactivate();
+    
 
         bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, -10, bullet.transform.rotation.z);
+        bullet.GetComponent<BulletDamage>().EnableShoot();
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        bullet.GetComponent<BulletDamage>().CallDeactivate();
+
 
         bullet = GetComponent<BulletsPool>().GetShootgunBullet(bulletSpawn);
         bullet.transform.Rotate(bullet.transform.rotation.x, bullet.transform.rotation.y, bullet.transform.rotation.z);
+        bullet.GetComponent<BulletDamage>().EnableShoot();
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedShootgun;
-        bullet.GetComponent<BulletDamage>().CallDeactivate();
 
         gunAudio.clip = shootgunSound;
         gunAudio.Play();
@@ -284,8 +289,8 @@ public class ShootingSystem : MonoBehaviour {
         main.startColor = new Color(0.0F, 1.0F, 0.0F, 1.0F);
 
         var bullet = GetComponent<BulletsPool>().GetSniperBullet(bulletSpawn);
+        bullet.GetComponent<BulletDamage>().EnableShoot();
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeedSniper;
-        bullet.GetComponent<BulletDamage>().CallDeactivate();
         timer = 0.0f;
     
         gunAudio.clip = sniperSound;

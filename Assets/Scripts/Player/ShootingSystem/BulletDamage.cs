@@ -2,17 +2,34 @@
 
 public class BulletDamage : MonoBehaviour {
 
-    public enum BulletType { ASSAULT, SHOOTGUN,SNIPER };
+    public enum BulletType { ASSAULT, SHOOTGUN, SNIPER };
     public float bulletLifeTime = 2.0f;
     public BulletType bulletType = BulletType.ASSAULT;
-	public AudioClip bulletHitHard;
-	public AudioClip bulletHitSoft;
-	public AudioClip enemyDamage;
-	public AudioClip enemyScreech;
+    public AudioClip bulletHitHard;
+    public AudioClip bulletHitSoft;
+    public AudioClip enemyDamage;
+    public AudioClip enemyScreech;
     public int assaultRifleDamage = 10;
     public int shootgunDamage = 5;
     public int sniperDamage = 30;
-  
+    private float resetTime = 0f;
+    private bool shootFlag = false;
+
+    void Awake()
+    {
+        resetTime = bulletLifeTime;
+    }
+
+    void Update()
+    {
+
+        if (shootFlag == true)
+            bulletLifeTime -= Time.deltaTime;
+
+        if (bulletLifeTime <= 0)
+            DeactivateBullet();
+
+    }
 
     void OnCollisionEnter(Collision other)
     {
@@ -76,13 +93,13 @@ public class BulletDamage : MonoBehaviour {
                     break;
             }
 
-			AudioSource.PlayClipAtPoint (bulletHitHard, transform.position);
-			if (context.life <= 0)
+            AudioSource.PlayClipAtPoint(bulletHitHard, transform.position);
+            if (context.life <= 0)
             {
-				AudioSource.PlayClipAtPoint (enemyScreech, transform.position, 4.0f);
-			}
-			else
-                AudioSource.PlayClipAtPoint (enemyDamage, transform.position, 4.0f);
+                AudioSource.PlayClipAtPoint(enemyScreech, transform.position, 4.0f);
+            }
+            else
+                AudioSource.PlayClipAtPoint(enemyDamage, transform.position, 4.0f);
 
             DeactivateBullet();
         }
@@ -103,11 +120,11 @@ public class BulletDamage : MonoBehaviour {
                     other.gameObject.GetComponent<SpawnControl>().health -= sniperDamage / 2;
                     break;
             }
-         }
-        
-		if (other.gameObject.tag != "Player" && other.gameObject.tag != "Enemy")
+        }
+
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Enemy")
         {
-			AudioSource.PlayClipAtPoint (bulletHitSoft, transform.position);
+            AudioSource.PlayClipAtPoint(bulletHitSoft, transform.position);
             DeactivateBullet();
         }
     }
@@ -123,13 +140,19 @@ public class BulletDamage : MonoBehaviour {
 
     }
 
-    public void CallDeactivate()
-    {
-        Invoke("DeactivateBullet", bulletLifeTime);
-    }
-
     void DeactivateBullet()
     {
         gameObject.SetActive(false);
     }
+
+    public void ResetBulletLifeTime()
+    {
+        bulletLifeTime = resetTime;
+        shootFlag = false;
+    }
+
+    public void EnableShoot()
+    {
+        shootFlag = true;
+    } 
 }
