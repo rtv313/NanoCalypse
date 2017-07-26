@@ -12,9 +12,9 @@ public class BulletsPool : MonoBehaviour {
     public int shootgunBulletsAmount = 20;
     public int sniperBulletsAmount = 20;
 
-    public List<GameObject> rifleBullets;
-    public List<GameObject> shootgunBullets;
-    public List<GameObject> sniperBullets;
+    private List<GameObject> rifleBullets;
+    private List<GameObject> shootgunBullets;
+    private List<GameObject> sniperBullets;
 
     // Use this for initialization
     void Start()

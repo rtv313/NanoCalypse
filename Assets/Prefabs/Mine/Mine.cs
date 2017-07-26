@@ -6,19 +6,30 @@ public class Mine : MonoBehaviour
 {
    
     public GameObject Explosion;
-   
-    // Update is called once per frame
-	void Start ()
+    public float lifeTime = 30f;
+    private float resetTime = 0f;
+    private bool droopFlag = false;
+
+    void Awake()
     {
-        Invoke("Destroy", 30.0f);
-	}
+        resetTime = lifeTime;
+    }
+
+    void Update()
+    {
+        if (droopFlag == true)
+            lifeTime -= Time.deltaTime;
+
+        if (lifeTime <= 0)
+            Destroy();
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2)
         {
             Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
-            Destroy(transform.gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -27,14 +38,26 @@ public class Mine : MonoBehaviour
         if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2)
         {
             Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
-            Destroy(transform.gameObject);
+            gameObject.SetActive(false);
         }
     }
 
     void Destroy()
     {
         Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
-        Destroy(transform.gameObject);
+        gameObject.SetActive(false);
+    }
+
+    public void ActiveMine()
+    {
+        droopFlag = true;
+    }
+
+    public void Reset()
+    {
+        droopFlag = false;
+        lifeTime = resetTime;
+        gameObject.SetActive(true);
     }
 }
 

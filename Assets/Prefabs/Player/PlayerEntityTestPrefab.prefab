@@ -1159,6 +1159,7 @@ GameObject:
   - component: {fileID: 114144584961248784}
   - component: {fileID: 114348503712072098}
   - component: {fileID: 114150632379734968}
+  - component: {fileID: 114197150304176840}
   m_Layer: 0
   m_Name: PlayerEntityTestPrefab
   m_TagString: Player
@@ -4793,9 +4794,19 @@ MonoBehaviour:
   rifleBulletsAmount: 15
   shootgunBulletsAmount: 10
   sniperBulletsAmount: 5
-  rifleBullets: []
-  shootgunBullets: []
-  sniperBullets: []
+--- !u!114 &114197150304176840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563886284642954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ed6a69b525d94489b6aa3a5448fcb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mine: {fileID: 1979340622244994, guid: 4940c128645e59a478670107e5c165fd, type: 2}
+  minesAmount: 5
 --- !u!114 &114348503712072098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4826,7 +4837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3618fb07fdd574a8e7c8106d90604e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinePrefab: {fileID: 1979340622244994, guid: 4940c128645e59a478670107e5c165fd, type: 2}
   minesLimit: 5
   cooldown: 0.5
   MinePosition: {fileID: 1277352008431460}
