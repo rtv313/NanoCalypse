@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Explosion: {fileID: 1627925735460288, guid: 1af8049cbe41ce04295f68d9ae7c18ea, type: 2}
+  lifeTime: 5
 --- !u!135 &135318351692131120
 SphereCollider:
   m_ObjectHideFlags: 1

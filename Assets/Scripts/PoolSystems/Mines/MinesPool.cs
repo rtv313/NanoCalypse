@@ -5,19 +5,14 @@ using UnityEngine;
 public class MinesPool : MonoBehaviour {
 
     public GameObject mine;
-    //public GameObject shockWave;
     public int minesAmount = 5;
-
     private List<GameObject> mines;
-    //private List<GameObject> shockWaves;
-
+    
     // Use this for initialization
     void Start ()
     {
-        mines = new List<GameObject>();
-        //shockWaves = new List<GameObject>();
-
-        GameObject mineRef, shockRef;
+       mines = new List<GameObject>();
+       GameObject mineRef;
 
         for (int i = 0; i < minesAmount; i++)
         {

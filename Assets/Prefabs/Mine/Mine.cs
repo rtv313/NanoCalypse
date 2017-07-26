@@ -9,10 +9,16 @@ public class Mine : MonoBehaviour
     public float lifeTime = 30f;
     private float resetTime = 0f;
     private bool droopFlag = false;
+    private ExplosionsMinePool explosionsMinePool;
 
     void Awake()
     {
         resetTime = lifeTime;
+    }
+
+    void Start()
+    {
+        explosionsMinePool = GameObject.FindGameObjectWithTag("Player").GetComponent<ExplosionsMinePool>();
     }
 
     void Update()
@@ -28,7 +34,8 @@ public class Mine : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2)
         {
-            Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
+            GameObject explosion = explosionsMinePool.GetMineExplosion(gameObject.transform);
+            explosion.GetComponent<ShockWave>().EnableExplosion();
             gameObject.SetActive(false);
         }
     }
@@ -37,14 +44,16 @@ public class Mine : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2)
         {
-            Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
+            GameObject explosion = explosionsMinePool.GetMineExplosion(gameObject.transform);
+            explosion.GetComponent<ShockWave>().EnableExplosion();
             gameObject.SetActive(false);
         }
     }
 
     void Destroy()
     {
-        Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
+        GameObject explosion = explosionsMinePool.GetMineExplosion(gameObject.transform);
+        explosion.GetComponent<ShockWave>().EnableExplosion();
         gameObject.SetActive(false);
     }
 
