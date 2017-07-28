@@ -9,7 +9,8 @@ public class ExplosionsMinePool : MonoBehaviour {
     private List<GameObject> mineExplosions;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
 
         mineExplosions = new List<GameObject>();
         GameObject mineExpRef;

@@ -9,10 +9,14 @@ public class DestroyInterfaze : MonoBehaviour
     }
 }
 
-public class DeathState : State {
+public class DeathState : State
+{
+
     private GameObject explosionPS;
     private bool isSinking = false;
     private bool callAnimation = false;
+    private bool exploded = false;
+
     public override void Handle(Context context)
     {
         explosionPS = context.explosion;
@@ -22,12 +26,16 @@ public class DeathState : State {
         {
             Death(context);
         }
-        else {
-            if (context.enemyType == Context.EnemyType.BACTERIA)
+        else
+        {
+            if (context.enemyType == Context.EnemyType.BACTERIA && exploded == false)
             {
-                GameObject explosion = GameObject.Instantiate(explosionPS, context.gameObject.transform.position, 
-                    context.gameObject.transform.localRotation);
-                GameObject.Destroy(explosion, 2.0f);
+                exploded = true;
+                GameObject explosion = GameObject.FindGameObjectWithTag("BacteriaExpPool").GetComponent<BacteriaExplosionsPool>().GetBacteriaExplosion(context.transform);
+                explosion.GetComponent<BacteriaExplosion>().EnableExplosion();
+                DestroyInterfaze destroyInterface = new DestroyInterfaze();
+                destroyInterface.DestroyObject(context.gameObject,0.0f);
+                return;
             }
             StartSinking(context);
         }

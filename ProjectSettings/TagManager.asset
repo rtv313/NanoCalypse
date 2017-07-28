@@ -15,6 +15,7 @@ TagManager:
   - KillPlane
   - Undefined
   - SpawnPoint
+  - BacteriaExpPool
   layers:
   - Default
   - TransparentFX

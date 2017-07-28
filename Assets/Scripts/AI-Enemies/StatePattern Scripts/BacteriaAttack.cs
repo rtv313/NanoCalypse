@@ -5,11 +5,16 @@ public class BacteriaAttack : MonoBehaviour {
     public GameObject explosionParticles;
     public float radius = 5.0F;
     public float power = 100.0F;
-    public float explosionTime = 0.2F;
+    private BacteriaExplosionsPool bacteriaExplosionsPool;
+
+    void Start()
+    {
+        bacteriaExplosionsPool = GameObject.FindGameObjectWithTag("BacteriaExpPool").GetComponent<BacteriaExplosionsPool>();
+    }
 
     public void Attack(Context context)
     {
-        GameObject explosion = Instantiate(explosionParticles,transform.position,transform.localRotation);
+        GameObject explosion = bacteriaExplosionsPool.GetBacteriaExplosion(transform);
         Vector3 explosionPos = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders)
@@ -29,7 +34,7 @@ public class BacteriaAttack : MonoBehaviour {
             }
         }
 
-        Destroy(explosion, explosionTime);
+        explosion.GetComponent<BacteriaExplosion>().EnableExplosion();
         Destroy(transform.gameObject);
     }
 }

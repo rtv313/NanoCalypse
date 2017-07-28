@@ -975,7 +975,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.7
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.5
@@ -1193,7 +1193,6 @@ MonoBehaviour:
     type: 2}
   radius: 8.34
   power: 400
-  explosionTime: 3
 --- !u!135 &135575005534233132
 SphereCollider:
   m_ObjectHideFlags: 1

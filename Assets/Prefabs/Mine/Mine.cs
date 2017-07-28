@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-   
-    public GameObject Explosion;
     public float lifeTime = 30f;
     private float resetTime = 0f;
     private bool droopFlag = false;
