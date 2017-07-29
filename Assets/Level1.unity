@@ -1243,6 +1243,7 @@ GameObject:
   - component: {fileID: 118419646}
   - component: {fileID: 118419652}
   - component: {fileID: 118419651}
+  - component: {fileID: 118419653}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1414,6 +1415,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1819480170}
   smoothing: 5
+--- !u!114 &118419653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118419645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 206f62f75520a034bb97492b1057dbeb, type: 2}
 --- !u!1001 &122812287
 Prefab:
   m_ObjectHideFlags: 0
@@ -4918,6 +4931,7 @@ GameObject:
   - component: {fileID: 511482785}
   - component: {fileID: 511482784}
   - component: {fileID: 511482787}
+  - component: {fileID: 511482788}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -4999,6 +5013,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf604cc9f73d9f746967c1e431595b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &511482788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511482782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 0}
 --- !u!1 &513271204
 GameObject:
   m_ObjectHideFlags: 0
@@ -15782,6 +15808,26 @@ Prefab:
       propertyPath: devToolsText
       value: 
       objectReference: {fileID: 1746349563}
+    - target: {fileID: 108993686970871188, guid: bce1a624e82699842875f2e9281e0b8a,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 9.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 120967514736050752, guid: bce1a624e82699842875f2e9281e0b8a,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 120879796707208042, guid: bce1a624e82699842875f2e9281e0b8a,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 120490323441134370, guid: bce1a624e82699842875f2e9281e0b8a,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
   m_IsPrefabParent: 0
