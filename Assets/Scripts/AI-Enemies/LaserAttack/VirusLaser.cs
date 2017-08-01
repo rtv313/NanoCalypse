@@ -89,6 +89,12 @@ public class VirusLaser : MonoBehaviour {
           timeAudioLaser = timerAudioLaser;
         }
     }
+
+    public void DeactivateLaserLight()
+    {
+        instanceImpactLaser.active = false;
+        lineRenderer.enabled = false;
+    }
 }
 
 

@@ -143,6 +143,8 @@ public class EnemiesPool : MonoBehaviour {
         {
             case Context.EnemyType.VIRUS:
 
+                enemy.GetComponent<VirusLaser>().DeactivateLaserLight();
+
                 if (!virusList.Contains(enemy))
                 {
                     virusList.Add(enemy);
