@@ -29,6 +29,6 @@ public class DeathDroneState : DroneState
         context.capsuleCollider.isTrigger = true;
         isSinking = true;
         DestroyInterfaze destroyInterface = new DestroyInterfaze();
-        destroyInterface.DestroyObject(context.gameObject, context.timeDestroy);
+        destroyInterface.DestroyObject(context.gameObject);
     }
 }

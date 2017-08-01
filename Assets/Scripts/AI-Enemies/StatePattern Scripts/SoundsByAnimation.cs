@@ -26,5 +26,12 @@ public class SoundsByAnimation : MonoBehaviour {
             audioSource.clip = attackAudio;
             audioSource.Play();
         }
+
+        if (cont.enemyType == Context.EnemyType.PARASITE && cont.mutaded == true)
+        {
+            cont.animFlagAttack = true;
+            audioSource.clip = attackAudio;
+            audioSource.Play();
+        }
     }
 }

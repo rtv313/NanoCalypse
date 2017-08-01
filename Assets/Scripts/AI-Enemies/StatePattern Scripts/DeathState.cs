@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class DestroyInterfaze : MonoBehaviour
 {
-    public void DestroyObject(GameObject gameObject, float timeToDestroy)
+
+    public void DestroyObject(GameObject gameObject)
     {
-        Destroy(gameObject, timeToDestroy);
+        EnemiesPool enemiesPool;
+        enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>();
+        enemiesPool.RecicleEnemy(gameObject);
     }
 }
 
@@ -34,7 +37,7 @@ public class DeathState : State
                 GameObject explosion = GameObject.FindGameObjectWithTag("BacteriaExpPool").GetComponent<BacteriaExplosionsPool>().GetBacteriaExplosion(context.transform);
                 explosion.GetComponent<BacteriaExplosion>().EnableExplosion();
                 DestroyInterfaze destroyInterface = new DestroyInterfaze();
-                destroyInterface.DestroyObject(context.gameObject,0.0f);
+                destroyInterface.DestroyObject(context.gameObject);
                 return;
             }
             StartSinking(context);
@@ -64,7 +67,7 @@ public class DeathState : State
         context.capsuleCollider.isTrigger = true;
         isSinking = true;
         DestroyInterfaze destroyInterface = new DestroyInterfaze();
-        destroyInterface.DestroyObject(context.gameObject, context.timeDestroy);
+        destroyInterface.DestroyObject(context.gameObject);
     }
     
 }

@@ -69,6 +69,7 @@ public class Context : MonoBehaviour
 
     //Textures for mutation
     public Texture2D mutationTexture;
+    public Texture2D originalTexture;
 
     void Awake()
     {

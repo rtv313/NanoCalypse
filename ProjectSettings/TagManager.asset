@@ -16,6 +16,7 @@ TagManager:
   - Undefined
   - SpawnPoint
   - BacteriaExpPool
+  - EnemiesPool
   layers:
   - Default
   - TransparentFX

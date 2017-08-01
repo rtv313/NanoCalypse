@@ -50,11 +50,15 @@ public class SpawnControl : MonoBehaviour {
     // ActivateMesh
     public  GameObject activationMesh;
 
+    //Enemy Pool 
+    private EnemiesPool enemiesPool;
+
     // Use this for initialization
     void Start ()
     {
         animatorControl = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>();
     }
 
     public void ActivateSpawn()
@@ -99,15 +103,15 @@ public class SpawnControl : MonoBehaviour {
         switch (enemyType)
         {
             case EnemyType.VIRUS:
-                enemySelected = enemyVirus;
+                enemySelected = enemiesPool.GetEnemy(spawnPos.transform, Context.EnemyType.VIRUS);
                 break;
 
             case EnemyType.BACTERIA:
-                enemySelected = enemyBacteria;
+                enemySelected = enemiesPool.GetEnemy(spawnPos.transform, Context.EnemyType.BACTERIA);
                 break;
 
             case EnemyType.PARASITE:
-                enemySelected = enemyParasite;
+                enemySelected = enemiesPool.GetEnemy(spawnPos.transform, Context.EnemyType.PARASITE);
                 break;
 
             case EnemyType.ALL:
@@ -116,15 +120,15 @@ public class SpawnControl : MonoBehaviour {
                 switch (randomEnemy)
                 {
                     case 0:
-                        enemySelected = enemyVirus;
+                        enemySelected = enemiesPool.GetEnemy(spawnPos.transform, Context.EnemyType.VIRUS);
                         break;
 
                     case 1:
-                        enemySelected = enemyBacteria;
+                        enemySelected = enemiesPool.GetEnemy(spawnPos.transform, Context.EnemyType.BACTERIA);
                         break;
 
                     case 2:
-                        enemySelected = enemyParasite;
+                        enemySelected = enemiesPool.GetEnemy(spawnPos.transform, Context.EnemyType.PARASITE);
                         break;
                 }
 
@@ -144,13 +148,16 @@ public class SpawnControl : MonoBehaviour {
         context.patrolPath = patrolPath;
         context.wanderPath = wanderPath;
         context.wander = true;
-        GameObject newEnemy = Instantiate(enemySelected, spawnPos.transform.position, spawnPos.transform.rotation);
+        GameObject newEnemy = enemySelected;
         newEnemy.GetComponent<Context>().enabled = false;
         newEnemy.GetComponent<SphereCollider>().enabled = false;
         newEnemy.GetComponent<CapsuleCollider>().enabled = false;
         newEnemy.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         newEnemy.GetComponent<Rigidbody>().isKinematic = false;
         newEnemy.GetComponent<Rigidbody>().velocity = newEnemy.transform.forward * speed;
+        float timeActivateColliders = newEnemy.GetComponent<ActivateEnemyCollidersNav>().timeToActivate;
+        newEnemy.GetComponent<ActivateEnemyCollidersNav>().flagEnter=false;
+        newEnemy.GetComponent<ActivateEnemyCollidersNav>().CallActivateColliders();
         Invoke("coolDown", coolDownTime);
     }
 
@@ -167,9 +174,7 @@ public class SpawnControl : MonoBehaviour {
         enemyType = setEnemyType;
     }
 
-   
-
-    //Animation functions
+   //Animation functions
     void AnimationControl()
     {
         if (riseSpawn == true && riseFlag == false) // activate spawn rising

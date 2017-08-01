@@ -9,10 +9,11 @@ public class ParasiteSpawn : MonoBehaviour {
 
     public void CreateParasites()
     {
-       GameObject parasiteOne = Instantiate(parasite, transform.position, transform.rotation);
+       EnemiesPool enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>(); 
+       GameObject parasiteOne = enemiesPool.GetEnemy(transform.transform, Context.EnemyType.PARASITE);
        parasiteOne.GetComponent<Context>().mutaded = true;
        parasiteOne.GetComponent<Context>().life = 50;
-       Destroy(gameObject);
+      // Destroy(gameObject);
      }
 
     void OnTriggerEnter(Collider other)

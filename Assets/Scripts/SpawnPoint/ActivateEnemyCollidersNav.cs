@@ -18,5 +18,11 @@ public class ActivateEnemyCollidersNav : MonoBehaviour {
     void ActivateColliders()
     {
         GetComponent<CapsuleCollider>().enabled = true;
+        GetComponent<CapsuleCollider>().isTrigger = false;
+    }
+
+    public void CallActivateColliders()
+    {
+        Invoke("ActivateColliders", timeToActivate);
     }
  }
