@@ -2235,10 +2235,15 @@ Prefab:
     - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
         type: 2}
       propertyPath: numberOfEnemiesForSpawn
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1143815183680708, guid: ecedd59edafc3d040931069908ef2fa3, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
+        type: 2}
+      propertyPath: enemyType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
