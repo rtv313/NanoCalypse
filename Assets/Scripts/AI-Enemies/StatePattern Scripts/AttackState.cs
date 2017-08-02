@@ -6,7 +6,7 @@ public class AttackState : State {
    
     public override void Handle(Context context)
     {
-        int walkState = Animator.StringToHash("Walk");
+        int walkState = Animator.StringToHash("Walk"); // 81563449
         if (context.animator.GetCurrentAnimatorStateInfo(0).nameHash == walkState)
         {
             callAnimation = false;

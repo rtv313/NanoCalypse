@@ -22,7 +22,9 @@ public class ChaseState : State
             }
             else
             {
-                context.animator.SetTrigger("Walk");
+                float dist = Vector3.Distance(context.target.position, context.transform.position);
+                if (dist > context.attackDistance)
+                    context.animator.SetTrigger("Walk");
             }
             callAnimation = true;
         }

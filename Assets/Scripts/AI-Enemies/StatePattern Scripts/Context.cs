@@ -77,8 +77,13 @@ public class Context : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        path_objs_Patrol = patrolPath.GetComponentsInChildren<Transform>();
-        path_objs_Wander = wanderPath.GetComponentsInChildren<Transform>();
+
+        if(patrolPath != null)
+            path_objs_Patrol = patrolPath.GetComponentsInChildren<Transform>();
+
+        if (wanderPath != null)
+            path_objs_Wander = wanderPath.GetComponentsInChildren<Transform>();
+
         sensors = GetComponent<EnemySensors>();
         state = new WanderState();
         target = GameObject.FindGameObjectWithTag("Player").transform;

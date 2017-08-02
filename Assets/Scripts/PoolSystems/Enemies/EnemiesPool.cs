@@ -72,7 +72,8 @@ public class EnemiesPool : MonoBehaviour {
         enemy.GetComponent<Context>().state = new WanderState();
         enemy.GetComponent<Context>().life = 100;
         enemy.GetComponent<Context>().mutaded = false;
-
+        enemy.GetComponent<Context>().animFlagAttack = false;
+        enemy.GetComponent<Context>().attackDistance = 10.0f;
         enemy.SetActive(true);
     }
 
