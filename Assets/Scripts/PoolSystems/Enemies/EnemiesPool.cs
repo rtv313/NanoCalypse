@@ -16,6 +16,8 @@ public class EnemiesPool : MonoBehaviour {
     public List<GameObject> parasiteList;
     public List<GameObject> bacteriaList;
 
+    public GameObject dummiePath;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -29,6 +31,8 @@ public class EnemiesPool : MonoBehaviour {
         {
             virusRef = Instantiate(virus);
             virusRef.SetActive(false);
+            virusRef.GetComponent<Context>().path_objs_Patrol = dummiePath.GetComponentsInChildren<Transform>();
+            virusRef.GetComponent<Context>().path_objs_Wander = dummiePath.GetComponentsInChildren<Transform>();
             virusList.Add(virusRef);
         }
 
@@ -36,6 +40,8 @@ public class EnemiesPool : MonoBehaviour {
         {
             parasiteRef = Instantiate(parasite);
             parasiteRef.SetActive(false);
+            parasiteRef.GetComponent<Context>().path_objs_Patrol = dummiePath.GetComponentsInChildren<Transform>();
+            parasiteRef.GetComponent<Context>().path_objs_Wander = dummiePath.GetComponentsInChildren<Transform>();
             parasiteList.Add(parasiteRef);
         }
 
@@ -43,6 +49,8 @@ public class EnemiesPool : MonoBehaviour {
         {
             bacteriaRef = Instantiate(bacteria);
             bacteriaRef.SetActive(false);
+            bacteriaRef.GetComponent<Context>().path_objs_Patrol = dummiePath.GetComponentsInChildren<Transform>();
+            bacteriaRef.GetComponent<Context>().path_objs_Wander = dummiePath.GetComponentsInChildren<Transform>();
             bacteriaList.Add(bacteriaRef);
         }
 
@@ -73,7 +81,6 @@ public class EnemiesPool : MonoBehaviour {
         enemy.GetComponent<Context>().life = 100;
         enemy.GetComponent<Context>().mutaded = false;
         enemy.GetComponent<Context>().animFlagAttack = false;
-        enemy.GetComponent<Context>().attackDistance = 10.0f;
         enemy.SetActive(true);
     }
 

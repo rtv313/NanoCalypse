@@ -1157,11 +1157,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91d7299719e09c44680b41e52e554c1b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &843096721 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1399999745233172, guid: 91d7299719e09c44680b41e52e554c1b,
-    type: 2}
-  m_PrefabInternal: {fileID: 843096720}
 --- !u!1 &886326233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,6 +1950,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4383167115478112, guid: 9d58c6f9505238441a274c1c2cd035d4,
     type: 2}
   m_PrefabInternal: {fileID: 1431180976}
+--- !u!1 &1431180978 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1128438397184556, guid: 9d58c6f9505238441a274c1c2cd035d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1431180976}
 --- !u!1 &1453141715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,7 +2602,8 @@ Prefab:
         type: 2}
       propertyPath: virus
       value: 
-      objectReference: {fileID: 843096721}
+      objectReference: {fileID: 1399999745233172, guid: 91d7299719e09c44680b41e52e554c1b,
+        type: 2}
     - target: {fileID: 114890323847703834, guid: ce3e4ea111903bf4bbc14bf19690d7e7,
         type: 2}
       propertyPath: parasite
@@ -2613,6 +2614,11 @@ Prefab:
       propertyPath: bacteria
       value: 
       objectReference: {fileID: 95997572}
+    - target: {fileID: 114890323847703834, guid: ce3e4ea111903bf4bbc14bf19690d7e7,
+        type: 2}
+      propertyPath: dummiePath
+      value: 
+      objectReference: {fileID: 1431180978}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce3e4ea111903bf4bbc14bf19690d7e7, type: 2}
   m_IsPrefabParent: 0
