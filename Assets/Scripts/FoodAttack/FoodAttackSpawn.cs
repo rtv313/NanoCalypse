@@ -18,6 +18,6 @@ public class FoodAttackSpawn : MonoBehaviour
     void Attack()
     {
         available = false;
-        Instantiate(food, transform.position, transform.rotation);
+        Instantiate(food, transform.position, food.transform.rotation);
     }
 }
