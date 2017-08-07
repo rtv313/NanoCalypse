@@ -30,9 +30,11 @@ public class PlayerMovement : MonoBehaviour {
     // Mouse/Controller
     bool usingMouse = true;
     Vector3 lastControllerPosition = new Vector3(0,0,0);
-    float turningSpeep = 20.0f;
+    float turningSpeed = 20.0f;
 
     private bool paused = false;
+    private Vector3 aimPos = new Vector3(0, 0, 0);
+    public float mouseAimDeadzone = 1.0f;
 
     void OnPauseGame()
     {
@@ -79,7 +81,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-	void DashCheck(float h, float v) {
+    void DashCheck(float h, float v) {
 		if (!dashing && trailTimer <= 0.0f && (Input.GetAxis("Dash") > 0.2f || Input.GetKeyDown(KeyCode.Space))) {
 			AudioSource.PlayClipAtPoint (dashingSound, transform.position);
 			dashing = true;
@@ -128,12 +130,12 @@ public class PlayerMovement : MonoBehaviour {
             lastControllerPosition = playerToMouse;
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-            playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeep));
+            playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
         }
         else if (!usingMouse) // Controller Axis giving no response
         {
             Quaternion newRotation = Quaternion.LookRotation(lastControllerPosition);
-            playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeep));
+            playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
         }
         else // Using mouse for aim
         {
@@ -143,10 +145,18 @@ public class PlayerMovement : MonoBehaviour {
             if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
             {
                 Vector3 playerToMouse = floorHit.point - transform.position;
-                playerToMouse.y = 0f;
+                playerToMouse.y = 0.0f;
 
-                Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-                playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeep));
+                // Mouse Aim Deadzone
+                if (playerToMouse.magnitude > 1.0f)
+                {
+
+                    //Debug.DrawLine(transform.position, )
+
+                    Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+                    playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
+
+                }
          
             }
         }
