@@ -17,6 +17,7 @@ TagManager:
   - SpawnPoint
   - BacteriaExpPool
   - EnemiesPool
+  - BulletSpawnPlayer
   layers:
   - Default
   - TransparentFX
