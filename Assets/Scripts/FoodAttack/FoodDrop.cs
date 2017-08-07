@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class FoodDrop : MonoBehaviour {
     public GameObject PsExplosion;
-    public GameObject target;
     private bool targetFlag =false;
     private GameObject targetRef;
+    private FoodAttackPool foodAttackPool;
     // Use this for initialization
     void Start () {
-		
-	}
+
+        foodAttackPool = GameObject.FindGameObjectWithTag("Player").GetComponent<FoodAttackPool>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,9 +25,10 @@ public class FoodDrop : MonoBehaviour {
         {
             collision.gameObject.GetComponent<PlayerHealth>().currentHealth -= 30;
         }
+
         Instantiate(PsExplosion, transform.position, transform.rotation);
-        Destroy(targetRef);
-        Destroy(gameObject);
+        targetRef.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     void FixedUpdate()
@@ -38,7 +41,7 @@ public class FoodDrop : MonoBehaviour {
             {
                 Vector3 targetPos = hit.point;
                 targetPos.y += 0.1f;
-                targetRef=Instantiate(target, targetPos, Quaternion.identity);
+                targetRef = foodAttackPool.GetTarget(targetPos);
             }
         }
     }

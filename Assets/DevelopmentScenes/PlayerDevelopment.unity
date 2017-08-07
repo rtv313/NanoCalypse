@@ -1879,9 +1879,30 @@ Prefab:
       propertyPath: spawnFoodPositions.Array.data[2]
       value: 
       objectReference: {fileID: 26657273}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114144584961248784, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bce1a624e82699842875f2e9281e0b8a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1132233366 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1563886284642954, guid: bce1a624e82699842875f2e9281e0b8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1132233365}
+--- !u!114 &1132233367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1132233366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af85a8bfc6f3fbf4ca2a9722c3abeef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodOne: {fileID: 1724208380967304, guid: daaccf00bf8846f409002b8526051823, type: 2}
+  foodTwo: {fileID: 1701567376120054, guid: 08ccaa0feb834384c8bce03cbf4da97e, type: 2}
+  foodThree: {fileID: 1145731171923754, guid: 4950ac4122e6b844881372f19a27a156, type: 2}
+  target: {fileID: 1056414803419304, guid: e71aea43269dc62419432b55e7f32fae, type: 2}
 --- !u!1 &1329674621
 GameObject:
   m_ObjectHideFlags: 0
