@@ -6,7 +6,6 @@ public class FoodAttackManager : MonoBehaviour
 {
 
     public GameObject[] spawnFoodPositions;
-    public GameObject[] food;
     public float[] spawnTimes;
     public float timeBetweenAttacks;
     public bool startAttack = false;
@@ -37,7 +36,6 @@ public class FoodAttackManager : MonoBehaviour
             float biggetsCooldown = 0;
             for (int i = 0; i < spawnFoodPositions.Length; i++)
             {
-                GameObject selectedFood = food[Random.Range(0, food.Length)];
                 GameObject spawnPoint = spawnFoodPositions[i];
                 float timeToStart = spawnTimes[Random.RandomRange(0, spawnTimes.Length)];
                 float timeCooldown = spawnTimes[Random.RandomRange(0, spawnTimes.Length)];
@@ -52,14 +50,14 @@ public class FoodAttackManager : MonoBehaviour
                     biggetsCooldown = timeCooldown;
                 }
 
-                spawnPoint.GetComponent<FoodAttackSpawn>().callAttack(timeToStart, timeCooldown, selectedFood);
+                spawnPoint.GetComponent<FoodAttackSpawn>().callAttack(timeToStart, timeCooldown);
             }
             startAttack = false;
             Invoke("ActivateAttack", timeBetweenAttacks + biggestTime + biggetsCooldown);
         }
     }
 
-    void ActivateAttack()
+    public void ActivateAttack()
     {
         startAttack = true;
     }
