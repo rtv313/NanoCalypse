@@ -8,8 +8,9 @@ public class FoodAttackPool : MonoBehaviour {
     public GameObject foodTwo;
     public GameObject foodThree;
     public GameObject target;
+    public GameObject foodExplosion;
 
-    private List<GameObject> foodOneList,foodTwoList,foodThreeList, targetList;
+    private List<GameObject> foodOneList,foodTwoList,foodThreeList, targetList,foodExplosionList;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +19,9 @@ public class FoodAttackPool : MonoBehaviour {
         foodTwoList = new List<GameObject>();
         foodThreeList = new List<GameObject>();
         targetList = new List<GameObject>();
+        foodExplosionList = new List<GameObject>();
 
-        GameObject foodRef,targetRef;
+        GameObject foodRef,targetRef,foodExplosionRef;
 
         for (int i = 0; i < 5; i++)
         {
@@ -38,7 +40,10 @@ public class FoodAttackPool : MonoBehaviour {
             targetRef = Instantiate(target);
             targetRef.SetActive(false);
             targetList.Add(targetRef);
-            
+
+            foodExplosionRef = Instantiate(foodExplosion);
+            foodExplosionRef.SetActive(false);
+            foodExplosionList.Add(foodExplosionRef);
         }
 
     }
@@ -46,6 +51,7 @@ public class FoodAttackPool : MonoBehaviour {
     private void PrepareFood(GameObject food, Transform positionReference)
     {
         food.transform.position = positionReference.position;
+        food.GetComponent<FoodDrop>().ResetFlag();
         food.SetActive(true);
     }
 
@@ -132,5 +138,30 @@ public class FoodAttackPool : MonoBehaviour {
         targetList.Add(newTarget);
         PrepareTarget(newTarget, positionReference);
         return newTarget;
+    }
+
+
+    private void PrepareFoodExplosion(GameObject foodExp, Transform positionReference)
+    {
+        foodExp.transform.position = positionReference.position;
+        foodExp.GetComponent<FoodExplosion>().ResetExplosionLifeTime();
+        foodExp.SetActive(true);
+    }
+
+    public GameObject GetFoodExplosion(Transform positionReference)
+    {
+        for (int i = 0; i < foodExplosionList.Count; i++)
+        {
+            if (!foodExplosionList[i].activeInHierarchy)
+            {
+                PrepareFoodExplosion(foodExplosionList[i], positionReference);
+                return foodExplosionList[i];
+            }
+        }
+        GameObject newFoodExp;
+        newFoodExp = Instantiate(foodExplosion);
+        foodExplosionList.Add(newFoodExp);
+        PrepareFoodExplosion(newFoodExp, positionReference);
+        return newFoodExp;
     }
 }
