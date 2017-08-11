@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ShootingSystem : MonoBehaviour {
 
-    public GameObject assaultRifleBullet;
-    public GameObject sniperBullet;
-    public GameObject shootgunBullet;
 	public interfaceManager playerInterface;
     public Transform bulletSpawn;
     public int bulletSpeedRifle=35;
