@@ -65,7 +65,7 @@ public class Context : MonoBehaviour
 
     // Damage Feedback
     private DamageFeedback dmgFeedback;
-    public GameObject explosion;
+   // public GameObject explosion;
 
     //Textures for mutation
     public Texture2D mutationTexture;

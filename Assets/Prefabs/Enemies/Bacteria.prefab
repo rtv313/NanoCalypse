@@ -1077,9 +1077,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8b1a639bd4214f85f706ad43ddc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPrefab: {fileID: 1725288561678184, guid: c6c1c451d1701444db32964d8bd103eb,
+  bloodPrefab: {fileID: 1706357258646438, guid: 98970270b0effee49ac07103e450348f,
     type: 2}
-  heightPosition: 1
+  heightPosition: 0.3
 --- !u!114 &114631780803292564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 1
   stateString: Patrol
-  life: 130
+  life: 100
   animator: {fileID: 95452073596169268}
   capsuleCollider: {fileID: 136529664606206042}
   rigidbody: {fileID: 54356547357809010}
@@ -1122,7 +1122,6 @@ MonoBehaviour:
   timeDestroy: 5
   mutaded: 0
   scoreManager: {fileID: 0}
-  explosion: {fileID: 1222996646645640, guid: 1cf3b1911ff4eb84fb2ed50756da7d28, type: 2}
   mutationTexture: {fileID: 2800000, guid: f234ee4a4dd33774e9f1db4fec370433, type: 3}
   originalTexture: {fileID: 2800000, guid: 1f88b171a817d904f84d9545eae1271e, type: 3}
 --- !u!114 &114709294184954394
@@ -1190,8 +1189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2418e644d0ec5e49afeb1a7389c0db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParticles: {fileID: 1222996646645640, guid: 1cf3b1911ff4eb84fb2ed50756da7d28,
-    type: 2}
   radius: 8.34
   power: 400
 --- !u!135 &135575005534233132
@@ -1228,9 +1225,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 5
+  m_Height: 6.79
   m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 2.46, z: -0.34}
 --- !u!136 &136798583632982332
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96bdc5297e20e6498303cacf4efa796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ripple: {fileID: 1000010135208026, guid: 31703e60449cde24d8bdcbcb2d3ba090, type: 2}
+  ripple: {fileID: 1968216951677126, guid: 2b889ce82aa21ca4ca63b9c41a5f5d56, type: 2}
 --- !u!135 &135326104825598888
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -45,7 +45,7 @@ public class FoodExplosion : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2.5)
         {
-            other.gameObject.GetComponent<Context>().life = 0;
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage (15);
         }
 
         Debug.Log("Collision");
@@ -55,7 +55,7 @@ public class FoodExplosion : MonoBehaviour {
     {
         if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2.5)
         {
-            other.gameObject.GetComponent<Context>().life = 0;
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(15);
         }
 
         Debug.Log("Collision");

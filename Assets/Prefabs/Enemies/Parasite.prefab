@@ -242,7 +242,6 @@ GameObject:
   - component: {fileID: 54917772624393478}
   - component: {fileID: 195297268977509754}
   - component: {fileID: 135491882044982216}
-  - component: {fileID: 136049897990596792}
   - component: {fileID: 114704206615367014}
   - component: {fileID: 114829741745013568}
   - component: {fileID: 114503074501931384}
@@ -253,6 +252,7 @@ GameObject:
   - component: {fileID: 82091810851388792}
   - component: {fileID: 114558780647551630}
   - component: {fileID: 114679340528232680}
+  - component: {fileID: 136665657921192582}
   m_Layer: 0
   m_Name: Parasite
   m_TagString: Enemy
@@ -1239,8 +1239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2418e644d0ec5e49afeb1a7389c0db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParticles: {fileID: 1397415935309674, guid: 0abcc4a59c7edae489198f9cdd4ddcc7,
-    type: 2}
   radius: 8.34
   power: 400
 --- !u!114 &114110236561107862
@@ -1336,9 +1334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8b1a639bd4214f85f706ad43ddc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPrefab: {fileID: 1725288561678184, guid: c6c1c451d1701444db32964d8bd103eb,
+  bloodPrefab: {fileID: 1251538883139978, guid: 11fc1cabfc6fd114abd9348c0a4f09e4,
     type: 2}
-  heightPosition: -0.5
+  heightPosition: -1
 --- !u!114 &114704206615367014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1381,7 +1379,6 @@ MonoBehaviour:
   timeDestroy: 5
   mutaded: 0
   scoreManager: {fileID: 0}
-  explosion: {fileID: 0}
   mutationTexture: {fileID: 0}
   originalTexture: {fileID: 0}
 --- !u!114 &114829741745013568
@@ -1448,7 +1445,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136049897990596792
+--- !u!136 &136665657921192582
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1457,10 +1454,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.26
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 1.5, z: -0.51}
 --- !u!136 &136790486080444874
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1470,10 +1467,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.51
   m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0.25}
 --- !u!137 &137169195269311822
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

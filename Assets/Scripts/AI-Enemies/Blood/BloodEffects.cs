@@ -12,9 +12,9 @@ public class BloodEffects : MonoBehaviour
         {
             Vector3 spawnPosition = transform.position;
             spawnPosition.y += heightPosition;
-            Quaternion rotateSpawnPosition = other.transform.rotation;
-            rotateSpawnPosition.y = 180;
-            Instantiate(bloodPrefab, spawnPosition, rotateSpawnPosition);
+            Quaternion rotateSpawnPosition = Quaternion.LookRotation(other.transform.position - transform.position ) ;
+            var newBlood = Instantiate(bloodPrefab, spawnPosition, rotateSpawnPosition);
+            newBlood.transform.parent = transform;
         }
     }
 

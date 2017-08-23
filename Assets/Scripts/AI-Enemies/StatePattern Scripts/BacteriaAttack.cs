@@ -2,7 +2,6 @@
 
 public class BacteriaAttack : MonoBehaviour {
 
-    public GameObject explosionParticles;
     public float radius = 5.0F;
     public float power = 100.0F;
     private BacteriaExplosionsPool bacteriaExplosionsPool;

@@ -91,7 +91,10 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
 		if(!godmode){
-	        damaged = true;
+
+            gameObject.GetComponent<PlayerDamageEffects>().ActivateSparks();
+
+            damaged = true;
 	        currentHealth -= amount;
 			scoreManager.playerTookDamage();
 	        playerAudio.clip = damageClip;

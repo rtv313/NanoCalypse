@@ -481,8 +481,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399999745233172}
-  m_LocalRotation: {x: -0, y: 0.7346061, z: -0, w: 0.67849386}
-  m_LocalPosition: {x: 120.67, y: 8.54, z: -263.54}
+  m_LocalRotation: {x: -0, y: 0.82750696, z: -0, w: -0.56145555}
+  m_LocalPosition: {x: 116.08, y: 4.71, z: -265.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4137526883785594}
@@ -745,7 +745,7 @@ Transform:
   m_GameObject: {fileID: 1007404127481106}
   m_LocalRotation: {x: -0, y: -0.7346061, z: 0, w: 0.67849386}
   m_LocalPosition: {x: 0, y: 0.94, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2247871, y: 1.2247869, z: 1.2247869}
   m_Children:
   - {fileID: 4976510969120336}
   - {fileID: 4675997983598960}
@@ -1073,8 +1073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2418e644d0ec5e49afeb1a7389c0db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParticles: {fileID: 1397415935309674, guid: 0abcc4a59c7edae489198f9cdd4ddcc7,
-    type: 2}
   radius: 8.34
   power: 400
 --- !u!114 &114282708631448390
@@ -1196,7 +1194,6 @@ MonoBehaviour:
   timeDestroy: 5
   mutaded: 0
   scoreManager: {fileID: 0}
-  explosion: {fileID: 0}
   mutationTexture: {fileID: 2800000, guid: f713488a0b67d5c4a8d3953e1e0c09d8, type: 3}
   originalTexture: {fileID: 2800000, guid: 93a798399a3a12e4883eb2afa9615b48, type: 3}
 --- !u!114 &114879321662113872
@@ -1222,7 +1219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8b1a639bd4214f85f706ad43ddc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPrefab: {fileID: 1725288561678184, guid: c6c1c451d1701444db32964d8bd103eb,
+  bloodPrefab: {fileID: 1332374147108846, guid: ee50a317cf2a73a499310614ab0aa993,
     type: 2}
   heightPosition: 1
 --- !u!120 &120010465799675668
@@ -1349,10 +1346,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.9
-  m_Height: 5.45
+  m_Radius: 0.26
+  m_Height: 6.4
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 1.7, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: 2.81, z: -0.00000008940697}
 --- !u!137 &137556325151706188
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
