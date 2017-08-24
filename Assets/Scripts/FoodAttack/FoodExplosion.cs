@@ -38,6 +38,7 @@ public class FoodExplosion : MonoBehaviour {
     {
         collider = gameObject.GetComponent<SphereCollider>();
         collider.enabled = false;
+        EnableExplosion();
         Invoke("activateTrigger", 0.4f);
     }
 
