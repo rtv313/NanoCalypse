@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.061
+  m_FogDensity: 0.021
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -1243,6 +1243,7 @@ GameObject:
   - component: {fileID: 118419646}
   - component: {fileID: 118419652}
   - component: {fileID: 118419651}
+  - component: {fileID: 118419653}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1314,7 +1315,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 118419645}
   m_LocalRotation: {x: 0.41186422, y: 0, z: 0, w: 0.9112452}
-  m_LocalPosition: {x: 128.4, y: 15.8, z: -300.2}
+  m_LocalPosition: {x: 125.17, y: 15.8, z: -298.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 511482783}
@@ -1414,6 +1415,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1724077715}
   smoothing: 5
+--- !u!114 &118419653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 118419645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 206f62f75520a034bb97492b1057dbeb, type: 2}
 --- !u!1001 &122812287
 Prefab:
   m_ObjectHideFlags: 0
@@ -4881,6 +4894,7 @@ GameObject:
   - component: {fileID: 511482785}
   - component: {fileID: 511482784}
   - component: {fileID: 511482787}
+  - component: {fileID: 511482788}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -4962,6 +4976,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf604cc9f73d9f746967c1e431595b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &511482788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 511482782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 206f62f75520a034bb97492b1057dbeb, type: 2}
 --- !u!1 &513271204
 GameObject:
   m_ObjectHideFlags: 0
@@ -17925,6 +17951,36 @@ Prefab:
       propertyPath: devToolsText
       value: 
       objectReference: {fileID: 1746349563}
+    - target: {fileID: 198064039942290430, guid: 01e8e783fb874f04e9caa430a87eed3d,
+        type: 2}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198064039942290430, guid: 01e8e783fb874f04e9caa430a87eed3d,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1780848730
+      objectReference: {fileID: 0}
+    - target: {fileID: 198396171019957140, guid: 01e8e783fb874f04e9caa430a87eed3d,
+        type: 2}
+      propertyPath: randomSeed
+      value: 106345507
+      objectReference: {fileID: 0}
+    - target: {fileID: 198396171019957140, guid: 01e8e783fb874f04e9caa430a87eed3d,
+        type: 2}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198248172500312578, guid: 01e8e783fb874f04e9caa430a87eed3d,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1101334291
+      objectReference: {fileID: 0}
+    - target: {fileID: 198248172500312578, guid: 01e8e783fb874f04e9caa430a87eed3d,
+        type: 2}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01e8e783fb874f04e9caa430a87eed3d, type: 2}
   m_IsPrefabParent: 0
