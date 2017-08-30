@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerMovement : MonoBehaviour {
 	public float playerGravity = -9.8f;
@@ -77,8 +78,40 @@ public class PlayerMovement : MonoBehaviour {
 
 			Turning ();
 			Animating (h, v);
-			
+
+            UpdateWalkingAnimation(h, v);
         }
+    }
+
+    private void UpdateWalkingAnimation(float h, float v)
+    {
+        Vector2 playerDirection = new Vector2(transform.forward.x, transform.forward.z);
+        Vector2 playerMovement = new Vector2(h, v);
+        float angle = Vector2.Angle(playerDirection, playerMovement);
+        // Checking for back walking
+        bool backwards = (angle >= 135.0 && angle < 225.0);
+        animator.SetBool("WalkingBack", backwards);
+        // Checking for strafing
+        if (angle > 45.0 && angle < 135.0)
+        {
+            float dot = playerMovement.x * (-playerDirection.y) + playerMovement.y * playerDirection.x;
+            if (dot > 0) // Left
+            {
+                animator.SetBool("WalkingRight", false);
+                animator.SetBool("WalkingLeft", true);
+            }
+            else // Right
+            {
+                animator.SetBool("WalkingRight", true);
+                animator.SetBool("WalkingLeft", false);
+            }
+        }
+        else
+        {
+            animator.SetBool("WalkingRight", false);
+            animator.SetBool("WalkingLeft", false);
+        }
+
     }
 
     void DashCheck(float h, float v) {
