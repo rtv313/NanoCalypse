@@ -10,6 +10,15 @@ public class CameraFollow : MonoBehaviour
     private bool debug = false;
     private Camera cam;
 
+    public enum CameraMode {
+        FOLLOW,
+        FIXED,
+        TOPDOWN
+    };
+    private CameraMode cameraMode;
+    private Vector3 fixedPosition;
+    private Quaternion originalRotation;
+
     void OnPreRender()
     {
         if (debug)
@@ -27,12 +36,28 @@ public class CameraFollow : MonoBehaviour
     {
         offset = transform.position - target.position;
         cam = this.gameObject.GetComponent<Camera>();
+        cameraMode = CameraMode.FOLLOW;
+        fixedPosition = transform.position;
+        originalRotation = transform.rotation;
     }
 
     void FixedUpdate()
     {
-        Vector3 targetCamPos = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+        if (cameraMode == CameraMode.FOLLOW)
+        {
+            Vector3 targetCamPos = target.position + offset;
+            transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+            transform.rotation = originalRotation;
+        }
+        else if (cameraMode == CameraMode.FIXED)
+        {
+            transform.position = Vector3.Lerp(transform.position, fixedPosition, smoothing * Time.deltaTime);
+            transform.rotation = originalRotation; // ?
+        }
+        else if (cameraMode == CameraMode.TOPDOWN)
+        {
+            // ---
+        }
 
         if (Input.GetKeyDown(KeyCode.F11))
         {
@@ -47,4 +72,21 @@ public class CameraFollow : MonoBehaviour
             }
         }
     }
- }
+
+    public void SetCameraModeFollow()
+    {
+        cameraMode = CameraMode.FOLLOW;
+    }
+
+    public void SetCameraModeFixed(Vector3 position)
+    {
+        cameraMode = CameraMode.FIXED;
+        fixedPosition = position;
+    }
+
+    public void SetCameraModeTopdown()
+    {
+        cameraMode = CameraMode.TOPDOWN;
+        // ---
+    }
+}
