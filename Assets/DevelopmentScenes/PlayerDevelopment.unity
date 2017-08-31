@@ -189,7 +189,7 @@ Prefab:
       objectReference: {fileID: 1431180977}
     - target: {fileID: 1384258613907614, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
@@ -4643,12 +4643,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 114333661450169314, guid: 57a1210c64db01144a1696a0377834f0,
-        type: 2}
-      propertyPath: bacteriaExplosion
-      value: 
-      objectReference: {fileID: 1407287049005556, guid: e96710109630d7a4797fdf4e7c6b923f,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57a1210c64db01144a1696a0377834f0, type: 2}
   m_IsPrefabParent: 0

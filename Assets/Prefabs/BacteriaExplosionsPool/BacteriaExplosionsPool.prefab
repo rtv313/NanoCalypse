@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1002897541282734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 137.44875, y: 7, z: -242.77322}
+  m_LocalPosition: {x: 120.421776, y: 29.9, z: -220}
   m_LocalScale: {x: 9.835428, y: 9.835434, z: 9.835434}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,6 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98a3ce4483163f4bbfce5b28c02add5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bacteriaExplosion: {fileID: 1222996646645640, guid: 1cf3b1911ff4eb84fb2ed50756da7d28,
+  bacteriaExplosion: {fileID: 1407287049005556, guid: e96710109630d7a4797fdf4e7c6b923f,
     type: 2}
   bacteriaExplosionsAmount: 10
