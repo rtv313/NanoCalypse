@@ -252,7 +252,6 @@ GameObject:
   - component: {fileID: 82091810851388792}
   - component: {fileID: 114558780647551630}
   - component: {fileID: 114679340528232680}
-  - component: {fileID: 136665657921192582}
   m_Layer: 0
   m_Name: Parasite
   m_TagString: Enemy
@@ -1445,19 +1444,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &136665657921192582
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1548391732938064}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.26
-  m_Height: 5
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: -0.51}
 --- !u!136 &136790486080444874
 CapsuleCollider:
   m_ObjectHideFlags: 1

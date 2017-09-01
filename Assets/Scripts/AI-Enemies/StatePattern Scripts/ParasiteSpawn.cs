@@ -13,6 +13,7 @@ public class ParasiteSpawn : MonoBehaviour {
        GameObject parasiteOne = enemiesPool.GetEnemy(transform.transform, Context.EnemyType.PARASITE);
        parasiteOne.GetComponent<Context>().mutaded = true;
        parasiteOne.GetComponent<Context>().life = 50;
+       parasiteOne.GetComponent<CapsuleCollider>().isTrigger = false;
       // Destroy(gameObject);
      }
 

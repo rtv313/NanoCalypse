@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class ActivateSpawnPoint : MonoBehaviour {
 
-    public GameObject spawnPoint;
+    public GameObject[] spawnPoints;
 
     void OnTriggerEnter(Collider other)
     {
 		if (other.tag == "Player") {
 			Debug.Log ("Spawn Point Activated!");
-            spawnPoint.GetComponent<SpawnControl>().riseSpawn = true;
-			Destroy(transform.gameObject);
+
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                spawnPoints[i].GetComponent<SpawnControl>().riseSpawn = true;
+            }
+            Destroy(transform.gameObject);
 		}
     }
 }

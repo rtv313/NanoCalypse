@@ -1012,7 +1012,7 @@ MonoBehaviour:
     type: 2}
   enemyParasite: {fileID: 1548391732938064, guid: 3178d9163e0e86943ac29a98175ef6dc,
     type: 2}
-  enemyType: 0
+  enemyType: 2
   speed: 4.3
   riseAudio: {fileID: 8300000, guid: 9dd8f35d6cd88974d995ffd328931125, type: 3}
   openAudio: {fileID: 8300000, guid: eff6bbbf1e208a04d985476a412e7743, type: 3}
@@ -1057,6 +1057,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 8cc459e1937862d48b65a1771afba1af, type: 2}
+  - {fileID: 2100000, guid: 3fd734007c089594aaf154d8b51da2c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

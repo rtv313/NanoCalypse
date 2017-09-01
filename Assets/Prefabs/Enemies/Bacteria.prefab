@@ -1122,7 +1122,7 @@ MonoBehaviour:
   timeDestroy: 5
   mutaded: 0
   scoreManager: {fileID: 0}
-  mutationTexture: {fileID: 2800000, guid: f234ee4a4dd33774e9f1db4fec370433, type: 3}
+  mutationTexture: {fileID: 2800000, guid: 16554b453ea6f6e44a66b61a50217063, type: 3}
   originalTexture: {fileID: 2800000, guid: 1f88b171a817d904f84d9545eae1271e, type: 3}
 --- !u!114 &114709294184954394
 MonoBehaviour:
