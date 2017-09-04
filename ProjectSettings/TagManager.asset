@@ -19,6 +19,7 @@ TagManager:
   - EnemiesPool
   - BulletSpawnPlayer
   - MainScenario
+  - DeathPSpool
   layers:
   - Default
   - TransparentFX

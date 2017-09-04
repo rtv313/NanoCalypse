@@ -8,6 +8,10 @@ public class DestroyInterfaze : MonoBehaviour
     {
         EnemiesPool enemiesPool;
         enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>();
+
+        EnemiesDeathPSpool enemiesPSdeathPool = GameObject.FindGameObjectWithTag("DeathPSpool").GetComponent<EnemiesDeathPSpool>();
+        enemiesPSdeathPool.GetDeathEffect(gameObject.transform, gameObject.GetComponent<Context>().enemyType);
+
         enemiesPool.RecicleEnemy(gameObject);
     }
 }
