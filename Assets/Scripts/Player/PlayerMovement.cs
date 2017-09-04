@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour {
     public float resetRb = 1.5f;
     Vector3 movement;
     Animator anim;
-    Rigidbody playerRigidbody;
+    // Rigidbody playerRigidbody;
+    CharacterController playerCharCont;
     int floorMask;
     float camRayLength = 100f;
 	private Transform firingPoint;
@@ -52,7 +53,8 @@ public class PlayerMovement : MonoBehaviour {
 		firingPoint = GameObject.Find ("bulletSpawn").GetComponent<Transform>();
 
         floorMask = LayerMask.GetMask("AimPlane");
-        playerRigidbody = GetComponent<Rigidbody>();
+        // playerRigidbody = GetComponent<Rigidbody>();
+        playerCharCont = GetComponent<CharacterController>();
 
 		tr = GetComponent<TrailRenderer> ();
     }
@@ -135,7 +137,8 @@ public class PlayerMovement : MonoBehaviour {
 	void Dash()
 	{
         Vector3 velocity = dashMovement.normalized * dashSpeed * Time.deltaTime;
-		playerRigidbody.MovePosition(transform.position + velocity);
+		// playerRigidbody.MovePosition(transform.position + velocity);
+        playerCharCont.Move(velocity);
 		currentDashTime -= Time.deltaTime;
 		if (currentDashTime < 0.0f) {
 			dashing = false;
@@ -147,8 +150,9 @@ public class PlayerMovement : MonoBehaviour {
     {
 		movement.Set(h, playerGravity * Time.deltaTime, v);
         movement = movement.normalized*speed*Time.deltaTime; // makes speed in diagonal the same
-		Rigidbody rb = GetComponent<Rigidbody>();
-        playerRigidbody.MovePosition(transform.position + movement);
+		// Rigidbody rb = GetComponent<Rigidbody>();
+        // playerRigidbody.MovePosition(transform.position + movement);
+        playerCharCont.Move(movement);
     }
 
 
@@ -163,12 +167,14 @@ public class PlayerMovement : MonoBehaviour {
             lastControllerPosition = playerToMouse;
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-            playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
+            // playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
+            transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
         }
         else if (!usingMouse) // Controller Axis giving no response
         {
             Quaternion newRotation = Quaternion.LookRotation(lastControllerPosition);
-            playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
+            // playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
+            transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
         }
         else // Using mouse for aim
         {
@@ -187,8 +193,8 @@ public class PlayerMovement : MonoBehaviour {
                     //Debug.DrawLine(transform.position, )
 
                     Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-                    playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
-
+                    // playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
+                    transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
                 }
          
             }
@@ -215,9 +221,9 @@ public class PlayerMovement : MonoBehaviour {
 
     private void ResetRb()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        //Rigidbody rb = GetComponent<Rigidbody>();
+        //rb.velocity = Vector3.zero;
+        //rb.angularVelocity = Vector3.zero;
         //Debug.Log("Reset rigidbody");
     }
 }
