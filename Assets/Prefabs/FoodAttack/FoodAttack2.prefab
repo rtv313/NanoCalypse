@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 135225219155090668}
   - component: {fileID: 114011988961012950}
   - component: {fileID: 82982220433681722}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: FoodAttack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,6 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: b0105421957bd4f40849656fd5d34776, type: 2}
+  - {fileID: 2100000, guid: d6b151d7c1962b348a665265a75b5d79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,13 +111,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b835c6297f219f5439dc77497d0789ea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 203
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -190,9 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dac26ba09349ac4cbd4fff48ff6b036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PsExplosion: {fileID: 1627925735460288, guid: 1af8049cbe41ce04295f68d9ae7c18ea,
-    type: 2}
-  target: {fileID: 1056414803419304, guid: e71aea43269dc62419432b55e7f32fae, type: 2}
 --- !u!135 &135225219155090668
 SphereCollider:
   m_ObjectHideFlags: 1

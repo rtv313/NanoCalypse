@@ -10,17 +10,27 @@ public class FoodAttackSpawn : MonoBehaviour
 
     void Start()
     {
-        foodAttackPool = GameObject.FindGameObjectWithTag("Player").GetComponent<FoodAttackPool>();
+        foodAttackPool = GameObject.FindGameObjectWithTag("Player").GetComponent<FoodAttackPool>(); // Invoke("Attack", timeAttack);
     }
 
     public void callAttack(float timeAttack,float coolDownTime)
     {
         this.coolDownTime = coolDownTime;
-        Invoke("Attack", timeAttack);
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit))
+        {
+            
+            if (hit.collider.tag == "MainScenario" || hit.collider.tag == "Player")
+            {
+                Invoke("Attack", timeAttack);
+            }
+        }
     }
 
     void Attack()
     {
+
         available = false;
         foodAttackPool.GetFood(transform);
     }

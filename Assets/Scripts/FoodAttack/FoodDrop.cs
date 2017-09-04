@@ -8,6 +8,7 @@ public class FoodDrop : MonoBehaviour {
     private GameObject targetRef;
     private FoodAttackPool foodAttackPool;
     private bool explosionFlag = false;
+    private bool canAttack = true;
     // Use this for initialization
     void Start () {
 

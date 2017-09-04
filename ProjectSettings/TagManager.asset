@@ -18,6 +18,7 @@ TagManager:
   - BacteriaExpPool
   - EnemiesPool
   - BulletSpawnPlayer
+  - MainScenario
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - BridgeStructure
   - ShorelinePS
   - Player
-  - 
+  - FoodAttack
   - 
   - 
   - 
