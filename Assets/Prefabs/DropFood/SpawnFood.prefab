@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33238224102422464}
   - component: {fileID: 23728224492343512}
   - component: {fileID: 114678233911579920}
+  - component: {fileID: 135145756496314762}
+  - component: {fileID: 114744872483529242}
   m_Layer: 0
   m_Name: SpawnFood
   m_TagString: Untagged
@@ -35,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082055521627556}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.7815, y: 27.9, z: -294.63495}
+  m_LocalRotation: {x: 7.5585265e-15, y: 0.8997478, z: 0.000000107258316, w: 0.4364103}
+  m_LocalPosition: {x: 81.7, y: 55, z: -303.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 128.25, z: 0}
 --- !u!23 &23728224492343512
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -93,5 +95,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food:
-  - {fileID: 1539776839549288, guid: 732c02ff65bd3bc4c8ca50ba6e1294ed, type: 2}
-  randomTimes: 02000000
+  - {fileID: 1724208380967304, guid: 31702b6a657b4ea45829652256510b42, type: 2}
+  - {fileID: 1701567376120054, guid: 6a7954e65110f9b46826dfd1661a2c05, type: 2}
+  - {fileID: 1145731171923754, guid: aeb7668b2e302ea48a4f9e6f0f73614c, type: 2}
+  randomTimes: 0a0000000f00000014000000
+--- !u!114 &114744872483529242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082055521627556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14cad206beea034494a83dca48f8f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &135145756496314762
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082055521627556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20.82
+  m_Center: {x: -15.3, y: -46.02, z: -14.3}
