@@ -231,15 +231,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cdcc80973e22da4f8f73379ca6c142f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLifeTime: 2
   bulletType: 0
   bulletHitHard: {fileID: 8300000, guid: 751f3ff62ffa0244295878c4a90d3017, type: 3}
   bulletHitSoft: {fileID: 8300000, guid: 5439af764d999f243949cc3f7064cfab, type: 3}
   enemyDamage: {fileID: 8300000, guid: eaeebe92cc295804fa7dcea378ab5f05, type: 3}
   enemyScreech: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
-  assaultRifleDamage: 35
-  shootgunDamage: 35
-  sniperDamage: 50
+  assaultRifleDamage: 20
+  shootgunDamage: 20
+  sniperDamage: 10
 --- !u!135 &135017510791799142
 SphereCollider:
   m_ObjectHideFlags: 1

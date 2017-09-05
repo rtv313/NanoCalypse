@@ -1,0 +1,239 @@
+fileFormatVersion: 2
+guid: 9835137028b2c504cb4b48b1964638b1
+timeCreated: 1504027107
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Body001
+    100002: Hip
+    100004: Hip_Controler
+    100006: //RootNode
+    100008: joint1
+    100010: joint2
+    100012: joint3
+    100014: L_Ankle_IK
+    100016: L_foot_control
+    100018: L_Foot_Ik
+    100020: L_Knee
+    100022: L_Knee_Cntrl
+    100024: L_Leg
+    100026: L_Leg1
+    100028: L_Shoulder
+    100030: L_Toe
+    100032: R_Ankle_IK
+    100034: R_Arm
+    100036: R_Arm_2
+    100038: R_foot_control1
+    100040: R_Foot_IK
+    100042: R_Knee
+    100044: R_Knee_Cntrl
+    100046: R_Leg1
+    100048: R_Leg3
+    100050: R_Shoulder
+    100052: R_Toe
+    100054: Spine
+    100056: transform1
+    100058: Weapon
+    100060: Weapon001
+    100062: Weapon_1
+    400000: Body001
+    400002: Hip
+    400004: Hip_Controler
+    400006: //RootNode
+    400008: joint1
+    400010: joint2
+    400012: joint3
+    400014: L_Ankle_IK
+    400016: L_foot_control
+    400018: L_Foot_Ik
+    400020: L_Knee
+    400022: L_Knee_Cntrl
+    400024: L_Leg
+    400026: L_Leg1
+    400028: L_Shoulder
+    400030: L_Toe
+    400032: R_Ankle_IK
+    400034: R_Arm
+    400036: R_Arm_2
+    400038: R_foot_control1
+    400040: R_Foot_IK
+    400042: R_Knee
+    400044: R_Knee_Cntrl
+    400046: R_Leg1
+    400048: R_Leg3
+    400050: R_Shoulder
+    400052: R_Toe
+    400054: Spine
+    400056: transform1
+    400058: Weapon
+    400060: Weapon001
+    400062: Weapon_1
+    4300000: Body001
+    4300002: Weapon001
+    7400000: Idle
+    9500000: //RootNode
+    13700000: Body001
+    13700002: Weapon001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body001
+        weight: 1
+      - path: Hip_Controler
+        weight: 1
+      - path: Hip_Controler/transform1
+        weight: 1
+      - path: Hip_Controler/transform1/Hip
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/L_Leg
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/L_Leg/L_Leg1
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/L_Leg/L_Leg1/L_Knee
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/L_Leg/L_Leg1/L_Knee/L_Toe
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/R_Leg3
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/R_Leg3/R_Leg1
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/R_Leg3/R_Leg1/R_Knee
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/R_Leg3/R_Leg1/R_Knee/R_Toe
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/L_Shoulder
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/L_Shoulder/joint1
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/L_Shoulder/joint1/joint2
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/L_Shoulder/joint1/joint2/joint3
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/R_Shoulder
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/R_Shoulder/R_Arm
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/R_Shoulder/R_Arm/R_Arm_2
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/R_Shoulder/R_Arm/R_Arm_2/Weapon
+        weight: 1
+      - path: Hip_Controler/transform1/Hip/Spine/R_Shoulder/R_Arm/R_Arm_2/Weapon/Weapon_1
+        weight: 1
+      - path: L_foot_control
+        weight: 1
+      - path: L_foot_control/L_Ankle_IK
+        weight: 1
+      - path: L_foot_control/L_Foot_Ik
+        weight: 1
+      - path: L_foot_control/L_Knee_Cntrl
+        weight: 1
+      - path: R_foot_control1
+        weight: 1
+      - path: R_foot_control1/R_Ankle_IK
+        weight: 1
+      - path: R_foot_control1/R_Foot_IK
+        weight: 1
+      - path: R_foot_control1/R_Knee_Cntrl
+        weight: 1
+      - path: Weapon001
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
