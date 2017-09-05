@@ -2287,7 +2287,6 @@ GameObject:
   - component: {fileID: 136772078043841472}
   - component: {fileID: 114087988844129054}
   - component: {fileID: 82719274891505604}
-  - component: {fileID: 54351557905494602}
   - component: {fileID: 114938973686526992}
   - component: {fileID: 114064999941038604}
   - component: {fileID: 114094766273710536}
@@ -2300,6 +2299,7 @@ GameObject:
   - component: {fileID: 114086431750422046}
   - component: {fileID: 114531601644919144}
   - component: {fileID: 114462648747305492}
+  - component: {fileID: 143151150895121202}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3370,7 +3370,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1946137493390920}
   m_LocalRotation: {x: -0, y: -0.3261645, z: -0, w: 0.94531304}
-  m_LocalPosition: {x: 124.53412, y: 5, z: -287.65125}
+  m_LocalPosition: {x: 124.64, y: 3.79, z: -287.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4794203560003850}
@@ -4949,21 +4949,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535696482491070}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54351557905494602
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1946137493390920}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!65 &65019698788461954
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -6118,10 +6103,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.74
-  m_Height: 5.91
+  m_Radius: 1
+  m_Height: 3.4
   m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!137 &137475782682346566
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -6357,6 +6342,23 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.3177992, y: -0.66473, z: 0.69720453}
     m_Extent: {x: 0.6065095, y: 0.88738567, z: 0.43852097}
   m_DirtyAABB: 0
+--- !u!143 &143151150895121202
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1946137493390920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 3.4
+  m_Radius: 1
+  m_SlopeLimit: 30
+  m_StepOffset: 0.01
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!198 &198005600441569496
 ParticleSystem:
   m_ObjectHideFlags: 1
