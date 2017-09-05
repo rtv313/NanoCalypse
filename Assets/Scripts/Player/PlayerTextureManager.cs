@@ -15,25 +15,25 @@ public class PlayerTextureManager : MonoBehaviour {
     public void SetAssaulRifleTexture()
     {
         fireMode = 1;
-        Material mat = mesh.GetComponent<Renderer>().material;
-        mat.mainTexture = rifleTexture;
-        mat.SetColor("_EmissionColor", red);
+        //Material mat = mesh.GetComponent<Renderer>().material;
+        //mat.mainTexture = rifleTexture;
+        //mat.SetColor("_EmissionColor", red);
     }
 
     public void SetShootgunTexture()
     {
         fireMode = 2;
-        Material mat = mesh.GetComponent<Renderer>().material;
-        mat.mainTexture = shootgunTexture;
-        mat.SetColor("_EmissionColor", blue);
+        //Material mat = mesh.GetComponent<Renderer>().material;
+        //mat.mainTexture = shootgunTexture;
+        //mat.SetColor("_EmissionColor", blue);
     }
 
     public void SetSniperTexture()
     {
         fireMode = 3;
-        Material mat = mesh.GetComponent<Renderer>().material;
-        mat.mainTexture = sniperTexture;
-        mat.SetColor("_EmissionColor", green);
+        //Material mat = mesh.GetComponent<Renderer>().material;
+        //mat.mainTexture = sniperTexture;
+        //mat.SetColor("_EmissionColor", green);
     }
    
 }
