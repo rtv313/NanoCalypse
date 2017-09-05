@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4766242188823324}
   - component: {fileID: 95709352821282876}
   - component: {fileID: 136360623305169212}
+  - component: {fileID: 114196446744590336}
   m_Layer: 0
   m_Name: Organ2
   m_TagString: Untagged
@@ -308,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536961186348970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 144.01, y: 4.77, z: -261.08746}
+  m_LocalPosition: {x: 135.13287, y: 4.82, z: -250.37418}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4057963696434614}
@@ -378,6 +379,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114196446744590336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536961186348970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157b81cb7dc845845aee7615643c38a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PSexplosion: {fileID: 1605859961698058, guid: a8acc805f0f74a74a8a76d95c1fe7993,
+    type: 2}
 --- !u!136 &136360623305169212
 CapsuleCollider:
   m_ObjectHideFlags: 1
