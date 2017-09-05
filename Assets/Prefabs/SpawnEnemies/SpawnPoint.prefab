@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8b1a639bd4214f85f706ad43ddc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPrefab: {fileID: 1725288561678184, guid: c6c1c451d1701444db32964d8bd103eb,
+  bloodPrefab: {fileID: 1332374147108846, guid: ee50a317cf2a73a499310614ab0aa993,
     type: 2}
   heightPosition: 0
 --- !u!114 &114169618013485620
@@ -996,7 +996,7 @@ MonoBehaviour:
   finishOpen: 0
   finishClose: 1
   spawnPos: {fileID: 1188986628341844}
-  deathPs: {fileID: 1565704686986492, guid: 09475e0bce9727e49ac4284ea7c32a7d, type: 2}
+  deathPs: {fileID: 1733549026010398, guid: 8c371f57203bf9745a5df9052de59bf5, type: 2}
   numberOfEnemiesForSpawn: 20
   timeToSpawnMin: 1
   timeToSpawnMax: 4

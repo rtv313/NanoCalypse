@@ -56,6 +56,7 @@ public class MutationState : State {
 
     private void parasiteMutation(Context context)
     {
+        context.GetComponent<ParasiteMutationPS>().ActivatePSMutation();
         CreateParasite createParasite = new CreateParasite();
         createParasite.createParasite(context);
         
@@ -71,6 +72,7 @@ public class CreateParasite:MonoBehaviour
 {
     public void createParasite(Context context)
     {
+        context.GetComponent<ParasiteMutationPS>().ActivatePSMutation();
         ParasiteSpawnManager manager= context.gameObject.GetComponent<ParasiteSpawnManager>();
         manager.CreateParasites();
 

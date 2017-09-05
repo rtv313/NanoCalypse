@@ -9,7 +9,7 @@ public class ParasiteSpawnManager : MonoBehaviour {
    
     public void CreateParasites()
     {
-        
+
         if (spawnPointOne.GetComponent<ParasiteSpawn>().canInstantiate == true)
         {
             spawnPointOne.GetComponent<ParasiteSpawn>().CreateParasites();
