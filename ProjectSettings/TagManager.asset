@@ -20,6 +20,7 @@ TagManager:
   - BulletSpawnPlayer
   - MainScenario
   - DeathPSpool
+  - SpawnFood
   layers:
   - Default
   - TransparentFX

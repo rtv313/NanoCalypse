@@ -28,7 +28,7 @@ public class EnemyBullet : MonoBehaviour {
             }
         }
 
-        if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "AgentDetector" && other.gameObject.tag != "Wound" && other.gameObject.tag!= "Bullet")
+        if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "AgentDetector" && other.gameObject.tag != "Wound" && other.gameObject.tag != "Bullet" && other.gameObject.tag != "SpawnFood")
         {
             Destroy(transform.gameObject);
         }
