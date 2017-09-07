@@ -1456,7 +1456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 2
   stateString: Patrol
-  life: 50
+  life: 30
   animator: {fileID: 95543698722648324}
   capsuleCollider: {fileID: 136790486080444874}
   rigidbody: {fileID: 54917772624393478}
@@ -1559,7 +1559,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1548391732938064}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.51
   m_Height: 5
   m_Direction: 1
