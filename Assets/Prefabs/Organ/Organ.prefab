@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95829456302174436}
   - component: {fileID: 135361429658323158}
   - component: {fileID: 114879305468586080}
+  - component: {fileID: 114746013940602754}
   m_Layer: 0
   m_Name: Organ
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095567776022026}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 127.688095, y: 4.447, z: -252.81464}
+  m_LocalPosition: {x: 135.73, y: 4.67, z: -244.46915}
   m_LocalScale: {x: 9.37591, y: 9.375915, z: 9.375915}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,6 +61,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114746013940602754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095567776022026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a228ff61ee75441af4c5c44e3c8e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomTimes: 01000000020000000300000005000000070000000200000001000000
 --- !u!114 &114879305468586080
 MonoBehaviour:
   m_ObjectHideFlags: 1

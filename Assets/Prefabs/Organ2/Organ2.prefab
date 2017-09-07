@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 95709352821282876}
   - component: {fileID: 136360623305169212}
   - component: {fileID: 114196446744590336}
+  - component: {fileID: 114724351546951502}
   m_Layer: 0
   m_Name: Organ2
   m_TagString: Untagged
@@ -392,6 +393,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PSexplosion: {fileID: 1605859961698058, guid: a8acc805f0f74a74a8a76d95c1fe7993,
     type: 2}
+--- !u!114 &114724351546951502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536961186348970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a228ff61ee75441af4c5c44e3c8e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomTimes: 01000000010000000200000003000000040000000600000005000000
 --- !u!136 &136360623305169212
 CapsuleCollider:
   m_ObjectHideFlags: 1

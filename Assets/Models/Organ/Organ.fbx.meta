@@ -24,7 +24,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: Event AnimationFinished has a time (2.489627) outside
+      the clip's valid range (0.000000..1.833333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
@@ -57,7 +58,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5508902
+        functionName: AnimationFinished
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 36a228ff61ee75441af4c5c44e3c8e39,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
