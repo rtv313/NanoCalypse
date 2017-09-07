@@ -106,6 +106,8 @@ public class BulletDamage : MonoBehaviour {
         // Hit on spawn Point
         else if (other.gameObject.tag == "SpawnPoint")
         {
+            other.gameObject.GetComponent<DamageFeedback>().receiveDamage();
+
             switch (bulletType)
             {
                 case BulletType.ASSAULT:

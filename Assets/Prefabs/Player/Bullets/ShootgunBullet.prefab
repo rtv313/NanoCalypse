@@ -238,7 +238,7 @@ MonoBehaviour:
   enemyDamage: {fileID: 8300000, guid: eaeebe92cc295804fa7dcea378ab5f05, type: 3}
   enemyScreech: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
   assaultRifleDamage: 20
-  shootgunDamage: 20
+  shootgunDamage: 25
   sniperDamage: 10
 --- !u!135 &135191370512942618
 SphereCollider:

@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 136935349350870672}
   - component: {fileID: 114169618013485620}
   - component: {fileID: 114072920587980090}
+  - component: {fileID: 114189419455969972}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: SpawnPoint
@@ -1019,6 +1020,18 @@ MonoBehaviour:
   closeAudio: {fileID: 8300000, guid: 2fff759111a318a40950a42d151de02a, type: 3}
   spawnAudio: {fileID: 8300000, guid: 40042ca57c7f7b94687d8ac0330724ff, type: 3}
   activationMesh: {fileID: 1835270953847334}
+--- !u!114 &114189419455969972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143815183680708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cccaa2ac1aba544a3a757ebf97d486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 1762110412696620}
 --- !u!114 &114462451685982944
 MonoBehaviour:
   m_ObjectHideFlags: 1
