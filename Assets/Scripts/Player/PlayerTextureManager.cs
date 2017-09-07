@@ -29,10 +29,6 @@ public class PlayerTextureManager : MonoBehaviour {
         mat.mainTexture = rifleTexture;
         mat.SetTexture("_EmissionMap", rifleEmission);
         mat.SetColor("_EmissionColor", red * brightness);
-
-
-
-
     }
 
     public void SetShootgunTexture()
