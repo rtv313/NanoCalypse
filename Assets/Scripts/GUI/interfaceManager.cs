@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class interfaceManager : MonoBehaviour {
 	private Slider HealthBar, HeatBar;
 	private Image WeaponSelector;
-	private int multiplier, scoreNumber, killNumber, multiplierBank, scoreNumberBank, killNumberBank, multiplierNegativeBank, highestMult;
-	private Text KillCount, ComboMultiplier, Score;
+	private int multiplier, scoreNumber, spRemainingNumber, killNumber, multiplierBank, scoreNumberBank, killNumberBank, multiplierNegativeBank, highestMult;
+	private Text KillCount, ComboMultiplier, Score, SpawnPointsRemaining;
 	private float angle, timmerScoreScound,timmerMultiplierScound, lowAlpha, highAlpha, TimeInLevel;
 	private ScoreManager scoreManager;
 	private AudioSource sourceScore, sourceMultiplierIncrease,sourceMultiplierDecrease, sourceWeaponSelector;
@@ -30,15 +30,17 @@ public class interfaceManager : MonoBehaviour {
 		KillCount = GameObject.Find ("KillCount").GetComponent<Text> ();
 		ComboMultiplier = GameObject.Find ("ComboMultiplier").GetComponent<Text> ();
 		Score = GameObject.Find ("Score").GetComponent<Text> ();
-		scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;
+        SpawnPointsRemaining = GameObject.Find("SpawnPointsRemaining").GetComponent<Text>();
+        scoreManager = GameObject.Find ("GUI").GetComponent<ScoreManager> () as ScoreManager;
 		// Operating values
 		multiplier = 1;
 		highestMult = 1;
 		scoreNumber = 0;
 		killNumber = 0;
+        spRemainingNumber = 14; // Needs to be set to correct amount. Should be 14.
 
-		//Banks
-		multiplierBank = 0;
+        //Banks
+        multiplierBank = 0;
 		scoreNumberBank = 0; 
 		killNumberBank = 0;
 		multiplierNegativeBank = 0;
@@ -137,6 +139,10 @@ public class interfaceManager : MonoBehaviour {
 	public void addScore(int points){
 		scoreNumberBank += multiplier * points;
 	}
+    public void updateSpawnPointsRemaining() {
+        --spRemainingNumber;
+        SpawnPointsRemaining.text = ""+spRemainingNumber;
+    }
 	public void setMultiplier(int mult){
 		if(mult >= 1)
 		{

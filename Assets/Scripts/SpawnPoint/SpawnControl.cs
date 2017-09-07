@@ -53,12 +53,15 @@ public class SpawnControl : MonoBehaviour {
     //Enemy Pool 
     private EnemiesPool enemiesPool;
 
+    private interfaceManager ifaceManager;
+
     // Use this for initialization
     void Start ()
     {
         animatorControl = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>();
+        ifaceManager = GameObject.Find("GUI").GetComponent<interfaceManager>();
     }
 
     public void ActivateSpawn()
@@ -82,7 +85,8 @@ public class SpawnControl : MonoBehaviour {
         }
         else
         {
-           GameObject deathPsRef= Instantiate(deathPs, transform.position, transform.rotation);
+            ifaceManager.updateSpawnPointsRemaining();
+            GameObject deathPsRef= Instantiate(deathPs, transform.position, transform.rotation);
             activationMesh.GetComponent<ActivateNavMesh>().DestroyActivationMesh();
             Destroy(deathPsRef, 2.0f);
             Destroy(gameObject); 

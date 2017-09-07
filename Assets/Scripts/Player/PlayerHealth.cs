@@ -17,7 +17,6 @@ public class PlayerHealth : MonoBehaviour
 	private ScoreManager scoreManager;
 	public bool dead;
     
-
     public Animator animator;                                             
     private AudioSource playerAudio;                                    
     private PlayerMovement playerMovement;                              
@@ -25,6 +24,11 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead = false;                                                
     private bool damaged, godmode, devTools;  
 	public Text godModeText, devToolsText;
+
+    private bool outOfCombat;
+    private float timeNotHit = 0.0f;
+    public float timeHealingStarts = 3.0f;
+    public float healthPerSecond = 0.5f;
 
 
     void Awake()
@@ -85,12 +89,19 @@ public class PlayerHealth : MonoBehaviour
         }
 
         damaged = false;
+
+        if (timeNotHit >= timeHealingStarts) outOfCombat = true;
+        else timeNotHit += Time.deltaTime;
+
+        if (outOfCombat) currentHealth = Mathf.Min(currentHealth + (healthPerSecond * Time.deltaTime), 3.0f);
     }
 
 
     public void TakeDamage(int amount)
     {
 		if(!godmode){
+            outOfCombat = false;
+            timeNotHit = 0.0f;
 
             gameObject.GetComponent<PlayerDamageEffects>().ActivateSparks();
 
