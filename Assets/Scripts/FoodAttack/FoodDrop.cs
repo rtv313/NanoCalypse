@@ -47,8 +47,18 @@ public class FoodDrop : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, -Vector3.up, out hit))
             {
+
                 Vector3 targetPos = hit.point;
-                targetPos.y += 0.1f;
+
+                if (hit.transform.gameObject.tag == "Player" || hit.transform.gameObject.tag == "Enemy")
+                {
+                    targetPos.y -= 3.35f;
+                }
+                else
+                {
+                    targetPos.y += 0.1f;
+                }
+                
                 targetRef = foodAttackPool.GetTarget(targetPos);
             }
         }
