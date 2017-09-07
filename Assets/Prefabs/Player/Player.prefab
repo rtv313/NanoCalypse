@@ -257,7 +257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1098693374143390
 GameObject:
   m_ObjectHideFlags: 1
@@ -3369,8 +3369,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1946137493390920}
-  m_LocalRotation: {x: -0, y: -0.3261645, z: -0, w: 0.94531304}
-  m_LocalPosition: {x: 124.64, y: 3.79, z: -287.77}
+  m_LocalRotation: {x: -0, y: -0.00631532, z: -0, w: 0.9999801}
+  m_LocalPosition: {x: 105.35, y: 9.22, z: -274.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4794203560003850}
@@ -5321,7 +5321,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.99188644, g: 1, b: 0.85294116, a: 1}
-  m_Intensity: 20
+  m_Intensity: 6.04
   m_Range: 15.2
   m_SpotAngle: 48
   m_CookieSize: 10
@@ -5530,10 +5530,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c677ad1a691ac943b17485169088119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesh: {fileID: 1515556579208600}
-  rifleTexture: {fileID: 2800000, guid: 5e9723b565246b941b6f84ae0dc49419, type: 3}
-  shootgunTexture: {fileID: 2800000, guid: 928edbc57695bb44f94e936bdf9b69f2, type: 3}
-  sniperTexture: {fileID: 2800000, guid: 810632715af7ca74fa66076d6faedc53, type: 3}
+  brightness: 2
+  meshBody: {fileID: 1515556579208600}
+  rifleTexture: {fileID: 2800000, guid: d19a4927f0143404ca09082735daa2e9, type: 3}
+  shootgunTexture: {fileID: 2800000, guid: 4bd894399e308934bb6431c75c91bcdf, type: 3}
+  sniperTexture: {fileID: 2800000, guid: 993705a95592c914fbadf4ea6d8be7d8, type: 3}
+  rifleEmission: {fileID: 2800000, guid: e3a62b9059d838a4b83798af9f31f85c, type: 3}
+  shootgunEmission: {fileID: 2800000, guid: eecaea14fd03ab54b8aa9f7a78741824, type: 3}
+  sniperEmission: {fileID: 2800000, guid: a224c4f2fecec21449befaae23f4039a, type: 3}
   red: {r: 1, g: 0, b: 0, a: 0}
   blue: {r: 0, g: 0.7931037, b: 1, a: 0}
   green: {r: 0.27170384, g: 0.83823526, b: 0, a: 0}
