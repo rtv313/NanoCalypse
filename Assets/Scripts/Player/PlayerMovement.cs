@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     // Mouse/Controller
     bool usingMouse = true;
     Vector3 lastControllerPosition = new Vector3(0, 0, 0);
-    float turningSpeed = 20.0f;
+    float turningSpeed = 50.0f;
 
     private bool paused = false;
     private Vector3 aimPos = new Vector3(0, 0, 0);
@@ -165,52 +165,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Turning()
     {
-        // Controller Axis giving values
-        if (Mathf.Abs(Input.GetAxis("AimHorizontal")) > 0.3f || Mathf.Abs(Input.GetAxis("AimVertical")) > 0.3f)
-        {
-            usingMouse = false;
-            Vector3 playerToMouse = new Vector3(Input.GetAxis("AimHorizontal"), 0.0f, Input.GetAxis("AimVertical")) - new Vector3(0.0f, 0.0f, 0.0f);
-            playerToMouse.y = 0f;
-            lastControllerPosition = playerToMouse;
+        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit floorHit;
 
-            Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-            // playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
-            transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
-        }
-        else if (!usingMouse) // Controller Axis giving no response
+        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
         {
-            Quaternion newRotation = Quaternion.LookRotation(lastControllerPosition);
-            // playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
-            transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
-        }
-        else // Using mouse for aim
-        {
-            Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit floorHit;
+            Vector3 floorHitPoint = floorHit.point;
+            floorHitPoint += -transform.right * 0.5f;
+            Vector3 playerToMouse = floorHitPoint - transform.position;
+            playerToMouse.y = 0.0f;
 
-            if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+            // Mouse Aim Deadzone
+            if (playerToMouse.magnitude > 1.0f)
             {
-                Vector3 playerToMouse = floorHit.point - transform.position;
-                playerToMouse.y = 0.0f;
-
-                // Mouse Aim Deadzone
-                if (playerToMouse.magnitude > 1.0f)
-                {
-
-                    //Debug.DrawLine(transform.position, )
-
-                    Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-                    // playerRigidbody.MoveRotation(Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
-                    transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
-                }
-
+                Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+                transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
             }
-        }
-
-        // Back to using mouse/keyboard
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            usingMouse = true;
         }
     }
 
