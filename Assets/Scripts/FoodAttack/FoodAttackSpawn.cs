@@ -21,7 +21,7 @@ public class FoodAttackSpawn : MonoBehaviour
         if (Physics.Raycast(transform.position, -Vector3.up, out hit))
         {
             
-            if (hit.collider.tag == "MainScenario" || hit.collider.tag == "Player")
+            if (hit.collider.tag == "MainScenario" || hit.collider.tag == "Player" )
             {
                 Invoke("Attack", timeAttack);
             }
