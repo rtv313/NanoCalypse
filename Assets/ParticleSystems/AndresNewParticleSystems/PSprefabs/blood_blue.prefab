@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 0.5
+  subPs: {fileID: 1731583691611964}
 --- !u!198 &198481250302186648
 ParticleSystem:
   m_ObjectHideFlags: 1

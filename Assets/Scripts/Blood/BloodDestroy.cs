@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BloodDestroy : MonoBehaviour {
-    public float destroyTime = 3.0f;
 
-	// Use this for initialization
-	void Start () {
-        Destroy(gameObject,destroyTime);
-    }
+    public float destroyTime = 1.0f;
+    public GameObject subPs;
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void PrepareBlood()
+    {
+        gameObject.SetActive(true);
+        gameObject.GetComponent<ParticleSystem>().Emit(1);
+        subPs.GetComponent<ParticleSystem>().Emit(1);
+        Invoke("DeactivateBlood", destroyTime);
+    }
+
+    void DeactivateBlood()
+    {
+        gameObject.SetActive(false);
+    }
 }

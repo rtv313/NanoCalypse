@@ -84,7 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c0e584b1b61684eba3874d8a60839f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 0.5
+  destroyTime: 0.6
+  subPs: {fileID: 1094912766245064}
 --- !u!198 &198549161253252910
 ParticleSystem:
   m_ObjectHideFlags: 1

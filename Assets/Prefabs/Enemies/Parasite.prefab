@@ -1440,9 +1440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a8b1a639bd4214f85f706ad43ddc83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPrefab: {fileID: 1251538883139978, guid: 11fc1cabfc6fd114abd9348c0a4f09e4,
-    type: 2}
   heightPosition: -1
+  bloodType: 1
 --- !u!114 &114704206615367014
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -21,6 +21,7 @@ TagManager:
   - MainScenario
   - DeathPSpool
   - SpawnFood
+  - BloodPsPool
   layers:
   - Default
   - TransparentFX
