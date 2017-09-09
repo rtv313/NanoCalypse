@@ -34,6 +34,7 @@ public class BacteriaAttack : MonoBehaviour {
         }
 
         explosion.GetComponent<BacteriaExplosion>().EnableExplosion();
-        Destroy(transform.gameObject);
+        gameObject.SetActive(false);
+       
     }
 }

@@ -290,7 +290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1098693374143390
 GameObject:
   m_ObjectHideFlags: 1
@@ -1337,7 +1337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1456556284147964
 GameObject:
   m_ObjectHideFlags: 1
@@ -5919,8 +5919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f45115e2662c2f4580442ef4986f06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
-  currentHealth: 3
+  startingHealth: 6
+  currentHealth: 6
   HealthBar: {fileID: 0}
   damageImage: {fileID: 0}
   deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}

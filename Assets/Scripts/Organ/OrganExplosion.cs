@@ -10,7 +10,8 @@ public class OrganExplosion : MonoBehaviour {
         if (collision.gameObject.tag == "Bullet")
         {
             Instantiate(PSexplosion, transform.position, transform.rotation);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

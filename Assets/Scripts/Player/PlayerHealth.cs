@@ -93,7 +93,7 @@ public class PlayerHealth : MonoBehaviour
         if (timeNotHit >= timeHealingStarts) outOfCombat = true;
         else timeNotHit += Time.deltaTime;
 
-        if (outOfCombat) currentHealth = Mathf.Min(currentHealth + (healthPerSecond * Time.deltaTime), 3.0f);
+        if (outOfCombat) currentHealth = Mathf.Min(currentHealth + (healthPerSecond * Time.deltaTime), 6.0f);
     }
 
 
