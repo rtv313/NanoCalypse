@@ -27,9 +27,6 @@ public class BacteriaAttack : MonoBehaviour {
 
                 if(hit.tag=="Player")
                     hit.GetComponent<PlayerMovement>().CallResetRb();
-
-                if (hit.tag == "Drone")
-                    hit.GetComponent<DroneContext>().life -= context.attackDamage;
             }
         }
 
