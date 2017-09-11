@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176896908592542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.691895, y: 24.484375, z: -221.1}
+  m_LocalPosition: {x: 75.691895, y: 29.5, z: -213.2}
   m_LocalScale: {x: 10.241328, y: 10.241328, z: 10.241328}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5823453fea0cc46a6eb91c729700cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redBlood: {fileID: 1332374147108846, guid: ee50a317cf2a73a499310614ab0aa993, type: 2}
-  blueBlood: {fileID: 1251538883139978, guid: 11fc1cabfc6fd114abd9348c0a4f09e4, type: 2}
-  greenBlood: {fileID: 1706357258646438, guid: 98970270b0effee49ac07103e450348f, type: 2}
+  redBlood: {fileID: 1014239135405490, guid: 5a596aec0cebfc4418af69f673bd9281, type: 2}
+  blueBlood: {fileID: 1634317250888882, guid: 852b6bb88197c164f98e9be9830e7956, type: 2}
+  greenBlood: {fileID: 1617431401039054, guid: 3e36fe621eff7424b8d01f0678c374c3, type: 2}
   bloodAmount: 10

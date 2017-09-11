@@ -6,6 +6,11 @@ public class ShockWave : MonoBehaviour {
 
     SphereCollider collider;
     public GameObject ps;
+    public GameObject psLighting;
+    public GameObject psShockWave;
+    public GameObject psSmoke;
+    public GameObject psLight;
+
     public float explosionLifeTime = 2.0f;
     private float resetTime = 0f;
     private bool explodeFlag = false;
@@ -75,6 +80,11 @@ public class ShockWave : MonoBehaviour {
     public void EnableExplosion()
     {
         ps.GetComponent<ParticleSystem>().Emit(1);
+        psLighting.GetComponent<ParticleSystem>().Emit(1);
+        psShockWave.GetComponent<ParticleSystem>().Emit(1);
+        psSmoke.GetComponent<ParticleSystem>().Emit(1);
+        psLight.GetComponent<ParticleSystem>().Emit(1);
+
         explodeFlag = true;
     } 
 }

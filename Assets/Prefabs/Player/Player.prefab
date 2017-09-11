@@ -6022,7 +6022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e3612b03ae74f64aaeffcb45f7f4bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1627925735460288, guid: 1af8049cbe41ce04295f68d9ae7c18ea, type: 2}
+  explosion: {fileID: 0}
   explosionsAmount: 5
 --- !u!114 &114105040611326388
 MonoBehaviour:
