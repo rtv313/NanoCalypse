@@ -4554,6 +4554,12 @@ Prefab:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 23422205}
+    - target: {fileID: 114679340528232680, guid: 3178d9163e0e86943ac29a98175ef6dc,
+        type: 2}
+      propertyPath: bloodPrefab
+      value: 
+      objectReference: {fileID: 1819282050986000, guid: 2917db96d0f904a4c845b92bcbb58ed1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
   m_IsPrefabParent: 0
@@ -4855,6 +4861,12 @@ Prefab:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 623942294}
+    - target: {fileID: 114679340528232680, guid: 3178d9163e0e86943ac29a98175ef6dc,
+        type: 2}
+      propertyPath: bloodPrefab
+      value: 
+      objectReference: {fileID: 1819282050986000, guid: 2917db96d0f904a4c845b92bcbb58ed1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
   m_IsPrefabParent: 0
@@ -6071,6 +6083,12 @@ Prefab:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 623942294}
+    - target: {fileID: 114679340528232680, guid: 3178d9163e0e86943ac29a98175ef6dc,
+        type: 2}
+      propertyPath: bloodPrefab
+      value: 
+      objectReference: {fileID: 1819282050986000, guid: 2917db96d0f904a4c845b92bcbb58ed1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
   m_IsPrefabParent: 0
@@ -7231,6 +7249,12 @@ Prefab:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 1481436422}
+    - target: {fileID: 114679340528232680, guid: 3178d9163e0e86943ac29a98175ef6dc,
+        type: 2}
+      propertyPath: bloodPrefab
+      value: 
+      objectReference: {fileID: 1819282050986000, guid: 2917db96d0f904a4c845b92bcbb58ed1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
   m_IsPrefabParent: 0
@@ -11245,6 +11269,12 @@ Prefab:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 23422205}
+    - target: {fileID: 114679340528232680, guid: 3178d9163e0e86943ac29a98175ef6dc,
+        type: 2}
+      propertyPath: bloodPrefab
+      value: 
+      objectReference: {fileID: 1819282050986000, guid: 2917db96d0f904a4c845b92bcbb58ed1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3178d9163e0e86943ac29a98175ef6dc, type: 2}
   m_IsPrefabParent: 0
