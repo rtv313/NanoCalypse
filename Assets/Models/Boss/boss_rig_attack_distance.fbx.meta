@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5b37c10d85c086d4ba562916028ae570
-timeCreated: 1505209803
+guid: c8ab5da94324bff40b09b831e40a90aa
+timeCreated: 1505222848
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -119,38 +119,39 @@ ModelImporter:
     100222: transform42
     100224: transform43
     100226: transform44
-    100228: transform5
-    100230: transform6
-    100232: transform7
-    100234: transform8
-    100236: transform9
-    100238: tube_big_left_01
-    100240: tube_big_left_02
-    100242: tube_big_left_03
-    100244: tube_big_left_04
-    100246: tube_big_origin
-    100248: tube_big_right_01
-    100250: tube_big_right_02
-    100252: tube_big_right_03
-    100254: tube_big_right_04
-    100256: tube_middle_left_01
-    100258: tube_middle_left_02
-    100260: tube_middle_left_03
-    100262: tube_middle_left_04
-    100264: tube_middle_origin
-    100266: tube_middle_right_01
-    100268: tube_middle_right_02
-    100270: tube_middle_right_03
-    100272: tube_middle_right_04
-    100274: tube_small_left_01
-    100276: tube_small_left_02
-    100278: tube_small_left_03
-    100280: tube_small_origin
-    100282: tube_small_right_01
-    100284: tube_small_right_02
-    100286: tube_small_right_03
-    100288: wrist_left
-    100290: wrist_right
+    100228: transform45
+    100230: transform5
+    100232: transform6
+    100234: transform7
+    100236: transform8
+    100238: transform9
+    100240: tube_big_left_01
+    100242: tube_big_left_02
+    100244: tube_big_left_03
+    100246: tube_big_left_04
+    100248: tube_big_origin
+    100250: tube_big_right_01
+    100252: tube_big_right_02
+    100254: tube_big_right_03
+    100256: tube_big_right_04
+    100258: tube_middle_left_01
+    100260: tube_middle_left_02
+    100262: tube_middle_left_03
+    100264: tube_middle_left_04
+    100266: tube_middle_origin
+    100268: tube_middle_right_01
+    100270: tube_middle_right_02
+    100272: tube_middle_right_03
+    100274: tube_middle_right_04
+    100276: tube_small_left_01
+    100278: tube_small_left_02
+    100280: tube_small_left_03
+    100282: tube_small_origin
+    100284: tube_small_right_01
+    100286: tube_small_right_02
+    100288: tube_small_right_03
+    100290: wrist_left
+    100292: wrist_right
     400000: arm_origin
     400002: big_bulb_left
     400004: big_bulb_right
@@ -265,43 +266,44 @@ ModelImporter:
     400222: transform42
     400224: transform43
     400226: transform44
-    400228: transform5
-    400230: transform6
-    400232: transform7
-    400234: transform8
-    400236: transform9
-    400238: tube_big_left_01
-    400240: tube_big_left_02
-    400242: tube_big_left_03
-    400244: tube_big_left_04
-    400246: tube_big_origin
-    400248: tube_big_right_01
-    400250: tube_big_right_02
-    400252: tube_big_right_03
-    400254: tube_big_right_04
-    400256: tube_middle_left_01
-    400258: tube_middle_left_02
-    400260: tube_middle_left_03
-    400262: tube_middle_left_04
-    400264: tube_middle_origin
-    400266: tube_middle_right_01
-    400268: tube_middle_right_02
-    400270: tube_middle_right_03
-    400272: tube_middle_right_04
-    400274: tube_small_left_01
-    400276: tube_small_left_02
-    400278: tube_small_left_03
-    400280: tube_small_origin
-    400282: tube_small_right_01
-    400284: tube_small_right_02
-    400286: tube_small_right_03
-    400288: wrist_left
-    400290: wrist_right
+    400228: transform45
+    400230: transform5
+    400232: transform6
+    400234: transform7
+    400236: transform8
+    400238: transform9
+    400240: tube_big_left_01
+    400242: tube_big_left_02
+    400244: tube_big_left_03
+    400246: tube_big_left_04
+    400248: tube_big_origin
+    400250: tube_big_right_01
+    400252: tube_big_right_02
+    400254: tube_big_right_03
+    400256: tube_big_right_04
+    400258: tube_middle_left_01
+    400260: tube_middle_left_02
+    400262: tube_middle_left_03
+    400264: tube_middle_left_04
+    400266: tube_middle_origin
+    400268: tube_middle_right_01
+    400270: tube_middle_right_02
+    400272: tube_middle_right_03
+    400274: tube_middle_right_04
+    400276: tube_small_left_01
+    400278: tube_small_left_02
+    400280: tube_small_left_03
+    400282: tube_small_origin
+    400284: tube_small_right_01
+    400286: tube_small_right_02
+    400288: tube_small_right_03
+    400290: wrist_left
+    400292: wrist_right
     2300000: eye1
     3300000: eye1
     4300000: boss
     4300002: eye1
-    7400000: Idle
+    7400000: DistanceAttack
     9500000: //RootNode
     13700000: boss
   materials:
@@ -328,7 +330,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: DistanceAttack
       takeName: Take 001
       firstFrame: 1
       lastFrame: 120
@@ -582,8 +584,6 @@ ModelImporter:
         weight: 1
       - path: ctrl_tube_small_left_01/transform33
         weight: 1
-      - path: ctrl_tube_small_left_01/transform33/tube_small_left_02
-        weight: 1
       - path: ctrl_tube_small_left_01/transform34
         weight: 1
       - path: ctrl_tube_small_left_01/transform34/tube_small_left_01
@@ -644,13 +644,17 @@ ModelImporter:
         weight: 1
       - path: root/boss_ctrl
         weight: 1
+      - path: transform45
+        weight: 1
+      - path: transform45/tube_small_left_02
+        weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.6
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

@@ -301,7 +301,7 @@ ModelImporter:
     3300000: eye1
     4300000: boss
     4300002: eye1
-    7400000: Take 001
+    7400000: Melee1
     9500000: //RootNode
     13700000: boss
   materials:
@@ -326,11 +326,331 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Melee1
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boss
+        weight: 1
+      - path: ctr_arm_left
+        weight: 1
+      - path: ctr_arm_left/ikHandle_left
+        weight: 1
+      - path: ctr_arm_right
+        weight: 1
+      - path: ctr_arm_right/IKHandle_right
+        weight: 1
+      - path: ctrl_big_bulb_left
+        weight: 1
+      - path: ctrl_big_bulb_left/transform39
+        weight: 1
+      - path: ctrl_big_bulb_left/transform39/big_bulb_left
+        weight: 1
+      - path: ctrl_big_bulb_right
+        weight: 1
+      - path: ctrl_big_bulb_right/transform38
+        weight: 1
+      - path: ctrl_big_bulb_right/transform38/big_bulb_right
+        weight: 1
+      - path: ctrl_bulb_middle_left
+        weight: 1
+      - path: ctrl_bulb_middle_left/transform40
+        weight: 1
+      - path: ctrl_bulb_middle_left/transform40/bulb_middle_left
+        weight: 1
+      - path: ctrl_bulb_middle_right
+        weight: 1
+      - path: ctrl_bulb_middle_right/transform41
+        weight: 1
+      - path: ctrl_bulb_middle_right/transform41/bulb_middle_right
+        weight: 1
+      - path: ctrl_bulb_small_left
+        weight: 1
+      - path: ctrl_bulb_small_left/transform42
+        weight: 1
+      - path: ctrl_bulb_small_left/transform42/bulb_small_left
+        weight: 1
+      - path: ctrl_bulb_small_right
+        weight: 1
+      - path: ctrl_bulb_small_right/transform43
+        weight: 1
+      - path: ctrl_bulb_small_right/transform43/bulb_small_right
+        weight: 1
+      - path: ctrl_neck_01
+        weight: 1
+      - path: ctrl_neck_01/transform8
+        weight: 1
+      - path: ctrl_neck_01/transform8/neck_01
+        weight: 1
+      - path: ctrl_neck_01/transform8/neck_01/eye
+        weight: 1
+      - path: ctrl_neck_01/transform8/neck_01/eye1
+        weight: 1
+      - path: ctrl_neck_02
+        weight: 1
+      - path: ctrl_neck_02/transform9
+        weight: 1
+      - path: ctrl_neck_02/transform9/neck_02
+        weight: 1
+      - path: ctrl_neck_03
+        weight: 1
+      - path: ctrl_neck_03/transform10
+        weight: 1
+      - path: ctrl_neck_03/transform10/neck_03
+        weight: 1
+      - path: ctrl_tail_01
+        weight: 1
+      - path: ctrl_tail_01/transform7
+        weight: 1
+      - path: ctrl_tail_01/transform7/tail_01
+        weight: 1
+      - path: ctrl_tail_02
+        weight: 1
+      - path: ctrl_tail_02/transform6
+        weight: 1
+      - path: ctrl_tail_02/transform6/tail_02
+        weight: 1
+      - path: ctrl_tail_03
+        weight: 1
+      - path: ctrl_tail_03/transform5
+        weight: 1
+      - path: ctrl_tail_03/transform5/tail_03
+        weight: 1
+      - path: ctrl_tail_04
+        weight: 1
+      - path: ctrl_tail_04/transform4
+        weight: 1
+      - path: ctrl_tail_04/transform4/tail_04
+        weight: 1
+      - path: ctrl_tail_05
+        weight: 1
+      - path: ctrl_tail_05/transform3
+        weight: 1
+      - path: ctrl_tail_05/transform3/tail_05
+        weight: 1
+      - path: ctrl_tail_06
+        weight: 1
+      - path: ctrl_tail_06/transform2
+        weight: 1
+      - path: ctrl_tail_06/transform2/tail_06
+        weight: 1
+      - path: ctrl_torso_01
+        weight: 1
+      - path: ctrl_torso_01/transform1
+        weight: 1
+      - path: ctrl_torso_01/transform1/torso_01
+        weight: 1
+      - path: ctrl_torso_02
+        weight: 1
+      - path: ctrl_torso_02/transform13
+        weight: 1
+      - path: ctrl_torso_02/transform13/torso_02
+        weight: 1
+      - path: ctrl_torso_02/transform13/torso_02/arm_origin
+        weight: 1
+      - path: ctrl_torso_02/transform13/torso_02/arm_origin/shoulder_left
+        weight: 1
+      - path: ctrl_torso_02/transform13/torso_02/arm_origin/shoulder_left/elbow_left
+        weight: 1
+      - path: ctrl_torso_02/transform13/torso_02/arm_origin/soulder_right
+        weight: 1
+      - path: ctrl_torso_02/transform13/torso_02/arm_origin/soulder_right/elbow_right
+        weight: 1
+      - path: ctrl_tube_big_left_01
+        weight: 1
+      - path: ctrl_tube_big_left_01/transform17
+        weight: 1
+      - path: ctrl_tube_big_left_01/transform17/tube_big_left_01
+        weight: 1
+      - path: ctrl_tube_big_left_02
+        weight: 1
+      - path: ctrl_tube_big_left_02/transform16
+        weight: 1
+      - path: ctrl_tube_big_left_02/transform16/tube_big_left_02
+        weight: 1
+      - path: ctrl_tube_big_left_03
+        weight: 1
+      - path: ctrl_tube_big_left_03/transform15
+        weight: 1
+      - path: ctrl_tube_big_left_03/transform15/tube_big_left_03
+        weight: 1
+      - path: ctrl_tube_big_left_04
+        weight: 1
+      - path: ctrl_tube_big_left_04/transform14
+        weight: 1
+      - path: ctrl_tube_big_left_04/transform14/tube_big_left_04
+        weight: 1
+      - path: ctrl_tube_big_right_01
+        weight: 1
+      - path: ctrl_tube_big_right_01/transform21
+        weight: 1
+      - path: ctrl_tube_big_right_01/transform21/tube_big_right_01
+        weight: 1
+      - path: ctrl_tube_big_right_02
+        weight: 1
+      - path: ctrl_tube_big_right_02/transform20
+        weight: 1
+      - path: ctrl_tube_big_right_02/transform20/tube_big_right_02
+        weight: 1
+      - path: ctrl_tube_big_right_03
+        weight: 1
+      - path: ctrl_tube_big_right_03/transform19
+        weight: 1
+      - path: ctrl_tube_big_right_03/transform19/tube_big_right_03
+        weight: 1
+      - path: ctrl_tube_big_right_04
+        weight: 1
+      - path: ctrl_tube_big_right_04/transform18
+        weight: 1
+      - path: ctrl_tube_big_right_04/transform18/tube_big_right_04
+        weight: 1
+      - path: ctrl_tube_middle_left_01
+        weight: 1
+      - path: ctrl_tube_middle_left_01/transform26
+        weight: 1
+      - path: ctrl_tube_middle_left_01/transform26/tube_middle_left_01
+        weight: 1
+      - path: ctrl_tube_middle_left_02
+        weight: 1
+      - path: ctrl_tube_middle_left_02/transform24
+        weight: 1
+      - path: ctrl_tube_middle_left_02/transform24/tube_middle_left_03
+        weight: 1
+      - path: ctrl_tube_middle_left_02/transform25
+        weight: 1
+      - path: ctrl_tube_middle_left_02/transform25/tube_middle_left_02
+        weight: 1
+      - path: ctrl_tube_middle_left_03
+        weight: 1
+      - path: ctrl_tube_middle_left_03/transform23
+        weight: 1
+      - path: ctrl_tube_middle_left_04
+        weight: 1
+      - path: ctrl_tube_middle_left_04/transform22
+        weight: 1
+      - path: ctrl_tube_middle_left_04/transform22/tube_middle_left_04
+        weight: 1
+      - path: ctrl_tube_middle_right_01
+        weight: 1
+      - path: ctrl_tube_middle_right_01/transform30
+        weight: 1
+      - path: ctrl_tube_middle_right_01/transform30/tube_middle_right_01
+        weight: 1
+      - path: ctrl_tube_middle_right_02
+        weight: 1
+      - path: ctrl_tube_middle_right_02/transform29
+        weight: 1
+      - path: ctrl_tube_middle_right_02/transform29/tube_middle_right_02
+        weight: 1
+      - path: ctrl_tube_middle_right_03
+        weight: 1
+      - path: ctrl_tube_middle_right_03/transform28
+        weight: 1
+      - path: ctrl_tube_middle_right_03/transform28/tube_middle_right_03
+        weight: 1
+      - path: ctrl_tube_middle_right_04
+        weight: 1
+      - path: ctrl_tube_middle_right_04/transform27
+        weight: 1
+      - path: ctrl_tube_middle_right_04/transform27/tube_middle_right_04
+        weight: 1
+      - path: ctrl_tube_small_left_01
+        weight: 1
+      - path: ctrl_tube_small_left_01/transform33
+        weight: 1
+      - path: ctrl_tube_small_left_01/transform33/tube_small_left_02
+        weight: 1
+      - path: ctrl_tube_small_left_01/transform34
+        weight: 1
+      - path: ctrl_tube_small_left_01/transform34/tube_small_left_01
+        weight: 1
+      - path: ctrl_tube_small_left_02
+        weight: 1
+      - path: ctrl_tube_small_left_02/transform32
+        weight: 1
+      - path: ctrl_tube_small_left_03
+        weight: 1
+      - path: ctrl_tube_small_left_03/transform31
+        weight: 1
+      - path: ctrl_tube_small_left_03/transform31/tube_small_left_03
+        weight: 1
+      - path: ctrl_tube_small_right_01
+        weight: 1
+      - path: ctrl_tube_small_right_01/transform37
+        weight: 1
+      - path: ctrl_tube_small_right_01/transform37/tube_small_right_01
+        weight: 1
+      - path: ctrl_tube_small_right_02
+        weight: 1
+      - path: ctrl_tube_small_right_02/transform36
+        weight: 1
+      - path: ctrl_tube_small_right_02/transform36/tube_small_right_02
+        weight: 1
+      - path: ctrl_tube_small_right_03
+        weight: 1
+      - path: ctrl_tube_small_right_03/transform35
+        weight: 1
+      - path: ctrl_tube_small_right_03/transform35/tube_small_right_03
+        weight: 1
+      - path: ctrl_wrist_left
+        weight: 1
+      - path: ctrl_wrist_left/transform11
+        weight: 1
+      - path: ctrl_wrist_left/transform11/wrist_left
+        weight: 1
+      - path: ctrl_wrist_right
+        weight: 1
+      - path: ctrl_wrist_right/transform12
+        weight: 1
+      - path: ctrl_wrist_right/transform12/wrist_right
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: nurbsCircle1/transform44
+        weight: 1
+      - path: nurbsCircle1/transform44/joint5
+        weight: 1
+      - path: nurbsCircle1/transform44/joint5/tube_big_origin
+        weight: 1
+      - path: nurbsCircle1/transform44/joint5/tube_big_origin/tube_middle_origin
+        weight: 1
+      - path: nurbsCircle1/transform44/joint5/tube_big_origin/tube_middle_origin/tube_small_origin
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/boss_ctrl
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.6
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
