@@ -22,7 +22,6 @@ public class BossContext : MonoBehaviour {
 
     //Chase Player
     public bool playerInSight = false;
-    public bool wander = false;
     public Transform target;
     public float attackDistance = 1.5f;
 
@@ -33,11 +32,12 @@ public class BossContext : MonoBehaviour {
     public bool resetTimeForIdle = false;
 
     // Sensors
-    public EnemySensors sensors;
+    private BossSensors sensors;
 
     //Attack Player
     public int attackDamage = 10;
     public PlayerHealth playerHealth;
+    public bool animFlagAttack = false;
 
     // Score
     public ScoreManager scoreManager;
@@ -63,7 +63,7 @@ public class BossContext : MonoBehaviour {
         else
             path_objs_Wander = null;
 
-        sensors = GetComponent<EnemySensors>();
+        sensors = GetComponent<BossSensors>();
         state = new BossWanderState();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = target.GetComponent<PlayerHealth>();

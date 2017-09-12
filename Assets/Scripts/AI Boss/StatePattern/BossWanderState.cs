@@ -51,21 +51,16 @@ public class BossWanderState : BossState
 
         if (context.life <= 0)
         {
-            //context.state = new DeathState();
+            context.state = new BossDeathState();
             return;
         }
 
         if (context.playerInSight == true && context.playerHealth.currentHealth > 0)
         {
-            //context.state = new ChaseState();
+            context.state = new BossChaseState();
             return;
         }
 
-        if (context.wander == false)
-        {
-            //context.state = new PatrolState();
-            return;
-        }
 
         if (time >= context.idleTimer)
         {

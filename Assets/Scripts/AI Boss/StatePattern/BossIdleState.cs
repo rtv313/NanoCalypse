@@ -17,7 +17,7 @@ public class BossIdleState : BossState {
     {
         if (callAnimation == false)
         {
-            context.animator.SetTrigger("Idle");
+            context.animator.SetTrigger("BossIdle");
             callAnimation = true;
         }
     }
@@ -43,9 +43,10 @@ public class BossIdleState : BossState {
             return;
         }
 
-        if (time >= context.idleTime && context.wander == true)
+        if (time >= context.idleTime)
         {
             context.state = new BossWanderState();
+            return;
         }
     }
 

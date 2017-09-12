@@ -80,7 +80,7 @@ public class AttackState : State {
     private void Transition(Context context)
     {
         
-       if (context.life <= 0)
+        if (context.life <= 0)
         {
             context.state = new DeathState();
             return;
@@ -102,6 +102,4 @@ public class AttackState : State {
             return;
         }
     }
-
-    
 }
