@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VirusLaser : MonoBehaviour {
+public class BossLaser : MonoBehaviour {
 
     public Transform firePoint;
     public int damage = 1;
@@ -12,28 +12,31 @@ public class VirusLaser : MonoBehaviour {
     private float timeAudioLaser = 0.0f;
     public AudioClip laserAudio;
     private AudioSource audioSource;
-    private Context context;
+    private BossContext context;
     private LineRenderer lineRenderer;
     private PlayerHealth playerHealth;
     public GameObject ImpactLaserEffect;
     private GameObject instanceImpactLaser;
-    
+
     private float timeForDamage = 0f;
-	// Use this for initialization
-	void Start ()
+
+
+    // Use this for initialization
+    void Start ()
     {
-        context = GetComponent<Context>();
+        context = GetComponent<BossContext>();
         lineRenderer = GetComponent<LineRenderer>();
         playerHealth = context.target.GetComponent<PlayerHealth>();
         audioSource = GetComponent<AudioSource>();
         timeAudioLaser = timerAudioLaser;
         instanceImpactLaser = Instantiate(ImpactLaserEffect);
         instanceImpactLaser.active = false;
-	}
+
+    }
 
     void FixedUpdate()
     {
-        if (context.mutaded == true && context.stateString == "Attack")
+        if (context.stateString == "BossAttack" && context.BossColor == Context.EnemyType.VIRUS)
         {
             LaserAttack();
         }
@@ -43,6 +46,7 @@ public class VirusLaser : MonoBehaviour {
             lineRenderer.enabled = false;
         }
     }
+
 
     void LaserAttack()
     {
@@ -87,7 +91,7 @@ public class VirusLaser : MonoBehaviour {
         }
         else
         {
-          timeAudioLaser = timerAudioLaser;
+            timeAudioLaser = timerAudioLaser;
         }
     }
 
@@ -97,5 +101,3 @@ public class VirusLaser : MonoBehaviour {
         lineRenderer.enabled = false;
     }
 }
-
-

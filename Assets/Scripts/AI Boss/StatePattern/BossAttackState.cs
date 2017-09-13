@@ -7,9 +7,9 @@ public class BossAttackState : BossState
 
     public override void Handle(BossContext context)
     {
-        AnimationControl(context);
-        context.stateString = "BossAttack";
+       context.stateString = "BossAttack";
         Attack(context);
+        AnimationControl(context);
         Transition(context);
     }
 
@@ -24,8 +24,6 @@ public class BossAttackState : BossState
 
     private void Attack(BossContext context)
     {
-
-        context.stateString = "Attack";
         context.nav.enabled = false;
 
         Vector3 direction = (context.target.position - context.transform.position).normalized;
@@ -60,12 +58,14 @@ public class BossAttackState : BossState
 
         if (context.life <= 0)
         {
+           
             context.state = new BossDeathState();
             return;
         }
 
         if (context.playerHealth.currentHealth <= 0)
         {
+           
             context.state = new BossIdleState();
             return;
         }
@@ -76,6 +76,7 @@ public class BossAttackState : BossState
 
         if (dist > context.attackDistance)
         {
+           
             context.state = new BossChaseState();
             return;
         }
