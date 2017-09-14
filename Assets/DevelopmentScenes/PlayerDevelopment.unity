@@ -5205,6 +5205,26 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114661291748279118, guid: de57d0b1a5d44444da7aae8b13734838,
+        type: 2}
+      propertyPath: airAttackDistance
+      value: 25.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 114661291748279118, guid: de57d0b1a5d44444da7aae8b13734838,
+        type: 2}
+      propertyPath: laserAttackDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114661291748279118, guid: de57d0b1a5d44444da7aae8b13734838,
+        type: 2}
+      propertyPath: meleeAttackDistance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201365883206766, guid: de57d0b1a5d44444da7aae8b13734838,
+        type: 2}
+      propertyPath: BossColor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de57d0b1a5d44444da7aae8b13734838, type: 2}
   m_IsPrefabParent: 0
