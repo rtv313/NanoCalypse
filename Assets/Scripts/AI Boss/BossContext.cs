@@ -37,7 +37,6 @@ public class BossContext : MonoBehaviour {
     //Attack Player
     public int attackDamage = 10;
     public PlayerHealth playerHealth;
-    public bool animFlagAttack = false;
 
     // Score
     public ScoreManager scoreManager;

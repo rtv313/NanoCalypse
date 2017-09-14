@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 114661291748279118}
   - component: {fileID: 114466278205597780}
   - component: {fileID: 82793850781960960}
+  - component: {fileID: 114950790183306374}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -1504,6 +1505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4971855839135932}
   - component: {fileID: 95307707760596988}
+  - component: {fileID: 114522035544145632}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -4433,7 +4435,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -4445,7 +4447,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -4457,7 +4459,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &95307707760596988
 Animator:
   serializedVersion: 3
@@ -4506,7 +4508,6 @@ MonoBehaviour:
   resetTimeForIdle: 0
   attackDamage: 10
   playerHealth: {fileID: 0}
-  animFlagAttack: 0
   scoreManager: {fileID: 0}
 --- !u!114 &114466278205597780
 MonoBehaviour:
@@ -4527,6 +4528,18 @@ MonoBehaviour:
   laserAudio: {fileID: 8300000, guid: ca9f3cff8ab27fa4d8c9f1d3a6e96cb5, type: 3}
   ImpactLaserEffect: {fileID: 1682002780390900, guid: f32a87f82e0463e40ad80e7c6fec424a,
     type: 2}
+--- !u!114 &114522035544145632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1686547996463590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccfd8c68a0fb4040a2ffa61cdc28c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1212534007640590}
 --- !u!114 &114547094196753354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4552,7 +4565,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshBody: {fileID: 1382392881722968}
   brightness: 1.6
-  changeTime: 10
+  changeTime: 3
+--- !u!114 &114950790183306374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1212534007640590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483a95b4e9fa33045866bc8aec0a0657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionOneExplosion: {fileID: 4992993818064170}
+  positionTwoExplosion: {fileID: 4762285986457474}
+  positionThreeExplosion: {fileID: 4547977870647660}
+  PositionFourExplosion: {fileID: 4826192112538618}
+  PositionFiveExplosion: {fileID: 4971793318197156}
+  PositionSixExplosion: {fileID: 4574078769078510}
 --- !u!120 &120177501395869508
 LineRenderer:
   m_ObjectHideFlags: 1

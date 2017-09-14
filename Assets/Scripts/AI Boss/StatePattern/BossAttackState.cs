@@ -9,18 +9,18 @@ public class BossAttackState : BossState
     {
        context.stateString = "BossAttack";
         Attack(context);
-        AnimationControl(context);
+        //AnimationControl(context);
         Transition(context);
     }
 
-    private void AnimationControl(BossContext context)
-    {
-        if (callAnimation == false)
-        {
-            context.animator.SetTrigger("Melee2");
-            callAnimation = true;
-        }
-    }
+    //private void AnimationControl(BossContext context)
+    //{
+    //    if (callAnimation == false)
+    //    {
+    //        context.animator.SetTrigger("Melee2");
+    //        callAnimation = true;
+    //    }
+    //}
 
     private void Attack(BossContext context)
     {
@@ -30,7 +30,7 @@ public class BossAttackState : BossState
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));    // flattens the vector3
         context.transform.rotation = Quaternion.Slerp(context.transform.rotation, lookRotation, Time.deltaTime * 4);
 
-        bool canAttack = context.playerHealth.currentHealth > 0 && context.playerInSight == true && context.animFlagAttack == true;
+        bool canAttack = context.playerHealth.currentHealth > 0 && context.playerInSight == true;
 
         if (canAttack==true)
         {
@@ -46,10 +46,13 @@ public class BossAttackState : BossState
 
                 case Context.EnemyType.BACTERIA:
 
+                    if (callAnimation == false)
+                    {
+                       context.animator.SetTrigger("DistanceAttack");
+                       callAnimation = true;
+                    }
                     break;
             }
-
-            context.animFlagAttack = false;
         }
     }
 
