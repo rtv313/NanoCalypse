@@ -37,7 +37,8 @@ public class SelectBossAttack : MonoBehaviour {
 
     private void SelectAttackType()
     {
-        int random = Random.Range(1,5);
+        //int random = Random.Range(1,5);
+        int random = 2;
         Material mat = meshBody.GetComponent<Renderer>().material;
 
         switch (random)

@@ -8,9 +8,9 @@ public class BossAttackState : BossState
     public override void Handle(BossContext context)
     {
        context.stateString = "BossAttack";
-        Attack(context);
+       Attack(context);
         //AnimationControl(context);
-        Transition(context);
+       Transition(context);
     }
 
     //private void AnimationControl(BossContext context)
@@ -41,7 +41,24 @@ public class BossAttackState : BossState
                     break;
 
                 case Context.EnemyType.PARASITE:
-                   
+
+                    if (context.CallMeleeAttackAnimation == false)
+                    {
+                        int randomChoice = Random.Range(1, 3);
+
+                        switch (randomChoice)
+                        {
+                            case 1:
+                                context.animator.SetTrigger("Melee1");
+                                break;
+
+                            case 2:
+                                context.animator.SetTrigger("Melee2");
+                                break;
+                        }
+
+                        context.CallMeleeAttackAnimation = true;
+                    }
                     break;
 
                 case Context.EnemyType.BACTERIA:
