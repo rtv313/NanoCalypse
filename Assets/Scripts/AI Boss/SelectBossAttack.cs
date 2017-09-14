@@ -42,7 +42,7 @@ public class SelectBossAttack : MonoBehaviour {
 
     private void SelectAttackType()
     {
-        int random = Random.Range(1,5);
+        int random = Random.Range(1, 4);
         Material mat = meshBody.GetComponent<Renderer>().material;
 
         switch (random)
@@ -56,6 +56,7 @@ public class SelectBossAttack : MonoBehaviour {
             case 2:
                 context.BossColor = Context.EnemyType.PARASITE;
                 context.attackDistance = meleeAttackDistance;
+                context.CallMeleeAttackAnimation = false;
                 mat.SetColor("_EmissionColor", Color.blue * brightness);
                 break;
 
