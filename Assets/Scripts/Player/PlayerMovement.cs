@@ -168,9 +168,17 @@ public class PlayerMovement : MonoBehaviour
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
 
-        if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+        // ---
+        // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // create a plane at 0,0,0 whose normal points to +Y:
+        Plane hPlane = new Plane(Vector3.up, new Vector3(0.0f, transform.position.y, 0.0f));
+        // Plane.Raycast stores the distance from ray.origin to the hit point in this variable:
+        float distance = 0;
+        // if the ray hits the plane...
+        if (hPlane.Raycast(camRay, out distance))
         {
-            Vector3 floorHitPoint = floorHit.point;
+            // get the hit point:
+            Vector3 floorHitPoint = camRay.GetPoint(distance);
             floorHitPoint += -transform.right * 0.5f;
             Vector3 playerToMouse = floorHitPoint - transform.position;
             playerToMouse.y = 0.0f;
@@ -182,6 +190,22 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
             }
         }
+        // ---
+
+        //if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
+        //{
+        //    Vector3 floorHitPoint = floorHit.point;
+        //    floorHitPoint += -transform.right * 0.5f;
+        //    Vector3 playerToMouse = floorHitPoint - transform.position;
+        //    playerToMouse.y = 0.0f;
+
+        //    // Mouse Aim Deadzone
+        //    if (playerToMouse.magnitude > 1.0f)
+        //    {
+        //        Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+        //        transform.rotation = (Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * turningSpeed));
+        //    }
+        //}
     }
 
 
