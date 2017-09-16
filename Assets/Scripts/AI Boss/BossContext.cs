@@ -24,6 +24,8 @@ public class BossContext : MonoBehaviour {
     public bool playerInSight = false;
     public Transform target;
     public float meleeAttackDistance = 7.0f;
+    public float laserAttackDistance = 14.0f;
+    public float spawnAttackDistance = 14.0f;
     public float attackDistance = 1.5f;
 
     //Idle Player
@@ -49,6 +51,8 @@ public class BossContext : MonoBehaviour {
 
     //AnimationsFlags
     public bool FlagMeleeAttack = false;
+    public bool FlagSpawnAttack = false;
+    public bool FlagAirAttack = false;
     public bool AnimationInProcess = false;
 
     // Use this for initialization

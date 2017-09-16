@@ -5,12 +5,16 @@ using UnityEngine;
 public class BossMeleeInterface : MonoBehaviour {
     public BossContext context;
     public GameObject meleeAttackCollider;
-    public GameObject meleeAttackCollider2;
+
+    public GameObject SpawnPoint1;
+    public GameObject SpawnPoint2;
+    public GameObject SpawnPoint3;
+    private EnemiesPool enemiesPool;
 
     void Start()
     {
         meleeAttackCollider.GetComponent<Collider>().enabled = false;
-        meleeAttackCollider2.GetComponent<Collider>().enabled = false;
+        enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>();
     }
 
     public void ActivateMeleeCollider()
@@ -23,19 +27,62 @@ public class BossMeleeInterface : MonoBehaviour {
         meleeAttackCollider.GetComponent<Collider>().enabled = false;
     }
 
-    public void ActivateMeleeCollider2()
+    public void SpawnEnemiesBoss()
     {
-        meleeAttackCollider2.GetComponent<Collider>().enabled = true;
+        CreateEnemy(SpawnPoint1.transform);
+        CreateEnemy(SpawnPoint2.transform);
+        CreateEnemy(SpawnPoint2.transform);
     }
 
-    public void DeActivateMeleeCollider2()
-    {
-        meleeAttackCollider2.GetComponent<Collider>().enabled = false;
-    }
+
 
     public void CallAnimationEnded()
     {
         context.FlagMeleeAttack = false;
+        context.FlagSpawnAttack = false;
         context.AnimationInProcess = false;
+    }
+
+    private void CreateEnemy(Transform spawnPos)
+    {
+        int randomEnemy = Random.Range(0, 3);
+        GameObject enemySelected;
+      ;
+        switch (randomEnemy)
+        {
+            case 0:
+                enemySelected = enemiesPool.GetEnemy(spawnPos, Context.EnemyType.VIRUS);
+                PrepareEnemy(enemySelected, spawnPos);
+                break;
+
+            case 1:
+                enemySelected = enemiesPool.GetEnemy(spawnPos, Context.EnemyType.BACTERIA);
+                PrepareEnemy(enemySelected, spawnPos);
+                break;
+
+            case 2:
+                enemySelected = enemiesPool.GetEnemy(spawnPos, Context.EnemyType.PARASITE);
+                PrepareEnemy(enemySelected, spawnPos);
+                break;
+        }
+    }
+
+
+    private void PrepareEnemy(GameObject enemySelected,Transform spawnPos)
+    {
+       
+        enemySelected.GetComponent<CapsuleCollider>().isTrigger = false;
+        Context contextSpawnedEnemy = enemySelected.GetComponent<Context>();
+        contextSpawnedEnemy.patrolPath = context.wanderPath;
+        contextSpawnedEnemy.wanderPath = context.wanderPath;
+        contextSpawnedEnemy.wander = true;
+        enemySelected.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        enemySelected.gameObject.GetComponent<Context>().enabled = true;
+        enemySelected.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        enemySelected.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        enemySelected.gameObject.GetComponent<SphereCollider>().enabled = true;
+        enemySelected.GetComponent<CapsuleCollider>().enabled = true;
+        contextSpawnedEnemy.path_objs_Wander = context.wanderPath.GetComponentsInChildren<Transform>();
+        contextSpawnedEnemy.path_objs_Wander = context.wanderPath.GetComponentsInChildren<Transform>();
     }
 }

@@ -38,15 +38,33 @@ public class BossAttackState : BossState
                     break;
 
                 case BossContext.BossStateColor.VIRUS:
-                    
+
+                    if (context.FlagMeleeAttack == false)
+                    {
+                        context.animator.SetTrigger("Melee1");
+                        context.FlagMeleeAttack = true;
+                        context.AnimationInProcess = true;
+                    }
                     break;
 
                 case BossContext.BossStateColor.PARASITE:
 
+                    if (context.FlagSpawnAttack == false)
+                    {
+                        context.animator.SetTrigger("Melee2");
+                        context.FlagSpawnAttack = true;
+                        context.AnimationInProcess = true;
+                    }
+
                     break;
 
                 case BossContext.BossStateColor.BACTERIA:
-
+                    if (context.FlagAirAttack == false)
+                    {
+                        context.animator.SetTrigger("DistanceAttack");
+                        context.FlagAirAttack = true;
+                        context.AnimationInProcess = true;
+                    }
                     break;
             }
         }

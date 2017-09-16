@@ -12,9 +12,14 @@ public class SelectBossAttack : MonoBehaviour {
     public float airAttackDistance = 18.0f;
 
 
-    private bool flagAirAttack = false;
+  
     private BossContext context;
     private float controlTime = 0.0f;
+
+    public float timeInInmmune = 10.0f;
+    public float timeInRed = 5.0f;
+    private float changeStateTime = 0.0f;
+    private float timer = 0.0f;
 
     private Material mat;
     // Use this for initialization
@@ -28,38 +33,54 @@ public class SelectBossAttack : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        //if (context.AnimationInProcess == true)
+        //    return;
 
+        if (timer >= changeStateTime)
+        {
+            if (context.bossColor == BossContext.BossStateColor.INMUNE)
+            {
+                SelectSpecialAttack();
+            }
+            else
+            {
+                AnyStateToInmmune();
+            }
+            timer = 0.0f;
+        }
+        else
+        {
+            timer += Time.deltaTime;
+        }
     }
 
     private void SelectSpecialAttack()
     {
-
-        int random = Random.Range(1, 3);
-        random = 1;
+        gameObject.GetComponent<BossBulletAttack>().enabled = false;
+        int random = Random.Range(1, 4);
+        
         switch (random)
         {
             case 1: // por tiempo
-                context.bossColor = BossContext.BossStateColor.INMUNE;
+                context.bossColor = BossContext.BossStateColor.VIRUS;
                 mat.SetColor("_EmissionColor", Color.red * brightness);
+                changeStateTime = timeInRed;
+                context.attackDistance = context.laserAttackDistance;
                 break;
 
             case 2: // cuando la animacion acabe 
                 context.bossColor = BossContext.BossStateColor.BACTERIA;
                 mat.SetColor("_EmissionColor", Color.green * brightness);
-                flagAirAttack = true;
+                context.FlagAirAttack = false;
+                context.attackDistance = context.laserAttackDistance;
                 break;
 
             case 3:
                 context.bossColor = BossContext.BossStateColor.PARASITE;
                 mat.SetColor("_EmissionColor", Color.blue * brightness);
-
+                context.attackDistance = context.laserAttackDistance;
                 break;
         }
-    }
-
-    public void BossAirAttackAnimationFinished() // la animacion de ataque aereo a terminado
-    {
-        flagAirAttack = false;
     }
 
     public void SetInmmune()
@@ -67,6 +88,19 @@ public class SelectBossAttack : MonoBehaviour {
         context.attackDistance = context.meleeAttackDistance;
         context.bossColor = BossContext.BossStateColor.INMUNE;
         mat.SetColor("_EmissionColor", Color.yellow * brightness);
-    } 
+        changeStateTime = timeInInmmune;
+    }
 
+    private void InmunneToRed()
+    {
+
+    }
+
+    private void AnyStateToInmmune()
+    {
+        changeStateTime = timeInInmmune;
+        context.attackDistance = context.meleeAttackDistance;
+        SetInmmune();
+        gameObject.GetComponent<BossBulletAttack>().enabled = true;
+    }
 }
