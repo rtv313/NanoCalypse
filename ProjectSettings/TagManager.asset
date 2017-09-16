@@ -22,6 +22,7 @@ TagManager:
   - DeathPSpool
   - SpawnFood
   - BloodPsPool
+  - Boss
   layers:
   - Default
   - TransparentFX

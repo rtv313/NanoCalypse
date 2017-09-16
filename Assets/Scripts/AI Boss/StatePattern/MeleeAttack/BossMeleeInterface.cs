@@ -33,8 +33,9 @@ public class BossMeleeInterface : MonoBehaviour {
         meleeAttackCollider2.GetComponent<Collider>().enabled = false;
     }
 
-    public void CallAnimationFlag()
+    public void CallAnimationEnded()
     {
-        context.CallMeleeAttackAnimation = false;
+        context.FlagMeleeAttack = false;
+        context.AnimationInProcess = false;
     }
 }

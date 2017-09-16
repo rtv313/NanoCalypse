@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossContext : MonoBehaviour {
-
-    public Context.EnemyType BossColor = Context.EnemyType.VIRUS;
+    public enum BossStateColor { VIRUS, BACTERIA, PARASITE, INMUNE };
+    public BossContext.BossStateColor bossColor = BossStateColor.INMUNE;
     public BossState state;
     public string stateString = "Attack";
     public int life = 500;
@@ -23,6 +23,7 @@ public class BossContext : MonoBehaviour {
     //Chase Player
     public bool playerInSight = false;
     public Transform target;
+    public float meleeAttackDistance = 7.0f;
     public float attackDistance = 1.5f;
 
     //Idle Player
@@ -37,7 +38,7 @@ public class BossContext : MonoBehaviour {
     //Attack Player
     public int attackDamage = 10;
     public PlayerHealth playerHealth;
-    public bool CallMeleeAttackAnimation = false;
+    
 
     // Score
     public ScoreManager scoreManager;
@@ -45,6 +46,10 @@ public class BossContext : MonoBehaviour {
     // Damage Feedback
     private DamageFeedback dmgFeedback;
 
+
+    //AnimationsFlags
+    public bool FlagMeleeAttack = false;
+    public bool AnimationInProcess = false;
 
     // Use this for initialization
     void Start () {

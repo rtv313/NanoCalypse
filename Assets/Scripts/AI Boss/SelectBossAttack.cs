@@ -10,77 +10,63 @@ public class SelectBossAttack : MonoBehaviour {
 
     public float laserAttackDistance = 15.0f;
     public float airAttackDistance = 18.0f;
-    public float meleeAttackDistance = 7.0f;
 
-    private bool  flagChangeAttack = false;
+
+    private bool flagAirAttack = false;
     private BossContext context;
-    private float controlTime =0.0f;
+    private float controlTime = 0.0f;
 
-
-    private bool meleeAttack = false;
     private Material mat;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         context = GetComponent<BossContext>();
         mat = meshBody.GetComponent<Renderer>().material;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-
-        //if (flagChangeAttack == true)
-        //{
-        //    SelectAttackType();
-        //    flagChangeAttack = false;
-        //}
-        //else
-        //{
-        //    controlTime += Time.deltaTime;
-        //    if (controlTime >= changeTime)
-        //    {
-        //        flagChangeAttack = true;
-        //        controlTime = 0.0f;
-        //    }
-        //}
-
-        float distanceBetweenPlayer = Vector3.Distance(transform.position, context.target.position);
-
-        if (distanceBetweenPlayer  <= meleeAttackDistance)
-        {
-            context.BossColor = Context.EnemyType.PARASITE;
-            context.attackDistance = meleeAttackDistance;
-            mat.SetColor("_EmissionColor", Color.blue * brightness);
-            meleeAttack = true;
-
-           
-        }
-        else if (distanceBetweenPlayer >= meleeAttackDistance &&  distanceBetweenPlayer <= laserAttackDistance)
-        {
-            context.CallMeleeAttackAnimation = false;
-            SelectAttackType();
-        }
-
+        SetInmmune();
     }
 
-    private void SelectAttackType()
+    // Update is called once per frame
+    void Update()
     {
-        int random = Random.Range(1,3);
+
+    }
+
+    private void SelectSpecialAttack()
+    {
+
+        int random = Random.Range(1, 3);
         random = 1;
         switch (random)
         {
             case 1: // por tiempo
-                context.BossColor = Context.EnemyType.VIRUS;
-                context.attackDistance = laserAttackDistance;
+                context.bossColor = BossContext.BossStateColor.INMUNE;
                 mat.SetColor("_EmissionColor", Color.red * brightness);
                 break;
 
             case 2: // cuando la animacion acabe 
-                context.BossColor = Context.EnemyType.BACTERIA;
-                context.attackDistance = airAttackDistance;
+                context.bossColor = BossContext.BossStateColor.BACTERIA;
                 mat.SetColor("_EmissionColor", Color.green * brightness);
+                flagAirAttack = true;
                 break;
-         }
-     }
+
+            case 3:
+                context.bossColor = BossContext.BossStateColor.PARASITE;
+                mat.SetColor("_EmissionColor", Color.blue * brightness);
+
+                break;
+        }
+    }
+
+    public void BossAirAttackAnimationFinished() // la animacion de ataque aereo a terminado
+    {
+        flagAirAttack = false;
+    }
+
+    public void SetInmmune()
+    {
+        context.attackDistance = context.meleeAttackDistance;
+        context.bossColor = BossContext.BossStateColor.INMUNE;
+        mat.SetColor("_EmissionColor", Color.yellow * brightness);
+    } 
 
 }

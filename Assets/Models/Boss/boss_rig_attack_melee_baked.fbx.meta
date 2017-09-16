@@ -368,7 +368,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.99719894
-        functionName: CallAnimationFlag
+        functionName: CallAnimationEnded
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 9a0c62aab41de62488ce8470284da448,
           type: 3}

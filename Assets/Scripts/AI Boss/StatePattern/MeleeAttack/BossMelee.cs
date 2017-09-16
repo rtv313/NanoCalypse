@@ -12,6 +12,7 @@ public class BossMelee : MonoBehaviour {
 	
     void OnTriggerEnter(Collider other)
     {
-        playerHealth.TakeDamage(damage);
+        if(other.gameObject.tag == "Player")
+            playerHealth.TakeDamage(damage);
     }
 }

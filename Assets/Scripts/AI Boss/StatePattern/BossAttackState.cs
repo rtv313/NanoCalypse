@@ -3,24 +3,14 @@ using UnityEngine;
 
 public class BossAttackState : BossState
 {
-    private bool callAnimation = false;
-
     public override void Handle(BossContext context)
     {
        context.stateString = "BossAttack";
-       Attack(context);
-        //AnimationControl(context);
-       Transition(context);
+        Transition(context);
+        Attack(context);
+   
+       
     }
-
-    //private void AnimationControl(BossContext context)
-    //{
-    //    if (callAnimation == false)
-    //    {
-    //        context.animator.SetTrigger("Melee2");
-    //        callAnimation = true;
-    //    }
-    //}
 
     private void Attack(BossContext context)
     {
@@ -34,40 +24,29 @@ public class BossAttackState : BossState
 
         if (canAttack==true)
         {
-            switch (context.BossColor)
+            switch (context.bossColor)
             {
-                case Context.EnemyType.VIRUS:
+                case BossContext.BossStateColor.INMUNE:
+
+                    if (context.FlagMeleeAttack == false)
+                    {
+                        context.animator.SetTrigger("Melee1");
+                        context.FlagMeleeAttack = true;
+                        context.AnimationInProcess = true;
+                    }
+
+                    break;
+
+                case BossContext.BossStateColor.VIRUS:
                     
                     break;
 
-                case Context.EnemyType.PARASITE:
+                case BossContext.BossStateColor.PARASITE:
 
-                    if (context.CallMeleeAttackAnimation == false)
-                    {
-                        int randomChoice = Random.Range(1, 3);
-
-                        switch (randomChoice)
-                        {
-                            case 1:
-                                context.animator.SetTrigger("Melee1");
-                                break;
-
-                            case 2:
-                                context.animator.SetTrigger("Melee2");
-                                break;
-                        }
-
-                        context.CallMeleeAttackAnimation = true;
-                    }
                     break;
 
-                case Context.EnemyType.BACTERIA:
+                case BossContext.BossStateColor.BACTERIA:
 
-                    if (callAnimation == false)
-                    {
-                       context.animator.SetTrigger("DistanceAttack");
-                       callAnimation = true;
-                    }
                     break;
             }
         }
@@ -94,7 +73,7 @@ public class BossAttackState : BossState
 
         float dist = Vector3.Distance(context.target.position, context.transform.position);
 
-        if (dist > context.attackDistance)
+        if (dist > context.attackDistance && context.AnimationInProcess == false)
         {
            
             context.state = new BossChaseState();

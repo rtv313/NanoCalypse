@@ -27,12 +27,12 @@ public class VirusAttack : MonoBehaviour
         if (angle < angleForAttack)
         {
             Vector3 dir = (context.target.position - firePoint.position).normalized;
-            GameObject flash = Instantiate(muzzleFlash, transform.position, transform.rotation);
+            //GameObject flash = Instantiate(muzzleFlash, transform.position, transform.rotation);
             var bullet = Instantiate(virusBullet, firePoint.position, transform.rotation);
             bullet.transform.rotation = Quaternion.LookRotation(dir);
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
             Destroy(bullet, 2.0f);
-            Destroy(flash, 0.3f);
+            //Destroy(flash, 0.3f);
         }
     }    
 }

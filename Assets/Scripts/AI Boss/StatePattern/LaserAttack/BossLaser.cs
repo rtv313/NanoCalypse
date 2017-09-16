@@ -36,7 +36,7 @@ public class BossLaser : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (context.stateString == "BossAttack" && context.BossColor == Context.EnemyType.VIRUS)
+        if (context.stateString == "BossAttack" && context.bossColor == BossContext.BossStateColor.VIRUS)
         {
             LaserAttack();
         }

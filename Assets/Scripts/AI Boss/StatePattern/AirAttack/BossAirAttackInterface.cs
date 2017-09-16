@@ -10,5 +10,6 @@ public class BossAirAttackInterface : MonoBehaviour {
     public void CreateExplosions()
     {
         boss.GetComponent<BossAirAttack>().CreateExplosions();
+        boss.GetComponent<SelectBossAttack>().BossAirAttackAnimationFinished();
     }
 }

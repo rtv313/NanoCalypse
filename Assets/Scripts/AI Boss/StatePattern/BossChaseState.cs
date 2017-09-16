@@ -30,6 +30,7 @@ public class BossChaseState : BossState
 
     private void ChasePlayer(BossContext context)
     {
+        context.FlagMeleeAttack = false;
         context.nav.enabled = true;
         context.nav.SetDestination(context.target.position);
     }
