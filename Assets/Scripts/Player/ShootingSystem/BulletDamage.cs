@@ -106,22 +106,11 @@ public class BulletDamage : MonoBehaviour {
         // Hit on spawn Point
         else if (other.gameObject.tag == "SpawnPoint")
         {
-            other.gameObject.GetComponent<DamageFeedback>().receiveDamage();
-
-            switch (bulletType)
-            {
-                case BulletType.ASSAULT:
-                    other.gameObject.GetComponent<SpawnControl>().health -= assaultRifleDamage / 2;
-                    break;
-
-                case BulletType.SHOOTGUN:
-                    other.gameObject.GetComponent<SpawnControl>().health -= shootgunDamage / 2;
-                    break;
-
-                case BulletType.SNIPER:
-                    other.gameObject.GetComponent<SpawnControl>().health -= sniperDamage / 2;
-                    break;
-            }
+            SpawnDamage(other.gameObject);
+        }
+        else if (other.gameObject.tag == "Boss")
+        {
+            BossDamage(other.gameObject);
         }
 
         if (other.gameObject.tag != "Player" && other.gameObject.tag != "Enemy")
@@ -156,5 +145,52 @@ public class BulletDamage : MonoBehaviour {
     public void EnableShoot()
     {
         shootFlag = true;
-    } 
+    }
+
+    private void BossDamage(GameObject other)
+    {
+        BossContext bossContext = other.gameObject.GetComponent<BossContext>();
+
+        if (bossContext.bossColor != BossContext.BossStateColor.INMUNE)
+        {
+            switch (bulletType)
+            {
+                case BulletType.ASSAULT:
+                    if(bossContext.bossColor == BossContext.BossStateColor.VIRUS)
+                        bossContext.life -= assaultRifleDamage / 2;
+                    break;
+
+                case BulletType.SHOOTGUN:
+                    if (bossContext.bossColor == BossContext.BossStateColor.PARASITE)
+                        bossContext.life -= shootgunDamage / 2;
+                    break;
+
+                case BulletType.SNIPER:
+                    if (bossContext.bossColor == BossContext.BossStateColor.BACTERIA)
+                        bossContext.life -= sniperDamage / 2;
+                    break;
+            }
+        }
+    }
+
+    private void SpawnDamage(GameObject other)
+    {
+        other.gameObject.GetComponent<DamageFeedback>().receiveDamage();
+        SpawnControl spawnControl = other.gameObject.GetComponent<SpawnControl>();
+        switch (bulletType)
+        {
+            case BulletType.ASSAULT:
+                spawnControl.health -= assaultRifleDamage / 2;
+                break;
+
+            case BulletType.SHOOTGUN:
+                spawnControl.health -= shootgunDamage / 2;
+                break;
+
+            case BulletType.SNIPER:
+                spawnControl.health -= sniperDamage / 2;
+                break;
+        }
+    }
+
 }
