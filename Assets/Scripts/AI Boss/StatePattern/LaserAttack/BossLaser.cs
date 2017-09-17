@@ -38,6 +38,7 @@ public class BossLaser : MonoBehaviour {
     {
         if (context.stateString == "BossAttack" && context.bossColor == BossContext.BossStateColor.VIRUS)
         {
+           
             LaserAttack();
         }
         else
