@@ -156,18 +156,28 @@ public class BulletDamage : MonoBehaviour {
             switch (bulletType)
             {
                 case BulletType.ASSAULT:
-                    if(bossContext.bossColor == BossContext.BossStateColor.VIRUS)
+                    if (bossContext.bossColor == BossContext.BossStateColor.VIRUS)
+                    {
                         bossContext.life -= assaultRifleDamage / 2;
+                        other.gameObject.GetComponent<DamageFeedback>().receiveDamage();
+                    }
                     break;
 
                 case BulletType.SHOOTGUN:
                     if (bossContext.bossColor == BossContext.BossStateColor.PARASITE)
+                    {
                         bossContext.life -= shootgunDamage / 2;
+                        other.gameObject.GetComponent<DamageFeedback>().receiveDamage();
+                    } 
                     break;
 
                 case BulletType.SNIPER:
                     if (bossContext.bossColor == BossContext.BossStateColor.BACTERIA)
+                    {
                         bossContext.life -= sniperDamage / 2;
+                        other.gameObject.GetComponent<DamageFeedback>().receiveDamage();
+                    }
+                        
                     break;
             }
         }
