@@ -22,11 +22,13 @@ public class SelectBossAttack : MonoBehaviour {
     private float timer = 0.0f;
 
     private Material mat;
+    private Material matOutlined;
     // Use this for initialization
     void Start()
     {
         context = GetComponent<BossContext>();
         mat = meshBody.GetComponent<Renderer>().material;
+        matOutlined = meshBody.GetComponent<Renderer>().materials[1];
         SetInmmune();
     }
 
@@ -58,12 +60,13 @@ public class SelectBossAttack : MonoBehaviour {
     {
         gameObject.GetComponent<BossBulletAttack>().enabled = false;
         int random = Random.Range(1, 4);
-        
+       
         switch (random)
         {
             case 1: // por tiempo
                 context.bossColor = BossContext.BossStateColor.VIRUS;
                 mat.SetColor("_EmissionColor", Color.red * brightness);
+                matOutlined.SetColor("_OutlineColor", Color.red);
                 changeStateTime = timeInRed;
                 context.attackDistance = context.laserAttackDistance;
                 break;
@@ -71,6 +74,7 @@ public class SelectBossAttack : MonoBehaviour {
             case 2: // cuando la animacion acabe 
                 context.bossColor = BossContext.BossStateColor.BACTERIA;
                 mat.SetColor("_EmissionColor", Color.green * brightness);
+                matOutlined.SetColor("_OutlineColor", Color.green);
                 context.FlagAirAttack = false;
                 context.attackDistance = context.laserAttackDistance;
                 break;
@@ -78,6 +82,7 @@ public class SelectBossAttack : MonoBehaviour {
             case 3:
                 context.bossColor = BossContext.BossStateColor.PARASITE;
                 mat.SetColor("_EmissionColor", Color.blue * brightness);
+                matOutlined.SetColor("_OutlineColor", Color.blue);
                 context.attackDistance = context.laserAttackDistance;
                 break;
         }
@@ -88,13 +93,10 @@ public class SelectBossAttack : MonoBehaviour {
         context.attackDistance = context.meleeAttackDistance;
         context.bossColor = BossContext.BossStateColor.INMUNE;
         mat.SetColor("_EmissionColor", Color.yellow * brightness);
+        matOutlined.SetColor("_OutlineColor", Color.yellow);
         changeStateTime = timeInInmmune;
     }
 
-    private void InmunneToRed()
-    {
-
-    }
 
     private void AnyStateToInmmune()
     {
