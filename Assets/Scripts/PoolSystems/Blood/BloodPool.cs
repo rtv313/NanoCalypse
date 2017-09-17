@@ -62,11 +62,12 @@ public class BloodPool : MonoBehaviour {
 
                 for (int i = 0; i < redBloodPool.Count; i++)
                 {
-                    if (!redBloodPool[i].activeInHierarchy)
-                    {
-                        PrepareBlood(redBloodPool[i], positionReference, rotation);
-                        return redBloodPool[i];
-                    }
+					if (redBloodPool [i] != null) {
+						if (!redBloodPool [i].activeInHierarchy) {
+							PrepareBlood (redBloodPool [i], positionReference, rotation);
+							return redBloodPool [i];
+						}
+					}
                 }
 
                 GameObject newRedBlood = Instantiate(redBlood);
