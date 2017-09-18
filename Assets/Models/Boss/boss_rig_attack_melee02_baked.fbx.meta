@@ -351,6 +351,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.33320984
+        functionName: SpawnSoundEffect
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 9a0c62aab41de62488ce8470284da448,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.36132315
         functionName: SpawnEnemiesBoss
         data: 

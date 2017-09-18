@@ -9,6 +9,9 @@ public class BossMeleeInterface : MonoBehaviour {
     public GameObject SpawnPoint1;
     public GameObject SpawnPoint2;
     public GameObject SpawnPoint3;
+
+    public AudioSource meleeSoundEffect;
+    public AudioSource spawnSoundEffect;
     private EnemiesPool enemiesPool;
 
     void Start()
@@ -84,5 +87,15 @@ public class BossMeleeInterface : MonoBehaviour {
         enemySelected.GetComponent<CapsuleCollider>().enabled = true;
         contextSpawnedEnemy.path_objs_Wander = context.wanderPath.GetComponentsInChildren<Transform>();
         contextSpawnedEnemy.path_objs_Wander = context.wanderPath.GetComponentsInChildren<Transform>();
+    }
+
+    public void MeleeSoundEffect()
+    {
+        meleeSoundEffect.Play();
+    }
+
+    public void SpawnSoundEffect()
+    {
+        spawnSoundEffect.Play();
     }
 }

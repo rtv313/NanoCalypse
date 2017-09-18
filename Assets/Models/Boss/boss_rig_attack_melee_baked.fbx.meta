@@ -375,6 +375,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.4936709
+        functionName: MeleeSoundEffect
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 9a0c62aab41de62488ce8470284da448,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
