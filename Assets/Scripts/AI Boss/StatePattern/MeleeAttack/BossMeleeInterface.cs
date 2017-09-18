@@ -10,12 +10,30 @@ public class BossMeleeInterface : MonoBehaviour {
     public GameObject SpawnPoint2;
     public GameObject SpawnPoint3;
 
+    public GameObject SpawnPointPSBubbles1;
+    public GameObject SpawnPointPSBubbles2;
+    public GameObject SpawnPointPSBubbles3;
+
+    public GameObject SpawnPointPSFog1;
+    public GameObject SpawnPointPSFog2;
+    public GameObject SpawnPointPSFog3;
+
+
     public AudioSource meleeSoundEffect;
     public AudioSource spawnSoundEffect;
     private EnemiesPool enemiesPool;
 
     void Start()
     {
+
+        SpawnPointPSBubbles1.SetActive(false);
+        SpawnPointPSBubbles2.SetActive(false);
+        SpawnPointPSBubbles3.SetActive(false);
+
+        SpawnPointPSFog1.SetActive(false);
+        SpawnPointPSFog2.SetActive(false);
+        SpawnPointPSFog3.SetActive(false);
+
         meleeAttackCollider.GetComponent<Collider>().enabled = false;
         enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>();
     }
@@ -50,7 +68,24 @@ public class BossMeleeInterface : MonoBehaviour {
     {
         int randomEnemy = Random.Range(0, 3);
         GameObject enemySelected;
-      ;
+
+        SpawnPointPSBubbles1.SetActive(true);
+        SpawnPointPSBubbles1.GetComponent<ParticleSystem>().Emit(1);
+        SpawnPointPSFog1.SetActive(true);
+        SpawnPointPSFog1.GetComponent<ParticleSystem>().Emit(1);
+
+        SpawnPointPSBubbles2.SetActive(true);
+        SpawnPointPSBubbles2.GetComponent<ParticleSystem>().Emit(1);
+        SpawnPointPSFog2.SetActive(true);
+        SpawnPointPSFog2.GetComponent<ParticleSystem>().Emit(1);
+
+        SpawnPointPSBubbles3.SetActive(true);
+        SpawnPointPSBubbles3.GetComponent<ParticleSystem>().Emit(1);
+        SpawnPointPSFog3.SetActive(true);
+        SpawnPointPSFog3.GetComponent<ParticleSystem>().Emit(1);
+
+        Invoke("DeactivatePS", 2.5f);
+
         switch (randomEnemy)
         {
             case 0:
@@ -97,5 +132,17 @@ public class BossMeleeInterface : MonoBehaviour {
     public void SpawnSoundEffect()
     {
         spawnSoundEffect.Play();
+    }
+
+    private void DeactivatePS()
+    {
+        SpawnPointPSBubbles1.SetActive(false);
+        SpawnPointPSFog1.SetActive(false);
+
+        SpawnPointPSBubbles2.SetActive(false);
+        SpawnPointPSFog2.SetActive(false);
+
+        SpawnPointPSBubbles3.SetActive(false);
+        SpawnPointPSFog3.SetActive(false);
     }
 }
