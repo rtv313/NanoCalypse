@@ -192,6 +192,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.41598356
+        functionName: SpawnOpen
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: dbd051aceb6116b4abb5a9eca7a7e99a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

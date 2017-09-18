@@ -421,7 +421,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143815183680708}
   m_LocalRotation: {x: -0, y: 0.9995967, z: -0, w: 0.028397812}
-  m_LocalPosition: {x: 92.43209, y: 5.72, z: -257.04}
+  m_LocalPosition: {x: 111.2, y: 5.72, z: -259.93}
   m_LocalScale: {x: 1.3107228, y: 1.3107228, z: 1.3107228}
   m_Children:
   - {fileID: 4425422076672026}
@@ -432,7 +432,7 @@ Transform:
   - {fileID: 4420710807405662}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 176.74501, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 106.81901, z: 0}
 --- !u!4 &4032351121071168
 Transform:
   m_ObjectHideFlags: 1
@@ -988,8 +988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd051aceb6116b4abb5a9eca7a7e99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  riseSpawn: 1
+  health: 200
+  riseSpawn: 0
   openSpawn: 1
   closeSpawn: 0
   finishRise: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   flagCreate: 1
   patrolPath: {fileID: 0}
   wanderPath: {fileID: 0}
-  spawnEnemyEffect: {fileID: 1565704686986492, guid: 09475e0bce9727e49ac4284ea7c32a7d,
+  spawnEnemyEffect: {fileID: 1014239135405490, guid: b15f5b6388a4aaa4e810ee9599a8a789,
     type: 2}
   enemyVirus: {fileID: 1399999745233172, guid: 91d7299719e09c44680b41e52e554c1b, type: 2}
   enemyBacteria: {fileID: 1384258613907614, guid: 65e304356d9786a4393782b6aeab0b9c,
@@ -1019,6 +1019,8 @@ MonoBehaviour:
   closeAudio: {fileID: 8300000, guid: 485197cf5c49e5347849a90f9ed49c21, type: 3}
   spawnAudio: {fileID: 8300000, guid: a7549f453ecd38c469a5625adb8018ad, type: 3}
   activationMesh: {fileID: 1835270953847334}
+  deadSoundEffect: {fileID: 1875591123011230, guid: e6dafbcff4eea634596d97a3fff1ecb9,
+    type: 2}
 --- !u!114 &114189419455969972
 MonoBehaviour:
   m_ObjectHideFlags: 1

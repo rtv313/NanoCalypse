@@ -5071,6 +5071,10 @@ Prefab:
       propertyPath: wanderPath
       value: 
       objectReference: {fileID: 1431180977}
+    - target: {fileID: 1212534007640590, guid: de57d0b1a5d44444da7aae8b13734838, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de57d0b1a5d44444da7aae8b13734838, type: 2}
   m_IsPrefabParent: 0
@@ -5774,12 +5778,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114169618013485620, guid: ecedd59edafc3d040931069908ef2fa3,
-        type: 2}
-      propertyPath: spawnEnemyEffect
-      value: 
-      objectReference: {fileID: 1014239135405490, guid: b15f5b6388a4aaa4e810ee9599a8a789,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecedd59edafc3d040931069908ef2fa3, type: 2}
   m_IsPrefabParent: 0

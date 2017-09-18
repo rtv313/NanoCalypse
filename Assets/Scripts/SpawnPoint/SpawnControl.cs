@@ -54,6 +54,10 @@ public class SpawnControl : MonoBehaviour {
     private EnemiesPool enemiesPool;
 
     private interfaceManager ifaceManager;
+    private CameraShake cam;
+
+    //Dead Sound Effect
+    public GameObject deadSoundEffect;
 
     // Use this for initialization
     void Start ()
@@ -62,6 +66,7 @@ public class SpawnControl : MonoBehaviour {
         audio = GetComponent<AudioSource>();
         enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>();
         ifaceManager = GameObject.Find("GUI").GetComponent<interfaceManager>();
+        cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
     }
 
     public void ActivateSpawn()
@@ -88,8 +93,11 @@ public class SpawnControl : MonoBehaviour {
             ifaceManager.updateSpawnPointsRemaining();
             GameObject deathPsRef= Instantiate(deathPs, transform.position, transform.rotation);
             activationMesh.GetComponent<ActivateNavMesh>().DestroyActivationMesh();
+            cam.fireShake(0);
             Destroy(deathPsRef, 2.0f);
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            GameObject soundDead= Instantiate(deadSoundEffect, transform.position, transform.rotation);
+            Destroy(soundDead, 3.0f);
         }
     }
 
