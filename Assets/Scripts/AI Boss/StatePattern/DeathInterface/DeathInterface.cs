@@ -11,6 +11,9 @@ public class DeathInterface : MonoBehaviour {
     public Transform explosion4;
     public Transform explosion5;
 
+    public GameObject deadSoundEffect;
+    public AudioSource preDeadAudioSource;
+
     private GameObject fatherObject;
 
 	// Use this for initialization
@@ -28,6 +31,10 @@ public class DeathInterface : MonoBehaviour {
     {
         GameObject deathPsRef;
 
+        GameObject bossDead = Instantiate(deadSoundEffect, explosion1.position, explosion1.rotation);
+
+        Destroy(bossDead, 3.0f);
+
         deathPsRef = Instantiate(deathPs, explosion1.position, explosion1.rotation);
         Destroy(deathPsRef, 2.0f);
 
@@ -44,5 +51,11 @@ public class DeathInterface : MonoBehaviour {
         Destroy(deathPsRef, 2.0f);
 
         Destroy(fatherObject);
+    }
+
+
+    void PreDeadAudioSource()
+    {
+        preDeadAudioSource.Play();
     }
 }
