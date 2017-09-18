@@ -15,12 +15,13 @@ public class DeathInterface : MonoBehaviour {
     public AudioSource preDeadAudioSource;
 
     private GameObject fatherObject;
-
-	// Use this for initialization
-	void Start () {
+    private CameraShake cam;
+    // Use this for initialization
+    void Start () {
 
         fatherObject = transform.parent.gameObject;
-	}
+        cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,7 +31,7 @@ public class DeathInterface : MonoBehaviour {
     void Death()
     {
         GameObject deathPsRef;
-
+        cam.fireShake(0);
         GameObject bossDead = Instantiate(deadSoundEffect, explosion1.position, explosion1.rotation);
 
         Destroy(bossDead, 3.0f);

@@ -60,6 +60,7 @@ public class SelectBossAttack : MonoBehaviour {
     {
         gameObject.GetComponent<BossBulletAttack>().enabled = false;
         int random = Random.Range(1, 4);
+        //random = 1;
         switch (random)
         {
             case 1: // por tiempo

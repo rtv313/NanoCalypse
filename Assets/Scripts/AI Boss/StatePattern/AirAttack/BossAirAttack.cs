@@ -14,18 +14,20 @@ public class BossAirAttack : MonoBehaviour {
     private bool flagAttack = false;
     private BacteriaExplosionsPool bacteriaExplosionsPool;
     FoodAttackManager foodManager;
+    private CameraShake cam;
     // Use this for initialization
     void Start()
     {
 
         bacteriaExplosionsPool = GameObject.FindGameObjectWithTag("BacteriaExpPool").GetComponent<BacteriaExplosionsPool>();
-        foodManager = GameObject.FindGameObjectWithTag("Player").GetComponent<FoodAttackManager>(); ;
+        foodManager = GameObject.FindGameObjectWithTag("Player").GetComponent<FoodAttackManager>();
+        cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
     }
 
     public void CreateExplosions()
     {
         GameObject explosion;
-
+        cam.fireShake(0);
         explosion = bacteriaExplosionsPool.GetBacteriaExplosion(positionOneExplosion);
         explosion.GetComponent<BacteriaExplosion>().EnableExplosion();
 
