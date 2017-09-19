@@ -31,7 +31,7 @@ public class DeathInterface : MonoBehaviour {
     void Death()
     {
         GameObject deathPsRef;
-        cam.fireShake(0);
+        cam.fireShake(2);
         GameObject bossDead = Instantiate(deadSoundEffect, explosion1.position, explosion1.rotation);
 
         Destroy(bossDead, 3.0f);
