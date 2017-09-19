@@ -93,11 +93,12 @@ public class SpawnControl : MonoBehaviour {
             ifaceManager.updateSpawnPointsRemaining();
             GameObject deathPsRef= Instantiate(deathPs, transform.position, transform.rotation);
             activationMesh.GetComponent<ActivateNavMesh>().DestroyActivationMesh();
-            cam.fireShake(0);
+            cam.fireShake(1);
             Destroy(deathPsRef, 2.0f);
             Destroy(gameObject);
             GameObject soundDead= Instantiate(deadSoundEffect, transform.position, transform.rotation);
             Destroy(soundDead, 3.0f);
+
         }
     }
 

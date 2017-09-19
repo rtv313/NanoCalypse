@@ -8,9 +8,12 @@ public class BacteriaExplosion : MonoBehaviour {
     private float resetTime = 0f;
     private bool explodeFlag = false;
 
+    private CameraShake cam;
+
     void Awake()
     {
         resetTime = explosionLifeTime;
+        cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
     }
 
     void Update()
@@ -28,11 +31,11 @@ public class BacteriaExplosion : MonoBehaviour {
       Invoke("activateTrigger", 0.4f);
     }
 
-
     void activateTrigger()
     {
         explodeFlag = true;
         explosionLifeTime = resetTime;
+        cam.fireShake(1);
     }
 
     void DeactivateExplosion()

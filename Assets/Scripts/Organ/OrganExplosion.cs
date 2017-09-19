@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrganExplosion : MonoBehaviour {
     public GameObject PSexplosion;
-    CameraShake cam;
+    private CameraShake cam;
 
     void Awake()
     {
