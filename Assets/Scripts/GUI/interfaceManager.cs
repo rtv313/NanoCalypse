@@ -262,4 +262,9 @@ public class interfaceManager : MonoBehaviour {
 			//Debug.Log (audioToFade.volume);
 		}
 	}
+
+    public int getRemainingSpawnPoints()
+    {
+        return spRemainingNumber;
+    }
 }

@@ -51,12 +51,22 @@ public class DeathInterface : MonoBehaviour {
         deathPsRef = Instantiate(deathPs, explosion5.position, explosion5.rotation);
         Destroy(deathPsRef, 2.0f);
 
+        EndGame();
+
         Destroy(fatherObject);
+
+       
     }
 
 
     void PreDeadAudioSource()
     {
         preDeadAudioSource.Play();
+    }
+
+    void EndGame()
+    {
+        GameObject endGame = GameObject.FindGameObjectWithTag("EndGame");
+        endGame.GetComponent<endgame_trigger>().CallEndLevel();
     }
 }

@@ -23,6 +23,7 @@ TagManager:
   - SpawnFood
   - BloodPsPool
   - Boss
+  - EndGame
   layers:
   - Default
   - TransparentFX

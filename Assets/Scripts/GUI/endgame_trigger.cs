@@ -12,9 +12,15 @@ public class endgame_trigger : MonoBehaviour {
 		objects = FindObjectsOfType(typeof(GameObject));
 	}
 
-	void OnTriggerEnter(Collider other) {
 
-		if (other.tag == "Player") {
+    public void CallEndLevel()
+    {
+        Invoke("EndLevel", 3.0f);
+    }
+
+	public void EndLevel() {
+
+		
 			GUI.enabled = false;
 			ScoreScreen.enabled = true;
 			objects = FindObjectsOfType(typeof(GameObject));
@@ -23,6 +29,8 @@ public class endgame_trigger : MonoBehaviour {
 				go.SendMessage("OnPauseGame", SendMessageOptions.DontRequireReceiver);
 				Time.timeScale = 0.0f;
 			}
-		}
+		
 	}
+
+
 }
