@@ -563,7 +563,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548391732938064}
   m_LocalRotation: {x: -0, y: 0.0073434254, z: -0, w: 0.99997306}
-  m_LocalPosition: {x: 109.6, y: 5.19, z: -253.7}
+  m_LocalPosition: {x: 15.94, y: 5, z: -258.34}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4308235147980692}
@@ -1560,9 +1560,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.51
-  m_Height: 5
+  m_Height: 6.98
   m_Direction: 1
-  m_Center: {x: 0, y: 1.5, z: 0.25}
+  m_Center: {x: 0, y: 2.5, z: 0.25}
 --- !u!137 &137169195269311822
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -31,7 +31,7 @@ public class ActivateBoss : MonoBehaviour {
                 CameraShake cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
                 cam.fireShake(0);
                 boss.SetActive(true);
-                Destroy(gameObject);
+                Destroy(gameObject,6.0f);
             }
         }
     }
