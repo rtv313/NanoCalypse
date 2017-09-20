@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/LevelStomach.unity
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Level1.unity
+  - enabled: 0
+    path: 
     guid: fa3e64ba367e2df44810130dd7fa1ada
   - enabled: 1
     path: Assets/GameOver.unity
     guid: 6de4fc06f33e6da4698a13213f2da9b2
+  - enabled: 1
+    path: Assets/Level1.unity
+    guid: 7fc6912035c70764489a52cc4b7ab0d8
