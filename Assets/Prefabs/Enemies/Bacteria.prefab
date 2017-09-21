@@ -1223,9 +1223,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 7.78
+  m_Height: 8.82
   m_Direction: 1
-  m_Center: {x: 0, y: 2.98, z: -0.34}
+  m_Center: {x: 0, y: 0, z: -0.34}
 --- !u!137 &137266449405495186
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

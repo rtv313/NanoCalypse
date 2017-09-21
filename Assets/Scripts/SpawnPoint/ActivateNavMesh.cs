@@ -21,6 +21,9 @@ public class ActivateNavMesh : MonoBehaviour {
             other.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
             other.gameObject.GetComponent<ActivateEnemyCollidersNav>().flagEnter = true;
             other.gameObject.GetComponent<SphereCollider>().enabled = true;
+
+            Vector3 capCenter = other.gameObject.GetComponent<CapsuleCollider>().center;
+            other.gameObject.GetComponent<CapsuleCollider>().center = new Vector3(capCenter.x, 0.0f, capCenter.z);
         }
     }
 

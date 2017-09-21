@@ -175,7 +175,6 @@ public class EnemiesPool : MonoBehaviour {
                 }
                 break;
         }
-
     }
 	
 }
