@@ -54,17 +54,18 @@ public class MainMenu : MonoBehaviour {
         }
         else if (buttonIndex == 1) // Help
         {
-			CanvasHelp.enabled = true;
+			
 			TitleCanvas.enabled = false;
 			CanvasCredit.enabled = false;
 			camtravel.moveCameraToScreen ();
+			Invoke ("activeHelp", camtravel.getTransitionDuration ());
         }
         else if (buttonIndex == 2) // Credits
         {
 			CanvasHelp.enabled = false;
 			TitleCanvas.enabled = false;
-			CanvasCredit.enabled = true;
 			camtravel.moveCameraToScreen ();
+			Invoke ("activeCredit", camtravel.getTransitionDuration ());
         }
 		else if (buttonIndex == 3) // Quit
 		{
@@ -79,9 +80,9 @@ public class MainMenu : MonoBehaviour {
 	public void backToMain(){
 		sourceClick.PlayOneShot (clickSound);
 		CanvasHelp.enabled = false;
-		TitleCanvas.enabled = true;
 		CanvasCredit.enabled = false;
 		camtravel.moveCameraToTable ();
+		Invoke ("activeTitle", camtravel.getTransitionDuration ());
 	}
 	public void buttonOver ()
 	{
@@ -91,5 +92,15 @@ public class MainMenu : MonoBehaviour {
 	}
 	public void buttonOut(){
 		gameObject.GetComponent<RectTransform> ().sizeDelta = new Vector2 (160f, 30f);
+	}
+
+	private void activeTitle(){
+		TitleCanvas.enabled = true;
+	}
+	private void activeCredit(){
+		CanvasCredit.enabled = true;
+	}
+	private void activeHelp(){
+		CanvasHelp.enabled = true;
 	}
 }

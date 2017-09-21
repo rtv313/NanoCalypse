@@ -46,4 +46,7 @@ public class camera_travelling : MonoBehaviour {
 			StartCoroutine (Transition(tablePosition));
 		}
 	}
+	public float getTransitionDuration(){
+		return transitionDuration;
+	}
 }
