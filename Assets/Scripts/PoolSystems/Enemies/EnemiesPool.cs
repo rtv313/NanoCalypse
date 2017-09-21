@@ -81,6 +81,10 @@ public class EnemiesPool : MonoBehaviour {
         enemy.GetComponent<Context>().life = 100;
         enemy.GetComponent<Context>().mutaded = false;
         enemy.GetComponent<Context>().animFlagAttack = false;
+
+        if(enemy.GetComponent<Context>().enemyType == Context.EnemyType.PARASITE)
+            enemy.GetComponent<Context>().life = 50;
+
         enemy.SetActive(true);
     }
 
