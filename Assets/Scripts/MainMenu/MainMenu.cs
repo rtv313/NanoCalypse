@@ -10,11 +10,16 @@ public class MainMenu : MonoBehaviour {
 	private Canvas TitleCanvas, CanvasHelp, CanvasCredit;
 	private AudioSource sourceClick, sourceOver;
 	private AudioSource [] sounds;
+	private camera_travelling camtravel;
 	// Use this for initialization
 	void Start () {
 		CanvasHelp = GameObject.Find ("CanvasHelp").GetComponent<Canvas>();
 		TitleCanvas = GameObject.Find ("TitleCanvas").GetComponent<Canvas>();
 		CanvasCredit = GameObject.Find ("CanvasCredit").GetComponent<Canvas>();
+
+		if(GameObject.Find ("Main Camera").GetComponent<camera_travelling>() != null)
+			camtravel = GameObject.Find ("Main Camera").GetComponent<camera_travelling>();
+		
 		CanvasHelp.enabled = false;
 		TitleCanvas.enabled = true;
 		CanvasCredit.enabled = false;
@@ -52,12 +57,14 @@ public class MainMenu : MonoBehaviour {
 			CanvasHelp.enabled = true;
 			TitleCanvas.enabled = false;
 			CanvasCredit.enabled = false;
+			camtravel.moveCameraToScreen ();
         }
         else if (buttonIndex == 2) // Credits
         {
 			CanvasHelp.enabled = false;
 			TitleCanvas.enabled = false;
 			CanvasCredit.enabled = true;
+			camtravel.moveCameraToScreen ();
         }
 		else if (buttonIndex == 3) // Quit
 		{
@@ -66,6 +73,7 @@ public class MainMenu : MonoBehaviour {
         else if (buttonIndex == 4) // Back To Main Menu
         {
             SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
+
         }
     }
 	public void backToMain(){
@@ -73,12 +81,13 @@ public class MainMenu : MonoBehaviour {
 		CanvasHelp.enabled = false;
 		TitleCanvas.enabled = true;
 		CanvasCredit.enabled = false;
+		camtravel.moveCameraToTable ();
 	}
 	public void buttonOver ()
 	{
 		sourceOver.PlayOneShot (overSound);
 		gameObject.GetComponent<RectTransform> ().sizeDelta = new Vector2 (160f, 28f);
-		Debug.Log ("Scaled");
+
 	}
 	public void buttonOut(){
 		gameObject.GetComponent<RectTransform> ().sizeDelta = new Vector2 (160f, 30f);
