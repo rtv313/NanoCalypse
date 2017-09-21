@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4205465768482482}
   - component: {fileID: 198094651066672210}
   - component: {fileID: 199579254140014668}
+  - component: {fileID: 114231481018543560}
   m_Layer: 0
   m_Name: ShockWavePs
   m_TagString: Untagged
@@ -41,6 +42,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114231481018543560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226645562429110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9e6ee63bbe23e4289d526793c9c78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ps: {fileID: 0}
+  psLighting: {fileID: 0}
+  psShockWave: {fileID: 0}
+  psSmoke: {fileID: 0}
+  psLight: {fileID: 0}
+  explosionLifeTime: 2
 --- !u!198 &198094651066672210
 ParticleSystem:
   m_ObjectHideFlags: 1
