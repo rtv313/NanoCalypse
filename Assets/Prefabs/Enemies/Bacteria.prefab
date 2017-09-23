@@ -646,7 +646,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1384258613907614}
   m_LocalRotation: {x: -0, y: -0.9997436, z: -0, w: -0.022646058}
-  m_LocalPosition: {x: 63.5, y: 5, z: -243.9}
+  m_LocalPosition: {x: 114.89, y: 5.26, z: -264.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4529648456431274}
@@ -1109,7 +1109,7 @@ MonoBehaviour:
   playerInSight: 0
   target: {fileID: 0}
   attackDistance: 2
-  attackDamage: 1
+  attackDamage: 4
   playerHealth: {fileID: 0}
   animFlagAttack: 0
   idleTimer: 10

@@ -92,6 +92,7 @@ public class EnemiesPool : MonoBehaviour {
                 break;
 
             case Context.EnemyType.BACTERIA:
+                enemy.GetComponent<BacteriaAttack>().ResetBacteriaAttack();
                 enemyContext.life = 70;
                 break;
         }
