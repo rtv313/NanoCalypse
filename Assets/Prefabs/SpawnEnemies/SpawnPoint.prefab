@@ -420,8 +420,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143815183680708}
-  m_LocalRotation: {x: -0, y: 0.9995967, z: -0, w: 0.028397812}
-  m_LocalPosition: {x: 111.2, y: 5.72, z: -259.93}
+  m_LocalRotation: {x: -0, y: 0.8029171, z: -0, w: 0.5960908}
+  m_LocalPosition: {x: -13.91, y: 5.81, z: -194.67}
   m_LocalScale: {x: 1.3107228, y: 1.3107228, z: 1.3107228}
   m_Children:
   - {fileID: 4425422076672026}
@@ -1012,7 +1012,7 @@ MonoBehaviour:
     type: 2}
   enemyParasite: {fileID: 1548391732938064, guid: 3178d9163e0e86943ac29a98175ef6dc,
     type: 2}
-  enemyType: 0
+  enemyType: 2
   speed: 4.3
   riseAudio: {fileID: 8300000, guid: 815719d0730f52b4fb7906df093acad6, type: 3}
   openAudio: {fileID: 8300000, guid: 9f931dad163bff141bbd30c46378d6bf, type: 3}

@@ -70,20 +70,31 @@ public class EnemiesPool : MonoBehaviour {
             rend.material.mainTexture = enemyContext.originalTexture;
         }
 
-        if (enemy.GetComponent<Context>().enemyType == Context.EnemyType.BACTERIA)
+        if (enemyContext.enemyType == Context.EnemyType.BACTERIA)
         {
-            enemy.GetComponent<Context>().nav.angularSpeed = 60;
-            enemy.GetComponent<Context>().nav.speed = 5;
+            enemyContext.nav.angularSpeed = 60;
+            enemyContext.nav.speed = 5;
             enemy.GetComponent<TrailRenderer>().enabled = false;
         }
 
-        enemy.GetComponent<Context>().state = new WanderState();
-        enemy.GetComponent<Context>().life = 100;
-        enemy.GetComponent<Context>().mutaded = false;
-        enemy.GetComponent<Context>().animFlagAttack = false;
+        enemyContext.state = new WanderState();
+        enemyContext.mutaded = false;
+        enemyContext.animFlagAttack = false;
 
-        if(enemy.GetComponent<Context>().enemyType == Context.EnemyType.PARASITE)
-            enemy.GetComponent<Context>().life = 50;
+        switch (enemyContext.enemyType)
+        {
+            case Context.EnemyType.VIRUS:
+                enemyContext.life = 55;
+                break;
+
+            case Context.EnemyType.PARASITE:
+                enemyContext.life = 50;
+                break;
+
+            case Context.EnemyType.BACTERIA:
+                enemyContext.life = 70;
+                break;
+        }
 
         enemy.SetActive(true);
     }
