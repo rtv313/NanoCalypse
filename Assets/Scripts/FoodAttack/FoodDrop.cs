@@ -25,7 +25,7 @@ public class FoodDrop : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(30);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(4);
         }
 
         if (explosionFlag == false)
