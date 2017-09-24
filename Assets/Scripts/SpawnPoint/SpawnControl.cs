@@ -57,8 +57,7 @@ public class SpawnControl : MonoBehaviour {
     private CameraShake cam;
 
     //Dead Sound Effect
-    public GameObject deadSoundEffect;
-
+    private OrganExplosions organsExplosionsPool;
     // Use this for initialization
     void Start ()
     {
@@ -67,6 +66,7 @@ public class SpawnControl : MonoBehaviour {
         enemiesPool = GameObject.FindGameObjectWithTag("EnemiesPool").GetComponent<EnemiesPool>();
         ifaceManager = GameObject.Find("GUI").GetComponent<interfaceManager>();
         cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+        organsExplosionsPool = GameObject.FindGameObjectWithTag("OrgansExplosionSoundPool").GetComponent<OrganExplosions>();
     }
 
     public void ActivateSpawn()
@@ -96,9 +96,7 @@ public class SpawnControl : MonoBehaviour {
             cam.fireShake(1);
             Destroy(deathPsRef, 2.0f);
             Destroy(gameObject);
-            GameObject soundDead= Instantiate(deadSoundEffect, transform.position, transform.rotation);
-            Destroy(soundDead, 3.0f);
-
+            organsExplosionsPool.GetDeadSound(transform.position);
         }
     }
 

@@ -5,10 +5,12 @@ using UnityEngine;
 public class OrganExplosion : MonoBehaviour {
     public GameObject PSexplosion;
     private CameraShake cam;
-
+    private OrganExplosions organsExplosionsPool;
     void Awake()
     {
         cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+        organsExplosionsPool = GameObject.FindGameObjectWithTag("OrgansExplosionSoundPool").GetComponent<OrganExplosions>();
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -17,7 +19,7 @@ public class OrganExplosion : MonoBehaviour {
         {
             Instantiate(PSexplosion, transform.position, transform.rotation);
             cam.fireShake(0);
-            //Destroy(gameObject);
+            organsExplosionsPool.GetDeadSound(transform.position);
             gameObject.SetActive(false);
         }
     }
