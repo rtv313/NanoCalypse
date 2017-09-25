@@ -84,16 +84,16 @@ public class EnemiesPool : MonoBehaviour {
         switch (enemyContext.enemyType)
         {
             case Context.EnemyType.VIRUS:
-                enemyContext.life = 70;
+                enemyContext.life = 100;
                 break;
 
             case Context.EnemyType.PARASITE:
-                enemyContext.life = 50;
+                enemyContext.life = 100;
                 break;
 
             case Context.EnemyType.BACTERIA:
                 enemy.GetComponent<BacteriaAttack>().ResetBacteriaAttack();
-                enemyContext.life = 70;
+                enemyContext.life = 100;
                 break;
         }
 

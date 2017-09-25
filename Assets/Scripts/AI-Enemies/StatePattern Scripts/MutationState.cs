@@ -44,7 +44,7 @@ public class MutationState : State {
 
     private void bacteriaMutation(Context context)
     {
-        context.nav.speed = 12;
+        context.nav.speed = 18;
         //Change enemy color with shader
         Transform ChildWithRender =  context.gameObject.transform.GetChild(1).GetChild(0);
         Renderer rend = ChildWithRender.gameObject.GetComponent<Renderer>();

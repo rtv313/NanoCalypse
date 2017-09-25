@@ -187,10 +187,6 @@ Prefab:
       propertyPath: wanderPath
       value: 
       objectReference: {fileID: 1431180977}
-    - target: {fileID: 1384258613907614, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65e304356d9786a4393782b6aeab0b9c, type: 2}
   m_IsPrefabParent: 0
@@ -3983,11 +3979,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 89.198006, z: 0}
---- !u!1 &469424800 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1225986104402890, guid: 91d7299719e09c44680b41e52e554c1b,
-    type: 2}
-  m_PrefabInternal: {fileID: 843096720}
 --- !u!1 &473921548
 GameObject:
   m_ObjectHideFlags: 0
@@ -9475,7 +9466,7 @@ Prefab:
         type: 2}
       propertyPath: parasite
       value: 
-      objectReference: {fileID: 469424800}
+      objectReference: {fileID: 0}
     - target: {fileID: 114890323847703834, guid: ce3e4ea111903bf4bbc14bf19690d7e7,
         type: 2}
       propertyPath: bacteria
