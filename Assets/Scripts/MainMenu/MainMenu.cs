@@ -7,22 +7,31 @@ public class MainMenu : MonoBehaviour {
 
     public int buttonIndex = 0;
 	public AudioClip clickSound, overSound;
-	private Canvas TitleCanvas, CanvasHelp, CanvasCredit;
+	private Canvas TitleCanvas, CanvasHelp, CanvasCredit,CanvasControls;
 	private AudioSource sourceClick, sourceOver;
 	private AudioSource [] sounds;
 	private camera_travelling camtravel;
+	private MeshRenderer plane_bacteria, plane_virus, plane_parasite;
 	// Use this for initialization
 	void Start () {
 		CanvasHelp = GameObject.Find ("CanvasHelp").GetComponent<Canvas>();
 		TitleCanvas = GameObject.Find ("TitleCanvas").GetComponent<Canvas>();
 		CanvasCredit = GameObject.Find ("CanvasCredit").GetComponent<Canvas>();
+		CanvasControls = GameObject.Find ("CanvasControls").GetComponent<Canvas>();
+
+		plane_bacteria = GameObject.Find ("Plane_bacteria").GetComponent<MeshRenderer> ();
+		plane_virus = GameObject.Find ("Plane_virus").GetComponent<MeshRenderer> ();
+		plane_parasite = GameObject.Find ("Plane_parasite").GetComponent<MeshRenderer> ();
+
 
 		if(GameObject.Find ("Main Camera").GetComponent<camera_travelling>() != null)
 			camtravel = GameObject.Find ("Main Camera").GetComponent<camera_travelling>();
 		
+		deactivateHelpPlanes ();
 		CanvasHelp.enabled = false;
 		TitleCanvas.enabled = true;
 		CanvasCredit.enabled = false;
+		CanvasControls.enabled = false;
 		gameObject.AddComponent<AudioSource> ();
 		gameObject.AddComponent<AudioSource> ();
 
@@ -57,13 +66,15 @@ public class MainMenu : MonoBehaviour {
 			
 			TitleCanvas.enabled = false;
 			CanvasCredit.enabled = false;
+			CanvasControls.enabled = false;
 			camtravel.moveCameraToScreen ();
 			Invoke ("activeHelp", camtravel.getTransitionDuration ());
         }
         else if (buttonIndex == 2) // Credits
         {
-			CanvasHelp.enabled = false;
+			CanvasHelp.gameObject.SetActive (false);
 			TitleCanvas.enabled = false;
+			CanvasControls.enabled = false;
 			camtravel.moveCameraToScreen ();
 			Invoke ("activeCredit", camtravel.getTransitionDuration ());
         }
@@ -76,11 +87,20 @@ public class MainMenu : MonoBehaviour {
             SceneManager.LoadScene("TitleMenu", LoadSceneMode.Single);
 
         }
+		else if (buttonIndex == 5) // Credits
+		{
+			CanvasHelp.gameObject.SetActive (false);
+			TitleCanvas.enabled = false;
+			CanvasCredit.enabled = false;
+			camtravel.moveCameraToScreen ();
+			Invoke ("activeControls", camtravel.getTransitionDuration ());
+		}
     }
 	public void backToMain(){
 		sourceClick.PlayOneShot (clickSound);
-		CanvasHelp.enabled = false;
+		CanvasHelp.gameObject.SetActive (false);
 		CanvasCredit.enabled = false;
+		CanvasControls.enabled = false;
 		camtravel.moveCameraToTable ();
 		Invoke ("activeTitle", camtravel.getTransitionDuration ());
 	}
@@ -101,6 +121,23 @@ public class MainMenu : MonoBehaviour {
 		CanvasCredit.enabled = true;
 	}
 	private void activeHelp(){
+		activateHelpPlanes ();
+		CanvasHelp.enabled = true;
+		CanvasHelp.gameObject.SetActive (true);
+	}
+	private void activeControls(){
+		CanvasControls.enabled = true;
+	}
+	private void deactivateHelpPlanes(){
+		plane_bacteria.enabled = false;
+		plane_parasite.enabled = false;
+		plane_virus.enabled = false;
+		CanvasHelp.enabled = false;
+	}
+	private void activateHelpPlanes(){
+		plane_bacteria.enabled = true;
+		plane_parasite.enabled = true;
+		plane_virus.enabled = true;
 		CanvasHelp.enabled = true;
 	}
 }
