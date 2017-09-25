@@ -24,7 +24,7 @@ public class camera_travelling : MonoBehaviour {
 	void Update(){
 		if(Time.time - time_static > time_for_glitch){
 			StartCoroutine (StartGlitch ());
-			time_for_glitch = Random.Range (1, 7);
+			time_for_glitch = Random.Range (3, 7);
 		}
 		if (!moving) {
 			float angle = Mathf.LerpAngle (current_rotation.y - 5, current_rotation.y + 5, Mathf.PingPong (Time.time / 20, 1.0f));
@@ -54,7 +54,7 @@ public class camera_travelling : MonoBehaviour {
 	IEnumerator StartGlitch()
 	{
 		glitch.enabled = true;
-		yield return new WaitForSeconds (Random.Range (0.25f, 1.5f));
+		yield return new WaitForSeconds (Random.Range (0.25f, 1.0f));
 		glitch.enabled = false;
 		time_static = Time.time;
 	}
