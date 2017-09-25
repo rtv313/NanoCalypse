@@ -24,6 +24,7 @@ TagManager:
   - BloodPsPool
   - Boss
   - EndGame
+  - OrgansExplosionSoundPool
   layers:
   - Default
   - TransparentFX

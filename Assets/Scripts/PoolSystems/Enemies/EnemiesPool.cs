@@ -84,7 +84,7 @@ public class EnemiesPool : MonoBehaviour {
         switch (enemyContext.enemyType)
         {
             case Context.EnemyType.VIRUS:
-                enemyContext.life = 55;
+                enemyContext.life = 70;
                 break;
 
             case Context.EnemyType.PARASITE:
