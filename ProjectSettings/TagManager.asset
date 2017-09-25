@@ -25,6 +25,8 @@ TagManager:
   - Boss
   - EndGame
   - OrgansExplosionSoundPool
+  - ActivateBoss
+  - EnableBossComponents
   layers:
   - Default
   - TransparentFX

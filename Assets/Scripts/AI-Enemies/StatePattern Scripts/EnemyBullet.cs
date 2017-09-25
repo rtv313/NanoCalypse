@@ -28,7 +28,8 @@ public class EnemyBullet : MonoBehaviour {
             }
         }
 
-        if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "AgentDetector" && other.gameObject.tag != "Wound" && other.gameObject.tag != "Bullet" && other.gameObject.tag != "SpawnFood" && other.gameObject.tag != "Boss")
+        if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "AgentDetector" && other.gameObject.tag != "Wound" && other.gameObject.tag != "Bullet" && other.gameObject.tag != "SpawnFood" && other.gameObject.tag != "Boss" && other.gameObject.tag != "ActivateBoss"
+            && other.gameObject.tag != "EnableBossComponents")
         {
             Destroy(transform.gameObject);
         }
