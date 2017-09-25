@@ -18,11 +18,11 @@ public class scoreScreenManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (this.gameObject.GetComponent<Canvas> ().enabled == true) {
-			FinalScore.text = "Score: \t\t\t\t\t\t\t" + MainInterface.getScore ().ToString ();
-			FinalKillCount.text = "Kills: \t\t\t\t\t\t\t" + MainInterface.getKillCount().ToString();
-			FinalHighestMult.text = "Highest Multiplier: \t" + MainInterface.getHighestMult ().ToString ();
+			FinalScore.text = "Score: \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + MainInterface.getScore ().ToString ();
+			FinalKillCount.text = "Kills: \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + MainInterface.getKillCount().ToString();
+			FinalHighestMult.text = "Highest Multiplier: \t\t\t\t\t\t\t\t" + MainInterface.getHighestMult ().ToString ();
 			int GameTime = (int)Mathf.Floor(MainInterface.getTimeInLevel ());
-			FinalTime.text = "Time: \t\t\t\t\t\t\t" + Mathf.Floor(GameTime/60).ToString("00") + " : " + (GameTime%60).ToString("00");
+			FinalTime.text = "Time: \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + Mathf.Floor(GameTime/60).ToString("00") + " : " + (GameTime%60).ToString("00");
 		}	
 	}
 }

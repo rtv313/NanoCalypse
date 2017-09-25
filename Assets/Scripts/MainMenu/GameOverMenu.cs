@@ -44,6 +44,10 @@ public class GameOverMenu : MonoBehaviour {
         {
             Application.Quit();
         }
+		if (buttonIndex == 2) // Back To Level 1
+		{
+			SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+		}
     }
 
 	public void buttonOver ()
