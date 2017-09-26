@@ -187,6 +187,10 @@ public class BulletDamage : MonoBehaviour {
     {
         other.gameObject.GetComponent<DamageFeedback>().receiveDamage();
         SpawnControl spawnControl = other.gameObject.GetComponent<SpawnControl>();
+
+        if (spawnControl.riseSpawn == false)
+            return;
+
         switch (bulletType)
         {
             case BulletType.ASSAULT:
