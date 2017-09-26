@@ -14,9 +14,10 @@ public class interfaceManager : MonoBehaviour {
 	private AudioSource [] sounds;
 	private imageFadin red_img, blue_img, green_img;
 	public AudioClip scoreSound, MultIncSound, MultDecSound, WeaponSelSound;
+	public GameObject spawn_ui, boss_ui, eye_ui;
 	// Use this for initialization
 	void Start () {
-
+		spawn_ui = GameObject.Find ("spawn_point_ui");
 		// Weapon images
 		red_img = GameObject.Find("red_image").GetComponent<imageFadin>();
 		blue_img = GameObject.Find("blue_image").GetComponent<imageFadin>();
@@ -83,6 +84,14 @@ public class interfaceManager : MonoBehaviour {
 
 	}
 	void Update(){
+		if (spRemainingNumber == 0) {
+			SpawnPointsRemaining.text = "Main threat detected";
+			spawn_ui.SetActive (false);
+			boss_ui.GetComponent<SkinnedMeshRenderer> ().enabled = true;
+			eye_ui.GetComponent<MeshRenderer> ().enabled = true;
+		} else {
+			SpawnPointsRemaining.text = ""+spRemainingNumber;
+		}
 		
 		WeaponSelector.transform.rotation = Quaternion.Slerp (WeaponSelector.transform.rotation, Quaternion.Euler (0, 0, angle), Time.deltaTime*5); // Updates the rotation of the weapon selector
 
