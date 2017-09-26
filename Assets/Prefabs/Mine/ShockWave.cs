@@ -12,6 +12,7 @@ public class ShockWave : MonoBehaviour {
     public GameObject psLight;
 
     public float explosionLifeTime = 2.0f;
+    public float deadRadio = 5.0f;
     private float resetTime = 0f;
     private bool explodeFlag = false;
 
@@ -39,7 +40,7 @@ public class ShockWave : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2.5)
+        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= deadRadio)
         {
             other.gameObject.GetComponent<Context>().life = 0;
         }
@@ -49,7 +50,7 @@ public class ShockWave : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= 2.5)
+        if (other.gameObject.tag == "Enemy" && Vector3.Distance(other.transform.position, transform.position) <= deadRadio)
         {
              other.gameObject.GetComponent<Context>().life = 0;
         }

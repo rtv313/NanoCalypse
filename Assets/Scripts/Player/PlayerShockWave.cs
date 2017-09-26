@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerShockWave : MonoBehaviour
 {
-   // public GameObject MinePrefab;
     public int minesLimit=5;
-    public float cooldown = 0.3f;
+    //public float cooldown = 0.3f;
     public GameObject MinePosition;
-    private float mineHeat = 1f;
+    //private float mineHeat = 1f;
     private bool releaseButton = false;
     private MinesPool minePool;
-
-
+    public int mineCounter = 0;
 
     void Start()
     {
@@ -23,30 +21,20 @@ public class PlayerShockWave : MonoBehaviour
     void Update()
     {
         CreateShockWave();
-        CoolDown();
     }
 
     void CreateShockWave()
     {
-        if(Input.GetAxis("Fire2") > 0.2f && mineHeat < minesLimit && releaseButton)
+        if(Input.GetAxis("Fire2") > 0.2f && mineCounter < minesLimit && releaseButton)
         {
             releaseButton = false;
-            //Instantiate(MinePrefab, MinePosition.transform.position,MinePosition.transform.rotation);
             var mine = minePool.GetMine(MinePosition.transform);
             mine.GetComponent<Mine>().ActiveMine();
-            mineHeat++;
+            ++mineCounter;
         }
 
         if (Input.GetAxis("Fire2") < 0.2f)
             releaseButton = true;
     }
 
-    void CoolDown()
-    {
-        mineHeat -= cooldown * Time.deltaTime;
-        if (mineHeat <= 1)
-        {
-            mineHeat = 1.0f;
-        }
-    }
 }
