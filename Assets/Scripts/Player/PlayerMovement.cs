@@ -84,6 +84,10 @@ public class PlayerMovement : MonoBehaviour
             Animating(h, v);
 
             UpdateWalkingAnimation(h, v);
+
+            if (transform.position.y > 6.0f) {
+                transform.position = new Vector3 (transform.position.x, 6.0f, transform.position.z); // Force player to stay bellow 5.5f
+            }
         }
     }
 
@@ -144,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 velocity = dashMovement.normalized * dashSpeed * Time.deltaTime;
         // playerRigidbody.MovePosition(transform.position + velocity);
+        velocity.y = -9.8f * Time.deltaTime;
         playerCharCont.Move(velocity);
         currentDashTime -= Time.deltaTime;
         if (currentDashTime < 0.0f)
@@ -159,6 +164,7 @@ public class PlayerMovement : MonoBehaviour
         movement = movement.normalized * speed * Time.deltaTime; // makes speed in diagonal the same
                                                                  // Rigidbody rb = GetComponent<Rigidbody>();
                                                                  // playerRigidbody.MovePosition(transform.position + movement);
+        movement.y = -9.8f * Time.deltaTime;
         playerCharCont.Move(movement);
     }
 
